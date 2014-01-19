@@ -25,7 +25,7 @@
 						<li class="comments"><a href="<%= @document.path %>#disqus_thread" data-disqus-identifier="<%= @document.disqusid %>" >Комментарии</a></li>
 						<li class="tags-list">
 							<% for tag in @document.tags : %>
-								<a class="label-tag" href="<%= @getTagUrl(tag) %>"><%= tag %></a>
+								<span class="label-tag"><%= tag %></span>
 							<% end %>
 						</li>
 					</ul>

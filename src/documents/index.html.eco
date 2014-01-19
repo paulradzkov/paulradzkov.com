@@ -18,7 +18,7 @@ title: 'Блог'
 					<li class="comments"><a href="<%= page.url %>#disqus_thread" data-disqus-identifier="<%= page.disqusid %>" >Комментарии</a></li>
 					<li class="tags-list">
 						<% for tag in page.tags : %>
-							<a class="tag" href="<%= @getTagUrl(tag) %>"><%= tag %></a>
+							<span class="tag"><%= tag %></span>
 						<% end %>
 					</li>
 				</ul>

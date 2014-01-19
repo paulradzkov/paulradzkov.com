@@ -16,9 +16,9 @@ custom_css: true
 
 <!-- cut -->
 
-<p><code class="rule"><span class="attribute">pointer-events</span>: <span class="value">none</span></code> — элемент перестанет реагировать на hover, click и другие события мыши. Он станет «прозрачным» для взаимодействия, а hover и click будут передаваться элементу, лежащему под ним.</p>
+<p><code class="hljs-rule"><span class="hljs-attribute">pointer-events</span>: <span class="hljs-value">none</span></code> — элемент перестанет реагировать на hover, click и другие события мыши. Он станет «прозрачным» для взаимодействия, а hover и click будут передаваться элементу, лежащему под ним.</p>
 
-<p><code class="rule"><span class="attribute">pointer-events</span>: <span class="value">auto</span></code> — (значение по-умолчанию) включает стандартное поведение элемента.</p>
+<p><code class="hljs-rule"><span class="hljs-attribute">pointer-events</span>: <span class="hljs-value">auto</span></code> — (значение по-умолчанию) включает стандартное поведение элемента.</p>
 
 <p>Изначально свойство «pointer-events» было введено для SVG и должно было стать частью CSS3, но было перенесено в спецификацию CSS4. Кроме «none» и «auto» есть <a href="https://developer.mozilla.org/ru/docs/CSS/pointer-events">еще несколько значений</a>, но они применимы только к SVG, и мы не будем их рассматривать.</p>
 
@@ -49,9 +49,9 @@ custom_css: true
     <div class="clr"></div>
 </div>
 
-<p>В первом примере для белого градиента, накрывающего текст, <code class="rule"><span class="attribute">pointer-events</span></code> установлен в none. Текст легко выделяется мышью сквозь градиент. Даже курсор меняет свою форму со стрелки на выделение текста.</p>
+<p>В первом примере для белого градиента, накрывающего текст, <code class="hljs-rule"><span class="hljs-attribute">pointer-events</span></code> установлен в none. Текст легко выделяется мышью сквозь градиент. Даже курсор меняет свою форму со стрелки на выделение текста.</p>
 
-<p>Во втором примере <code class="rule"><span class="attribute">pointer-events</span></code> не задан, маска градиента не даёт выделить текст, курсор имеет форму стрелки, как для нетекстовых элементов.</p>
+<p>Во втором примере <code class="hljs-rule"><span class="hljs-attribute">pointer-events</span></code> не задан, маска градиента не даёт выделить текст, курсор имеет форму стрелки, как для нетекстовых элементов.</p>
 
 <h2>Пример 2</h2>
 

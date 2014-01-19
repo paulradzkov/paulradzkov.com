@@ -17,7 +17,7 @@ custom_css: true
 	<a href="/demo/crosswise/" class="link-to-demo">Демка</a>
 </p>
 
-<p>Напишем стили для строчного тега <code class="tag">del</code> и подготовим класс для перечёркивания блочных элементов <code class="class">.del-cross</code>.</p>
+<p>Напишем стили для строчного тега <code class="hljs-tag">del</code> и подготовим класс для перечёркивания блочных элементов <code class="hljs-class">.del-cross</code>.</p>
 <pre><code class="lang-css">del.cross {
     display:inline-block; /* запрещает перенос текста на следующую строку */
     text-decoration:none;
@@ -46,7 +46,7 @@ del.cross:before,
 }
 </code></pre>
 <aside>
-	<p>Примечание: лучше использовать <code class="pseudo">:before</code>, так как на <code class="pseudo">:after</code> может быть clearfix.</p>
+	<p>Примечание: лучше использовать <code class="hljs-pseudo">:before</code>, так как на <code class="hljs-pseudo">:after</code> может быть clearfix.</p>
 </aside>
 
 <p>Пример:</p>
@@ -65,7 +65,7 @@ del.cross:before,
 		</div>
 	</div>
 </div>
-<p>Для картинок класс <code class="class">.del-cross</code> нужно ставить на их обёртку. Тег <code class="tag">img</code> не имеет псевдокласса <code class="pseudo">:before</code>.</p>
+<p>Для картинок класс <code class="hljs-class">.del-cross</code> нужно ставить на их обёртку. Тег <code class="hljs-tag">img</code> не имеет псевдокласса <code class="hljs-pseudo">:before</code>.</p>
 <p>А теперь посмотрим, что внутри SVG-файла, и как настроить цвет и толщину линий.</p>
 <p><a href="/demo/crosswise/cross_old.svg">cross_old.svg</a>:</p>
 
@@ -74,11 +74,11 @@ del.cross:before,
     &lt;line x1=&quot;0&quot; y1=&quot;100&quot; x2=&quot;100&quot; y2=&quot;0&quot;   vector-effect=&quot;non-scaling-stroke&quot; /&gt;
 &lt;/svg&gt;
 </code></pre>
-<p><code class="tag"><span class="attribute">viewBox</span>=<span class="value">&quot;0 0 100 100&quot;</span></code> — задает виртуальный размер картинки 100×100 безразмерных единиц. Формат записи: <code>x1 y1 x2 y2</code>.</p>
-<p><code class="tag"><span class="attribute">preserveAspectRatio</span>=<span class="value">&quot;none&quot;</span></code> — отключает сохранение пропорций при масштабировании.</p>
+<p><code class="hljs-tag"><span class="hljs-attribute">viewBox</span>=<span class="hljs-value">&quot;0 0 100 100&quot;</span></code> — задает виртуальный размер картинки 100×100 безразмерных единиц. Формат записи: <code>x1 y1 x2 y2</code>.</p>
+<p><code class="hljs-tag"><span class="hljs-attribute">preserveAspectRatio</span>=<span class="hljs-value">&quot;none&quot;</span></code> — отключает сохранение пропорций при масштабировании.</p>
 
-<p><code class="tag"><span class="attribute">vector-effect</span>=<span class="value">&quot;non-scaling-stroke&quot;</span></code> — чтобы толщина линий не зависела от размеров картинки. К сожалению, не работает в IE9 и IE10.</p>
-<p><code class="tag"><span class="attribute">style</span>=<span class="value">&quot;stroke: rgba(255,0,0,0.9); stroke-width: 1.5&quot;</span></code> — цвет линий можно задавать как в hex, так и в rgba с прозрачностью, а толщину линий делать дробной.</p>
+<p><code class="hljs-tag"><span class="hljs-attribute">vector-effect</span>=<span class="hljs-value">&quot;non-scaling-stroke&quot;</span></code> — чтобы толщина линий не зависела от размеров картинки. К сожалению, не работает в IE9 и IE10.</p>
+<p><code class="hljs-tag"><span class="hljs-attribute">style</span>=<span class="hljs-value">&quot;stroke: rgba(255,0,0,0.9); stroke-width: 1.5&quot;</span></code> — цвет линий можно задавать как в hex, так и в rgba с прозрачностью, а толщину линий делать дробной.</p>
 
 <h2>Поддержка браузерами</h2>
 
@@ -95,7 +95,7 @@ del.cross:before,
 &lt;/svg&gt;
 </code></pre>
 
-<p>Задавая координаты линий в процентах, мы избавляемся от необходимости применять <code><span class="attribute-name">vector-effect</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">non-scaling-stroke</span><span class="delimiter">&quot;</span></span></code>, который не работает в IE9 и IE10.</p>
+<p>Задавая координаты линий в процентах, мы избавляемся от необходимости применять <code class="hljs-tag"><span class="hljs-attribute">vector-effect</span>=<span class="hljs-value">&quot;non-scaling-stroke&quot;</span></code>, который не работает в IE9 и IE10.</p>
 
 <p>
 	<a href="/demo/crosswise/" class="link-to-demo">Демка</a>

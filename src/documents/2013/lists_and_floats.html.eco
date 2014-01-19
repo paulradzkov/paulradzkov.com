@@ -22,7 +22,7 @@ layout: article
 </figure>
 
 
-<p>Эту проблему можно решить, но придется переписать все отступы для тегов <code class="tag">ul</code>, <code class="tag">ol</code> и <code class="tag">li</code>. Так как <code class="tag nobr">ul > li</code> могут использоваться не только для текста с маркерами, но и для менюшек, слайдеров, списков новостей и других семантических конструкций, задавать стили напрямую тегам <code class="tag">ol</code>, <code class="tag">ul</code> и <code class="tag">li</code> опасно. Иначе в дальнейшем придется слишком часто эти стили обнулять. Поэтому создадим отдельный класс <code class="class">.textlist</code>, чтобы ставить его на наши <code class="tag">ul</code> и <code class="tag">ol</code>.</p>
+<p>Эту проблему можно решить, но придется переписать все отступы для тегов <code class="hljs-tag">ul</code>, <code class="hljs-tag">ol</code> и <code class="hljs-tag">li</code>. Так как <code class="hljs-tag nobr">ul > li</code> могут использоваться не только для текста с маркерами, но и для менюшек, слайдеров, списков новостей и других семантических конструкций, задавать стили напрямую тегам <code class="hljs-tag">ol</code>, <code class="hljs-tag">ul</code> и <code class="hljs-tag">li</code> опасно. Иначе в дальнейшем придется слишком часто эти стили обнулять. Поэтому создадим отдельный класс <code class="hljs-class">.textlist</code>, чтобы ставить его на наши <code class="hljs-tag">ul</code> и <code class="hljs-tag">ol</code>.</p>
 
 <pre><code class="language-css">.textlist {
     margin: 0;
@@ -37,9 +37,9 @@ layout: article
 }
 </code></pre>
 
-<p><code class="rule"><span class="attribute">overflow</span>: <span class="value">hidden</span></code>  тут нам нужен для того, чтобы запретить тексту обтекание картинки по строкам внутри <code class="tag">li</code>. Теперь каждая <code class="tag">li</code> обтекает картинку как прямоугольный блок.</p>
+<p><code class="hljs-rule"><span class="hljs-attribute">overflow</span>: <span class="hljs-value">hidden</span></code>  тут нам нужен для того, чтобы запретить тексту обтекание картинки по строкам внутри <code class="hljs-tag">li</code>. Теперь каждая <code class="hljs-tag">li</code> обтекает картинку как прямоугольный блок.</p>
 
-<p><code class="rule"><span class="attribute">list-style-position</span>: <span class="value">inside</span></code>  чтобы втянуть маркер списка внутрь блока.</p>
+<p><code class="hljs-rule"><span class="hljs-attribute">list-style-position</span>: <span class="hljs-value">inside</span></code>  чтобы втянуть маркер списка внутрь блока.</p>
 
 <p>А всё остальное, чтобы отступы выглядели как раньше.</p>
 

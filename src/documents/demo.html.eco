@@ -1,0 +1,29 @@
+---
+title: Сниппеты
+description: "Блог Павла Радькова."
+is_hidden: true
+layout: 'default'
+---
+
+<h1>Сниппеты</h1>
+
+<p>Сниппеты, демки или просто куски полезного кода.</p>
+
+<p>
+	<a href="/static-site-generators/">Презентация про генераторы статических сайтов и DocPad</a>
+</p>
+<p><a href="/demo/lava_lamp_css_menu/index.html">«Lava-Lamp» меню на css</a></p>
+<p>
+	<a href="/demo/alignment/vertical-align.html">Вертикальное выравнивание блока произвольной высоты внутри блока заданной высоты</a><br/>
+	<a href="/demo/alignment/align-center.html">Центрирование блока произвольных размеров внутри блока заданных размеров</a>
+</p>
+<p>
+	<a href="/demo/crosswise/index.html">Перечёркивание крест-накрест</a>
+</p>
+<p>
+	<a href="/demo/box-shadow_instead_gradient/index.html">Имитация градиента при помощи box-shadow</a>
+</p>
+<p>
+	<a href="/demo/testimonials_slideshow/module-test-simple.html">Слайдшоу текстовых блоков. Модуль «Отзывы»</a>
+</p>
+<% %>

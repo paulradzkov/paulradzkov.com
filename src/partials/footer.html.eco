@@ -1,0 +1,12 @@
+				<footer class="page-footer width-limiter-outer">
+					<div class="width-limiter">
+						<p class="copyrights">
+							© Павел Радьков 
+							<% if (@document.created_at) : %>
+								<%= @formatDate(@document.created_at, 'YYYY') %>
+							<% else : %>
+								2012—<%= @formatDate(@now,'YYYY')%>
+							<% end %>
+						</p>
+					</div>
+				</footer>

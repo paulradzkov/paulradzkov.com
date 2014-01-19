@@ -1,0 +1,102 @@
+--- 
+title: "Перечёркивание крест-накрест"
+excerpt: 'Как при помощи CSS перечеркнуть слово или блок текста диагональными линиями крест-накрест.'
+description: "Как при помощи CSS перечеркнуть слово или блок текста или картинку диагональными линиями крест-накрест."
+created_at: 2012-10-28
+kind: article
+publish: true
+disqusid: crosswise
+tags: [svg,css]
+custom_css: true
+---
+
+<p>Итак, задача: перечеркнуть слово или блок текста или картинку диагональными линиями крест-накрест. Нам поможет SVG.</p>
+
+<!-- cut -->
+<p>
+	<a href="/demo/crosswise/" class="link-to-demo">Демка</a>
+</p>
+
+<p>Напишем стили для строчного тега <code class="tag">del</code> и подготовим класс для перечёркивания блочных элементов <code class="class">.del-cross</code>.</p>
+<pre><code class="lang-css">del.cross {
+    display:inline-block; /* запрещает перенос текста на следующую строку */
+    text-decoration:none;
+    position:relative;
+}
+
+.del-cross {
+    display:block;
+    position:relative;
+    overflow:hidden; /* запрещает обтекать другие блоки */
+}
+
+del.cross:before,
+.del-cross:before {
+    content:'';
+    position:absolute;
+    display:block;
+    width:auto;
+    height:auto;
+    left:0;
+    top:0;
+    right:0;
+    bottom:0;
+    background: rgba(0,0,0,0) url(cross.svg) no-repeat;
+    background-size:100% 100%; /* растягивает фон на всю ширину и высоту блока */
+}
+</code></pre>
+<aside>
+	<p>Примечание: лучше использовать <code class="pseudo">:before</code>, так как на <code class="pseudo">:after</code> может быть clearfix.</p>
+</aside>
+
+<p>Пример:</p>
+<div class="demo">
+	<div style="font:bold 18px/1.2 Arial;">components / com_content / <del class="cross">views</del> / category / <del class="cross">tmpl</del> / blog.php <span>&rarr;</span> components / com_content /  category / blog.php</div>
+	<div class="media">
+		<figure class="img">
+			<div class="del-cross">
+				<img src="http://placekitten.com/g/300/200" width="300" height="200" alt="No kitten here"/>
+			</div>
+			<figcaption><p>No kitten here</p></figcaption>
+		</figure>
+		<div class="bd">
+			<p class="del-cross">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet lectus in ante lobortis suscipit. Nullam sed augue id ante tempor ultrices ut eget nibh. Donec ultrices aliquam aliquet. Sed non velit at enim auctor euismod ut eget dolor. Sed rutrum lacinia tellus porta suscipit. Nam tincidunt odio sed ipsum faucibus semper. Fusce malesuada justo ut turpis fringilla a egestas sem scelerisque. Cras ligula neque, pellentesque a eleifend vitae, vulputate id sapien. Aliquam vestibulum aliquam pretium. Proin ut nulla dui.</p>
+			<p class="del-cross">Cras placerat elit sed nisi accumsan at porta elit lacinia. Aliquam erat volutpat. Mauris eu ipsum in urna gravida tristique rutrum ac est. Phasellus vulputate sagittis congue. Aenean nec justo eu neque vehicula imperdiet. Nunc eleifend, diam eu aliquam ullamcorper, ligula felis interdum nunc, ut tincidunt enim erat at orci.</p>
+		</div>
+	</div>
+</div>
+<p>Для картинок класс <code class="class">.del-cross</code> нужно ставить на их обёртку. Тег <code class="tag">img</code> не имеет псевдокласса <code class="pseudo">:before</code>.</p>
+<p>А теперь посмотрим, что внутри SVG-файла, и как настроить цвет и толщину линий.</p>
+<p><a href="/demo/crosswise/cross_old.svg">cross_old.svg</a>:</p>
+
+<pre><code class="lang-html">&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 100 100&quot; preserveAspectRatio=&quot;none&quot; style=&quot;stroke: rgba(255,0,0,0.9); stroke-width: 1.5&quot; &gt;
+    &lt;line x1=&quot;0&quot; y1=&quot;0&quot;   x2=&quot;100&quot; y2=&quot;100&quot; vector-effect=&quot;non-scaling-stroke&quot; /&gt;
+    &lt;line x1=&quot;0&quot; y1=&quot;100&quot; x2=&quot;100&quot; y2=&quot;0&quot;   vector-effect=&quot;non-scaling-stroke&quot; /&gt;
+&lt;/svg&gt;
+</code></pre>
+<p><code class="tag"><span class="attribute">viewBox</span>=<span class="value">&quot;0 0 100 100&quot;</span></code> — задает виртуальный размер картинки 100×100 безразмерных единиц. Формат записи: <code>x1 y1 x2 y2</code>.</p>
+<p><code class="tag"><span class="attribute">preserveAspectRatio</span>=<span class="value">&quot;none&quot;</span></code> — отключает сохранение пропорций при масштабировании.</p>
+
+<p><code class="tag"><span class="attribute">vector-effect</span>=<span class="value">&quot;non-scaling-stroke&quot;</span></code> — чтобы толщина линий не зависела от размеров картинки. К сожалению, не работает в IE9 и IE10.</p>
+<p><code class="tag"><span class="attribute">style</span>=<span class="value">&quot;stroke: rgba(255,0,0,0.9); stroke-width: 1.5&quot;</span></code> — цвет линий можно задавать как в hex, так и в rgba с прозрачностью, а толщину линий делать дробной.</p>
+
+<h2>Поддержка браузерами</h2>
+
+<p>SVG не поддерживается IE8 и ниже. <del>Да и в IE9-IE10 толщина линий изменяется пропорционально размерам перечёркиваемого блока, что есть баг.</del> Есть решение.</p>
+<p>Для браузеров, не поддерживающих SVG, можно сделать деградацию с помощью условных комментариев или наоборот, используя <a href="http://modernizr.com/">Modernizer</a>, сделать прогрессивное улучшение только для тех, кто умеет отображать SVG.</p>
+
+<p><strong>Обновлено 9 апреля 2013</strong></p>
+
+<p>В комментариях GreLI подсказал, что SVG-файл можно сократить до такого вида (<a href="<%- @document.url %>/cross.svg">cross.svg</a>):</p>
+
+<pre><code class="language-html">&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; style=&quot;stroke: rgba(255,0,0,0.9); stroke-width: 1.5&quot; &gt;
+    &lt;line x1=&quot;0&quot; y1=&quot;0&quot;    x2=&quot;100%&quot; y2=&quot;100%&quot; /&gt;
+    &lt;line x1=&quot;0&quot; y1=&quot;100%&quot; x2=&quot;100%&quot; y2=&quot;0&quot;    /&gt;
+&lt;/svg&gt;
+</code></pre>
+
+<p>Задавая координаты линий в процентах, мы избавляемся от необходимости применять <code><span class="attribute-name">vector-effect</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">non-scaling-stroke</span><span class="delimiter">&quot;</span></span></code>, который не работает в IE9 и IE10.</p>
+
+<p>
+	<a href="/demo/crosswise/" class="link-to-demo">Демка</a>
+</p>

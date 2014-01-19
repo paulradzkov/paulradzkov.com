@@ -1,0 +1,58 @@
+/* sample 1 */
+
+.demo-card {
+    position: relative;
+    width: 300px;
+    padding: 19px;
+    border: 1px solid #CCC;
+    background: #FFF;
+    float: left;
+    margin: 20px 20px 20px 0;
+    font-size: 13px;
+    overflow: hidden;
+}
+.demo-card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 150px;
+    box-shadow:inset 0 -150px 150px -75px #FFF, inset 0 -150px 150px -75px #FFF;
+}
+.demo-card-descr {
+    height: 110px;
+    margin-bottom:0;
+}
+
+
+/* sample 2 */
+
+.demo-menu {
+    list-style-type: none;
+    background: #333;
+    margin: 40px 0;
+    padding: 0;
+    font-size: 0;
+}
+
+.demo-menu  li {
+    display: inline-block;
+    font-size: 14px;
+}
+.demo-menu  a  {
+    display: block;
+    padding: 5px 15px;
+    color: #FFF;
+    text-decoration: none;
+}
+.demo-menu a:hover {
+    background: #666;
+}
+.demo-menu a.current {
+    background: #AAA;
+    color: #333;
+    pointer-events: none; /* disables click event */
+}
+.clr {
+    clear: both;
+}

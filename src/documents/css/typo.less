@@ -1,0 +1,96 @@
+/* typography */
+
+body {
+	font-family: sans-serif;
+	font-size: 16px;
+	line-height: 1.6;
+}
+h1, h2, h3, h4 {
+	font-family: sans-serif;
+	letter-spacing: -0.04em;
+	font-weight: 700;
+	line-height: 1.1;
+}
+
+code {
+	font-family: Consolas, 'courier new', monospace, serif;
+}
+
+/* making inline code same x-height as general text */
+p code {
+    font-size: 1.06em;
+    line-height: 0.8;
+}
+
+@media screen and (min-width:960px) {
+
+	body {
+		font-family: 'Open Sans', 'Roboto', sans-serif;
+	}
+
+	h1, h2, h3, h4,
+  .horizontal-nav a,
+  .navlinks {
+		font-family: 'PT Sans Caption', 'Roboto', sans-serif;
+	}
+}
+
+/* scoped to article */
+article ul:not([class]) {
+    list-style-type: none;
+}
+article ul:not([class]) > li:before {
+    content: '\2013'; /* &ndash; */
+    position: absolute;
+    display: inline-block;
+    margin-left: -1em;
+}
+nav ul {
+    padding-left: 0;
+}
+/* colors */
+
+a {
+	text-decoration: underline;
+    -webkit-transition: color 0.5s, text-shadow 0.5s;
+       -moz-transition: color 0.5s, text-shadow 0.5s;
+        -ms-transition: color 0.5s, text-shadow 0.5s;
+         -o-transition: color 0.5s, text-shadow 0.5s;
+            transition: color 0.5s, text-shadow 0.5s;
+}
+nav a {
+    text-decoration: none;
+}
+a:link    {	color: #0877db;}
+a:visited {	color: #9108db;}
+a:hover   {	color: #2b9aff;}
+a:active  {	color: #2b9aff;}
+
+figure {
+  margin: 4em 0;
+  margin: 4rem 0;
+}
+figure img {
+    width: inherit;
+    max-width: 100%;
+    height: auto;
+    -ms-interpolation-mode: bicubic;
+    -weblit-box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.4), 3px 3px 5px rgba(0, 0, 0, 0.3);
+       -moz-box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.4), 3px 3px 5px rgba(0, 0, 0, 0.3);
+            box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.4), 3px 3px 5px rgba(0, 0, 0, 0.3);
+}
+figure figcaption {
+    margin: 2em auto;
+    margin: 2rem auto;
+    max-width: 25em;
+    font-size: 0.9em;
+    font-size: 0.9rem;
+    text-align: left;
+}
+
+.clear {
+  clear: both;
+}
+.nowrap {
+  white-space: nowrap;
+}

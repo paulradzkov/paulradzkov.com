@@ -1,0 +1,41 @@
+--- 
+title: "Contenteditable"
+excerpt: 'Атрибут «сontenteditable» позволяет редактировать любой элемент страницы на лету прямо в браузере.'
+description: "Статья о применении атрибута сontenteditable."
+created_at: 2012-03-09
+kind: article
+publish: false
+tags: [css]
+---
+<h1>Тезисы</h1>
+<ul>
+	<li>Теория</li>
+	<li>Поддержка браузерами</li>
+	<li>Редактируем данные прямо на странице</li>
+	<li>Сохраняем по enter, отменяем по escape</li>
+	<li>Не забываем про tab-index</li>
+	<li>Деградация в обыкновенную форму с обыкновенными полями</li>
+</ul>
+<h3>Пример</h3>
+<div class="profile" сontenteditable="false">
+    <h1 class="user-name">Paul Radzkov</h1>
+    <h1 class="user-occupation">front-end developer</h1>
+    <div class="user-status">
+        Working on some cool project...
+    </div>
+    <dl class="user-contacts">
+    	<dt сontenteditable="false">Email:</dt>
+    	<dd>example@example.com</dd>
+    	<dt сontenteditable="false">Skype:</dt>
+    	<dd>echo123</dd>
+    	<dt сontenteditable="false">Phone:</dt>
+    	<dd>+375 00 000-00-00</dd>
+    </dl>
+    <div class="profile-actions" сontenteditable="false">
+        <a href="#edit" class="action-edit">Edit</a>
+        <a href="#save" class="action-save s-invisible">Save</a>
+        <span class="action-inprogress s-invisible">Saving...</span>
+        <span class="action-success s-invisible">Done!</span>
+    </div>
+</div>
+<% %>

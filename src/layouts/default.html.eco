@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ru">
+<%- @partial('html-head') %>
+<body class="kind-default">
+	<div class="page-container">
+		<div class="screen-content">
+			
+			<div class="content-container">
+				<header class="page-header">
+					<div class="width-limiter">
+						<p class="header-logo">
+							<a class="logo" href="/">
+								<span class="pic">
+									<img src="/i/paulradzkov.jpg" width="120" height="120" alt="Павел Радьков">
+								</span>
+								<span class="site-name">&lt;&thinsp;Павел&nbsp;Радьков&thinsp;/&gt;</span>
+							</a>
+						</p>
+						<div class="intro-text">
+							<p>Приветствую! Я фронт-энд разработчик и занимаюсь любимым делом. Интересуюсь дизайном, графикой, интерфейсами. Живу в Минске, работаю в <a href="http://belitsoft.ru" target="_blank">Belitsoft</a>.</p>
+						</div>
+						<nav class="contact-links">
+							<ul class="vertical-nav">
+								<li><a href="mailto:radzkov@gmail.com" target="_blank"><i class="icon-envelope"></i> radzkov@gmail.com</a></li>
+								<li><a href="http://plus.google.com/115202814477140711940/about" target="_blank"><i class="icon-google-plus"></i> google+</a></li>
+								<li><a href="http://twitter.com/#!/paul_radzkov" target="_blank"><i class="icon-twitter"></i> @paul_radzkov</a></li>
+								<li><a href="http://github.com/interpaul" target="_blank"><i class="icon-github"></i> github</a></li>
+								<li><a href="http://cssdeck.com/user/interpaul" target="_blank"><i class="icon-code"></i> cssdeck</a></li>
+							</ul>
+						</nav>
+					</div>
+				</header>
+				
+				<nav class="site-nav popup-nav">
+					<button class="nav-icon js-popup-trigger"><i class="icon-menu"></i></button>
+					<div class="site-nav-container js-menu-popup popup-is-opened">
+					<%- @partial('nav') %>
+					</div>
+				</nav>
+
+				<article class="index-page-content">
+					<%- @content %>
+				</article>
+
+				<%- @partial('footer') %>
+
+			</div>
+		</div><!-- screen-content -->
+	</div><!-- page-container -->
+
+	<%- @partial('scripts') %>
+</body>
+</html>

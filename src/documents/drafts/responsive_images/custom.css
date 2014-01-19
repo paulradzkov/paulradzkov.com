@@ -1,0 +1,17 @@
+/* sample 1 */
+
+figure img {
+    width: inherit; /* для IE8 */
+    max-width:100%;
+    height:auto;
+    -ms-interpolation-mode: bicubic; /* для IE7 */
+}
+
+
+/* sample 2 */
+figure img.double-density {
+    width: 100%; /* для IE8 */
+    max-width:1000px;
+    height:auto;
+    -ms-interpolation-mode: bicubic; /* для IE7 */
+}

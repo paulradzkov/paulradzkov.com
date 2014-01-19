@@ -1,0 +1,93 @@
+	<!-- jQuery -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/vendor/jquery.js"><\/script>')</script>
+
+	<!-- DocPad Scripts + Our Own -->
+	<%- @getBlock('scripts').add(@site.scripts).toHTML() %>
+
+    <% if (@document.kind == "article") : %>
+		<script type="text/javascript">
+			/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+			var disqus_shortname = 'paulradzkov'; // required: replace example with your forum shortname
+			//var disqus_developer = 1; // developer mode is on
+			var disqus_identifier = '<%= @document.disqusid %>';
+			var disqus_title = '<%= @document.title %>';
+			
+			/* * * DON'T EDIT BELOW THIS LINE * * */
+			(function() {
+				var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+				dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+				(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+			})();
+			(function () {
+				var s = document.createElement('script'); s.async = true;
+				s.type = 'text/javascript';
+				s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+				(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+			}());
+		</script>
+	<% else : %>
+		<script type="text/javascript">
+			/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+			var disqus_shortname = 'paulradzkov'; // required: replace example with your forum shortname
+
+			/* * * DON'T EDIT BELOW THIS LINE * * */
+			(function () {
+				var s = document.createElement('script'); s.async = true;
+				s.type = 'text/javascript';
+				s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+				(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+			}());
+		</script>
+	<% end %>
+
+	<!-- AddThis Smart Layers BEGIN -->
+	<!-- Go to http://www.addthis.com/get/smart-layers to customize -->
+	<!--<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5077f8b93c56f7a0"></script>
+	<script type="text/javascript">
+	  addthis.layers({
+	    'theme' : 'transparent',
+	    'responsive' : {
+	      'maxWidth' : '979px',
+	      'minWidth' : '0px'
+	    },
+	    'share' : {
+	      'position' : 'right',
+	      'services' : 'google_plusone_share,twitter,facebook,more',
+	      'postShareTitle' : 'Thanks for sharing!',
+	      'postShareFollowMsg' : 'Follow me',
+	      'postShareRecommendedMsg' : 'Recommended for you',
+	      'desktop' : true,
+	      'mobile' : true,
+	    }
+	  });
+	</script>-->
+	<!-- AddThis Smart Layers END -->
+
+	<!-- Yandex.Metrika counter -->
+	<script type="text/javascript">
+	(function (d, w, c) {
+	    (w[c] = w[c] || []).push(function() {
+	        try {
+	            w.yaCounter22878469 = new Ya.Metrika({id:22878469,
+	                    webvisor:true,
+	                    clickmap:true,
+	                    trackLinks:true,
+	                    accurateTrackBounce:true});
+	        } catch(e) { }
+	    });
+
+	    var n = d.getElementsByTagName("script")[0],
+	        s = d.createElement("script"),
+	        f = function () { n.parentNode.insertBefore(s, n); };
+	    s.type = "text/javascript";
+	    s.async = true;
+	    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+	    if (w.opera == "[object Opera]") {
+	        d.addEventListener("DOMContentLoaded", f, false);
+	    } else { f(); }
+	})(document, window, "yandex_metrika_callbacks");
+	</script>
+	<noscript><div><img src="//mc.yandex.ru/watch/22878469" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+	<!-- /Yandex.Metrika counter -->

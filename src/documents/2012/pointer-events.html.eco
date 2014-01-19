@@ -1,0 +1,81 @@
+--- 
+title: "Pointer-events"
+excerpt: "Свойство <code class='key'>pointer-events</code> придет к нам с CSS4, но уже сейчас поддерживается более чем половиной браузеров. Если установить <code><span class='key'>pointer-events</span>: <span class='value'>none</span></code>, то элемент перестанет реагировать на hover, click и другие события мыши. Он станет «прозрачным» для взаимодействия, а hover и click будут передаваться элементу, лежащему под ним. Рассмотрим, для чего это можно использовать."
+description: "Свойство pointer-events придет к нам с CSS4, но уже сейчас поддерживается более чем половиной браузеров. Если установить pointer-events: none, то элемент перестанет реагировать на hover, click и другие события мыши. Он станет «прозрачным» для взаимодействия, а hover и click будут передаваться элементу, лежащему под ним. Рассмотрим, для чего это можно использовать."
+created_at: 2012-12-09
+kind: article
+publish: true
+disqusid: pointer-events
+tags: [css,progressive enhancement]
+custom_css: true
+---
+
+<p>Представим ситуацию, когда у нас один html-элемент расположен поверх другого. Но нам нужно, чтобы нижний элемент был кликабельным или реагировал на hover.</p>
+
+<p>В CSS4 есть такое свойство — <code><a href="http://wiki.csswg.org/spec/css4-ui#pointer-events">pointer-events</a></code>.</p>
+
+<!-- cut -->
+
+<p><code class="rule"><span class="attribute">pointer-events</span>: <span class="value">none</span></code> — элемент перестанет реагировать на hover, click и другие события мыши. Он станет «прозрачным» для взаимодействия, а hover и click будут передаваться элементу, лежащему под ним.</p>
+
+<p><code class="rule"><span class="attribute">pointer-events</span>: <span class="value">auto</span></code> — (значение по-умолчанию) включает стандартное поведение элемента.</p>
+
+<p>Изначально свойство «pointer-events» было введено для SVG и должно было стать частью CSS3, но было перенесено в спецификацию CSS4. Кроме «none» и «auto» есть <a href="https://developer.mozilla.org/ru/docs/CSS/pointer-events">еще несколько значений</a>, но они применимы только к SVG, и мы не будем их рассматривать.</p>
+
+<p>Несмотря на то, что свойство относится к  CSS4, <a href="http://caniuse.com/pointer-events" title="Где работает pointer-events?">pointer-events поддерживается</a> уже большим количеством браузеров и довольно давно. Не работает в IE ниже 11 версии и в Opera Presto. А значит, его можно осторожно использовать для улучшения юзабилити в рамках прогрессивного улучшения.</p>
+
+<div class="caniuse" data-feature="pointer-events"></div>
+
+<p>Проверить, поддерживается ли это свойство браузером, можно с помощью <a href="https://github.com/ausi/Feature-detection-technique-for-pointer-events" title="Modernizr plugin feature detection for css property 'pointer-events'">специального теста для Modernizer</a>.</p>
+
+<h2>Пример 1</h2>
+
+<p>Рассмотрим на практике.</p>
+
+<div class="demo">
+
+    <div class="demo-card">
+    	<a href="#" class="demo-card-image-holder"><img src="http://placehold.it/300x200" alt=""></a>
+    	<h3 class="demo-card-title"><a href="#" class="demo-card-link">Esse iusto consectetur quibusdam quasi excepturi voluptatum architecto aliquid</a></h3>
+        <p class="demo-card-descr">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit ullam minus a ipsum eum rerum eaque maxime amet beatae modi qui incidunt voluptas quis maiores quos autem inventore! Mollitia praesentium. Impedit ullam minus a ipsum eum rerum eaque maxime amet beatae modi qui incidunt voluptas quis maiores quos autem inventore! Mollitia praesentium.</p>
+        <span class="demo-card-overlay" style="pointer-events:none;"><!--gradient overlay--></span>
+    </div>
+    <div class="demo-card">
+    	<a href="#" class="demo-card-image-holder"><img src="http://placehold.it/300x200" alt=""></a>
+    	<h3 class="demo-card-title"><a href="#" class="demo-card-link">Esse iusto consectetur quibusdam quasi excepturi voluptatum architecto aliquid</a></h3>
+        <p class="demo-card-descr">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit ullam minus a ipsum eum rerum eaque maxime amet beatae modi qui incidunt voluptas quis maiores quos autem inventore! Mollitia praesentium. Impedit ullam minus a ipsum eum rerum eaque maxime amet beatae modi qui incidunt voluptas quis maiores quos autem inventore! Mollitia praesentium.</p>
+        <span class="demo-card-overlay"><!--gradient overlay--></span>
+    </div>
+    <div class="clr"></div>
+</div>
+
+<p>В первом примере для белого градиента, накрывающего текст, <code class="rule"><span class="attribute">pointer-events</span></code> установлен в none. Текст легко выделяется мышью сквозь градиент. Даже курсор меняет свою форму со стрелки на выделение текста.</p>
+
+<p>Во втором примере <code class="rule"><span class="attribute">pointer-events</span></code> не задан, маска градиента не даёт выделить текст, курсор имеет форму стрелки, как для нетекстовых элементов.</p>
+
+<h2>Пример 2</h2>
+
+<p>Задача: сделать так, чтобы ссылка в меню становилась некликабельной, если она ведет на эту же страницу.</p>
+
+<div class="demo">
+
+    <ul class="demo-menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#blog" class="current">Blog</a></li>
+        <li><a href="#works">Works</a></li>
+        <li><a href="#archive">Archive</a></li>
+        <li><a href="#contacts">Contacts</a></li>
+    </ul>
+    
+</div>
+
+<p>Обычно в CMS уже есть какой-либо класс для индикации текущей страницы в меню. Допишем ему pointer-events:</p>
+
+<pre><code class="language-css">.demo-menu a.current {
+    background: #AAA;
+    color: #333;
+    pointer-events: none; /* disables click event */
+} 
+</code></pre>
+
+<% %>

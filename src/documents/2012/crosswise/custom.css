@@ -1,0 +1,51 @@
+/*
+Crosswise del
+*/
+.svg del.cross {
+  display: inline-block;
+  /* запрещает перенос текста на следующую строку */
+
+  text-decoration: none;
+  position: relative;
+}
+.svg .del-cross {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  /* запрещает обтекать другие блоки */
+
+}
+.svg del.cross:before,
+.svg .del-cross:before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: auto;
+  height: auto;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0) url(cross.svg) no-repeat;
+  background-size: 100% 100%;
+  /* растягивает фон на всю ширину и высоту блока */
+
+}
+
+/* ====== media ====== */
+.media {
+  margin: 10px 0;
+}
+.media,
+.bd {
+  overflow: hidden;
+  _overflow: visible;
+  zoom: 1;
+}
+.media .img {
+  float: left;
+  margin-right: 30px;
+}
+.media .img img {
+  display: block;
+}

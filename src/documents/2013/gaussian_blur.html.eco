@@ -1,0 +1,54 @@
+--- 
+title: "Как сверстать Гауссово размытие"
+excerpt: "Гауссово размытие"
+description: "Как сделать гауссово размытие (gaussian blur) в браузере без javascript"
+created_at: 2013-03-07
+kind: article
+layout: article
+publish: false
+disqusid: gaussian-blur
+tags: 
+	- css
+	- svg
+	- IE
+
+custom_css: false
+---
+
+<p>Понадобилось мне как-то сверстать такой эффект: картинка «светится» и подсвечивает фон под собой. Каждая картинка своими цветами. В графическом редакторе свечение — это дубликат картинки с применением размытия по Гауссу в несколько десятков пикселей.</p>
+
+<!-- cut -->
+
+<figure>
+	<img src="<%= @document.url %>/gaussian_glow_design.jpg" width="715" height="715" alt=""/>
+</figure>
+
+<p>Сначала была мысль сделать размытие, используя canvas. Но, как оказалось, проще сделать это без канваса и яваскрипта через SVG-фильтры. <a href="http://caniuse.com/#feat=css-filters"  target="_blank">CSS-фильтры</a> от Adobe <abbr title="Март 2013">ещё</abbr> не слишком распространены: работают с префиксом только в webkit. У <a href="http://caniuse.com/#feat=svg-filters">SVG-фильтров</a> поддержка намного шире — все современные браузеры, кроме Safari 5.1 и Андроид браузера. А в IE уже начиная с версии 5.5 есть старые добрые фильтры (те самые, с длинным названием <code>filter: progid:DXImageTransform.Microsoft.Blur(pixelradius=70);</code>), которые, тем не менее, прекрасно справляются с задачей.</p>
+
+<aside>Если всё-таки нужно именно через canvas, то вам сюда — <a href="http://www.quasimondo.com/StackBlurForCanvas/StackBlurDemo.html" target="_blank">StackBlur for Canvas</a>.</aside>
+
+<p>
+	<a href="http://cssdeck.com/labs/ambi-glow" class="link-to-demo">Demo</a>
+</p>
+
+<p>Рассмотрим, как это работает.</p> 
+
+<p>Под картинкой спозиционируем SVG-файл:</p>
+
+<pre><code class="language-html">&lt;svg class=&quot;bg-blur&quot;&gt;
+    &lt;defs&gt;
+        &lt;filter id=&quot;blur&quot; x=&quot;-200%&quot; y=&quot;-200%&quot; width=&quot;400%&quot; height=&quot;400%&quot;&gt;
+            &lt;feGaussianBlur in=&quot;SourceGraphic&quot; stdDeviation=&quot;70&quot; /&gt;
+        &lt;/filter&gt;
+    &lt;/defs&gt;
+    
+    &lt;image x=&quot;150&quot; y=&quot;150&quot; id=&quot;svg-image&quot; width=&quot;280&quot; height=&quot;280&quot; xlink:href=&quot;http://pcdn.500px.net/27549003/d409bce305cd0f77f3b12d124f69c7a3659bfaea/3.jpg&quot; filter=&quot;url(#blur)&quot;/&gt;
+
+&lt;/svg&gt; 
+</code></pre>
+
+<p>Размеры и позиция SVG задаются в CSS через класс <code class="class">bg-blur</code>.</p>
+
+<p>Внутри тегом <code class="type">image</code> мы помещаем нашу картинку. Левый верхний угол имеет координаты <code><span class="attribute-name">x</span>=<span class="string"><span class="delimiter">"</span><span class="content">150</span><span class="delimiter">"</span></span> <span class="attribute-name">y</span>=<span class="string"><span class="delimiter">"</span><span class="content">150</span><span class="delimiter">"</span></span></code>, чтобы дать место свечению.</p>
+
+<p>Изображению назначен фильтр <code class="type">#blur</code>, который определен ранее в секции <code class="type">defs</code>.</p>

@@ -1,0 +1,218 @@
+/* chars post */
+
+table.chars {
+  border-collapse: separate;
+  margin: auto;
+}
+
+table.chars td,
+table.chars th {
+  border-style: dotted;
+  border-color: #CCC;
+  border-width: 0 0 1px 0;
+  padding: 0.5em 2em;
+  padding: 0.5rem 2rem;
+}
+
+table.chars th {
+  padding-top: 4em;
+  padding-top: 4rem;
+  border-width: 0 0 1px;
+}
+
+.char-entity {
+  color: #5368a6;
+}
+
+.char-code {
+  color: #d14;
+}
+
+.char-demo {
+  font-size: 3em;
+  font-size: 3rem;
+  font-family: serif;
+  text-align: center;
+  vertical-align: middle;
+  width: 125px;
+}
+
+.char-demo.char-spaces {
+  color: #999;
+  font-size: 1.5em;
+  font-size: 1.5rem !important;
+}
+
+/* .csstransitions — filter IE10+ */
+.no-touch.csstransitions .chars.layout-flow {
+  display: block;
+  padding-right: 120px;
+  position: relative;
+  z-index: 1;
+}
+
+.no-touch.csstransitions .chars.layout-flow thead {
+  display: none;
+}
+
+.no-touch.csstransitions .chars.layout-flow tr {
+  display: block;
+  float: left;
+  width: 119px;
+  height: 119px;
+  border: 1px solid #AAA;
+  margin: -1px 0 0 -1px;
+  background: #FFF;
+  position: relative;
+}
+
+.no-touch.csstransitions .chars.layout-flow .ch-section {
+  width: 239px;
+  height: 119px;
+  background: #EEE;
+}
+
+.no-touch.csstransitions .chars.layout-flow .ch-section th {
+  display: table-cell;
+  border: none;
+  padding: 20px 20px;
+  vertical-align: middle;
+  text-align: right;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.no-touch.csstransitions .chars.layout-flow tr td {
+  border: none;
+  position: absolute;
+}
+
+.no-touch.csstransitions .chars.layout-flow tr td.char-demo {
+  position: relative;
+  z-index: 1;
+  display: table-cell;
+  vertical-align: middle;
+  width: 118px;
+  height: 119px;
+  background: #FFF;
+  padding: 0 10px;
+}
+
+.no-touch.csstransitions .chars.layout-flow .char-entity,
+.no-touch.csstransitions .chars.layout-flow .char-code,
+.no-touch.csstransitions .chars.layout-flow .char-descr {
+  visibility: hidden;
+  background: #FFF;
+  border: 1px solid #AAA;
+  -webkit-transition: none !important;
+  transition: none !important;
+}
+
+.no-touch.csstransitions .chars.layout-flow tr:hover .char-entity,
+.no-touch.csstransitions .chars.layout-flow tr:hover .char-code,
+.no-touch.csstransitions .chars.layout-flow tr:hover .char-descr {
+  visibility: visible;
+  z-index: 2;
+  border: 1px solid #AAA;
+  -webkit-transition: none !important;
+  transition: none !important;
+}
+
+.no-touch.csstransitions .chars.layout-flow tr:hover .char-demo {
+  color: #4e8d00;
+}
+
+.no-touch.csstransitions .chars.layout-flow tr:hover .char-entity {
+  top: -1px;
+  left: 100%;
+  width: 120px;
+  height: 60px;
+  padding: 0;
+  border-width: 1px 1px 0 0;
+}
+
+.no-touch.csstransitions .chars.layout-flow tr:hover .char-code {
+  top: 60px;
+  left: 100%;
+  width: 120px;
+  height: 60px;
+  padding: 0;
+  border-width: 0px 1px 0 0;
+}
+
+.no-touch.csstransitions .chars.layout-flow tr:hover .char-descr {
+  top: 100%;
+  left: -1px;
+  width: 199px;
+  height: 80px;
+  padding: 20px;
+  border-width: 0px 1px 1px 1px;
+}
+
+.no-touch.csstransitions .layout-flow .char-entity code,
+.no-touch.csstransitions .layout-flow .char-code code {
+  display: inline-block;
+  margin: 1em;
+}
+
+.demo-css-editable {
+  outline: none;
+  margin-left: 0;
+  margin-right: 0;
+  max-width: none;
+}
+
+.demo-css-editable style {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2em;
+  max-width: 50rem;
+  outline: 3px solid #CCC;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-family: monospace, serif;
+  text-align: left;
+  background: #f8f8f8;
+  text-shadow: 1px 1px 0px #FFF;
+  border-style: solid;
+  border-width: 1px 0;
+  border-color: #f1f1f1;
+}
+
+@media screen and (min-width: @breakpointL) {
+  .demo-css-editable style {
+    min-width: 50rem;
+    display: inline-block;
+  }
+}
+
+.demo-css-editable style:focus {
+  outline: 3px solid #f5ca03;
+}
+
+/* .no-borderradius filter to IE8 and below */
+.no-borderradius .demo-css-editable style {
+  display: none;
+}
+
+.toc {
+  max-width: 50em;
+  max-width: 50rem;
+  margin: 4em auto;
+}
+.toc a {
+  border-bottom: dashed 1px;
+}
+.csscolumns .toc {
+  -webkit-columns: 17em;
+  -moz-columns: 17em;
+  columns: 17em;
+}
+:target {
+  background-color: #F3F3A0;
+};

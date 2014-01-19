@@ -35,10 +35,11 @@
 					<h1 class="article-title"><%- @document.title %></h1>
 					<%- @content %>
 				</article>
+				
+				<%- @partial('footer') %>
 
 				<article id="disqus_thread"></article>
 
-				<%- @partial('footer') %>
 
 				<nav class="read-next">
 					<h4 class="read-next-title">Читать дальше:</h4>

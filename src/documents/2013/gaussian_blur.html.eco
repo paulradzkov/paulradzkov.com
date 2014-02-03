@@ -4,7 +4,6 @@ excerpt: "Гауссово размытие"
 description: "Как сделать гауссово размытие (gaussian blur) в браузере без javascript"
 created_at: 2013-03-07
 kind: article
-layout: article
 publish: false
 disqusid: gaussian-blur
 tags: 

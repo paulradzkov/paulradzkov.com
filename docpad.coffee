@@ -1,7 +1,3 @@
-# Requires
-moment = require('moment')
-moment.lang('ru')  # set locale to russian
-
 # The DocPad Configuration File
 # It is simply a CoffeeScript Object which is parsed by CSON
 docpadConfig = {
@@ -31,6 +27,12 @@ docpadConfig = {
 			# RSS title of our website
 			rssTitle: "Блог Павла Радькова"
 
+			# Author name used in copyrights and meta data
+			author: "Павел Радьков"
+
+			# Change to your disqus name or comment it out to disable comments
+			disqus_shortname: "paulradzkov"
+
 			# The website description (for SEO)
 			description: """
 				Заметки о веб-разработке.
@@ -40,8 +42,6 @@ docpadConfig = {
 			keywords: """
 				Paul Radzkov, web-developer, blog, html, css
 				"""
-
-			author: "Павел Радьков"
 
 			email: "radzkov@gmail.com"
 
@@ -53,9 +53,10 @@ docpadConfig = {
 			styles: [
 				'/vendor/normalize.css'
 				'/vendor/h5bp.css'
+				'/css/bettertext.css'
 				'/css/github.css'
 				'/css/caniuse.css'
-				'/css/theme.css'
+				'/css/template.css'
 			]
 
 			# The website's scripts
@@ -63,6 +64,8 @@ docpadConfig = {
 				'/vendor/log.js'
 				'/js/offscreenmenu.js'
 				'/vendor/caniuse.js'
+				'/vendor/jquery.sticky.js'
+				'/js/script.js'
 			]
 
 		# -----------------------------
@@ -93,10 +96,6 @@ docpadConfig = {
 			# Merge the document keywords with the site keywords
 			tags.concat(tags or []).join(', ')
 
-		# Format the passed date, by default format like: Thursday, November 29 2012 3:53 PM
-		formatDate: (date,format='MM-DD-YYYY') ->
-				return moment(date).format(format)
-
 		# Prepare Feed links and URLs
 		prepareFeed: (s) ->
 			s and (s
@@ -124,11 +123,11 @@ docpadConfig = {
 		articles: ->
 			# get all posts by «kind», sort them by «created_at» and set to all «layout»
 			@getCollection("html").findAllLive({kind:'article',publish:true},[{created_at:-1}]).on "add", (model) ->
-				model.setMetaDefaults({layout:"article"})
+				model.setMetaDefaults({layout:"default"})
 
 		drafts: ->
 			@getCollection("html").findAllLive({kind:'article',publish:false},[{created_at:-1}]).on "add", (model) ->
-				model.setMetaDefaults({layout:"article"})
+				model.setMetaDefaults({layout:"default"})
 
 	# Plugins configurations
 	plugins:

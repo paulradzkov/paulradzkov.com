@@ -1,6 +1,7 @@
 			<ul class="nav-list">
 				<li><a href="/"><i class="icon-megaphone"></i> Блог</a></li>
 				<li><a href="/demo"><i class="icon-lab"></i> Снипеты</a></li>
+				<li><a href="/tags"><i class="icon-tag"></i> Теги</a></li>
 				<li><a href="/atom.xml"><i class="icon-rss"></i> RSS</a></li>
 			</ul>
 			<% %>

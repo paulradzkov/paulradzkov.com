@@ -94,3 +94,31 @@ figure figcaption {
 .nowrap {
   white-space: nowrap;
 }
+
+/* tables */
+table:not([class]) {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    border-collapse: collapse;
+}
+table:not([class]) caption {
+    text-align: right;
+    font-size: 0.8em;
+    margin-bottom: 0.625em;
+}
+table:not([class]) tr {
+    border-style: solid;
+    border-color: rgba(0,0,0,0.1);
+    border-width: 0 0 1px;
+}
+table:not([class]) th,
+table:not([class]) td {
+    padding: 0.5em 1em;
+    text-align: left;
+    vertical-align: top;
+}
+table:not([class]) thead th,
+table:not([class]) thead td {
+    vertical-align: bottom;
+    border-bottom-width: 2px;
+}

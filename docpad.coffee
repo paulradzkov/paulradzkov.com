@@ -96,6 +96,11 @@ docpadConfig = {
 			# Merge the document keywords with the site keywords
 			tags.concat(tags or []).join(', ')
 
+		isActive: (s) ->
+			# current links in navigation
+			if @document.url == s
+				" class='active' "
+
 		# Prepare Feed links and URLs
 		prepareFeed: (s) ->
 			s and (s

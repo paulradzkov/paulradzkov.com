@@ -1,7 +1,6 @@
 			<ul class="nav-list">
-				<li><a href="/"><i class="icon-megaphone"></i><span class="item-label">Блог</span></a></li>
-				<li><a href="/demo"><i class="icon-lab"></i><span class="item-label">Сниппеты</span></a></li>
-				<li><a href="/tags"><i class="icon-tag"></i><span class="item-label">Теги</span></a></li>
+				<li <%- @isActive("/") %>><a href="/"><i class="icon-megaphone"></i><span class="item-label">Блог</span></a></li>
+				<li <%- @isActive("/demo") %>><a href="/demo"><i class="icon-lab"></i><span class="item-label">Сниппеты</span></a></li>
+				<li <%- @isActive("/tags") %>><a href="/tags"><i class="icon-tag"></i><span class="item-label">Теги</span></a></li>
 				<li><a href="/atom.xml"><i class="icon-rss"></i><span class="item-label">RSS</span></a></li>
 			</ul>
-			<% %>

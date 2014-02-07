@@ -63,8 +63,8 @@ docpadConfig = {
 			scripts: [
 				'/vendor/log.js'
 				'/js/offscreenmenu.js'
-				'/vendor/caniuse.js'
 				'/vendor/jquery.sticky.js'
+				'/vendor/caniuse.js'
 				'/js/script.js'
 			]
 

@@ -2,21 +2,24 @@
 <html class="no-js" lang="ru">
 <%- @partial('html-head') %>
 <body class="layout-<%- @document.kind %>">
-	
 	<% if ((!@document.kind) or (@document.kind != 'article')) : %>
 		<header class="page-header content-width">
 			<%- @partial('hero') %>
 		</header>
-	<% end %>
-	<nav class="site-navigation" id="sticker">
-		<% if (@document.kind == 'article') : %>
-			<a href="/" class="nav-icon"><i class="icon-menu"></i></a>
-		<% else : %>
+		<nav class="site-navigation horizontal-nav">
 			<div class="mainmenu content-width">
 				<%- @partial('nav') %>
 			</div>
+		</nav>
+	<% end %>
+	<nav class="site-navigation sticky-nav" id="sticker">
+		<% if (@document.kind == 'article') : %>
+			<button class="nav-icon js-menu-trigger"><i class="icon-menu"></i></button>
+		<% else : %>
+			<button class="nav-icon nav-icon-hidden js-menu-trigger"><i class="icon-menu"></i></button>
 		<% end %>
 	</nav>
+	<% if (@document.kind == 'article') : %>
 	<aside class="article-meta content-width">
 		<div class="article-meta-container">
 			<ul class="meta-data">
@@ -36,6 +39,7 @@
 		</ul>
 		</div>
 	</aside>
+	<% end %>
 	<article class="page-content content-width" role="main">
 		<% if (@document.kind == 'article') : %>
 		<h1><%- @document.title %></h1>
@@ -52,7 +56,12 @@
 		<%- @getNavLinks() %>
 	</nav>
 	<% end %>
-
+	<aside class="off-canvas-nav" role="navigation">
+		<div class="mainmenu vertical-nav">
+				<%- @partial('nav') %>
+		</div>
+	</aside>
+	<div class="site-nav-overlay js-menu-overlay"></div>
 	<%- @partial('scripts') %>
 </body>
 </html>

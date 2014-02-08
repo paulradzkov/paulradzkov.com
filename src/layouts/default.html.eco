@@ -14,7 +14,10 @@
 	<% end %>
 	<nav class="site-navigation sticky-nav" id="sticker">
 		<% if (@document.kind == 'article') : %>
-			<button class="nav-icon js-menu-trigger"><i class="icon-menu"></i></button>
+			<span class="breadcrumbs">
+				<button class="nav-icon js-menu-trigger"><i class="icon-menu"></i></button>
+				<span class="breadcrumbs-path"><span class="separator">/</span> <a href="/">Блог</a></span>
+			</span>
 		<% else : %>
 			<button class="nav-icon nav-icon-hidden js-menu-trigger"><i class="icon-menu"></i></button>
 		<% end %>

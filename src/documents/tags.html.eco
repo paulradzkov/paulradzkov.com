@@ -1,10 +1,10 @@
 ---
-title: Облако тэгов
+title: Облако тегов
 is_hidden: true
 layout: default
 ---
 
-<h1>«Облако» тэгов</h1>
+<h1>«Облако» тегов</h1>
 
 <nav class="tags-page">
 	<% for tag, data of @getTagCloud(): %>

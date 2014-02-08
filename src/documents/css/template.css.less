@@ -76,9 +76,7 @@ nav a {
 	font-family: 'PT Sans Caption', 'Roboto', sans-serif;
 	text-transform: uppercase;
 	text-decoration: none;
-	-webkit-box-shadow: inset 0 0 0 0 #2b9aff, 0 0px 0px -2px rgba(0, 0, 0, 0.2);
-	   -moz-box-shadow: inset 0 0 0 0 #2b9aff, 0 0px 0px -2px rgba(0, 0, 0, 0.2);
-	        box-shadow: inset 0 0 0 0 #2b9aff, 0 0px 0px -2px rgba(0, 0, 0, 0.2);
+	box-shadow: inset 0 0 0 0 #2b9aff, 0 0px 0px -2px rgba(0, 0, 0, 0.2);
 	-webkit-transition: 0.5s;
 	   -moz-transition: 0.5s;
 	    -ms-transition: 0.5s;
@@ -88,9 +86,7 @@ nav a {
 .button:hover {
 	color: #FFF !important;
 	border-color: #2b9aff;
-	-webkit-box-shadow: inset 0 0 0 4rem #2b9aff, 0 3px 3px -2px rgba(0, 0, 0, 0.2);
-	   -moz-box-shadow: inset 0 0 0 4rem #2b9aff, 0 3px 3px -2px rgba(0, 0, 0, 0.2);
-	        box-shadow: inset 0 0 0 4rem #2b9aff, 0 3px 3px -2px rgba(0, 0, 0, 0.2);
+	box-shadow: inset 0 0 0 4rem #2b9aff, 0 3px 3px -2px rgba(0, 0, 0, 0.2);
 }
 .no-boxshadow .button:hover {
 	background: #2b9aff;
@@ -107,9 +103,7 @@ nav a {
     font-family: 'PT Sans Caption', 'Roboto', sans-serif;
     text-transform: uppercase;
     text-decoration: none;
-    -webkit-box-shadow: inset 0 0 0 0 #2b9aff, 0 0px 0px -2px rgba(0,0,0,0.2);
-       -moz-box-shadow: inset 0 0 0 0 #2b9aff, 0 0px 0px -2px rgba(0,0,0,0.2);
-            box-shadow: inset 0 0 0 0 #2b9aff, 0 0px 0px -2px rgba(0,0,0,0.2);
+    box-shadow: inset 0 0 0 0 #2b9aff, 0 0px 0px -2px rgba(0,0,0,0.2);
     -webkit-transition: 0.5s;
        -moz-transition: 0.5s;
         -ms-transition: 0.5s;
@@ -119,9 +113,7 @@ nav a {
 .link-to-demo:hover {
     color: #FFF !important;
     border-color: #2b9aff;
-    -webkit-box-shadow: inset 0 0 0 4rem #2b9aff, 0 3px 3px -2px rgba(0,0,0,0.2);
-       -moz-box-shadow: inset 0 0 0 4rem #2b9aff, 0 3px 3px -2px rgba(0,0,0,0.2);
-            box-shadow: inset 0 0 0 4rem #2b9aff, 0 3px 3px -2px rgba(0,0,0,0.2);
+    box-shadow: inset 0 0 0 4rem #2b9aff, 0 3px 3px -2px rgba(0,0,0,0.2);
 }
 .no-boxshadow .link-to-demo:hover {
     background: #2b9aff;
@@ -148,15 +140,14 @@ body {
 	padding: 2em;
 	text-align: center;
 	color: #FFF;
-	background-color: #161616;
+	background-color: #000;
 	background-position: 50% 50%;
 	-webkit-background-size: cover;
 	        background-size: cover;
-	-webkit-box-shadow: inset 0 0 0 100em rgba(0,0,0,0.3);
-	   -moz-box-shadow: inset 0 0 0 100em rgba(0,0,0,0.3);
-	        box-shadow: inset 0 0 0 100em rgba(0,0,0,0.3);
+	box-shadow: inset 0 0 0 100em rgba(0,0,0,0.3);
 	text-shadow: 0 0 10px #000;
 }
+
 .page-header a:link    {color: #57AFFF;}
 .page-header a:visited {color: #E2ABFF;}
 .page-header a:hover   {color: #C1DFFA;}
@@ -195,7 +186,7 @@ body {
 		width: 100%;
 	}
 	.dtbc-logo {
-		width: 120px;
+		width: 25%;
 	}
 	.dtbc-logo,
 	.dtbc-intro-text,
@@ -210,7 +201,7 @@ body {
 		padding-right: 1.5em;
 	}
 	.dtbc-contact-links {
-		width: 15em;
+		width: 25%;
 	}
 }
 /* logo */
@@ -230,41 +221,42 @@ a.logo {
     position: relative;
     z-index: 1;
     display: inline-block;
-    border: 1px solid rgba(0,0,0,0.5);
+    border: 1px solid rgba(0,0,0,0.3);
+    box-shadow: 1px 2px 4px -2px rgba(0, 0, 0, 0.7);
     border-radius: inherit;
-    box-shadow: 
-      0 5px 15px rgba(0,0,0,0.5),
-      0 3px 5px rgba(0,0,0,0.2);
 }
-.pic:before {
-    content: '';
-    position: absolute;
-    z-index: 2;
-    top: 1px;
-    right: 1px;
-    bottom: 1px;
-    left: 1px;
-    border-radius: 1px;
-    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.15);
-}
-.bg-blur { 
-    height: 220px; 
-    width: 220px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    margin-left: -110px;
-    margin-top: -110px;
-    z-index: 0;
-}
-.no-svg .bg-blur {
-    display: none;
+.cssfilters .pic:after {
+	content: url("../i/paulradzkov.jpg");
+	position: absolute;
+	z-index: 0;
+	top: 0;
+	left: 0;
+	opacity: 0.8;
+	-webkit-filter: blur(30px);
+            filter: blur(30px);
+    -webkit-transition: 0.5s;
+       -moz-transition: 0.5s;
+        -ms-transition: 0.5s;
+         -o-transition: 0.5s;
+            transition: 0.5s;
 }
 .site-name {
     position: relative;
     z-index: 1;
     display: block;
+    margin: 5px 0 0;
     text-align: center;
+    color: #FFF;
+    text-shadow: 0 0 2px #FFF;
+    text-indent: 0.3em;
+}
+.deco {
+	opacity: 0.1;
+	text-shadow: none;
+}
+.cssfilters a.logo:hover .pic:after {
+	-webkit-filter: blur(40px);
+            filter: blur(40px);
 }
 
 .post-tizer {
@@ -333,6 +325,11 @@ pre code {
 	margin: 0;
 	padding: 1em 2em;
 	text-align: left;
+}
+.post-tizer pre code {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
 }
 
 @media screen and (min-width: 54em) {
@@ -486,8 +483,8 @@ pre code {
 /* ie fallback */
 .no-mediaqueries.display-table .navlinks {
 	display: table;
-	width: 100%;
 	table-layout: fixed;
+	width: 100%;
 	border-collapse: collapse;
 }
 .no-mediaqueries.display-table .navlinks-prev,
@@ -550,11 +547,16 @@ pre code {
 	     -o-transition: all 0.1s;
 	        transition: all 0.1s;
 }
+
+.layout-article .hold {
+	margin-top: -5px;
+}
+
 .nav-list {
 	margin-top: 0;
 	margin-bottom: 0;
 }
-.nav-list li {
+.nav-list .nav-item {
 	display: inline-block;
 	vertical-align: top;
 }
@@ -572,7 +574,7 @@ pre code {
 		table-layout: fixed;
 		width: 100%;
 	}
-	.horizontal-nav .nav-list li {
+	.horizontal-nav .nav-list .nav-item {
 		display: table-cell;
 		width: 25%;
 		text-align: center;
@@ -606,21 +608,38 @@ pre code {
 	margin: 0 auto;
 	width: 100%;
 }
-
 .nav-icon-hidden {
-	-webkit-transform: translateX(-4em);
-	   -moz-transform: translateX(-4em);
-	        transform: translateX(-4em);
 	-webkit-transition: 0.5s;
 	   -moz-transition: 0.5s;
 	    -ms-transition: 0.5s;
 	     -o-transition: 0.5s;
 	        transition: 0.5s;
 }
-.fixed .nav-icon-hidden {
-	-webkit-transform: translateX(0);
-	   -moz-transform: translateX(0);
-	        transform: translateX(0);	
+.no-csstransforms .nav-icon-hidden {
+	display: none;
+}
+.no-csstransforms .fixed .nav-icon-hidden {
+	display: block;
+}
+.csstransforms .nav-icon-hidden {
+	-webkit-transform: translate(-4em,0);
+	   -moz-transform: translate(-4em,0);
+	        transform: translate(-4em,0);
+}
+.csstransforms .fixed .nav-icon-hidden {
+	-webkit-transform: translate(0,0);
+	   -moz-transform: translate(0,0);
+	        transform: translate(0,0);	
+}
+.csstransforms3d .nav-icon-hidden {
+	-webkit-transform: translate3d(-4em,0,0);
+	   -moz-transform: translate3d(-4em,0,0);
+	        transform: translate3d(-4em,0,0);
+}
+.csstransforms3d .fixed .nav-icon-hidden {
+	-webkit-transform: translate3d(0,0,0);
+	   -moz-transform: translate3d(0,0,0);
+	        transform: translate3d(0,0,0);	
 }
 .sticky-nav {
 	z-index: 2;
@@ -629,17 +648,121 @@ pre code {
 .horizontal-nav .mainmenu .item-label {
 	display: block;
 	padding: 5px 0 0;
+	font-size: 16px;
+	text-transform: uppercase;
 }
 .horizontal-nav .mainmenu i {
 	font-size: 32px;
+	-webkit-transition: 0.7s;
+       -moz-transition: 0.7s;
+        -ms-transition: 0.7s;
+         -o-transition: 0.7s;
+            transition: 0.7s;
 }
+.csstransforms .horizontal-nav .mainmenu a:hover i {
+	-webkit-transform: translate(0,-4px,0);
+	        transform: translate(0,-4px,0);
+}
+.csstransforms3d .horizontal-nav .mainmenu a:hover i {
+	-webkit-transform: translate3d(0,-4px,0);
+	        transform: translate3d(0,-4px,0);
+}
+
+/* ----- horizontal color effect -----*/
+
+@color1: #0080fd;
+@color2: #00ff81;
+@color3: #83ff04;
+@color4: #ff7c00;
+
+.horizontal-nav .nav-list {
+	position: relative;
+}
+.horizontal-nav a {
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 0 1px #FFF, 0 0 10px #FFF, 0 0 0px #FFF;
+}
+/* ----- active / hover ----- */
+.horizontal-nav .nav-item:nth-child(1) a:hover, .horizontal-nav .nav-item.active:nth-child(1) a { color: #FFF; text-shadow: 0 0 3px @color1, 0 0 10px @color1, 0 0 15px @color1; }
+.horizontal-nav .nav-item:nth-child(2) a:hover, .horizontal-nav .nav-item.active:nth-child(2) a { color: #FFF; text-shadow: 0 0 3px @color2, 0 0 10px @color2, 0 0 15px @color2; }
+.horizontal-nav .nav-item:nth-child(3) a:hover, .horizontal-nav .nav-item.active:nth-child(3) a { color: #FFF; text-shadow: 0 0 3px @color3, 0 0 10px @color3, 0 0 15px @color3; }
+.horizontal-nav .nav-item:nth-child(4) a:hover, .horizontal-nav .nav-item.active:nth-child(4) a { color: #FFF; text-shadow: 0 0 3px @color4, 0 0 10px @color4, 0 0 15px @color4; }
+
+@media screen and (min-width: 54em) {
+	.horizontal-nav .nav-list .effect {
+		position: absolute;
+	    z-index: 0;
+		display: block;
+	    width: 25%;
+	    left: 0;
+	    top: 0;
+	    bottom: 0;
+	    background: transparent;
+	    border-bottom:2px solid;
+	    -webkit-transition: 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	       -moz-transition: 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	        -ms-transition: 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	         -o-transition: 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	            transition: 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+	}
+
+	/* ----- active ----- */
+	.horizontal-nav .nav-item.active:nth-child(1) ~ .effect { border-color: @color1; box-shadow:inset 0 -70px 70px -70px @color1;}
+	.horizontal-nav .nav-item.active:nth-child(2) ~ .effect { border-color: @color2; box-shadow:inset 0 -70px 70px -70px @color2;}
+	.horizontal-nav .nav-item.active:nth-child(3) ~ .effect { border-color: @color3; box-shadow:inset 0 -70px 70px -70px @color3;}
+	.horizontal-nav .nav-item.active:nth-child(4) ~ .effect { border-color: @color4; box-shadow:inset 0 -70px 70px -70px @color4;}
+
+	/* ----- hover ----- */
+	.horizontal-nav .nav-item:nth-child(1):hover ~ .effect { border-color: @color1; box-shadow:inset 0 -70px 70px -70px @color1;}
+	.horizontal-nav .nav-item:nth-child(2):hover ~ .effect { border-color: @color2; box-shadow:inset 0 -70px 70px -70px @color2;}
+	.horizontal-nav .nav-item:nth-child(3):hover ~ .effect { border-color: @color3; box-shadow:inset 0 -70px 70px -70px @color3;}
+	.horizontal-nav .nav-item:nth-child(4):hover ~ .effect { border-color: @color4; box-shadow:inset 0 -70px 70px -70px @color4;}
+
+	/* ----- active ----- */
+	.no-csstransforms .horizontal-nav .nav-item.active:nth-child(1) ~ .effect { left:  0% }
+	.no-csstransforms .horizontal-nav .nav-item.active:nth-child(2) ~ .effect { left: 25% }
+	.no-csstransforms .horizontal-nav .nav-item.active:nth-child(3) ~ .effect { left: 50% }
+	.no-csstransforms .horizontal-nav .nav-item.active:nth-child(4) ~ .effect { left: 75% }
+
+	/* ----- hover ----- */
+	.no-csstransforms .horizontal-nav .nav-item:nth-child(1):hover ~ .effect { left:  0%; }
+	.no-csstransforms .horizontal-nav .nav-item:nth-child(2):hover ~ .effect { left: 25%; }
+	.no-csstransforms .horizontal-nav .nav-item:nth-child(3):hover ~ .effect { left: 50%; }
+	.no-csstransforms .horizontal-nav .nav-item:nth-child(4):hover ~ .effect { left: 75%; }
+
+	/* ----- active ----- */
+	.csstransforms .horizontal-nav .nav-item.active:nth-child(1) ~ .effect { -webkit-transform: translate(  0%,0); transform: translate(  0%,0) }
+	.csstransforms .horizontal-nav .nav-item.active:nth-child(2) ~ .effect { -webkit-transform: translate(100%,0); transform: translate(100%,0) }
+	.csstransforms .horizontal-nav .nav-item.active:nth-child(3) ~ .effect { -webkit-transform: translate(200%,0); transform: translate(200%,0) }
+	.csstransforms .horizontal-nav .nav-item.active:nth-child(4) ~ .effect { -webkit-transform: translate(300%,0); transform: translate(300%,0) }
+
+	/* ----- hover ----- */
+	.csstransforms .horizontal-nav .nav-item:nth-child(1):hover ~ .effect { -webkit-transform: translate(  0%,0); transform: translate(  0%,0) }
+	.csstransforms .horizontal-nav .nav-item:nth-child(2):hover ~ .effect { -webkit-transform: translate(100%,0); transform: translate(100%,0) }
+	.csstransforms .horizontal-nav .nav-item:nth-child(3):hover ~ .effect { -webkit-transform: translate(200%,0); transform: translate(200%,0) }
+	.csstransforms .horizontal-nav .nav-item:nth-child(4):hover ~ .effect { -webkit-transform: translate(300%,0); transform: translate(300%,0) }
+
+	/* ----- active ----- */
+	.csstransforms3d .horizontal-nav .nav-item.active:nth-child(1) ~ .effect { -webkit-transform: translate3d(  0%,0,0); transform: translate3d(  0%,0,0) }
+	.csstransforms3d .horizontal-nav .nav-item.active:nth-child(2) ~ .effect { -webkit-transform: translate3d(100%,0,0); transform: translate3d(100%,0,0) }
+	.csstransforms3d .horizontal-nav .nav-item.active:nth-child(3) ~ .effect { -webkit-transform: translate3d(200%,0,0); transform: translate3d(200%,0,0) }
+	.csstransforms3d .horizontal-nav .nav-item.active:nth-child(4) ~ .effect { -webkit-transform: translate3d(300%,0,0); transform: translate3d(300%,0,0) }
+
+	/* ----- hover ----- */
+	.csstransforms3d .horizontal-nav .nav-item:nth-child(1):hover ~ .effect { -webkit-transform: translate3d(  0%,0,0); transform: translate3d(  0%,0,0) }
+	.csstransforms3d .horizontal-nav .nav-item:nth-child(2):hover ~ .effect { -webkit-transform: translate3d(100%,0,0); transform: translate3d(100%,0,0) }
+	.csstransforms3d .horizontal-nav .nav-item:nth-child(3):hover ~ .effect { -webkit-transform: translate3d(200%,0,0); transform: translate3d(200%,0,0) }
+	.csstransforms3d .horizontal-nav .nav-item:nth-child(4):hover ~ .effect { -webkit-transform: translate3d(300%,0,0); transform: translate3d(300%,0,0) }
+}
+/* ----- horizontal color effect end -----*/
 
 .vertical-nav .nav-list {
 	display: block;
 	margin: 6em 0 0;
 	padding: 0;
 }
-.vertical-nav .nav-list li {
+.vertical-nav .nav-list .nav-item {
 	display: block;
 }
 .vertical-nav .nav-list a {
@@ -659,9 +782,18 @@ pre code {
 	vertical-align: middle;
 }
 
+/* controlling z-inex of nav-icon */
+body:not(.site-nav-is-opened) .sticky-nav {
+	-webkit-transition: z-index 0 0.5s;
+	   -moz-transition: z-index 0 0.5s;
+	    -ms-transition: z-index 0 0.5s;
+	     -o-transition: z-index 0 0.5s;
+	        transition: z-index 0 0.5s;
+}
 .site-nav-is-opened .sticky-nav {
 	position: relative;
 	z-index: 5;
+
 }
 .off-canvas-nav {
 	position: fixed;
@@ -696,7 +828,8 @@ pre code {
         -ms-transform: translate(-15em,0);
          -o-transform: translate(-15em,0);
             transform: translate(-15em,0);
-}.csstransforms3d .off-canvas-nav {
+}
+.csstransforms3d .off-canvas-nav {
     -webkit-transform: translate3d(-15em,0,0);
        -moz-transform: translate3d(-15em,0,0);
         -ms-transform: translate3d(-15em,0,0);
@@ -716,7 +849,8 @@ pre code {
         -ms-transform: translate(0,0);
          -o-transform: translate(0,0);
             transform: translate(0,0);
-}.csstransforms3d .site-nav-is-opened .off-canvas-nav {
+}
+.csstransforms3d .site-nav-is-opened .off-canvas-nav {
     -webkit-transform: translate3d(0,0,0);
        -moz-transform: translate3d(0,0,0);
         -ms-transform: translate3d(0,0,0);
@@ -745,3 +879,65 @@ pre code {
 	font-weight: bold;
 }
 /* tag cloud end */
+
+/* breadcrumbs */
+.breadcrumbs {
+	position: relative;
+	z-index: 1;
+	display: inline-block;
+}
+.breadcrumbs:hover {
+	z-index: 5;
+}
+.breadcrumbs-path {
+	position: absolute;
+	top: 1.5em;
+	left: 4.5em;
+	height: 3em;
+	padding-left: 1em;
+	padding-right: 0.5em;
+	line-height: 3em;
+	border-radius: 0 2px 2px 0;
+	text-decoration: none;
+}
+.breadcrumbs-path .separator {
+	color: #AAA;
+	font-size: 0.8em;
+}
+.breadcrumbs-path a {
+	font-size: 0.8em;
+	text-decoration: underline;
+	padding: 1em;
+	-webkit-transition: all 0.5em;
+	   -moz-transition: all 0.5em;
+	    -ms-transition: all 0.5em;
+	     -o-transition: all 0.5em;
+	        transition: all 0.5em;
+}
+@media screen and (max-width:70em) {
+    .breadcrumbs-path {
+        display: none;
+    }
+    .breadcrumbs:hover .breadcrumbs-path {
+        display: block;
+        background-color: #fff;
+        box-shadow: 0.1em 0.1em 0.2em -0.1em rgba(0,0,0,0.1);
+    }
+    .site-nav-is-opened .breadcrumbs-path {
+        display: block;
+        background-color: transparent;
+    }
+}
+.site-nav-is-opened .breadcrumbs:hover .breadcrumbs-path {
+    background-color: transparent;
+}
+.site-nav-is-opened .breadcrumbs a:link,
+.site-nav-is-opened .breadcrumbs a:visited, {
+    color: #FFF;
+}
+.site-nav-is-opened .breadcrumbs a:hover,
+.site-nav-is-opened .breadcrumbs a:focus, {
+    color: #C1DFFA;
+    text-shadow: 0 0 8px #C1DFFA;
+}
+/* breadcrumbs end */

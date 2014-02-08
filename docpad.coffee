@@ -99,7 +99,7 @@ docpadConfig = {
 		isActive: (s) ->
 			# current links in navigation
 			if @document.url == s
-				" class='active' "
+				" active "
 
 		# Prepare Feed links and URLs
 		prepareFeed: (s) ->

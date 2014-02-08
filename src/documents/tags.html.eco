@@ -1,16 +1,14 @@
 ---
-title: Облако тэгов
+title: Облако тегов
 is_hidden: true
 layout: default
 ---
 
-<h1>Облако тэгов</h1>
+<h1>«Облако» тегов</h1>
 
 <nav class="tags-page">
 	<% for tag, data of @getTagCloud(): %>
-	    <a href="<%= data.url %>" data-tag-count="<%= data.count %>" data-tag-weight="<%= data.weight %>">
-	        <%= tag %>
-	    </a>
+	    <a href="<%= data.url %>" data-tag-count="<%= data.count %>" data-tag-weight="<%= data.weight %>"><%= tag %></a> <br>
 	<% end %>
 </nav>
 

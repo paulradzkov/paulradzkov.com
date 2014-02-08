@@ -21,7 +21,7 @@
 
 				<aside class="meta">
 					<ul class="meta-data">
-						<li class="date"><%= @formatDate(@document.created_at, 'DD MMMM YYYY') %></li>
+						<li class="date"><%= //@formatDate(@document.created_at, 'DD MMMM YYYY') %></li>
 						<li class="comments"><a href="<%= @document.path %>#disqus_thread" data-disqus-identifier="<%= @document.disqusid %>" >Комментарии</a></li>
 						<li class="tags-list">
 							<% for tag in @document.tags : %>

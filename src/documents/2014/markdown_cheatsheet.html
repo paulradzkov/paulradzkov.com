@@ -1,0 +1,73 @@
+--- 
+title: "Учебник по Маркдауну"
+excerpt: ""
+description: ""
+created_at: 2014-04-07
+kind: article
+publish: true
+disqusid: markdown_cheatsheet
+tags: [tools]
+styles: 
+  - '/vendor/codemirror/lib/codemirror.css'
+  - '/vendor/default.css'
+  - '/2014/markdown_cheatsheet/markdown_cheatsheet.css'
+scripts: 
+  - '/vendor/marked.js'
+  - '/vendor/highlight.pack.js'
+  - '/vendor/codemirror/lib/codemirror.js'
+  - '/vendor/codemirror/xml/xml.js'
+  - '/vendor/codemirror/markdown/markdown.js'
+  - '/vendor/codemirror/gfm/gfm.js'
+  - '/vendor/codemirror/javascript/javascript.js'
+  - '/vendor/rawinflate.js'
+  - '/vendor/rawdeflate.js'
+  - '/2014/markdown_cheatsheet/markdown_cheatsheet.js'
+---
+
+<p>Учебник по Маркдауну</p>
+
+<!-- cut -->
+
+<div class="markdown-cheatsheet">
+<div class="markdown-cheatsheet-inner">
+<div id="in"><form><textarea id="code"># (GitHub-Flavored) Markdown Editor
+
+Basic useful feature list:
+
+ * Ctrl/Cmd + S to save the file
+ * Drag and drop a file into here to load it
+ * File contents are saved in the URL so you can share files
+
+
+I'm no good at writing sample / filler text, so go write something yourself.
+
+Look, a list!
+
+ * foo
+ * bar
+ * baz
+
+And here's some code!
+
+```javascript
+$(function(){
+  $('div').html('I am a div.');
+});
+```
+
+This is [on GitHub](https://github.com/jbt/markdown-editor) so let me know if I've b0rked it somewhere.
+
+
+Props to Mr. Doob and his [code editor](http://mrdoob.com/projects/code-editor/), from which
+the inspiration to this, and some handy implementation hints, came.
+
+### Stuff used to make this:
+
+ * [marked](https://github.com/chjj) for Markdown parsing
+ * [CodeMirror](http://codemirror.net/) for the awesome syntax-highlighted editor
+ * [highlight.js](http://softwaremaniacs.org/soft/highlight/en/) for syntax highlighting in output code blocks
+ * [js-deflate](https://github.com/dankogai/js-deflate) for gzipping of data to make it fit in URLs
+</textarea></form></div>
+<div id="out"></div>
+</div>
+</div>

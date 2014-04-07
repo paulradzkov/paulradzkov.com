@@ -1,0 +1,61 @@
+.markdown-cheatsheet {
+  position: relative;
+  z-index: 100;
+  margin: 0 -2rem;
+  max-width: none;
+  border: 12px solid #DDD;
+  background: #FFF;
+}
+.CodeMirror pre {
+  line-height: 20px;
+  text-align: left;
+}
+#in,
+.CodeMirror {
+  overflow: auto;
+  font-size: 16px;
+}
+.CodeMirror-scroll {
+  height: 100%;
+  min-height: 100%;
+}
+.markdown-cheatsheet-inner {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+.markdown-cheatsheet-inner > div {
+  display: table-cell;
+  width: 50%;
+  vertical-align: top;
+}
+#in {
+  width: 50%;
+  background-color: #F7F7F0;
+}
+#out {
+  overflow: auto;
+  padding: 2em 3em;
+  background-color: #fff;
+}
+#out pre code {
+  min-width: 0;
+  display: block;
+}
+@media screen and (max-width: 1024px) {
+  #in {
+    display: none;
+  }
+  #out {
+    left: 0;
+    padding-left: 10px;
+  }
+}
+
+.view #in {
+  display: none;
+}
+.view #out {
+  left: 0;
+  padding-left: 10px;
+}

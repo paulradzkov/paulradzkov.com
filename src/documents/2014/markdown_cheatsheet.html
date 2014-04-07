@@ -1,5 +1,5 @@
 --- 
-title: "Учебник по Маркдауну"
+title: "Краткое руководство по Маркдауну"
 excerpt: ""
 description: ""
 created_at: 2014-04-07
@@ -24,49 +24,187 @@ scripts:
   - '/2014/markdown_cheatsheet/markdown_cheatsheet.js'
 ---
 
-<p>Учебник по Маркдауну</p>
+<p><a href="http://daringfireball.net/projects/markdown/syntax" target="_blank">Официальное руководство</a> по синтаксису Markdown мне кажется не слишком наглядным, поэтому когда-то давно сделал для себя <a href="http://cssdeck.com/labs/short-markdown-manual-on-russian">краткое руководство</a>, а теперь решил перенести его к себе в блог.</p>
 
 <!-- cut -->
 
+<p>Для создания демки использован <a href="https://github.com/jbt/markdown-editor">Live Markdown Editor</a>. </p>
+
+<p>Дополнительные функции:</p>
+<ul>
+  <li><kbd>Ctrl/Cmd + S</kbd> — сохранить маркдаун-код как файл</li>
+  <li>Перетянуть файл в панель кода, чтобы загрузить его.</li>
+  <li>Контент файла сохраняется в URL, чтобы можно было поделиться ссылкой.</li>
+</ul>
+
 <div class="markdown-cheatsheet">
 <div class="markdown-cheatsheet-inner">
-<div id="in"><form><textarea id="code"># (GitHub-Flavored) Markdown Editor
+<div id="in"><form><textarea id="code">Markdown
+========
 
-Basic useful feature list:
+Краткое руководство
+-------------------
 
- * Ctrl/Cmd + S to save the file
- * Drag and drop a file into here to load it
- * File contents are saved in the URL so you can share files
+Абзацы создаются при помощи пустой строки. Например, это первый абзац.
+
+А это второй абзац.
+
+Чтобы сделать перенос строки вместо абзаца, нужно в конце строки оставить два пробела и нажать «enter» — сгенерируется тег `<br/>`.  
+Эта фраза начинается с новой строки.
+А это предложение не с новой строки.
+
+Заголовки отмечаются диезом «#» в начале строки, от одного до шести. Например:
+
+# Заголовок первого уровня #
+## Заголовок h2
+### Заголовок h3
+#### Заголовок h4
+##### Заголовок h5
+###### Заголовок h6
+
+В декоративных целях заголовки можно «закрывать» с обратной стороны, но это необязательно.
+
+Также заголовоки первого и второго уровня можно создать, подчеркнув текст заголовка символом «равно» и «дефис» для создания `<h1>` и `<h2>` соответственно. Количество символов не имеет значения.
+
+###Списки
+
+Неупорядоченный список:
+
+* элемент 1
+* элемент 2
+  * вложенный элемент 2.1
+  * вложенный элемент 2.2
+* элемент ...
+
+Для разметки неупорядоченных списков можно использовать или «*», или «-», или «+», или всё вперемешку — результат будет один:
+
++ элемент 1
+- элемент 2
+* элемент ...
+
+Упорядоченный список:
+
+1. элемент 1
+2. элемент 2
+  1. вложенный
+  2. вложенный
+3. элемент 3
+4. Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.
+
+Список с абзацами:
+
+* Раз абзац. Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.
+
+* Два абзац. Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.
+
+* Три абзац. Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.
+  
+    Четыре абзац (Четыре пробела в начале или один tab).
+
+###Цитаты
+
+Цитаты оформляются как в емейлах, с помощью символа «`>`».
+
+> This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
+> consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
+> Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
+> 
+> Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
+> id sem consectetuer libero luctus adipiscing.
+
+Или более ленивым способом, когда знак «`>`» ставится только перед первой строкой каждого абзаца цитаты:
+
+> This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
+consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
+Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
+
+> Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
+id sem consectetuer libero luctus adipiscing.
+
+В цитаты можно примешивать всё что угодно, в том числе вложенные цитаты:
 
 
-I'm no good at writing sample / filler text, so go write something yourself.
+> ## This is a header.
+> 
+> 1.   This is the first list item.
+> 2.   This is the second list item.
+> 
+>> Вложенная цитата.
+>
+> Here's some example code:
+> 
+>     return shell_exec("echo $input | $markdown_script");
 
-Look, a list!
+###Исходный код
 
- * foo
- * bar
- * baz
+Блоки кода отбиваются 4 пробелами в начале строки. Самое приятное, что в коде не нужно заменять угловые скобки `< >` и амперсанд `&` на их html-сущности.
 
-And here's some code!
+    <?php if ($config->CHECKOUT_PAGE == 'singlepage') { ?>
+      <table border="0" width="100%" cellspacing="0" cellpadding="0">
+        <tr>
+          <?php
+            if (isset($giftwrap_info) && $giftwrap_info) {
+              echo tep_draw_checkout_progress_bar(5, 5, CHECKOUT_BAR_FINISHED);
+            } else {
+              echo tep_draw_checkout_progress_bar(4, 4, CHECKOUT_BAR_FINISHED);
+            }
+          ?>
+        </tr>
+      </table>
+    <?php } ?>
 
-```javascript
-$(function(){
-  $('div').html('I am a div.');
-});
-```
+### Горизонтальная черта
 
-This is [on GitHub](https://github.com/jbt/markdown-editor) so let me know if I've b0rked it somewhere.
+`hr` создается тремя звездочками.
 
+***
 
-Props to Mr. Doob and his [code editor](http://mrdoob.com/projects/code-editor/), from which
-the inspiration to this, and some handy implementation hints, came.
+### Ссылки
 
-### Stuff used to make this:
+Это встроенная [ссылка с title элементом](http://example.com/link "Я ссылка"). Это — [без title](http://example.com/link).
 
- * [marked](https://github.com/chjj) for Markdown parsing
- * [CodeMirror](http://codemirror.net/) for the awesome syntax-highlighted editor
- * [highlight.js](http://softwaremaniacs.org/soft/highlight/en/) for syntax highlighting in output code blocks
- * [js-deflate](https://github.com/dankogai/js-deflate) for gzipping of data to make it fit in URLs
+А вот [пример][1] [нескольких][2] [ссылок][id] с разметкой как у сносок. Прокатит и [короткая запись][] без указания id.
+
+[1]: http://example.com/ "Optional Title Here"
+[2]: http://example.com/some
+[id]: http://example.com/links (Optional Title Here)
+[короткая запись]: http://example.com/short
+
+### Emphasis
+
+Выделять слова можно при помощи «`*`» и «`_`». Одним символ для наклонного текста, два символа для жирного текста, три — для наклонного и жирного одновременно.
+
+Например, это _italic_ и это тоже *italic*. А вот так уже __strong__, и так тоже **strong**. А так ***жирный и наклонный*** одновременно.
+
+### Инлайн код
+
+Для вставки кода внутри предложений нужно заключать этот код в апострофы (на букве Ё). Пример: `<html class="ie no-js">`.
+
+Если внутри кода есть апостроф, то код надо обрамить двойными апострофами: ``There is a literal backtick (`) here.``
+
+## Картинки
+
+![Alt text](http://placehold.it/150x100)
+
+![Alt text](http://placehold.it/150x100 "Optional title")
+
+![Картинка][image1]
+![Картинка][image2]
+![Картинка][image3]
+
+[image1]: http://placehold.it/250x100
+[image2]: http://placehold.it/200x100
+[image3]: http://placehold.it/150x100
+
+## Использование HTML внутри Markdown
+
+Использовать строчные тэги внутри markdown можно:
+
+> Выделять слова можно при помощи * и _ . Например, это <em class="a1">italic</em> и это тоже <i class="a1">italic</i>. А вот так уже <b>strong</b>, и так тоже <strong>strong</strong>.
+
+А вот markdown внутри блочных html-тегов нельзя:
+
+<p class="someclass">Выделять слова можно при помощи * и _ . Например, это _italic_ и это тоже *italic*. А вот так уже __strong__, и так тоже **strong**.</p>
 </textarea></form></div>
 <div id="out"></div>
 </div>

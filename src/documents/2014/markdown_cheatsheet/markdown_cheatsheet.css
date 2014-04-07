@@ -1,19 +1,24 @@
 .markdown-cheatsheet {
   position: relative;
   z-index: 100;
-  margin: 0 -2rem;
+  margin: 2em -2em;
+  margin: 2rem -2rem;
   max-width: none;
-  border: 12px solid #DDD;
+  border: 20px solid #DDD;
   background: #FFF;
 }
 .CodeMirror pre {
-  line-height: 20px;
   text-align: left;
+  border: none;
 }
-#in,
-.CodeMirror {
+#in .CodeMirror {
   overflow: auto;
   font-size: 16px;
+  line-height: 25px;
+}
+/* 1 - fixes line-height */
+#in .CodeMirror pre span {
+  vertical-align: top; /* 1 */
 }
 .CodeMirror-scroll {
   height: 100%;
@@ -23,6 +28,7 @@
   display: table;
   width: 100%;
   table-layout: fixed;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
 }
 .markdown-cheatsheet-inner > div {
   display: table-cell;
@@ -32,11 +38,13 @@
 #in {
   width: 50%;
   background-color: #F7F7F0;
+  box-shadow: inset -20px 0 20px -10px rgba(0,0,0,0.1);
 }
 #out {
   overflow: auto;
   padding: 2em 3em;
   background-color: #fff;
+  font-size: 14px;
 }
 #out pre code {
   min-width: 0;

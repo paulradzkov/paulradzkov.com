@@ -33,7 +33,7 @@ function setOutput(val){
 }
 
 var editor = CodeMirror.fromTextArea(document.getElementById('code'), {
-  mode: 'gfm',
+  mode: 'markdown',
   lineNumbers: true,
   matchBrackets: true,
   lineWrapping: true,

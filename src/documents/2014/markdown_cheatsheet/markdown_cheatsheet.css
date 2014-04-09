@@ -46,6 +46,13 @@
   background-color: #fff;
   font-size: 14px;
 }
+#out p code {
+  padding: 0 0.3em;
+  border: 1px solid #DDD;
+  border-radius: 2px;
+  background: #F7F7F0;
+  color: #000;
+}
 #out pre code {
   min-width: 0;
   display: block;

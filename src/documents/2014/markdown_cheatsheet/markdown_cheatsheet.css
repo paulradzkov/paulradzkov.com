@@ -58,19 +58,10 @@
   display: block;
 }
 @media screen and (max-width: 1024px) {
-  #in {
-    display: none;
+  .markdown-cheatsheet {
+    border: none;
   }
   #out {
-    left: 0;
-    padding-left: 10px;
+    display: none;
   }
-}
-
-.view #in {
-  display: none;
-}
-.view #out {
-  left: 0;
-  padding-left: 10px;
 }

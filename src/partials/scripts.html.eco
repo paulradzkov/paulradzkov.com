@@ -3,7 +3,7 @@
     <script>window.jQuery || document.write('<script src="/vendor/jquery.js"><\/script>')</script>
 
 	<!-- DocPad Scripts + Our Own -->
-	<%- @getBlock('scripts').add(@site.scripts).toHTML() %>
+	<%- @getBlock('scripts').add([].concat(@site.scripts or []).concat(@document.scripts or [])).toHTML() %>
 
     <% if (@document.kind == "article") : %>
 		<script type="text/javascript">

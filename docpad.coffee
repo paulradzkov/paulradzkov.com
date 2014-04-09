@@ -143,6 +143,9 @@ docpadConfig = {
 		navlinks:
 			collections:
 				articles: -1
+		cleanurls:
+			static: true
+			trailingSlashes: true
 		tags:
 			extension: '.html.eco'
 			injectDocumentHelper: (document) ->

@@ -24,6 +24,7 @@
 	<!-- Favicon -->
 	<link rel="shortcut icon" href="/favicon.ico" />
 	<link rel="alternate" type="application/atom+xml" title="Atom" href="/atom.xml">
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml">
 	<script src="/vendor/modernizr.js"></script>
 	<% if @site.googleAnalyticsId : %>
 	<script type="text/javascript">

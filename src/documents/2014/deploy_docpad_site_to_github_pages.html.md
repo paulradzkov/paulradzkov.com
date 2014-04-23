@@ -2,7 +2,7 @@
 title: "Деплой Docpad сайта на GitHub Pages"
 excerpt: ""
 description: ""
-created_at: 2014-02-10
+created_at: 2014-04-23
 kind: article
 publish: true
 disqusid: deploy_docpad_site_to_github_pages
@@ -22,14 +22,16 @@ tags: [docpad, github pages]
 
 Сначала разберемся с абсолютными путями в докпаде.
 
-1. Установим плагин [Get Url Plugin for DocPad](https://github.com/Hypercubed/docpad-plugin-geturl/)
+Установим плагин [Get Url Plugin for DocPad](https://github.com/Hypercubed/docpad-plugin-geturl/)
 
-2. Создадим в конфиге докпада `@site.url`:
+Создадим в конфиге докпада `@site.url`:
 
+```coffeescript
 	templateData:
 		site:
 			# The production url of our website. Used in sitemap and rss feed
 			url: "http://interpaul.github.io/docpad-simpleblog"
+```
 
 И отдельную конфигурацию для «development» окружения:
 
@@ -44,7 +46,7 @@ tags: [docpad, github pages]
 
 Эта переменная — `@site.url` — будет подставляться префиксом ко всем путям и ссылкам в зависимости от окружения.
 
-3. Теперь нужно добавить хелпер `@getUrl()` ко всем `href` и `src` в шаблоне, документах — везде-везде.
+Теперь нужно добавить хелпер `@getUrl()` ко всем `href` и `src` в шаблоне, документах — везде-везде.
 
 Например, было:
 
@@ -106,15 +108,15 @@ tags: [docpad, github pages]
 
 ## Деплой на GitHub Pages
 
-1. Создадим ветку `gh-pages`. По мануалу это должна быть пустая ветка без истории, но об этом в дальнейшем позаботится плагин для деплоя. 
+Создадим ветку `gh-pages`. По мануалу это должна быть пустая ветка без истории, но об этом в дальнейшем позаботится плагин для деплоя. 
 
-2. Установим [GitHub Pages Deployer Plugin for DocPad](https://github.com/docpad/docpad-plugin-ghpages)
+Установим [GitHub Pages Deployer Plugin for DocPad](https://github.com/docpad/docpad-plugin-ghpages)
 
-При попытке выполнить `docpad deploy-ghpages --env static` у меня появляется ошибка.
+При попытке выполнить <kbd>docpad deploy-ghpages --env static</kbd> у меня появляется ошибка.
 
 Это значит, что плагин не может соединиться с вашим аккаунтом на гитхабе.
 
-3. Чтобы показать плагину правильный путь, добавим новый «remote» для репозитория. Для этого в консоли git выполните `git remote add deploy https://login:password@github.com/repo_owner/repo_name.git`. Где «deploy» — это название удаленного репозитория (может быть любым, но если выбрать «origin» локальная копия репозитория скорее всего потеряет связь с Гитхабом); 
+Чтобы показать плагину правильный путь, добавим новый «remote» для репозитория. Для этого в консоли git выполните `git remote add deploy https://login:password@github.com/repo_owner/repo_name.git`. Где «deploy» — это название удаленного репозитория (может быть любым, но если выбрать «origin» локальная копия репозитория скорее всего потеряет связь с Гитхабом); 
 «login» и «password» — данные вашего аккаунта на Гитхабе; «github.com/repo_owner/repo_name.git» — путь к репозиторию проекта, в котором у вас есть права на запись (т.е. это не обязательно должен быть ваш репозиторий, достаточно быть коллаборатором).
 
 Стоит отметить, что эту процедуру нужно выполнить один раз для каждого локального репозитория.
@@ -127,4 +129,4 @@ tags: [docpad, github pages]
 			deployRemote: 'deploy'
 			deployBranch: 'gh-pages'
 
-4. Теперь можно выкатывать сайт: `docpad deploy-ghpages --env static`
+Теперь можно выкатывать сайт: `docpad deploy-ghpages --env static`

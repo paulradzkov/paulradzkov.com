@@ -5,7 +5,7 @@ description: "Font-weight: bolder не работает или работает 
 created_at: 2014-02-06
 kind: article
 publish: true
-disqusid: visited_link_on_hover
+disqusid: font-weight_bolder
 tags: [css, typography]
 custom_css: false
 ---

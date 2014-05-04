@@ -48,7 +48,7 @@ scripts: ["/vendor/fotorama/fotorama.js"]
 
 Самым выгодным вариантом является [Adobe Typekit][typekit] c его предложением 40$ в месяц за 2 млн. просмотров. Это 480$ в год. Цена уже более менее адекватная, но на неё всё равно согласится не каждый, учитывая, что можно найти [бесплатный аналог](/2014/free_substitution_for_helvetica_neue/) и избежать этих затрат.
 
-Как видим, цены на одно и то же могут отличаться 10 раз.
+Как видим, цены на одно и то же могут отличаться в 10 раз.
 
 [Linotype]: http://www.linotype.com/1266/NeueHelvetica-family.html
 [MyFonts.com]: http://www.myfonts.com/fonts/linotype/neue-helvetica/buy.html

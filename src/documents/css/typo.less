@@ -13,7 +13,7 @@ h1, h2, h3, h4 {
 }
 
 code, kbd {
-	font-family: Consolas, 'courier new', monospace, serif;
+	font-family: Consolas, 'courier new', 'Roboto', monospace, serif;
 }
 
 /* making inline code same x-height as general text */
@@ -23,49 +23,55 @@ p kbd {
     line-height: 0.8;
 }
 
-@media screen and (min-width:960px) {
-
-	body {
-		font-family: 'Open Sans', 'Roboto', sans-serif;
-	}
-
-	h1, h2, h3, h4,
-  .horizontal-nav a,
-  .navlinks {
-		font-family: 'PT Sans Caption', 'Roboto', sans-serif;
-	}
+/* Custom fonts applies and loaded only on large screens */
+@media screen and (min-width: 960px) {
+    body {
+        font-family: 'Open Sans', 'Roboto', sans-serif;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .navlinks,
+    .nav-list a {
+        font-family: 'PT Sans Caption', 'Roboto', sans-serif;
+    }
 }
-
-/* scoped to article */
-article ul:not([class]) {
-    list-style-type: none;
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a,
+.navlinks a {
+    text-decoration: none;
 }
-article ul:not([class]) > li:before {
-    content: '\2013'; /* &ndash; */
-    position: absolute;
-    display: inline-block;
-    margin-left: -1em;
-}
-nav ul {
-    padding-left: 0;
+.page-content > h1 {
+    font-size: 3em;
+    font-size: 3rem;
 }
 /* colors */
-
 a {
-	text-decoration: underline;
+    text-decoration: underline;
     -webkit-transition: color 0.5s, text-shadow 0.5s;
        -moz-transition: color 0.5s, text-shadow 0.5s;
         -ms-transition: color 0.5s, text-shadow 0.5s;
          -o-transition: color 0.5s, text-shadow 0.5s;
             transition: color 0.5s, text-shadow 0.5s;
 }
+a:link    {color: #0877db;}
+a:visited {color: #9108db;}
+a:hover   {color: #2b9aff;}
+a:active  {color: #2b9aff;}
 nav a {
     text-decoration: none;
 }
-a:link    {	color: #0877db;}
-a:visited {	color: #9108db;}
-a:hover   {	color: #2b9aff;}
-a:active  {	color: #2b9aff;}
+
+nav ul {
+    padding-left: 0;
+}
 
 figure {
   margin: 4em 0;
@@ -94,32 +100,4 @@ figure figcaption {
 }
 .nowrap {
   white-space: nowrap;
-}
-
-/* tables */
-table:not([class]) {
-    margin-top: 1em;
-    margin-bottom: 1em;
-    border-collapse: collapse;
-}
-table:not([class]) caption {
-    text-align: right;
-    font-size: 0.8em;
-    margin-bottom: 0.625em;
-}
-table:not([class]) tr {
-    border-style: solid;
-    border-color: rgba(0,0,0,0.1);
-    border-width: 0 0 1px;
-}
-table:not([class]) th,
-table:not([class]) td {
-    padding: 0.5em 1em;
-    text-align: left;
-    vertical-align: top;
-}
-table:not([class]) thead th,
-table:not([class]) thead td {
-    vertical-align: bottom;
-    border-bottom-width: 2px;
 }

@@ -7,7 +7,8 @@ kind: article
 publish: true
 disqusid: pointer-events
 tags: [css,progressive enhancement]
-custom_css: true
+styles: ['/css/caniuse.css', '/2012/pointer-events/custom.css']
+scripts: ['/vendor/caniuse.js']
 ---
 
 <p>Представим ситуацию, когда у нас один html-элемент расположен поверх другого. Но нам нужно, чтобы нижний элемент был кликабельным или реагировал на hover.</p>

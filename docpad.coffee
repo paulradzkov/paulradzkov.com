@@ -51,20 +51,13 @@ docpadConfig = {
 
 			# The website's styles
 			styles: [
-				'/vendor/normalize.css'
-				'/vendor/h5bp.css'
-				'/css/bettertext.css'
-				'/css/github.css'
-				'/css/caniuse.css'
 				'/css/template.css'
 			]
 
 			# The website's scripts
 			scripts: [
-				'/vendor/log.js'
 				'/js/offscreenmenu.js'
 				'/vendor/jquery.sticky.js'
-				'/vendor/caniuse.js'
 				'/js/script.js'
 			]
 

@@ -1,7 +1,18 @@
-			<ul class="nav-list">
-				<li class="nav-item <%- @isActive("/") %>"><a href="/"><i class="icon-megaphone"></i><span class="item-label">Блог</span></a></li>
-				<li class="nav-item <%- @isActive("/demo") %>"><a href="/demo"><i class="icon-lab"></i><span class="item-label">Сниппеты</span></a></li>
-				<li class="nav-item <%- @isActive("/tags") %>"><a href="/tags"><i class="icon-tag"></i><span class="item-label">Теги</span></a></li>
-				<li class="nav-item"><a href="/rss.xml"><i class="icon-rss"></i><span class="item-label">RSS</span></a></li>
-				<li class="effect"></li>
-			</ul>
+<ul class="site-map">
+    <% for page in @getCollection("articles").toJSON(): %>
+        <li class="map-item <%= if page.id is @document.id then 'active' else 'inactive' %>">
+            <a href="<%= page.url %>"><%= page.title %></a>
+			<!--aside class="blog-item-meta">
+				<ul class="meta-data">
+					<li class="date"><%=@moment(page.created_at).format('DD MMMM YYYY') %></li>
+					<li class="comments"><a href="<%= page.url %>#disqus_thread" data-disqus-identifier="<%= page.disqusid %>" >Комментарии</a></li>
+					<li class="tags-list">
+						<% for tag in page.tags : %>
+						<a class="tag" href="<%= @getTagUrl(tag) %>"><%= tag %></a>
+						<% end %>
+					</li>
+				</ul>
+			</aside-->
+        </li>
+    <% end %>
+</ul>

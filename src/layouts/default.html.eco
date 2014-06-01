@@ -6,47 +6,35 @@
 		<header class="page-header content-width">
 			<%- @partial('hero') %>
 		</header>
-		<nav class="site-navigation horizontal-nav">
-			<div class="mainmenu content-width">
-				<%- @partial('nav') %>
-			</div>
-		</nav>
 	<% end %>
 	<nav class="site-navigation sticky-nav" id="sticker">
 		<% if (@document.kind == 'article') : %>
-			<span class="breadcrumbs">
-				<button class="nav-icon js-menu-trigger"><i class="icon-menu"></i></button>
-				<span class="breadcrumbs-path"><span class="separator">/</span> <a href="/">Блог</a></span>
-			</span>
-		<% else : %>
-			<button class="nav-icon nav-icon-hidden js-menu-trigger"><i class="icon-menu"></i></button>
+			<button class="nav-icon js-menu-trigger"><i class="icon-menu"></i></button>
 		<% end %>
 	</nav>
 	<% if (@document.kind == 'article') : %>
-	<aside class="article-meta content-width">
-		<div class="article-meta-container">
-			<ul class="meta-data">
-				<% if (@document.created_at) : %>
-				<li class="date"><%= @moment(@document.created_at).lang('ru').format('DD MMMM YYYY') %></li>
+	<header class="page-header content-width">
+		<aside class="article-meta content-width">
+			<% if (@document.created_at) : %>
+			<p class="date"><%= @moment(@document.created_at).lang('ru').format('DD MMMM YYYY') %></p>
+			<% end %>
+		</aside>
+		<h1 class="article-title"><%- @document.title %></h1>
+		<aside class="article-meta content-width inlined">
+			<% if (@document.tags) : %>
+			<span class="tags-list">
+				<% for tag in @document.tags : %>
+					<a class="tag" href="<%= @getTagUrl(tag) %>"><%= tag %></a>
 				<% end %>
-				<% if ((@site.disqus_shortname) and (@document.disqusid)) : %>
-				<li class="comments"><a href="<%= @document.path %>#disqus_thread" data-disqus-identifier="<%= @document.disqusid %>" >Комментарии</a></li>
-				<% end %>
-				<% if (@document.tags) : %>
-				<li class="tags-list">
-					<% for tag in @document.tags : %>
-						<a class="label-tag" href="<%= @getTagUrl(tag) %>"><%= tag %></a>
-					<% end %>
-				</li>
-				<% end %>
-		</ul>
-		</div>
-	</aside>
+			</span>
+			<% end %>
+			<% if ((@site.disqus_shortname) and (@document.disqusid)) : %>
+			<span class="comments"><a href="<%= @document.path %>#disqus_thread" data-disqus-identifier="<%= @document.disqusid %>" >Комментарии</a></span>
+			<% end %>
+		</aside>
+	</header>
 	<% end %>
 	<article class="page-content content-width" role="main">
-		<% if (@document.kind == 'article') : %>
-		<h1><%- @document.title %></h1>
-		<% end %>
 		<%- @content %>
 	</article>
 	<%- @partial('footer') %>

@@ -1,7 +1,6 @@
 ---
 layout: 'default'
 title: 'Блог'
-scripts: ["/vendor/bootstrap/js/bootstrap.min.js","/js/tooltip.js"]
 ---
 
 <div class="compound-header">
@@ -32,7 +31,7 @@ scripts: ["/vendor/bootstrap/js/bootstrap.min.js","/js/tooltip.js"]
 					<li class="comments"><a href="<%= page.url %>#disqus_thread" data-disqus-identifier="<%= page.disqusid %>" >Комментарии</a></li>
 					<li class="tags-list">
 						<% for tag in page.tags : %>
-						<a class="tag" href="<%= @getTagUrl(tag) %>"><%= tag %></a>
+						<a class="tag" href="<%= @getTagUrl(tag) %>"><span class="inner"><%= tag %></span></a>
 						<% end %>
 					</li>
 				</ul>

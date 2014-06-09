@@ -1,10 +1,10 @@
 	<footer class="page-footer content-width">
 		<p class="copyrights">
-			© <a href="https://plus.google.com/+%D0%9F%D0%B0%D0%B2%D0%B5%D0%BB%D0%A0%D0%B0%D0%B4%D1%8C%D0%BA%D0%BE%D0%B2?rel=author" target="_blank" rel="author"><%- @site.author %></a>
+			© <a href="//plus.google.com/+ПавелРадьков/about?rel=author" class="author"><span class="author-label">Автор:</span><%- @site.author %></a>
 			<% if (@document.created_at) : %>
 				<%= @moment(@document.created_at).format('YYYY') %>
 			<% else : %>
-				2012—<%= @moment(@now).format('YYYY') %>
+				2012&ndash;<%= @moment(@now).format('YYYY') %>
 			<% end %>
 		</p>
 	</footer>

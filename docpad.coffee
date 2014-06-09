@@ -35,7 +35,7 @@ docpadConfig = {
 
 			# The website description (for SEO)
 			description: """
-				Заметки о веб-разработке.
+				Заметки о веб-разработке Павла Радькова.
 				"""
 
 			# The website keywords (for SEO) separated by commas
@@ -59,6 +59,8 @@ docpadConfig = {
 				'/js/offscreenmenu.js'
 				'/vendor/jquery.sticky.js'
 				'/js/script.js'
+				'/vendor/bootstrap/js/bootstrap.min.js'
+				'/js/tooltip.js'
 			]
 
 		# -----------------------------

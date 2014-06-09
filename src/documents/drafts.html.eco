@@ -8,14 +8,9 @@ title: 'Ченовики'
 <div class="blogroll">
     <% for page in @getCollection("drafts").toJSON(): %>
         <section class="<%= if page.id is @document.id then 'active' else 'inactive' %>">
-            
             <h2><a href="<%= page.url %>"><%= page.title %></a></h2>
-			<%- @cuttedContent page.contentRenderedWithoutLayouts %>
-			<% if @hasReadMore page.contentRenderedWithoutLayouts : %>
-				<p class="read-more"><a href="<%= page.url %>">»</a></p>
-			<% end %>
-            
-			<aside class="meta">
+			<div class="before-cut"><%- @cuttedContent page.contentRenderedWithoutLayouts %></div>
+			<aside class="blog-item-meta">
 				<ul class="meta-data">
 					<li class="date"><%=@moment(page.created_at).format('DD MMMM YYYY') %></li>
 					<li class="comments"><a href="<%= page.url %>#disqus_thread" data-disqus-identifier="<%= page.disqusid %>" >Комментарии</a></li>

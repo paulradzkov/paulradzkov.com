@@ -89,6 +89,11 @@ docpadConfig = {
 			# Merge the document keywords with the site keywords
 			tags.concat(tags or []).join(', ')
 
+		# Get a collection of documents with a daterange
+		# Using QueryEngine's setFilter
+		getPostsByYear: (theYear) ->
+			return @getCollection('articles').findAll({url: $startsWith: '/' + theYear},[{created_at:-1}])
+
 		isActive: (s) ->
 			# current links in navigation
 			if @document.url == s

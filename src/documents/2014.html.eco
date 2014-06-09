@@ -1,11 +1,11 @@
 ---
 layout: 'default'
-title: 'Блог'
+title: 'Блог / Статьи 2014 года'
 scripts: ["/vendor/bootstrap/js/bootstrap.min.js","/js/tooltip.js"]
 ---
 
 <div class="compound-header">
-	<h1>Блог</h1>
+	<h1>Блог / 2014</h1>
 	<div class="view-toggle">
 		<form name="blogroll-view" class="btn-group" data-toggle="buttons">
 			<label class="btn btn-primary active" data-toggle="tooltip" data-placement="bottom" title="Лента">
@@ -21,7 +21,7 @@ scripts: ["/vendor/bootstrap/js/bootstrap.min.js","/js/tooltip.js"]
 </div>
 
 <div class="blogroll detailed-view">
-	<% for page in @getCollection("articles").toJSON(): %>
+    <% for page in @getPostsByYear(2014).toJSON(): %>
 		<section class="post-tizer <%= if page.id is @document.id then 'active' else 'inactive' %>">
 			<h2><a href="<%= page.url %>"><%= page.title %></a></h2>
 			<div class="before-cut"><%- @cuttedContent page.contentRenderedWithoutLayouts %></div>
@@ -38,5 +38,5 @@ scripts: ["/vendor/bootstrap/js/bootstrap.min.js","/js/tooltip.js"]
 				</ul>
 			</aside>
 		</section>
-	<% end %>
+    <% end %>
 </div>

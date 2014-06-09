@@ -1,11 +1,10 @@
 ---
 layout: 'default'
 title: 'Блог / Статьи 2012 года'
-scripts: ["/vendor/bootstrap/js/bootstrap.min.js","/js/tooltip.js"]
 ---
 
 <div class="compound-header">
-	<h1>Блог / 2012</h1>
+	<h1><a href="/">Блог</a> / 2012</h1>
 	<div class="view-toggle">
 		<form name="blogroll-view" class="btn-group" data-toggle="buttons">
 			<label class="btn btn-primary active" data-toggle="tooltip" data-placement="bottom" title="Лента">

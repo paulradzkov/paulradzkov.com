@@ -10,6 +10,7 @@ html {
 
 /* Fonts and sizes */
 @import "typo.less";
+//@import "linksunderline.less";
 
 
 /* demo-button */
@@ -109,6 +110,7 @@ html {
 .article-title:before {
 	content: '~';
 	display: block;
+	text-align: center;
 	margin: 0 0 0.2em;
 }
 .page-header h2 {
@@ -145,6 +147,10 @@ a.logo {
     font-family: 'DINPro-Bold', 'PT Sans Caption', 'Roboto', sans-serif;
     font-size: 20px;
 }
+.logo .title {
+	color: #FFF;
+	opacity: 0.8;
+}
 .cssfilters a.logo:hover .pic:after {
 	-webkit-filter: blur(40px);
             filter: blur(40px);
@@ -154,6 +160,7 @@ a.logo {
 	padding-top: 3rem;
 }
 .post-tizer {
+	background: #FFF;
 	margin: 1em 0 8em;
 	margin: 1rem 0 8em;
 }
@@ -424,7 +431,7 @@ a.author {
 	width: 2em;
 	height: 2em;
 	text-align: center;
-	line-height: 2.2;
+	line-height: 2;
 	border: 0;
 	background-color: #000;
 	background-repeat: no-repeat;
@@ -459,6 +466,13 @@ a.author {
 	    -ms-transition: all 0.1s;
 	     -o-transition: all 0.1s;
 	        transition: all 0.1s;
+}
+.nav-icon img {
+	max-width: none;
+	width: 28px;
+	height: 28px;
+	display: inline-block;
+	vertical-align: middle;
 }
 .site-navigation .tooltip {
 	text-align: left;
@@ -640,7 +654,7 @@ p .cli {
 .compound-header > * {
 	display: table-cell;
 }
-.compound-header > *:last-child {
+.compound-header .view-toggle {
 	text-align: right;
 }
 .btn-group {
@@ -665,8 +679,8 @@ p .cli {
 }
 .btn-icon {
 	display: block;
-	width: 18px;
-	height: 18px;
+	width: 14px;
+	height: 14px;
 	margin: 4px;
 }
 [data-toggle=buttons]>.btn>input[type=radio],
@@ -858,6 +872,7 @@ p .cli {
 }
 /* rss end */
 
+
 /* site-map */
 .site-map {
 	margin: 0;
@@ -876,3 +891,36 @@ p .cli {
 	pointer-events: none;
 }
 /* site-map end */
+
+/* tags filter */
+.btn-group.tags-list {
+	box-shadow: none;
+}
+.filters-container {
+	padding: 1em 0;
+}
+.tags-list .btn-label {
+	float: none;
+	display: inline-block;
+	padding: 0;
+	border-radius: 2px;
+}
+.btn-label .tag {
+	margin: 0;
+	color: @link;
+	font-size: 0.8em;
+}
+.not-tag {
+	font-size: 0.8em;
+	padding: 0.1em 0.7em;
+	color: @link;
+}
+.active .tag, 
+.active .not-tag {
+	color: #000;
+}
+.bnt:not(.active) {
+	cursor: pointer;
+}
+/* tags filter end */
+

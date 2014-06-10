@@ -107,6 +107,11 @@ docpadConfig = {
 				.replace /href="\//g, "href=\"#{@site.url}/"
 				.replace /src="\//g, "src=\"#{@site.url}/"
 			)
+			
+		wspToDash: (s) ->
+			s and (s 
+				.replace /\ /g, "-"
+			) 
 
 		# Post part before “cut”
 		cuttedContent: (content) ->            

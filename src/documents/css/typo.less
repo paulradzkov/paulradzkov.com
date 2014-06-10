@@ -57,16 +57,21 @@ h6 a,
 /* colors */
 a {
     text-decoration: underline;
-    -webkit-transition: color 0.5s, text-shadow 0.5s;
-       -moz-transition: color 0.5s, text-shadow 0.5s;
-        -ms-transition: color 0.5s, text-shadow 0.5s;
-         -o-transition: color 0.5s, text-shadow 0.5s;
-            transition: color 0.5s, text-shadow 0.5s;
+    text-decoration-line: underline;
+    text-decoration-style: solid;  
 }
-a:link    {color: #0877db;}
-a:visited {color: #9108db;}
-a:hover   {color: #2b9aff;}
-a:active  {color: #2b9aff;}
+@link:          #0877db;
+@visited:       #9108db;
+@hover:         #2b9aff;       
+@visitedhover:  #bc4df8;
+@active:        #2b9aff;
+
+a:link          {color: @link;          -moz-text-decoration-color: fadeout(@link,        70%);}
+a:visited       {color: @visited;       -moz-text-decoration-color: fadeout(@visited,     70%);}
+a:visited:hover {color: @visitedhover;  -moz-text-decoration-color: fadeout(@visitedhover,70%);}
+a:hover         {color: @hover;         -moz-text-decoration-color: fadeout(@hover,       70%);}
+a:active        {color: @active;        -moz-text-decoration-color: fadeout(@active,      70%);}
+
 nav a {
     text-decoration: none;
 }

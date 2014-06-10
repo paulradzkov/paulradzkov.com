@@ -7,11 +7,6 @@
 			<%- @partial('hero') %>
 		</header>
 	<% end %>
-	<nav class="site-navigation sticky-nav" id="sticker">
-		<% if (@document.kind == 'article') : %>
-			<a class="nav-icon js-menu-trigger" href="/" data-toggle="tooltip" data-placement="right" title="На главную"><i class="icon-menu"><span class="visuallyhidden">На главную</span></i></a>
-		<% end %>
-	</nav>
 	<% if (@document.kind == 'article') : %>
 	<header class="page-header content-width">
 		<aside class="article-meta content-width">
@@ -34,6 +29,11 @@
 		</aside>
 	</header>
 	<% end %>
+	<nav class="site-navigation sticky-nav" id="sticker">
+		<% if (@document.url != '/') : %>
+			<a class="nav-icon js-menu-trigger" href="/" data-toggle="tooltip" data-placement="right" title="На главную"><img src="/i/home.svg" width="28" height="28" alt="На главную" onerror="this.onerror=null; this.src='/i/home.png'" /><span class="visuallyhidden">На главную</span></a>
+		<% end %>
+	</nav>
 	<article class="page-content content-width" role="main">
 		<%- @content %>
 	</article>

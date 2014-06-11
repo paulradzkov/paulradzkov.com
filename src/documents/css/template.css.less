@@ -241,6 +241,9 @@ pre {
 	border-color: #f1f1f1;
 	text-align: center;
 	text-shadow: 1px 1px 0px #FFF;
+	white-space: pre;
+	white-space: pre-wrap;
+	word-wrap: break-word;
 }
 pre code {
 	display: block; 
@@ -257,7 +260,13 @@ pre code {
 @media screen and (min-width: 54em) {
 	pre code {
 		min-width: 50rem;
+		max-width: 100%;
+		padding-left: 0;
+		padding-right: 0;
 		display: inline-block;
+		-webkit-box-sizing: border-box;
+		   -moz-box-sizing: border-box;
+		        box-sizing: border-box;
 	}
 }
 @media screen and (min-width: 60rem) {
@@ -912,6 +921,10 @@ p .cli {
 /* site-map end */
 
 /* tags filter */
+.no-js .filters-container,
+.no-js .view-toggle {
+	display: none;
+}
 .btn-group.tags-list {
 	box-shadow: none;
 }
@@ -947,7 +960,3 @@ p .cli {
 	cursor: pointer;
 }
 /* tags filter end */
-
-
-@import "caniuse";
-

@@ -11,7 +11,7 @@
 	<header class="page-header content-width">
 		<aside class="article-meta content-width">
 			<% if (@document.created_at) : %>
-			<p class="date"><%= @moment(@document.created_at).lang('ru').format('DD MMMM YYYY') %></p>
+			<p class="date"><time datetime="<%= @document.created_at %>"><%=@moment(@document.created_at).lang('ru').format('DD MMMM YYYY') %></time></p>
 			<% end %>
 		</aside>
 		<h1 class="article-title"><%- @document.title %></h1>

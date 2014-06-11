@@ -22,7 +22,7 @@ scripts: ["/vendor/isotope.pkgd.min.js","/js/isotope-settings.js"]
 
 <div class="filters-container">
 	<form class="filters btn-group tags-list" data-toggle="buttons" id="filters">
-		Фильтр по тегам:
+		<span class="filter-legend">Фильтр по тегам:</span>
 		<label class="btn btn-label active" data-filter="*">
 			<input type="radio" name="filters-options" id="view-all" checked>
 			<strong class="not-tag">Все</strong>
@@ -44,7 +44,7 @@ scripts: ["/vendor/isotope.pkgd.min.js","/js/isotope-settings.js"]
 
 			<aside class="blog-item-meta">
 				<ul class="meta-data">
-					<li class="date"><%=@moment(page.created_at).format('DD MMMM YYYY') %></li>
+					<li class="date"><time datetime="<%= page.created_at %>"><%=@moment(page.created_at).format('DD MMMM YYYY') %></time></li>
 					<li class="comments"><a href="<%= page.url %>#disqus_thread" data-disqus-identifier="<%= page.disqusid %>" >Комментарии</a></li>
 					<li class="tags-list">
 						<% for tag in page.tags : %>

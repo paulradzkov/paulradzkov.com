@@ -14,8 +14,8 @@ h1, h2, h3, h4 {
 h1, h2 {
     line-height: 1;
 }
-code, kbd {
-	font-family: Consolas, 'courier new', 'Roboto', monospace, serif;
+code, kbd, samp {
+	font-family: @fontmono;
 }
 
 /* making inline code same x-height as general text */
@@ -28,7 +28,7 @@ p kbd {
 /* Custom fonts applies and loaded only on large screens */
 @media screen and (min-width: 960px) {
     body {
-        font-family: 'Clear Sans', 'Open Sans', 'Roboto', sans-serif;
+        font-family: @fontmain;
     }
     h1,
     h2,
@@ -38,7 +38,7 @@ p kbd {
     h6,
     .navlinks,
     .nav-list a {
-        font-family: 'DINPro-Bold', 'PT Sans Caption', 'Roboto', sans-serif;
+        font-family: @fontsecond;
     }
 }
 h1 a,
@@ -60,11 +60,6 @@ a {
     text-decoration-line: underline;
     text-decoration-style: solid;  
 }
-@link:          #0877db;
-@visited:       #9108db;
-@hover:         #2b9aff;       
-@visitedhover:  #bc4df8;
-@active:        #2b9aff;
 
 a:link          {color: @link;          -moz-text-decoration-color: fadeout(@link,        70%);}
 a:visited       {color: @visited;       -moz-text-decoration-color: fadeout(@visited,     70%);}
@@ -99,7 +94,13 @@ figure figcaption {
     max-width: 25em;
     font-size: 0.9em;
     font-size: 0.9rem;
+    text-align: center;
+}
+figure figcaption p {
     text-align: left;
+}
+figure figcaption p:only-child {
+    display: inline-block;
 }
 
 .clear {

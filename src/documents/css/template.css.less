@@ -268,6 +268,10 @@ pre code {
 		   -moz-box-sizing: border-box;
 		        box-sizing: border-box;
 	}
+	.post-tizer pre code {
+		padding-left: 2em;
+		padding-right: 2em;		
+	}
 }
 @media screen and (min-width: 60rem) {
 	pre code {
@@ -385,14 +389,15 @@ a.author {
 	background: #EFEFEF;
 	padding: 1em 0 0;
 	box-shadow: inset 0 3px 6px -6px rgba(0, 0, 0, 0.45);
+	font-weight: bold;
 }
 .read-next-title {
 	font-size: 1.5em;
 	text-align: center;
 	color: #AAA;
 }
-.navlinks-prev,
-.navlinks-next {
+.read-next .navlinks-prev,
+.read-next .navlinks-next {
 	display: block;
 	text-align: center;
 	padding: 1em 1em 1.5em;
@@ -401,17 +406,17 @@ a.author {
 	line-height: 1.1;
 }
 @media screen and (min-width: 40rem) {
-	.navlinks {
+	.read-next .navlinks {
 		display: table;
 		width: 100%;
 		border-collapse: collapse;
 	}
-	.navlinks > a:only-child {
+	.read-next .navlinks > a:only-child {
 		width: 100%;
 		text-align: center;
 	}
-	.navlinks-prev,
-	.navlinks-next {
+	.read-next .navlinks-prev,
+	.read-next .navlinks-next {
 		display: table-cell;
 		vertical-align: middle;
 		width: 50%;
@@ -421,11 +426,33 @@ a.author {
 		   -moz-box-sizing: border-box;
 		        box-sizing: border-box;
 	}
-	.navlinks-prev {
+	.read-next .navlinks-prev {
 		text-align: right;
 	}
-	.navlinks-next {
+	.read-next .navlinks-next {
 		text-align: left;
+	}
+	.read-siblings {
+		max-width: none;
+	}
+	.read-siblings .navlinks {
+		display: block;
+		position: relative;
+	}
+	.read-siblings .navlinks a {
+		position: absolute;
+		top: 10em;
+		width: 10em;
+		font-size: 0.8em;
+		line-height: 1.2;
+	}
+	.read-siblings .navlinks-prev {
+		text-align: left;
+		left: 0;
+	}
+	.read-siblings .navlinks-next {
+		text-align: right;
+		right: 0;
 	}
 }
 /* ie fallback */

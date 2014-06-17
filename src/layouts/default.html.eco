@@ -9,9 +9,6 @@
 	<% end %>
 	<% if (@document.kind == 'article') : %>
 	<header class="page-header content-width">
-		<nav class="read-siblings">
-			<%- @getNavLinks() %>
-		</nav>
 		<aside class="article-meta content-width">
 			<% if (@document.created_at) : %>
 			<p class="date"><time datetime="<%= @document.created_at %>"><%=@moment(@document.created_at).lang('ru').format('DD MMMM YYYY') %></time></p>
@@ -31,12 +28,15 @@
 			<% end %>
 		</aside>
 	</header>
-	<% end %>
-	<nav class="site-navigation sticky-nav" id="sticker">
-		<% if (@document.url != '/') : %>
-			<a class="nav-icon js-menu-trigger" href="/" data-toggle="tooltip" data-placement="right" title="На главную"><img src="/i/home.svg" width="28" height="28" alt="На главную" onerror="this.onerror=null; this.src='/i/home.png'" /><span class="visuallyhidden">На главную</span></a>
-		<% end %>
+	<nav class="read-siblings">
+		<%- @getNavLinks() %>
 	</nav>
+	<% end %>
+	<% if (@document.url != '/') : %>
+		<nav class="site-navigation sticky-nav" id="sticker">
+			<a class="nav-icon js-menu-trigger" href="/" data-toggle="tooltip" data-placement="right" title="На главную"><img src="/i/home.svg" width="28" height="28" alt="На главную" onerror="this.onerror=null; this.src='/i/home.png'" /><span class="visuallyhidden">На главную</span></a>
+		</nav>
+	<% end %>
 	<article class="page-content content-width" role="main">
 		<%- @content %>
 	</article>

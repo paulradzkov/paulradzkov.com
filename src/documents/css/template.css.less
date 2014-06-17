@@ -21,7 +21,13 @@ html {
 
 @import "typo.less";
 
-
+/* font-size overrides */
+h1 {
+	font-size: 3.1em;
+}
+h2 {
+	font-size: 2.2em;
+}
 /* demo-button */
 .button {
 	display: inline-block;
@@ -115,7 +121,9 @@ html {
 	margin-bottom: 0.2em;
 }
 .article-title {
-	font-size: 3em;
+	font-size: 3.1em;
+	position: relative;
+
 }
 .article-title:before {
 	content: '~';
@@ -406,6 +414,7 @@ a.author {
 	font-size: 1.5rem;
 	line-height: 1.1;
 }
+
 @media screen and (min-width: 40rem) {
 	.read-next .navlinks {
 		display: table;
@@ -433,27 +442,92 @@ a.author {
 	.read-next .navlinks-next {
 		text-align: left;
 	}
-	.read-siblings {
+}
+
+.read-siblings {
+	display: none;
+}
+
+@media screen and (min-width: 60rem) {
+	.flexbox .read-siblings {
+		display: block;
 		max-width: none;
+		position: absolute;
+		z-index: 0;
+		width: 100%;
+		top: 10em;
+		overflow: hidden;
 	}
 	.read-siblings .navlinks {
-		display: block;
-		position: relative;
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-pack: justify;
+		-webkit-box-align: center;
+		-webkit-justify-content: space-between;
+		-webkit-align-items: center;
+		-ms-flex-pack: justify;
+		-ms-flex-align: center;
+		justify-content: space-between;
+		align-items: center;
 	}
-	.read-siblings .navlinks a {
-		position: absolute;
-		top: 10em;
+	.read-siblings a {
+		/*position: absolute;
+		top: 10em;*/
+		display: block;
 		width: 10em;
+		padding: 1em 2em;
 		font-size: 0.8em;
 		line-height: 1.2;
+		background-repeat: no-repeat;
+		transition: all 0.2s ease-out;
 	}
 	.read-siblings .navlinks-prev {
 		text-align: left;
 		left: 0;
+		padding-right: 4em;
+		background-image: url(/i/chevron-left.svg);
+		background-position: 90% 50%;
+		border-radius: 0 3px 3px 0;
+		-webkit-transform: translate3d(-12em,0,0);
+		   -moz-transform: translate3d(-12em,0,0);
+		        transform: translate3d(-12em,0,0);
 	}
 	.read-siblings .navlinks-next {
 		text-align: right;
 		right: 0;
+		padding-left: 4em;
+		background-image: url(/i/chevron-right.svg);
+		background-position: 10% 50%;
+		border-radius: 3px 0 0 3px;
+		-webkit-transform: translate3d(12em,0,0);
+		   -moz-transform: translate3d(12em,0,0);
+		        transform: translate3d(12em,0,0);
+	}
+	.read-siblings a:hover,
+	.read-siblings a:focus {
+		background-color: #444;
+		-webkit-transform: translate3d(0,0,0);
+		   -moz-transform: translate3d(0,0,0);
+		        transform: translate3d(0,0,0);
+	}
+	.read-siblings .navlinks-next:only-child {
+		position: relative;
+		left: 100%;
+		margin-left: -4em;
+		-webkit-transform: translate3d(0,0,0);
+		   -moz-transform: translate3d(0,0,0);
+		        transform: translate3d(0,0,0);
+	}
+	.read-siblings .navlinks-next:only-child:hover,
+	.read-siblings .navlinks-next:only-child:focus {
+		position: relative;
+		left: 100%;
+		margin-left: -4em;
+		-webkit-transform: translate3d(-12em,0,0);
+		   -moz-transform: translate3d(-12em,0,0);
+		        transform: translate3d(-12em,0,0);
 	}
 }
 /* ie fallback */

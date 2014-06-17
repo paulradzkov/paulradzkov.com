@@ -17,7 +17,14 @@ html {
 @visited:       #9108db;
 @hover:         #2b9aff;       
 @visitedhover:  #bc4df8;
-@active:        #2b9aff;
+@active:        #bc4df8;
+
+//colors on dark bg
+@link2:          #57AFFF;
+@visited2:       #E2ABFF;
+@hover2:         #C1DFFA;       
+@visitedhover2:  #f2d9ff;
+@active2:  		 #f2d9ff;
 
 @import "typo.less";
 
@@ -107,10 +114,11 @@ h2 {
 	text-shadow: 0 0 10px #000;
 }
 
-.page-header a:link    {color: #57AFFF;}
-.page-header a:visited {color: #E2ABFF;}
-.page-header a:hover   {color: #C1DFFA;}
-.page-header a:active  {color: #C1DFFA;}
+.page-header a:link    			{color: @link2;}
+.page-header a:visited 			{color: @visited2;}
+.page-header a:hover   			{color: @hover2;}
+.page-header a:visited:hover   	{color: @visitedhover2;}
+.page-header a:active  			{color: @active2;}
 
 .page-header h1,
 .page-header h2 {
@@ -122,14 +130,17 @@ h2 {
 }
 .article-title {
 	font-size: 3.1em;
-	position: relative;
-
 }
 .article-title:before {
 	content: '~';
 	display: block;
 	text-align: center;
 	margin: 0 0 0.2em;
+}
+.article-title,
+.article-meta {
+	/*position: relative;
+	z-index: 2;*/
 }
 .page-header h2 {
 	margin-bottom: 1em;
@@ -455,8 +466,8 @@ a.author {
 		position: absolute;
 		z-index: 0;
 		width: 100%;
-		top: 10em;
-		overflow: hidden;
+		top: 12.3em;
+		/*overflow-x: hidden; /* removes scroll in IE10 */
 	}
 	.read-siblings .navlinks {
 		display: -webkit-box;
@@ -471,18 +482,29 @@ a.author {
 		-ms-flex-align: center;
 		justify-content: space-between;
 		align-items: center;
+		position: absolute;
+		clip: rect(0, auto, auto, 0);
+		width: 100%;
+		height: 0;
 	}
 	.read-siblings a {
-		/*position: absolute;
-		top: 10em;*/
 		display: block;
+		z-index: 20;
 		width: 10em;
 		padding: 1em 2em;
 		font-size: 0.8em;
+		font-family: @fontmain;
+		font-weight: normal;
 		line-height: 1.2;
 		background-repeat: no-repeat;
 		transition: all 0.2s ease-out;
 	}
+	.read-siblings a:link    			{color: @link2;}
+	.read-siblings a:visited 			{color: @visited2;}
+	.read-siblings a:hover   			{color: @hover2;}
+	.read-siblings a:visited:hover   	{color: @visitedhover2;}
+	.read-siblings a:active  			{color: @active2;}
+
 	.read-siblings .navlinks-prev {
 		text-align: left;
 		left: 0;
@@ -507,7 +529,7 @@ a.author {
 	}
 	.read-siblings a:hover,
 	.read-siblings a:focus {
-		background-color: #444;
+		background-color: #0877db;
 		-webkit-transform: translate3d(0,0,0);
 		   -moz-transform: translate3d(0,0,0);
 		        transform: translate3d(0,0,0);
@@ -522,9 +544,6 @@ a.author {
 	}
 	.read-siblings .navlinks-next:only-child:hover,
 	.read-siblings .navlinks-next:only-child:focus {
-		position: relative;
-		left: 100%;
-		margin-left: -4em;
 		-webkit-transform: translate3d(-12em,0,0);
 		   -moz-transform: translate3d(-12em,0,0);
 		        transform: translate3d(-12em,0,0);

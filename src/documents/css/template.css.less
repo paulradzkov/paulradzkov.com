@@ -95,6 +95,12 @@ h2 {
 	padding: 4em 2em 4em;
 	padding: 4rem 2rem 4rem;
 }
+@media screen and (max-width: 64rem) {
+	.page-content {
+		padding-top: 6rem;
+	}
+}
+
 .content-width > * {
 	max-width: 800px;
 	max-width: 50rem;
@@ -458,15 +464,25 @@ a.author {
 .read-siblings {
 	display: none;
 }
+.page-header {
+	position: relative;
+}
+.page-header .article-meta,
+.page-header .article-title {
+	position: relative;
+}
 
 @media screen and (min-width: 60rem) {
 	.flexbox .read-siblings {
 		display: block;
 		max-width: none;
 		position: absolute;
-		z-index: 0;
+		bottom: 0;
+		top: 0;
+		margin: 0 -2em;
 		width: 100%;
-		top: 12.3em;
+		overflow: hidden;
+
 		/*overflow-x: hidden; /* removes scroll in IE10 */
 	}
 	.read-siblings .navlinks {
@@ -483,9 +499,9 @@ a.author {
 		justify-content: space-between;
 		align-items: center;
 		position: absolute;
-		clip: rect(0, auto, auto, 0);
 		width: 100%;
 		height: 0;
+		top: 12em;
 	}
 	.read-siblings a {
 		display: block;
@@ -626,6 +642,31 @@ a.author {
 .site-navigation .tooltip {
 	text-align: left;
 	white-space: nowrap;
+}
+
+@media screen and (max-width:64rem) {
+	.no-csstransforms3d .fixed.scrolldown .nav-icon {
+		top: -4em;
+		-webkit-transition: top .3s;
+		        transition: top .3s;
+	}
+	.no-csstransforms3d .fixed.scrolltop .nav-icon {
+		top: 0;
+		-webkit-transition: top .3s;
+		        transition: top .3s;
+	}	
+	.csstransforms3d .fixed.scrolldown .nav-icon {
+		-webkit-transform: translate3d(0, -4em, 0);
+		        transform: translate3d(0, -4em, 0);
+		-webkit-transition: -webkit-transform .3s;
+		        transition: transform .3s;
+	}
+	.csstransforms3d .fixed.scrolltop .nav-icon {
+		-webkit-transform: translate3d(0, 0em, 0);
+		        transform: translate3d(0, 0em, 0);
+		-webkit-transition: -webkit-transform .3s;
+		        transition: transform .3s;
+	}
 }
 
 .layout-article .hold {

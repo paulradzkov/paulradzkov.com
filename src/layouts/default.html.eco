@@ -9,6 +9,9 @@
 	<% end %>
 	<% if (@document.kind == 'article') : %>
 	<header class="page-header content-width">
+		<nav class="read-siblings">
+			<%- @getNavLinks() %>
+		</nav>
 		<aside class="article-meta content-width">
 			<% if (@document.created_at) : %>
 			<p class="date"><time datetime="<%= @document.created_at %>"><%=@moment(@document.created_at).lang('ru').format('DD MMMM YYYY') %></time></p>
@@ -27,10 +30,8 @@
 			<span class="comments"><a href="<%= @document.path %>#disqus_thread" data-disqus-identifier="<%= @document.disqusid %>" >Комментарии</a></span>
 			<% end %>
 		</aside>
+
 	</header>
-	<nav class="read-siblings">
-		<%- @getNavLinks() %>
-	</nav>
 	<% end %>
 	<% if (@document.url != '/') : %>
 		<nav class="site-navigation sticky-nav" id="sticker">

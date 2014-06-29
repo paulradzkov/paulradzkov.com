@@ -168,10 +168,13 @@ a.logo {
     border-radius: 50%;
 }
 .pic img {
+	width: 120px;
+	height: 120px;
     position: relative;
     z-index: 1;
     display: inline-block;
-    box-shadow: 1px 2px 4px -2px rgba(0, 0, 0, 0.7), 0 0 0 0 #FFF;
+    box-shadow: 1px 2px 4px -2px rgba(0, 0, 0, 0.7), 0 0 0 -1px #FFF;
+    background: #000;
     border-radius: inherit;
     -webkit-transition: box-shadow 0.2s ease-in-out;
        -moz-transition: box-shadow 0.2s ease-in-out;
@@ -181,6 +184,7 @@ a.logo {
 }
 a:hover .pic img {
 	box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0), 0 0 0 4px #FFF;
+	background: #FFF;
 }
 .site-name {
     position: relative;
@@ -672,7 +676,25 @@ a.author {
 .layout-article .hold {
 	margin-top: -5px;
 }
-
+.horizontal-nav {
+	text-align: center;
+}
+.horizontal-nav > * {
+	display: inline-block;
+	padding: 0 0.5em;
+}
+.horizontal-nav a {
+	padding: 8px;
+}
+.horizontal-nav .txt {
+	display: none;
+	margin-left: 0.3em;
+}
+@media screen and (min-width:48rem) {
+	.horizontal-nav .txt {
+		display: inline-block;
+	}
+}
 .nav-list {
 	margin-top: 0;
 	margin-bottom: 0;
@@ -680,26 +702,6 @@ a.author {
 .nav-list .nav-item {
 	display: inline-block;
 	vertical-align: top;
-}
-.horizontal-nav {
-	text-align: center;
-	background-color: #000;
-	margin-bottom: 2em;
-}
-@media screen and (min-width:54em) {
-	.horizontal-nav {
-		margin-bottom: 4em;
-	}
-	.horizontal-nav .nav-list {
-		display: table;
-		table-layout: fixed;
-		width: 100%;
-	}
-	.horizontal-nav .nav-list .nav-item {
-		display: table-cell;
-		width: 25%;
-		text-align: center;
-	}
 }
 
 .nav-list a {

@@ -1,15 +1,13 @@
 # humanstxt.org/
 # The humans responsible & technology colophon
 
-# TEAM
+# AUTHOR
 
-    <name> -- <role> -- <twitter>
+    Paul Radzkov -- web-developer
 
-# THANKS
-
-    <name>
 
 # TECHNOLOGY COLOPHON
 
     HTML5, CSS3
-    Normalize.css, jQuery, Modernizr
+    Normalize.css, HTML5 Boilerplate, jQuery, Modernizr
+    Node.js, DocPad

@@ -126,7 +126,7 @@ docpadConfig = {
 			content and ((content.search @cutTag) isnt -1)
 
 		getTagUrl: (tag) ->
-			doc = docpad.getFile({tag:tag})
+			doc = @getFile({tag:tag})
 			return doc?.get('url') or ''
 
 	collections:

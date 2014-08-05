@@ -1,5 +1,10 @@
 /* chars post */
 
+.table-switcher {
+  margin: 1em 0;
+  text-align: center;
+}
+
 table.chars {
   border-collapse: separate;
   margin: auto;

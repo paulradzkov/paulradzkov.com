@@ -160,6 +160,13 @@ docpadConfig = {
 						<%- @partial('tag', @) %>
 						"""
 				)
+		grunt:
+			writeAfter: ["default"]
+			writeBefore: false
+			renderBefore: false
+			renderAfter: false
+			generateBefore: false
+			generateAfter: false
 
 	# =================================
 	# DocPad Events

@@ -54,13 +54,10 @@ docpadConfig = {
 				'/css/template.css'
 			]
 
-			# The website's scripts
+			# The website's production scripts.
+			# See also Environments section below for development scripts
 			scripts: [
-				'/js/offscreenmenu.js'
-				'/vendor/jquery.sticky.js'
-				'/js/script.js'
-				'/vendor/bootstrap/js/bootstrap.min.js'
-				'/js/tooltip.js'
+				'/js/output.min.js'
 			]
 
 		# -----------------------------
@@ -107,14 +104,14 @@ docpadConfig = {
 				.replace /href="\//g, "href=\"#{@site.url}/"
 				.replace /src="\//g, "src=\"#{@site.url}/"
 			)
-			
+
 		wspToDash: (s) ->
-			s and (s 
+			s and (s
 				.replace /\ /g, "-"
-			) 
+			)
 
 		# Post part before “cut”
-		cuttedContent: (content) ->            
+		cuttedContent: (content) ->
 			if @hasReadMore content
 				cutIdx = content.search @cutTag
 				content[0..cutIdx-1]
@@ -161,12 +158,39 @@ docpadConfig = {
 						"""
 				)
 		grunt:
-			writeAfter: ["default"]
+			writeAfter: ["production"]
 			writeBefore: false
 			renderBefore: false
 			renderAfter: false
 			generateBefore: false
 			generateAfter: false
+
+	# =================================
+	# DocPad Environments settings
+
+	environments:
+		development:
+			templateData:
+				site:
+					url: 'http://localhost:9778'
+
+					# The website's scripts
+					scripts: [
+						'/vendor/jquery.sticky.js'
+						'/js/script.js'
+						'/vendor/bootstrap/js/bootstrap.min.js'
+						'/js/tooltip.js'
+					]
+
+			plugins:
+				grunt:
+					writeAfter: ["default"]
+					writeBefore: false
+					renderBefore: false
+					renderAfter: false
+					generateBefore: false
+					generateAfter: false
+
 
 	# =================================
 	# DocPad Events

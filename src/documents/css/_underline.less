@@ -1,0 +1,185 @@
+//mixins of types
+
+.line(@c) {
+    background-image:    -moz-linear-gradient(left, @c, @c 100%);
+    background-image:     -ms-linear-gradient(left, @c, @c 100%);
+    background-image:      -o-linear-gradient(left, @c, @c 100%);
+    background-image: -webkit-gradient(linear, 0 0, 100% 0, from(@c), to(@c));
+    background-image: -webkit-linear-gradient(left, @c, @c 100%);
+    background-image:         linear-gradient(left, @c, @c 100%);
+}
+.dashed(@c) {
+    background-image:    -moz-linear-gradient(left, @c, @c 60%, transparent 60%);
+    background-image:     -ms-linear-gradient(left, @c, @c 60%, transparent 60%);
+    background-image:      -o-linear-gradient(left, @c, @c 60%, transparent 60%);
+    background-image: -webkit-gradient(linear, 0 0, 100% 0, from(@c), color-stop(0.6, @c), color-stop(0.6, transparent));
+    background-image: -webkit-linear-gradient(left, @c, @c 60%, transparent 60%);
+    background-image:         linear-gradient(left, @c, @c 60%, transparent 60%);
+}
+.dotted(@c) {
+    background-image:    -moz-linear-gradient(left, @c, @c 50%, transparent 50%);
+    background-image:     -ms-linear-gradient(left, @c, @c 50%, transparent 50%);
+    background-image:      -o-linear-gradient(left, @c, @c 50%, transparent 50%);
+    background-image: -webkit-gradient(linear, 0 0, 100% 0, from(@c), color-stop(0.5, @c), color-stop(0.5, transparent));
+    background-image: -webkit-linear-gradient(left, @c, @c 50%, transparent 50%);
+    background-image:         linear-gradient(left, @c, @c 50%, transparent 50%);
+}
+
+//short syntax with 2 colors
+
+.underlined(line, @link, @hover) {
+
+    &:link,
+    &:visited {
+        color:@link;
+        .line(lighten(@link, 30%));
+    }
+
+    &:hover,
+    &:active {
+        color:@hover;
+        .line(@hover);
+    }
+
+    & {
+        text-decoration: none;
+        background-size: 10px 1px;
+        background-position: 0 95%;
+        background-repeat: repeat-x;
+    }
+
+}
+.underlined(dashed, @link, @hover) {
+
+    &:link,
+    &:visited {
+        color:@link;
+        .dashed(lighten(@link, 30%));
+    }
+
+    &:hover,
+    &:active {
+        color:@hover;
+        .dashed(@hover);
+    }
+
+    & {
+        text-decoration: none;
+        background-size: 10px 1px;
+        background-position: 0 95%;
+        background-repeat: repeat-x;
+    }
+
+}
+
+.underlined(dotted, @link, @hover) {
+
+    &:link,
+    &:visited {
+        color:@link;
+        .dotted(lighten(@link, 30%));
+    }
+
+    &:hover,
+    &:active {
+        color:@hover;
+        .dotted(@hover);
+    }
+
+    & {
+        text-decoration: none;
+        background-size: 2px 1px;
+        background-position: 0 95%;
+        background-repeat: repeat-x;
+    }
+
+}
+
+//long syntax with 4 colors
+
+.underlined(line, @link, @visited, @hover, @active) {
+
+    &:link {
+        color:@link;
+        .line(lighten(@link, 30%));
+    }
+
+    &:visited {
+        color:@visited;
+    }
+
+    &:hover {
+        color:@hover;
+        .line(@hover);
+    }
+
+    &:active {
+        color:@active;
+        .line(@active);
+    }
+
+    & {
+        text-decoration: none;
+        background-size: 10px 1px;
+        background-position: 0 95%;
+        background-repeat: repeat-x;
+    }
+}
+.underlined(dashed, @link, @visited, @hover, @active) {
+
+    &:link {
+        color:@link;
+        .dashed(lighten(@link, 30%));
+    }
+
+    &:visited {
+        color:@visited;
+    }
+
+    &:hover {
+        color:@hover;
+        .dashed(@hover);
+    }
+
+    &:active {
+        color:@active;
+        .dashed(@active);
+    }
+
+    & {
+        text-decoration: none;
+        background-size: 10px 1px;
+        background-position: 0 95%;
+        background-repeat: repeat-x;
+    }
+}
+
+.underlined(dotted, @link, @visited, @hover, @active) {
+
+    &:link {
+        color:@link;
+        .dotted(lighten(@link, 30%));
+    }
+
+    &:visited {
+        color:@visited;
+    }
+
+    &:hover {
+        color:@hover;
+        .dotted(@hover);
+    }
+
+    &:active {
+        color:@active;
+        .dotted(@active);
+    }
+
+    & {
+        text-decoration: none;
+        background-size: 2px 1px;
+        background-position: 0 95%;
+        background-repeat: repeat-x;
+    }
+}
+//end of mixins

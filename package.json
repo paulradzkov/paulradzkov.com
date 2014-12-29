@@ -43,6 +43,7 @@
     "docpad-plugin-moment": "~2.0.2",
     "docpad-plugin-navlinks": "~2.0.4",
     "docpad-plugin-partials": "~2.9.1",
+    "docpad-plugin-prezip": "~2.2.0",
     "docpad-plugin-sitemap": "~2.2.0",
     "docpad-plugin-stylus": "~2.8.0",
     "docpad-plugin-tagcloud": "~2.0.1",

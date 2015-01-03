@@ -193,6 +193,7 @@ img {
     -ms-interpolation-mode: bicubic; /* for IE7 */
     vertical-align: middle;
 }
+
 figure {
     margin: 2em auto;
 }
@@ -204,11 +205,11 @@ figcaption {
 }
 
 /* blockquotes */
-blockquote {
+blockquote:not([class]) {
     margin-left: 2.5em;
     margin-right: 2.5em;
 }
-blockquote > cite {
+blockquote:not([class]) > cite {
     display: block;
     text-align: right;
     padding-right: 1em;

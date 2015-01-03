@@ -178,9 +178,7 @@ docpadConfig = {
 				'.js'
 				'.xml'
 				'.svg'
-				'.eot'
 				'.ttf'
-				'.woff'
 			]
 
 			# Files that match a pattern in this list aren't compressed.

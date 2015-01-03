@@ -1,4 +1,4 @@
---- 
+---
 title: "Списки и картинки с флоатами"
 excerpt: "Для дефолтных браузерных стилей характерно такое поведение: если картинка обтекает список слева, маркеры списка налазят на картинку. От этого можно избавиться незначительно переписав стили."
 description: "Как улучшить обтекание списков картинками."
@@ -7,7 +7,7 @@ kind: article
 publish: true
 disqusid: lists-and-floats
 tags: [css, typography]
-custom_css: true
+styles: ["custom.css"]
 ---
 
 <p>Для дефолтных браузерных стилей характерно такое поведение: если картинка обтекает список слева, маркеры списка налазят на картинку. От этого можно избавиться незначительно переписав стили. </p>
@@ -16,8 +16,8 @@ custom_css: true
 
 <p><a href="http://cssdeck.com/labs/floated-images-and-lists" class="link-to-demo" target="_blank">демка</a></p>
 <figure>
-	<img src="<%= @document.url %>/floated_images_and_lists_problem.png" width="800" height="560" alt="Если картинка обтекает список, маркеры списка налазят на картинку"/>
-	<figcaption>Проблема: если картинка обтекает список, то маркеры списка налазят на картинку</figcaption>
+    <img src="<%= @document.url %>/floated_images_and_lists_problem.png" width="800" height="560" alt="Если картинка обтекает список, маркеры списка налазят на картинку"/>
+    <figcaption>Проблема: если картинка обтекает список, то маркеры списка налазят на картинку</figcaption>
 </figure>
 
 
@@ -45,21 +45,21 @@ custom_css: true
 <p><a href="http://cssdeck.com/labs/floated-images-and-lists" class="link-to-demo" target="_blank">демка</a></p>
 
 <figure>
-	<img src="<%= @document.url %>/floated_images_and_lists_solution.png" width="800" height="580" alt="Маркеры списка не налазят на картинку"/>
-	<figcaption>Маркеры списка больше не налазят на картинку</figcaption>
+    <img src="<%= @document.url %>/floated_images_and_lists_solution.png" width="800" height="580" alt="Маркеры списка не налазят на картинку"/>
+    <figcaption>Маркеры списка больше не налазят на картинку</figcaption>
 </figure>
 
 <p>Живой пример:</p>
 
 <div class="demo">
-	<img src="http://placehold.it/320x240" style="float:left; margin-right:1em;" alt="">
-	<p>Lorem ipsum.</p>
-	<ul class="textlist">
-	    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat porro eligendi quod ratione quaerat dolores quia quasi provident. Veniam earum iste modi quam aliquam qui itaque corporis quia vel inventore.</li>
-	    <li>In dapibus dapibus risus in molestie. Vestibulum vestibulum, orci a aliquam iaculis, diam quam ultrices lacus, sed tincidunt augue elit vitae eros. </li>
-	    <li>Nunc non arcu sed nibh fermentum venenatis ut quis ante. </li>
-	    <li>Nunc id mauris sit amet orci rhoncus lobortis eu mollis justo. Phasellus enim dolor, pretium sed commodo vitae, ultrices ac nibh. Vivamus et turpis odio, ac ultricies nibh. Donec erat augue, tempus et aliquet et, porttitor vitae ante. </li>
-	    <li>Quisque eu ante in nisl rutrum facilisis nec sed orci. Integer vel nibh sit amet libero convallis tempus sit amet a enim. Nullam felis velit, auctor eu tristique eu, lacinia vitae turpis. </li>
-	    <li>Praesent nisl felis, aliquet quis volutpat id, pretium sit amet elit. Mauris consequat vestibulum purus sit amet ornare. In euismod hendrerit quam vitae vehicula.</li>
-	</ul>
+    <img src="http://placehold.it/320x240" style="float:left; margin-right:1em;" alt="">
+    <p>Lorem ipsum.</p>
+    <ul class="textlist">
+        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat porro eligendi quod ratione quaerat dolores quia quasi provident. Veniam earum iste modi quam aliquam qui itaque corporis quia vel inventore.</li>
+        <li>In dapibus dapibus risus in molestie. Vestibulum vestibulum, orci a aliquam iaculis, diam quam ultrices lacus, sed tincidunt augue elit vitae eros. </li>
+        <li>Nunc non arcu sed nibh fermentum venenatis ut quis ante. </li>
+        <li>Nunc id mauris sit amet orci rhoncus lobortis eu mollis justo. Phasellus enim dolor, pretium sed commodo vitae, ultrices ac nibh. Vivamus et turpis odio, ac ultricies nibh. Donec erat augue, tempus et aliquet et, porttitor vitae ante. </li>
+        <li>Quisque eu ante in nisl rutrum facilisis nec sed orci. Integer vel nibh sit amet libero convallis tempus sit amet a enim. Nullam felis velit, auctor eu tristique eu, lacinia vitae turpis. </li>
+        <li>Praesent nisl felis, aliquet quis volutpat id, pretium sit amet elit. Mauris consequat vestibulum purus sit amet ornare. In euismod hendrerit quam vitae vehicula.</li>
+    </ul>
 </div>

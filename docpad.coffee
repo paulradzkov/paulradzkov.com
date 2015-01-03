@@ -54,13 +54,10 @@ docpadConfig = {
 				'/css/template.css'
 			]
 
-			# The website's scripts
+			# The website's production scripts.
+			# See also Environments section below for development scripts
 			scripts: [
-				'/js/offscreenmenu.js'
-				'/vendor/jquery.sticky.js'
-				'/js/script.js'
-				'/vendor/bootstrap/js/bootstrap.min.js'
-				'/js/tooltip.js'
+				'/js/output.min.js'
 			]
 
 		# -----------------------------
@@ -107,14 +104,14 @@ docpadConfig = {
 				.replace /href="\//g, "href=\"#{@site.url}/"
 				.replace /src="\//g, "src=\"#{@site.url}/"
 			)
-			
+
 		wspToDash: (s) ->
-			s and (s 
+			s and (s
 				.replace /\ /g, "-"
-			) 
+			)
 
 		# Post part before “cut”
-		cuttedContent: (content) ->            
+		cuttedContent: (content) ->
 			if @hasReadMore content
 				cutIdx = content.search @cutTag
 				content[0..cutIdx-1]
@@ -160,6 +157,78 @@ docpadConfig = {
 						<%- @partial('tag', @) %>
 						"""
 				)
+		grunt:
+			writeAfter: ["production"]
+			writeBefore: false
+			renderBefore: false
+			renderAfter: false
+			generateBefore: false
+			generateAfter: false
+		prezip:
+			# Files with compression ratios below this value are not kept.
+			ratio: 0.95
+
+			# Files that don't match a pattern in this list aren't compressed.
+			#
+			# The elements can be either a string or a RegExp.  Strings are
+			# considered suffixes that must match.
+			whitelist: [
+				'.html'
+				'.css'
+				'.js'
+				'.xml'
+				'.svg'
+				'.eot'
+				'.ttf'
+				'.woff'
+			]
+
+			# Files that match a pattern in this list aren't compressed.
+			blacklist: []
+
+			# A builtin blacklist of known uncompressible formats.
+			#
+			# This is broken out from blacklist so that blacklist can be easily
+			# modified without overwriting these values.  If you do not want to use
+			# these values set it to [].
+			blacklistBuiltin: []
+
+			# Gzip Compression Settings.
+			#
+			# See: http://zlib.net/manual.html#Advanced
+			#
+			# The defaults are for maximum compression and secondly compression speed.
+			gzip:
+				level: 9
+				windowBits: 15
+				memLevel: 8
+
+	# =================================
+	# DocPad Environments settings
+
+	environments:
+		development:
+			templateData:
+				site:
+					url: 'http://localhost:9778'
+
+					# The website's scripts
+					scripts: [
+						'/vendor/jquery.sticky.js'
+						'/js/script.js'
+						'/vendor/bootstrap/js/bootstrap.min.js'
+						'/js/tooltip.js'
+					]
+
+			plugins:
+				grunt:
+					writeAfter: ["default"]
+					writeBefore: false
+					renderBefore: false
+					renderAfter: false
+					generateBefore: false
+					generateAfter: false
+
 
 	# =================================
 	# DocPad Events

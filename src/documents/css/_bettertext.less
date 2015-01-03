@@ -65,7 +65,7 @@ p:last-child {
     margin-bottom: 0;
 }
 
-/* minimum paragraph width when floating http://css-tricks.com/minimum-paragraph-widths/‎ */
+/* minimum paragraph width when floating http://css-tricks.com/minimum-paragraph-widths/ */
 p:before,
 article ol:before,
 article ul:before {
@@ -131,7 +131,7 @@ article ol:not([class]) {
 }
 article ol:not([class]) li:before {
     direction: rtl;
-    content: "." counter(olist); 
+    content: "." counter(olist);
     counter-increment: olist;
     display: inline-block;
     float: left;
@@ -159,14 +159,14 @@ article ol:not([class]) ol {
     counter-reset: olist2;
 }
 article ol:not([class]) ol > li:before {
-    content: "." counter(olist) "." counter(olist2); 
+    content: "." counter(olist) "." counter(olist2);
     counter-increment: olist2;
 }
 article ol:not([class]) ol ol {
     counter-reset: olist3;
 }
 article ol:not([class]) ol ol > li:before {
-    content: "." counter(olist) "." counter(olist2) "." counter(olist3); 
+    content: "." counter(olist) "." counter(olist2) "." counter(olist3);
     counter-increment: olist3;
 }
 

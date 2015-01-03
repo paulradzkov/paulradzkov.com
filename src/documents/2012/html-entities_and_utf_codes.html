@@ -1,4 +1,4 @@
---- 
+---
 title: 'HTML-сущности и их UTF-коды'
 description: "Таблица HTML-сущностей и соотвествующих им UTF-кодов."
 excerpt: "Свойство <code><span class='key'>content</span>:<span class='string'><span class='delimiter'>'</span><span class='content'>x</span><span class='delimiter'>'</span></span></code> отображает HTML-сущности так, как они записаны в CSS, не заменяет их на специальные символы. Например, напишем в CSS <code><span class='key'>content</span>:<span class='string'><span class='delimiter'>'</span><span class='content'>&amp;rarr;</span><span class='delimiter'>'</span></span></code>, получим в браузере «&amp;rarr;» вместо «&rarr;». Поэтому писать спецальные символы в <code class='key'>content</code> нужно 4-значными UTF-кодами (UTF-16 hex), экранированными обратным слэшем."
@@ -7,7 +7,7 @@ kind: article
 publish: true
 tags: [css]
 disqusid: htmlentities
-custom_css: true
+styles: ["custom.css"]
 ---
 
 <p>Генерируемое содержимое псевдоклассов <code class="hljs-pseudo">:before</code> и <code class="hljs-pseudo">:after</code> очень удобно использовать для создания иконок, буллитов, кавычек и в прочих декоративных целях.</p>
@@ -40,1657 +40,1657 @@ custom_css: true
 }
 </style>
 <nav class="left-aside" data-spy="affix" data-offset-top="810">
-	<ul class="toc">
-		<li><a href="#quotes">Кавычки</a></li>
-		<li><a href="#punctuation">Тире и другие знаки препинания</a></li>
-		<li><a href="#arrows">Стрелки</a></li>
-		<li><a href="#bullits">Буллиты</a></li>
-		<li><a href="#spaces">Пробельные символы</a></li>
-		<li><a href="#math">Математические символы</a></li>
-		<li><a href="#currency">Знаки валют</a></li>
-		<li><a href="#other">Прочие символы</a></li>
-		<li><a href="#greek">Греческий алфавит</a></li>
-		<li><a href="#diacritics">Диакритические знаки</a></li>
-		<li><a href="#latin">Латиница с диакритическими знаками</a></li>
-	</ul>
+    <ul class="toc">
+        <li><a href="#quotes">Кавычки</a></li>
+        <li><a href="#punctuation">Тире и другие знаки препинания</a></li>
+        <li><a href="#arrows">Стрелки</a></li>
+        <li><a href="#bullits">Буллиты</a></li>
+        <li><a href="#spaces">Пробельные символы</a></li>
+        <li><a href="#math">Математические символы</a></li>
+        <li><a href="#currency">Знаки валют</a></li>
+        <li><a href="#other">Прочие символы</a></li>
+        <li><a href="#greek">Греческий алфавит</a></li>
+        <li><a href="#diacritics">Диакритические знаки</a></li>
+        <li><a href="#latin">Латиница с диакритическими знаками</a></li>
+    </ul>
 </nav>
 
 <div class="table-switcher">
-	<form name="chars-options" class="btn-group" data-toggle="buttons">
-		<label class="btn btn-primary active" data-toggle="tooltip" data-placement="bottom" title="Плитка">
-			<input type="radio" name="chars-view" id="tile-view" checked>
-			<img src="/i/th-large.svg" class="btn-icon" width="14" height="14" alt="Плитка">
-		</label>
-		<label class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="Таблица">
-			<input type="radio" name="chars-view" id="table-view">
-			<img src="/i/list.svg" class="btn-icon" width="14" height="14" alt="Таблица">
-		</label>
-	</form>
+    <form name="chars-options" class="btn-group" data-toggle="buttons">
+        <label class="btn btn-primary active" data-toggle="tooltip" data-placement="bottom" title="Плитка">
+            <input type="radio" name="chars-view" id="tile-view" checked>
+            <img src="/i/th-large.svg" class="btn-icon" width="14" height="14" alt="Плитка">
+        </label>
+        <label class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="Таблица">
+            <input type="radio" name="chars-view" id="table-view">
+            <img src="/i/list.svg" class="btn-icon" width="14" height="14" alt="Таблица">
+        </label>
+    </form>
 </div>
 
-	<table class="chars layout-flow">
-		<thead>
-			<tr>
-				<th>Символ</th>
-				<th>HTML-entity</th>
-				<th>UTF-код</th>
-				<th>Название</th>
-			</tr>
-		</thead>
-		<tbody>
-		
-			<tr class="ch-section" id="quotes">
-				<th colspan="4">
-					Кавычки
-				</th>
-			</tr>
-		
-			<tr>
-				<td class="char-demo">&lsaquo;</td>
-				<td class="char-entity"><code>&amp;lsaquo;</code></td>
-				<td class="char-code"><code>\2039</code></td>
-				<td class="char-descr">single left-pointing angle quotation mark</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&rsaquo;</td>
-				<td class="char-entity"><code>&amp;rsaquo;</code></td>
-				<td class="char-code"><code>\203A</code></td>
-				<td class="char-descr">single right-pointing angle quotation mark</td>
-			</tr>	
-			<tr>
-				<td class="char-demo">&laquo;</td>
-				<td class="char-entity"><code>&amp;laquo;</code></td>
-				<td class="char-code"><code>\00AB</code></td>
-				<td class="char-descr">left-pointing double angle quotation mark = left pointing guillemet</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&raquo;</td>
-				<td class="char-entity"><code>&amp;raquo;</code></td>
-				<td class="char-code"><code>\00BB</code></td>
-				<td class="char-descr">right-pointing double angle quotation mark = right pointing guillemet</td>
-			</tr>	
-			<tr>
-				<td class="char-demo">&sbquo;</td>
-				<td class="char-entity"><code>&amp;sbquo;</code></td>
-				<td class="char-code"><code>\201A</code></td>
-				<td class="char-descr">single bottom quotation mark</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&lsquo;</td>
-				<td class="char-entity"><code>&amp;lsquo;</code></td>
-				<td class="char-code"><code>\2018</code></td>
-				<td class="char-descr">left single quotation mark</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&rsquo;</td>
-				<td class="char-entity"><code>&amp;rsquo;</code></td>
-				<td class="char-code"><code>\2019</code></td>
-				<td class="char-descr">right single quotation mark</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&bdquo;</td>
-				<td class="char-entity"><code>&amp;bdquo;</code></td>
-				<td class="char-code"><code>\201E</code></td>
-				<td class="char-descr">bottom double quotation mark</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&ldquo;</td>
-				<td class="char-entity"><code>&amp;ldquo;</code></td>
-				<td class="char-code"><code>\201C</code></td>
-				<td class="char-descr">left double quotation mark</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&rdquo;</td>
-				<td class="char-entity"><code>&amp;rdquo;</code></td>
-				<td class="char-code"><code>\201D</code></td>
-				<td class="char-descr">right double quotation mark</td>
-			</tr>	
-			<tr>
-				<td class="char-demo">&quot;</td>
-				<td class="char-entity"><code>&amp;quot;</code></td>
-				<td class="char-code"><code>\0022</code></td>
-				<td class="char-descr">APL quote (прямая программистская кавычка с клавиатуры)</td>
-			</tr>	
-			<tr>
-				<td class="char-demo">&prime;</td>
-				<td class="char-entity"><code>&amp;prime;</code></td>
-				<td class="char-code"><code>\2032</code></td>
-				<td class="char-descr">prime = minutes = feet</td>
-			</tr>	
-			<tr>
-				<td class="char-demo">&Prime;</td>
-				<td class="char-entity"><code>&amp;Prime;</code></td>
-				<td class="char-code"><code>\2033</code></td>
-				<td class="char-descr">double prime = seconds = inches</td>
-			</tr>	
-		
-			<tr class="ch-section" id="punctuation">
-				<th colspan="4">
-					Тире и другие знаки препинания
-				</th>
-			</tr>	
-			
-			<tr>
-				<td class="char-demo">&mdash;</td>
-				<td class="char-entity"><code>&amp;mdash;</code></td>
-				<td class="char-code"><code>\2014</code></td>
-				<td class="char-descr">em dash</td>
-			</tr>			
-			<tr>
-				<td class="char-demo">&ndash;</td>
-				<td class="char-entity"><code>&amp;ndash;</code></td>
-				<td class="char-code"><code>\2013</code></td>
-				<td class="char-descr">en dash</td>
-			</tr>	
-			<tr>
-				<td class="char-demo">&hellip;</td>
-				<td class="char-entity"><code>&amp;hellip;</code></td>
-				<td class="char-code"><code>\2026</code></td>
-				<td class="char-descr">horizontal ellipsis = three dot leader</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&iexcl;</td>
-				<td class="char-entity"><code>&amp;iexcl;</code></td>
-				<td class="char-code"><code>\00A1</code></td>
-				<td class="char-descr">inverted exclamation mark</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&iquest;</td>
-				<td class="char-entity"><code>&amp;iquest;</code></td>
-				<td class="char-code"><code>\00BF</code></td>
-				<td class="char-descr">inverted question mark = turned question mark</td>
-			</tr>		
-			
-			<tr class="ch-section" id="arrows">
-				<th colspan="4">
-					Стрелки
-				</th>
-			</tr>	
-		
-			<tr>
-				<td class="char-demo">&larr;</td>
-				<td class="char-entity"><code>&amp;larr;</code></td>
-				<td class="char-code"><code>\2190</code></td>
-				<td class="char-descr">leftwards arrow</td>
-			</tr>	
-			<tr>
-				<td class="char-demo">&rarr;</td>
-				<td class="char-entity"><code>&amp;rarr;</code></td>
-				<td class="char-code"><code>\2192</code></td>
-				<td class="char-descr">rightwards arrow</td>
-			</tr>	
-			<tr>
-				<td class="char-demo">&uarr;</td>
-				<td class="char-entity"><code>&amp;uarr;</code></td>
-				<td class="char-code"><code>\2191</code></td>
-				<td class="char-descr">upwards arrow</td>
-			</tr>		
-			<tr>
-				<td class="char-demo">&darr;</td>
-				<td class="char-entity"><code>&amp;darr;</code></td>
-				<td class="char-code"><code>\2193</code></td>
-				<td class="char-descr">downwards arrow</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&lArr;</td>
-				<td class="char-entity"><code>&amp;lArr;</code></td>
-				<td class="char-code"><code>\21D0</code></td>
-				<td class="char-descr">leftwards double arrow</td>
-			</tr>	
-			<tr>
-				<td class="char-demo">&rArr;</td>
-				<td class="char-entity"><code>&amp;rArr;</code></td>
-				<td class="char-code"><code>\21D2</code></td>
-				<td class="char-descr">rightwards double arrow</td>
-			</tr>	
-			<tr>
-				<td class="char-demo">&uArr;</td>
-				<td class="char-entity"><code>&amp;uArr;</code></td>
-				<td class="char-code"><code>\21D1</code></td>
-				<td class="char-descr">upwards double arrow</td>
-			</tr>		
-			<tr>
-				<td class="char-demo">&dArr;</td>
-				<td class="char-entity"><code>&amp;dArr;</code></td>
-				<td class="char-code"><code>\21D3</code></td>
-				<td class="char-descr">downwards double arrow</td>
-			</tr>	
-			<tr>
-				<td class="char-demo">&harr;</td>
-				<td class="char-entity"><code>&amp;harr;</code></td>
-				<td class="char-code"><code>\2194</code></td>
-				<td class="char-descr">left right arrow</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&hArr;</td>
-				<td class="char-entity"><code>&amp;hArr;</code></td>
-				<td class="char-code"><code>\21D4</code></td>
-				<td class="char-descr">left right double arrow</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&crarr;</td>
-				<td class="char-entity"><code>&amp;crarr;</code></td>
-				<td class="char-code"><code>\21B5</code></td>
-				<td class="char-descr">downwards arrow with corner leftwards = carriage return</td>
-			</tr>
-		
-			<tr class="ch-section" id="bullits">
-				<th colspan="4">
-					Буллиты
-				</th>
-			</tr>
+    <table class="chars layout-flow">
+        <thead>
+            <tr>
+                <th>Символ</th>
+                <th>HTML-entity</th>
+                <th>UTF-код</th>
+                <th>Название</th>
+            </tr>
+        </thead>
+        <tbody>
 
-			<tr>
-				<td class="char-demo">&bull;</td>
-				<td class="char-entity"><code>&amp;bull;</code></td>
-				<td class="char-code"><code>\2022</code></td>
-				<td class="char-descr">bullet</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&middot;</td>
-				<td class="char-entity"><code>&amp;middot;</code></td>
-				<td class="char-code"><code>\00B7</code></td>
-				<td class="char-descr">middle dot</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&sdot;</td>
-				<td class="char-entity"><code>&amp;sdot;</code></td>
-				<td class="char-code"><code>\22C5</code></td>
-				<td class="char-descr">dot operator</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&lowast;</td>
-				<td class="char-entity"><code>&amp;lowast;</code></td>
-				<td class="char-code"><code>\2217</code></td>
-				<td class="char-descr">low asterisk</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&clubs;</td>
-				<td class="char-entity"><code>&amp;clubs;</code></td>
-				<td class="char-code"><code>\2663</code></td>
-				<td class="char-descr">black club suit</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&diams;</td>
-				<td class="char-entity"><code>&amp;diams;</code></td>
-				<td class="char-code"><code>\2666</code></td>
-				<td class="char-descr">black diamond suit</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&hearts;</td>
-				<td class="char-entity"><code>&amp;hearts;</code></td>
-				<td class="char-code"><code>\2665</code></td>
-				<td class="char-descr">black heart suit</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&spades;</td>
-				<td class="char-entity"><code>&amp;spades;</code></td>
-				<td class="char-code"><code>\2660</code></td>
-				<td class="char-descr">black spade suit</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&loz;</td>
-				<td class="char-entity"><code>&amp;loz;</code></td>
-				<td class="char-code"><code>\25CA</code></td>
-				<td class="char-descr">lozenge</td>
-			</tr>
+            <tr class="ch-section" id="quotes">
+                <th colspan="4">
+                    Кавычки
+                </th>
+            </tr>
 
-			<tr class="ch-section" id="spaces">
-				<th colspan="4">
-					Пробельные символы
-				</th>
-			</tr>
+            <tr>
+                <td class="char-demo">&lsaquo;</td>
+                <td class="char-entity"><code>&amp;lsaquo;</code></td>
+                <td class="char-code"><code>\2039</code></td>
+                <td class="char-descr">single left-pointing angle quotation mark</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&rsaquo;</td>
+                <td class="char-entity"><code>&amp;rsaquo;</code></td>
+                <td class="char-code"><code>\203A</code></td>
+                <td class="char-descr">single right-pointing angle quotation mark</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&laquo;</td>
+                <td class="char-entity"><code>&amp;laquo;</code></td>
+                <td class="char-code"><code>\00AB</code></td>
+                <td class="char-descr">left-pointing double angle quotation mark = left pointing guillemet</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&raquo;</td>
+                <td class="char-entity"><code>&amp;raquo;</code></td>
+                <td class="char-code"><code>\00BB</code></td>
+                <td class="char-descr">right-pointing double angle quotation mark = right pointing guillemet</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&sbquo;</td>
+                <td class="char-entity"><code>&amp;sbquo;</code></td>
+                <td class="char-code"><code>\201A</code></td>
+                <td class="char-descr">single bottom quotation mark</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&lsquo;</td>
+                <td class="char-entity"><code>&amp;lsquo;</code></td>
+                <td class="char-code"><code>\2018</code></td>
+                <td class="char-descr">left single quotation mark</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&rsquo;</td>
+                <td class="char-entity"><code>&amp;rsquo;</code></td>
+                <td class="char-code"><code>\2019</code></td>
+                <td class="char-descr">right single quotation mark</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&bdquo;</td>
+                <td class="char-entity"><code>&amp;bdquo;</code></td>
+                <td class="char-code"><code>\201E</code></td>
+                <td class="char-descr">bottom double quotation mark</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&ldquo;</td>
+                <td class="char-entity"><code>&amp;ldquo;</code></td>
+                <td class="char-code"><code>\201C</code></td>
+                <td class="char-descr">left double quotation mark</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&rdquo;</td>
+                <td class="char-entity"><code>&amp;rdquo;</code></td>
+                <td class="char-code"><code>\201D</code></td>
+                <td class="char-descr">right double quotation mark</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&quot;</td>
+                <td class="char-entity"><code>&amp;quot;</code></td>
+                <td class="char-code"><code>\0022</code></td>
+                <td class="char-descr">APL quote (прямая программистская кавычка с клавиатуры)</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&prime;</td>
+                <td class="char-entity"><code>&amp;prime;</code></td>
+                <td class="char-code"><code>\2032</code></td>
+                <td class="char-descr">prime = minutes = feet</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&Prime;</td>
+                <td class="char-entity"><code>&amp;Prime;</code></td>
+                <td class="char-code"><code>\2033</code></td>
+                <td class="char-descr">double prime = seconds = inches</td>
+            </tr>
 
-			<tr>
-				<td class="char-demo char-spaces">m m</td>
-				<td class="char-entity"><code> </code></td>
-				<td class="char-code"><code>\0020</code></td>
-				<td class="char-descr">обыкновенный пробел</td>
-			</tr>
-			<tr>
-				<td class="char-demo char-spaces">m&nbsp;m</td>
-				<td class="char-entity"><code>&amp;nbsp;</code></td>
-				<td class="char-code"><code>\00A0</code></td>
-				<td class="char-descr">no-break space = non-breaking space</td>
-			</tr>
-			<tr>
-				<td class="char-demo char-spaces">n&ensp;n</td>
-				<td class="char-entity"><code>&amp;ensp;</code></td>
-				<td class="char-code"><code>\2002</code></td>
-				<td class="char-descr">en space</td>
-			</tr>
-			<tr>
-				<td class="char-demo char-spaces">m&emsp;m</td>
-				<td class="char-entity"><code>&amp;emsp;</code></td>
-				<td class="char-code"><code>\2003</code></td>
-				<td class="char-descr">em space</td>
-			</tr>
-			<tr>
-				<td class="char-demo char-spaces">_&thinsp;_</td>
-				<td class="char-entity"><code>&amp;thinsp;</code></td>
-				<td class="char-code"><code>\2009</code></td>
-				<td class="char-descr">thin space</td>
-			</tr>
-			<tr>
-				<td class="char-demo char-spaces">_&zwj;_</td>
-				<td class="char-entity"><code>&amp;zwj;</code></td>
-				<td class="char-code"><code>\200D</code></td>
-				<td class="char-descr">zero width joiner</td>
-			</tr>
-			<tr>
-				<td class="char-demo char-spaces">_&zwnj;_</td>
-				<td class="char-entity"><code>&amp;zwnj;</code></td>
-				<td class="char-code"><code>\200C</code></td>
-				<td class="char-descr">zero width non-joiner</td>
-			</tr>
-			
-			<tr class="ch-section" id="math">
-				<th colspan="4">
-					Математические символы
-				</th>
-			</tr>
-			
-			<tr>
-				<td class="char-demo">&times;</td>
-				<td class="char-entity"><code>&amp;times;</code></td>
-				<td class="char-code"><code>\00D7</code></td>
-				<td class="char-descr">multiplication sign</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&divide;</td>
-				<td class="char-entity"><code>&amp;divide;</code></td>
-				<td class="char-code"><code>\00F7</code></td>
-				<td class="char-descr">division sign</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&frasl;</td>
-				<td class="char-entity"><code>&amp;frasl;</code></td>
-				<td class="char-code"><code>\2044</code></td>
-				<td class="char-descr">fraction slash</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&minus;</td>
-				<td class="char-entity"><code>&amp;minus;</code></td>
-				<td class="char-code"><code>\2212</code></td>
-				<td class="char-descr">minus sign</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&plusmn;</td>
-				<td class="char-entity"><code>&amp;plusmn;</code></td>
-				<td class="char-code"><code>\00B1</code></td>
-				<td class="char-descr">plus-minus sign = plus-or-minus sign</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&lt;</td>
-				<td class="char-entity"><code>&amp;lt;</code></td>
-				<td class="char-code"><code>\003C</code></td>
-				<td class="char-descr">less-than sign</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&gt;</td>
-				<td class="char-entity"><code>&amp;gt;</code></td>
-				<td class="char-code"><code>\003E</code></td>
-				<td class="char-descr">greater-than sign</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&le;</td>
-				<td class="char-entity"><code>&amp;le;</code></td>
-				<td class="char-code"><code>\2264</code></td>
-				<td class="char-descr">less-than or equal to</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&ge;</td>
-				<td class="char-entity"><code>&amp;ge;</code></td>
-				<td class="char-code"><code>\2265</code></td>
-				<td class="char-descr">greater-than or equal to</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&asymp;</td>
-				<td class="char-entity"><code>&amp;asymp;</code></td>
-				<td class="char-code"><code>\2248</code></td>
-				<td class="char-descr">almost equal to = asymptotic to</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&cong;</td>
-				<td class="char-entity"><code>&amp;cong;</code></td>
-				<td class="char-code"><code>\2245</code></td>
-				<td class="char-descr">approximately equal to</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&equiv;</td>
-				<td class="char-entity"><code>&amp;equiv;</code></td>
-				<td class="char-code"><code>\2261</code></td>
-				<td class="char-descr">identical to</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&ne;</td>
-				<td class="char-entity"><code>&amp;ne;</code></td>
-				<td class="char-code"><code>\2260</code></td>
-				<td class="char-descr">not equal to</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&deg;</td>
-				<td class="char-entity"><code>&amp;deg;</code></td>
-				<td class="char-code"><code>\00B0</code></td>
-				<td class="char-descr">degree sign</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&frac12;</td>
-				<td class="char-entity"><code>&amp;frac12;</code></td>
-				<td class="char-code"><code>\00BD</code></td>
-				<td class="char-descr">vulgar fraction one half = fraction one half</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&frac14;</td>
-				<td class="char-entity"><code>&amp;frac14;</code></td>
-				<td class="char-code"><code>\00BC</code></td>
-				<td class="char-descr">vulgar fraction one quarter = fraction one quarter</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&frac34;</td>
-				<td class="char-entity"><code>&amp;frac34;</code></td>
-				<td class="char-code"><code>\00BE</code></td>
-				<td class="char-descr">vulgar fraction three quarters = fraction three quarters</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&sup1;</td>
-				<td class="char-entity"><code>&amp;sup1;</code></td>
-				<td class="char-code"><code>\00B9</code></td>
-				<td class="char-descr">superscript one = superscript digit one</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&sup2;</td>
-				<td class="char-entity"><code>&amp;sup2;</code></td>
-				<td class="char-code"><code>\00B2</code></td>
-				<td class="char-descr">superscript two = superscript digit two = squared</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&sup3;</td>
-				<td class="char-entity"><code>&amp;sup3;</code></td>
-				<td class="char-code"><code>\00B3</code></td>
-				<td class="char-descr">superscript three = superscript digit three = cubed</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&amp;</td>
-				<td class="char-entity"><code>&amp;amp;</code></td>
-				<td class="char-code"><code>\0026</code></td>
-				<td class="char-descr">ampersand</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&sim;</td>
-				<td class="char-entity"><code>&amp;sim;</code></td>
-				<td class="char-code"><code>\223C</code></td>
-				<td class="char-descr">tilde operator = varies with = similar to</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&and;</td>
-				<td class="char-entity"><code>&amp;and;</code></td>
-				<td class="char-code"><code>\2227</code></td>
-				<td class="char-descr">logical and = wedge</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&or;</td>
-				<td class="char-entity"><code>&amp;or;</code></td>
-				<td class="char-code"><code>\2228</code></td>
-				<td class="char-descr">logical or = vee</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&not;</td>
-				<td class="char-entity"><code>&amp;not;</code></td>
-				<td class="char-code"><code>\00AC</code></td>
-				<td class="char-descr">not sign</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&alefsym;</td>
-				<td class="char-entity"><code>&amp;alefsym;</code></td>
-				<td class="char-code"><code>\2135</code></td>
-				<td class="char-descr">alef symbol = first transfinite cardinal</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&ang;</td>
-				<td class="char-entity"><code>&amp;ang;</code></td>
-				<td class="char-code"><code>\2220</code></td>
-				<td class="char-descr">angle</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&cap;</td>
-				<td class="char-entity"><code>&amp;cap;</code></td>
-				<td class="char-code"><code>\2229</code></td>
-				<td class="char-descr">intersection = cap</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&cup;</td>
-				<td class="char-entity"><code>&amp;cup;</code></td>
-				<td class="char-code"><code>\222A</code></td>
-				<td class="char-descr">union = cup</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&sub;</td>
-				<td class="char-entity"><code>&amp;sub;</code></td>
-				<td class="char-code"><code>\2282</code></td>
-				<td class="char-descr">subset of</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&sube;</td>
-				<td class="char-entity"><code>&amp;sube;</code></td>
-				<td class="char-code"><code>\2286</code></td>
-				<td class="char-descr">subset of or equal to</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&sup;</td>
-				<td class="char-entity"><code>&amp;sup;</code></td>
-				<td class="char-code"><code>\2283</code></td>
-				<td class="char-descr">superset of</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&supe;</td>
-				<td class="char-entity"><code>&amp;supe;</code></td>
-				<td class="char-code"><code>\2287</code></td>
-				<td class="char-descr">superset of or equal to</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&ni;</td>
-				<td class="char-entity"><code>&amp;ni;</code></td>
-				<td class="char-code"><code>\220B</code></td>
-				<td class="char-descr">contains as member</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&isin;</td>
-				<td class="char-entity"><code>&amp;isin;</code></td>
-				<td class="char-code"><code>\2208</code></td>
-				<td class="char-descr">element of</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&notin;</td>
-				<td class="char-entity"><code>&amp;notin;</code></td>
-				<td class="char-code"><code>\2209</code></td>
-				<td class="char-descr">not an element of</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&nsub;</td>
-				<td class="char-entity"><code>&amp;nsub;</code></td>
-				<td class="char-code"><code>\2284</code></td>
-				<td class="char-descr">not a subset of</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&exist;</td>
-				<td class="char-entity"><code>&amp;exist;</code></td>
-				<td class="char-code"><code>\2203</code></td>
-				<td class="char-descr">there exists</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&fnof;</td>
-				<td class="char-entity"><code>&amp;fnof;</code></td>
-				<td class="char-code"><code>\0192</code></td>
-				<td class="char-descr">latin small f with hook = function = florin</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&forall;</td>
-				<td class="char-entity"><code>&amp;forall;</code></td>
-				<td class="char-code"><code>\2200</code></td>
-				<td class="char-descr">for all</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&infin;</td>
-				<td class="char-entity"><code>&amp;infin;</code></td>
-				<td class="char-code"><code>\221E</code></td>
-				<td class="char-descr">infinity</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&int;</td>
-				<td class="char-entity"><code>&amp;int;</code></td>
-				<td class="char-code"><code>\222B</code></td>
-				<td class="char-descr">integral</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&lowast;</td>
-				<td class="char-entity"><code>&amp;lowast;</code></td>
-				<td class="char-code"><code>\2217</code></td>
-				<td class="char-descr">asterisk operator</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&micro;</td>
-				<td class="char-entity"><code>&amp;micro;</code></td>
-				<td class="char-code"><code>\00B5</code></td>
-				<td class="char-descr">micro sign</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&nabla;</td>
-				<td class="char-entity"><code>&amp;nabla;</code></td>
-				<td class="char-code"><code>\2207</code></td>
-				<td class="char-descr">nabla = backward difference</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&part;</td>
-				<td class="char-entity"><code>&amp;part;</code></td>
-				<td class="char-code"><code>\2202</code></td>
-				<td class="char-descr">partial differential</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&perp;</td>
-				<td class="char-entity"><code>&amp;perp;</code></td>
-				<td class="char-code"><code>\22A5</code></td>
-				<td class="char-descr">up tack = orthogonal to = perpendicular</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&prod;</td>
-				<td class="char-entity"><code>&amp;prod;</code></td>
-				<td class="char-code"><code>\220F</code></td>
-				<td class="char-descr">n-ary product = product sign</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&prop;</td>
-				<td class="char-entity"><code>&amp;prop;</code></td>
-				<td class="char-code"><code>\221D</code></td>
-				<td class="char-descr">proportional to</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&radic;</td>
-				<td class="char-entity"><code>&amp;radic;</code></td>
-				<td class="char-code"><code>\221A</code></td>
-				<td class="char-descr">square root = radical sign</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&sdot;</td>
-				<td class="char-entity"><code>&amp;sdot;</code></td>
-				<td class="char-code"><code>\22C5</code></td>
-				<td class="char-descr">dot operator</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&sum;</td>
-				<td class="char-entity"><code>&amp;sum;</code></td>
-				<td class="char-code"><code>\2211</code></td>
-				<td class="char-descr">n-ary sumation</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&empty;</td>
-				<td class="char-entity"><code>&amp;empty;</code></td>
-				<td class="char-code"><code>\2205</code></td>
-				<td class="char-descr">empty set = null set = diameter</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&oplus;</td>
-				<td class="char-entity"><code>&amp;oplus;</code></td>
-				<td class="char-code"><code>\2295</code></td>
-				<td class="char-descr">circled plus = direct sum</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&otimes;</td>
-				<td class="char-entity"><code>&amp;otimes;</code></td>
-				<td class="char-code"><code>\2297</code></td>
-				<td class="char-descr">circled times = vector product</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&there4;</td>
-				<td class="char-entity"><code>&amp;there4;</code></td>
-				<td class="char-code"><code>\2234</code></td>
-				<td class="char-descr">therefore</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&lang;</td>
-				<td class="char-entity"><code>&amp;lang;</code></td>
-				<td class="char-code"><code>\2329</code></td>
-				<td class="char-descr">left-pointing angle bracket = bra</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&rang;</td>
-				<td class="char-entity"><code>&amp;rang;</code></td>
-				<td class="char-code"><code>\232A</code></td>
-				<td class="char-descr">right-pointing angle bracket = ket</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&lceil;</td>
-				<td class="char-entity"><code>&amp;lceil;</code></td>
-				<td class="char-code"><code>\2308</code></td>
-				<td class="char-descr">left ceiling = apl upstile</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&lfloor;</td>
-				<td class="char-entity"><code>&amp;lfloor;</code></td>
-				<td class="char-code"><code>\230A</code></td>
-				<td class="char-descr">left floor = apl downstile</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&rceil;</td>
-				<td class="char-entity"><code>&amp;rceil;</code></td>
-				<td class="char-code"><code>\2309</code></td>
-				<td class="char-descr">right ceiling</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&rfloor;</td>
-				<td class="char-entity"><code>&amp;rfloor;</code></td>
-				<td class="char-code"><code>\230B</code></td>
-				<td class="char-descr">right floor</td>
-			</tr>
-			
-			<tr class="ch-section" id="currency">
-				<th colspan="4">
-					Знаки валют
-				</th>
-			</tr>
-			
-			<tr>
-				<td class="char-demo">&curren;</td>
-				<td class="char-entity"><code>&amp;curren;</code></td>
-				<td class="char-code"><code>\00A4</code></td>
-				<td class="char-descr">currency sign</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&cent;</td>
-				<td class="char-entity"><code>&amp;cent;</code></td>
-				<td class="char-code"><code>\00A2</code></td>
-				<td class="char-descr">cent sign</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&euro;</td>
-				<td class="char-entity"><code>&amp;euro;</code></td>
-				<td class="char-code"><code>\20AC</code></td>
-				<td class="char-descr">euro sign</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&pound;</td>
-				<td class="char-entity"><code>&amp;pound;</code></td>
-				<td class="char-code"><code>\00A3</code></td>
-				<td class="char-descr">pound sign</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&yen;</td>
-				<td class="char-entity"><code>&amp;yen;</code></td>
-				<td class="char-code"><code>\00A5</code></td>
-				<td class="char-descr">yen sign = yuan sign</td>
-			</tr>
-					
-			<tr class="ch-section" id="other">
-				<th colspan="4">
-					Прочие символы
-				</th>
-			</tr>
-			
-			<tr>
-				<td class="char-demo">&copy;</td>
-				<td class="char-entity"><code>&amp;copy;</code></td>
-				<td class="char-code"><code>\00A9</code></td>
-				<td class="char-descr">copyright sign</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&trade;</td>
-				<td class="char-entity"><code>&amp;trade;</code></td>
-				<td class="char-code"><code>\2122</code></td>
-				<td class="char-descr">trade mark sign</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&reg;</td>
-				<td class="char-entity"><code>&amp;reg;</code></td>
-				<td class="char-code"><code>\00AE</code></td>
-				<td class="char-descr">registered sign = registered trade mark sign</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&sect;</td>
-				<td class="char-entity"><code>&amp;sect;</code></td>
-				<td class="char-code"><code>\00A7</code></td>
-				<td class="char-descr">section sign</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&brvbar;</td>
-				<td class="char-entity"><code>&amp;brvbar;</code></td>
-				<td class="char-code"><code>\00A6</code></td>
-				<td class="char-descr">broken bar = broken vertical bar</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&dagger;</td>
-				<td class="char-entity"><code>&amp;dagger;</code></td>
-				<td class="char-code"><code>\2020</code></td>
-				<td class="char-descr">dagger</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&Dagger;</td>
-				<td class="char-entity"><code>&amp;Dagger;</code></td>
-				<td class="char-code"><code>\2021</code></td>
-				<td class="char-descr">double dagger</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&image;</td>
-				<td class="char-entity"><code>&amp;image;</code></td>
-				<td class="char-code"><code>\2111</code></td>
-				<td class="char-descr">blackletter capital I = imaginary part</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&real;</td>
-				<td class="char-entity"><code>&amp;real;</code></td>
-				<td class="char-code"><code>\211C</code></td>
-				<td class="char-descr">blackletter capital R = real part symbol</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&weierp;</td>
-				<td class="char-entity"><code>&amp;weierp;</code></td>
-				<td class="char-code"><code>\2118</code></td>
-				<td class="char-descr">script capital P = power set = Weierstrass p</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&oline;</td>
-				<td class="char-entity"><code>&amp;oline;</code></td>
-				<td class="char-code"><code>\203E</code></td>
-				<td class="char-descr">overline = spacing overscore</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&ordf;</td>
-				<td class="char-entity"><code>&amp;ordf;</code></td>
-				<td class="char-code"><code>\00AA</code></td>
-				<td class="char-descr">feminine ordinal indicator</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&ordm;</td>
-				<td class="char-entity"><code>&amp;ordm;</code></td>
-				<td class="char-code"><code>\00BA</code></td>
-				<td class="char-descr">masculine ordinal indicator</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&para;</td>
-				<td class="char-entity"><code>&amp;para;</code></td>
-				<td class="char-code"><code>\00B6</code></td>
-				<td class="char-descr">pilcrow sign = paragraph sign</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&permil;</td>
-				<td class="char-entity"><code>&amp;permil;</code></td>
-				<td class="char-code"><code>\2030</code></td>
-				<td class="char-descr">per mille sign</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&shy;</td>
-				<td class="char-entity"><code>&amp;shy;</code></td>
-				<td class="char-code"><code>\00AD</code></td>
-				<td class="char-descr">soft hyphen = discretionary hyphen</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&lrm;‎</td>
-				<td class="char-entity"><code>&amp;lrm;‎</code></td>
-				<td class="char-code"><code>\200E</code></td>
-				<td class="char-descr">left-to-right mark (for formatting only)</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&rlm;‏</td>
-				<td class="char-entity"><code>&amp;rlm;‏</code></td>
-				<td class="char-code"><code>\200F</code></td>
-				<td class="char-descr">right-to-left mark (for formatting only)</td>
-			</tr>
-					
-			<tr class="ch-section" id="greek">
-				<th colspan="4">
-					Греческий алфавит
-				</th>
-			</tr>
+            <tr class="ch-section" id="punctuation">
+                <th colspan="4">
+                    Тире и другие знаки препинания
+                </th>
+            </tr>
 
-			<tr>
-				<td class="char-demo">&Alpha;</td>
-				<td class="char-entity"><code>&amp;Alpha;</code></td>
-				<td class="char-code"><code>\0391</code></td>
-				<td class="char-descr">greek capital letter alpha</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&alpha;</td>
-				<td class="char-entity"><code>&amp;alpha;</code></td>
-				<td class="char-code"><code>\03B1</code></td>
-				<td class="char-descr">greek small letter alpha</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&Beta;</td>
-				<td class="char-entity"><code>&amp;Beta;</code></td>
-				<td class="char-code"><code>\0392</code></td>
-				<td class="char-descr">greek capital letter beta</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&beta;</td>
-				<td class="char-entity"><code>&amp;beta;</code></td>
-				<td class="char-code"><code>\03B2</code></td>
-				<td class="char-descr">greek small letter beta</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&Gamma;</td>
-				<td class="char-entity"><code>&amp;Gamma;</code></td>
-				<td class="char-code"><code>\0393</code></td>
-				<td class="char-descr">greek capital letter gamma</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&gamma;</td>
-				<td class="char-entity"><code>&amp;gamma;</code></td>
-				<td class="char-code"><code>\03B3</code></td>
-				<td class="char-descr">greek small letter gamma</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&Delta;</td>
-				<td class="char-entity"><code>&amp;Delta;</code></td>
-				<td class="char-code"><code>\0394</code></td>
-				<td class="char-descr">greek capital letter delta</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&delta;</td>
-				<td class="char-entity"><code>&amp;delta;</code></td>
-				<td class="char-code"><code>\03B4</code></td>
-				<td class="char-descr">greek small letter delta</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&Epsilon;</td>
-				<td class="char-entity"><code>&amp;Epsilon;</code></td>
-				<td class="char-code"><code>\0395</code></td>
-				<td class="char-descr">greek capital letter epsilon</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&epsilon;</td>
-				<td class="char-entity"><code>&amp;epsilon;</code></td>
-				<td class="char-code"><code>\03B5</code></td>
-				<td class="char-descr">greek small letter epsilon</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&Zeta;</td>
-				<td class="char-entity"><code>&amp;Zeta;</code></td>
-				<td class="char-code"><code>\0396</code></td>
-				<td class="char-descr">greek capital letter zeta</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&zeta;</td>
-				<td class="char-entity"><code>&amp;zeta;</code></td>
-				<td class="char-code"><code>\03B6</code></td>
-				<td class="char-descr">greek small letter zeta</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&Eta;</td>
-				<td class="char-entity"><code>&amp;Eta;</code></td>
-				<td class="char-code"><code>\0397</code></td>
-				<td class="char-descr">greek capital letter eta</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&eta;</td>
-				<td class="char-entity"><code>&amp;eta;</code></td>
-				<td class="char-code"><code>\03B7</code></td>
-				<td class="char-descr">greek small letter eta</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&Theta;</td>
-				<td class="char-entity"><code>&amp;Theta;</code></td>
-				<td class="char-code"><code>\0398</code></td>
-				<td class="char-descr">greek capital letter theta</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&theta;</td>
-				<td class="char-entity"><code>&amp;theta;</code></td>
-				<td class="char-code"><code>\03B8</code></td>
-				<td class="char-descr">greek small letter theta</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&thetasym;</td>
-				<td class="char-entity"><code>&amp;thetasym;</code></td>
-				<td class="char-code"><code>\03D1</code></td>
-				<td class="char-descr">greek small letter theta symbol</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&Iota;</td>
-				<td class="char-entity"><code>&amp;Iota;</code></td>
-				<td class="char-code"><code>\0399</code></td>
-				<td class="char-descr">greek capital letter iota</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&iota;</td>
-				<td class="char-entity"><code>&amp;iota;</code></td>
-				<td class="char-code"><code>\03B9</code></td>
-				<td class="char-descr">greek small letter iota</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&Kappa;</td>
-				<td class="char-entity"><code>&amp;Kappa;</code></td>
-				<td class="char-code"><code>\039A</code></td>
-				<td class="char-descr">greek capital letter kappa</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&kappa;</td>
-				<td class="char-entity"><code>&amp;kappa;</code></td>
-				<td class="char-code"><code>\03BA</code></td>
-				<td class="char-descr">greek small letter kappa</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&Lambda;</td>
-				<td class="char-entity"><code>&amp;Lambda;</code></td>
-				<td class="char-code"><code>\039B</code></td>
-				<td class="char-descr">greek capital letter lambda</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&lambda;</td>
-				<td class="char-entity"><code>&amp;lambda;</code></td>
-				<td class="char-code"><code>\03BB</code></td>
-				<td class="char-descr">greek small letter lambda</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&Mu;</td>
-				<td class="char-entity"><code>&amp;Mu;</code></td>
-				<td class="char-code"><code>\039C</code></td>
-				<td class="char-descr">greek capital letter mu</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&mu;</td>
-				<td class="char-entity"><code>&amp;mu;</code></td>
-				<td class="char-code"><code>\03BC</code></td>
-				<td class="char-descr">greek small letter mu</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&Nu;</td>
-				<td class="char-entity"><code>&amp;Nu;</code></td>
-				<td class="char-code"><code>\039D</code></td>
-				<td class="char-descr">greek capital letter nu</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&nu;</td>
-				<td class="char-entity"><code>&amp;nu;</code></td>
-				<td class="char-code"><code>\03BD</code></td>
-				<td class="char-descr">greek small letter nu</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&Xi;</td>
-				<td class="char-entity"><code>&amp;Xi;</code></td>
-				<td class="char-code"><code>\039E</code></td>
-				<td class="char-descr">greek capital letter xi</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&xi;</td>
-				<td class="char-entity"><code>&amp;xi;</code></td>
-				<td class="char-code"><code>\03BE</code></td>
-				<td class="char-descr">greek small letter xi</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&Omicron;</td>
-				<td class="char-entity"><code>&amp;Omicron;</code></td>
-				<td class="char-code"><code>\039F</code></td>
-				<td class="char-descr">greek capital letter omicron</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&omicron;</td>
-				<td class="char-entity"><code>&amp;omicron;</code></td>
-				<td class="char-code"><code>\03BF</code></td>
-				<td class="char-descr">greek small letter omicron</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&Pi;</td>
-				<td class="char-entity"><code>&amp;Pi;</code></td>
-				<td class="char-code"><code>\03A0</code></td>
-				<td class="char-descr">greek capital letter pi</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&pi;</td>
-				<td class="char-entity"><code>&amp;pi;</code></td>
-				<td class="char-code"><code>\03C0</code></td>
-				<td class="char-descr">greek small letter pi</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&piv;</td>
-				<td class="char-entity"><code>&amp;piv;</code></td>
-				<td class="char-code"><code>\03D6</code></td>
-				<td class="char-descr">greek pi symbol</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&Rho;</td>
-				<td class="char-entity"><code>&amp;Rho;</code></td>
-				<td class="char-code"><code>\03A1</code></td>
-				<td class="char-descr">greek capital letter rho</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&rho;</td>
-				<td class="char-entity"><code>&amp;rho;</code></td>
-				<td class="char-code"><code>\03C1</code></td>
-				<td class="char-descr">greek small letter rho</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&Sigma;</td>
-				<td class="char-entity"><code>&amp;Sigma;</code></td>
-				<td class="char-code"><code>\03A3</code></td>
-				<td class="char-descr">greek capital letter sigma</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&sigma;</td>
-				<td class="char-entity"><code>&amp;sigma;</code></td>
-				<td class="char-code"><code>\03C3</code></td>
-				<td class="char-descr">greek small letter sigma</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&sigmaf;</td>
-				<td class="char-entity"><code>&amp;sigmaf;</code></td>
-				<td class="char-code"><code>\03C2</code></td>
-				<td class="char-descr">greek small letter final sigma (note)</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&Tau;</td>
-				<td class="char-entity"><code>&amp;Tau;</code></td>
-				<td class="char-code"><code>\03A4</code></td>
-				<td class="char-descr">greek capital letter tau</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&tau;</td>
-				<td class="char-entity"><code>&amp;tau;</code></td>
-				<td class="char-code"><code>\03C4</code></td>
-				<td class="char-descr">greek small letter tau</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&Upsilon;</td>
-				<td class="char-entity"><code>&amp;Upsilon;</code></td>
-				<td class="char-code"><code>\03A5</code></td>
-				<td class="char-descr">greek capital letter upsilon</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&upsilon;</td>
-				<td class="char-entity"><code>&amp;upsilon;</code></td>
-				<td class="char-code"><code>\03C5</code></td>
-				<td class="char-descr">greek small letter upsilon</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&upsih;</td>
-				<td class="char-entity"><code>&amp;upsih;</code></td>
-				<td class="char-code"><code>\03D2</code></td>
-				<td class="char-descr">greek upsilon with hook symbol</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&Phi;</td>
-				<td class="char-entity"><code>&amp;Phi;</code></td>
-				<td class="char-code"><code>\03A6</code></td>
-				<td class="char-descr">greek capital letter phi</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&phi;</td>
-				<td class="char-entity"><code>&amp;phi;</code></td>
-				<td class="char-code"><code>\03C6</code></td>
-				<td class="char-descr">greek small letter phi</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&Chi;</td>
-				<td class="char-entity"><code>&amp;Chi;</code></td>
-				<td class="char-code"><code>\03A7</code></td>
-				<td class="char-descr">greek capital letter chi</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&chi;</td>
-				<td class="char-entity"><code>&amp;chi;</code></td>
-				<td class="char-code"><code>\03C7</code></td>
-				<td class="char-descr">greek small letter chi</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&Psi;</td>
-				<td class="char-entity"><code>&amp;Psi;</code></td>
-				<td class="char-code"><code>\03A8</code></td>
-				<td class="char-descr">greek capital letter psi</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&psi;</td>
-				<td class="char-entity"><code>&amp;psi;</code></td>
-				<td class="char-code"><code>\03C8</code></td>
-				<td class="char-descr">greek small letter psi</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&Omega;</td>
-				<td class="char-entity"><code>&amp;Omega;</code></td>
-				<td class="char-code"><code>\03A9</code></td>
-				<td class="char-descr">greek capital letter omega</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&omega;</td>
-				<td class="char-entity"><code>&amp;omega;</code></td>
-				<td class="char-code"><code>\03C9</code></td>
-				<td class="char-descr">greek small letter omega</td>
-			</tr>
-			
-			<tr class="ch-section" id="diacritics">
-				<th colspan="4">
-					Диакритические знаки
-				</th>
-			</tr>
-			
-			<tr>
-				<td class="char-demo">&acute;</td>
-				<td class="char-entity"><code>&amp;acute;</code></td>
-				<td class="char-code"><code>\00B4</code></td>
-				<td class="char-descr">acute accent = spacing acute</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&cedil;</td>
-				<td class="char-entity"><code>&amp;cedil;</code></td>
-				<td class="char-code"><code>\00B8</code></td>
-				<td class="char-descr">cedilla = spacing cedilla</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&circ;</td>
-				<td class="char-entity"><code>&amp;circ;</code></td>
-				<td class="char-code"><code>\02C6</code></td>
-				<td class="char-descr">modifier letter circumflex accent</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&macr;</td>
-				<td class="char-entity"><code>&amp;macr;</code></td>
-				<td class="char-code"><code>\00AF</code></td>
-				<td class="char-descr">macron = spacing macron = overline = APL overbar</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&middot;</td>
-				<td class="char-entity"><code>&amp;middot;</code></td>
-				<td class="char-code"><code>\00B7</code></td>
-				<td class="char-descr">middle dot = Georgian comma = Greek middle dot</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&tilde;</td>
-				<td class="char-entity"><code>&amp;tilde;</code></td>
-				<td class="char-code"><code>\02DC</code></td>
-				<td class="char-descr">small tilde</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&uml;</td>
-				<td class="char-entity"><code>&amp;uml;</code></td>
-				<td class="char-code"><code>\00A8</code></td>
-				<td class="char-descr">diaeresis = spacing diaeresis</td>
-			</tr>
-			
-			<tr class="ch-section" id="latin">
-				<th colspan="4">
-					Латиница с диакритическими знаками
-				</th>
-			</tr>
-			
-			<tr>
-				<td class="char-demo">&Aacute;</td>
-				<td class="char-entity"><code>&amp;Aacute;</code></td>
-				<td class="char-code"><code>\00C1</code></td>
-				<td class="char-descr">latin capital letter A with acute</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&aacute;</td>
-				<td class="char-entity"><code>&amp;aacute;</code></td>
-				<td class="char-code"><code>\00E1</code></td>
-				<td class="char-descr">latin small letter a with acute</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&Acirc;</td>
-				<td class="char-entity"><code>&amp;Acirc;</code></td>
-				<td class="char-code"><code>\00C2</code></td>
-				<td class="char-descr">latin capital letter A with circumflex</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&acirc;</td>
-				<td class="char-entity"><code>&amp;acirc;</code></td>
-				<td class="char-code"><code>\00E2</code></td>
-				<td class="char-descr">latin small letter a with circumflex</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&AElig;</td>
-				<td class="char-entity"><code>&amp;AElig;</code></td>
-				<td class="char-code"><code>\00C6</code></td>
-				<td class="char-descr">latin capital letter AE = latin capital ligature AE</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&aelig;</td>
-				<td class="char-entity"><code>&amp;aelig;</code></td>
-				<td class="char-code"><code>\00E6</code></td>
-				<td class="char-descr">latin small letter ae = latin small ligature ae</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&Agrave;</td>
-				<td class="char-entity"><code>&amp;Agrave;</code></td>
-				<td class="char-code"><code>\00C0</code></td>
-				<td class="char-descr">latin capital letter A with grave = latin capital letter A grave</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&agrave;</td>
-				<td class="char-entity"><code>&amp;agrave;</code></td>
-				<td class="char-code"><code>\00E0</code></td>
-				<td class="char-descr">latin small letter a with grave = latin small letter a grave</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&Aring;</td>
-				<td class="char-entity"><code>&amp;Aring;</code></td>
-				<td class="char-code"><code>\00C5</code></td>
-				<td class="char-descr">latin capital letter A with ring above = latin capital letter A ring</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&aring;</td>
-				<td class="char-entity"><code>&amp;aring;</code></td>
-				<td class="char-code"><code>\00E5</code></td>
-				<td class="char-descr">latin small letter a with ring above = latin small letter a ring</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&Atilde;</td>
-				<td class="char-entity"><code>&amp;Atilde;</code></td>
-				<td class="char-code"><code>\00C3</code></td>
-				<td class="char-descr">latin capital letter A with tilde</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&atilde;</td>
-				<td class="char-entity"><code>&amp;atilde;</code></td>
-				<td class="char-code"><code>\00E3</code></td>
-				<td class="char-descr">latin small letter a with tilde</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&Auml;</td>
-				<td class="char-entity"><code>&amp;Auml;</code></td>
-				<td class="char-code"><code>\00C4</code></td>
-				<td class="char-descr">latin capital letter A with diaeresis</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&auml;</td>
-				<td class="char-entity"><code>&amp;auml;</code></td>
-				<td class="char-code"><code>\00E4</code></td>
-				<td class="char-descr">latin small letter a with diaeresis</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&Ccedil;</td>
-				<td class="char-entity"><code>&amp;Ccedil;</code></td>
-				<td class="char-code"><code>\00C7</code></td>
-				<td class="char-descr">latin capital letter C with cedilla</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&ccedil;</td>
-				<td class="char-entity"><code>&amp;ccedil;</code></td>
-				<td class="char-code"><code>\00E7</code></td>
-				<td class="char-descr">latin small letter c with cedilla</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&Eacute;</td>
-				<td class="char-entity"><code>&amp;Eacute;</code></td>
-				<td class="char-code"><code>\00C9</code></td>
-				<td class="char-descr">latin capital letter E with acute</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&eacute;</td>
-				<td class="char-entity"><code>&amp;eacute;</code></td>
-				<td class="char-code"><code>\00E9</code></td>
-				<td class="char-descr">latin small letter e with acute</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&Ecirc;</td>
-				<td class="char-entity"><code>&amp;Ecirc;</code></td>
-				<td class="char-code"><code>\00CA</code></td>
-				<td class="char-descr">latin capital letter E with circumflex</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&ecirc;</td>
-				<td class="char-entity"><code>&amp;ecirc;</code></td>
-				<td class="char-code"><code>\00EA</code></td>
-				<td class="char-descr">latin small letter e with circumflex</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&Egrave;</td>
-				<td class="char-entity"><code>&amp;Egrave;</code></td>
-				<td class="char-code"><code>\00C8</code></td>
-				<td class="char-descr">latin capital letter E with grave</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&egrave;</td>
-				<td class="char-entity"><code>&amp;egrave;</code></td>
-				<td class="char-code"><code>\00E8</code></td>
-				<td class="char-descr">latin small letter e with grave</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&ETH;</td>
-				<td class="char-entity"><code>&amp;ETH;</code></td>
-				<td class="char-code"><code>\00D0</code></td>
-				<td class="char-descr">latin capital letter ETH</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&eth;</td>
-				<td class="char-entity"><code>&amp;eth;</code></td>
-				<td class="char-code"><code>\00F0</code></td>
-				<td class="char-descr">latin small letter eth</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&Euml;</td>
-				<td class="char-entity"><code>&amp;Euml;</code></td>
-				<td class="char-code"><code>\00CB</code></td>
-				<td class="char-descr">latin capital letter E with diaeresis</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&euml;</td>
-				<td class="char-entity"><code>&amp;euml;</code></td>
-				<td class="char-code"><code>\00EB</code></td>
-				<td class="char-descr">latin small letter e with diaeresis</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&Iacute;</td>
-				<td class="char-entity"><code>&amp;Iacute;</code></td>
-				<td class="char-code"><code>\00CD</code></td>
-				<td class="char-descr">latin capital letter I with acute</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&iacute;</td>
-				<td class="char-entity"><code>&amp;iacute;</code></td>
-				<td class="char-code"><code>\00ED</code></td>
-				<td class="char-descr">latin small letter i with acute</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&Icirc;</td>
-				<td class="char-entity"><code>&amp;Icirc;</code></td>
-				<td class="char-code"><code>\00CE</code></td>
-				<td class="char-descr">latin capital letter I with circumflex</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&icirc;</td>
-				<td class="char-entity"><code>&amp;icirc;</code></td>
-				<td class="char-code"><code>\00EE</code></td>
-				<td class="char-descr">latin small letter i with circumflex</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&Igrave;</td>
-				<td class="char-entity"><code>&amp;Igrave;</code></td>
-				<td class="char-code"><code>\00CC</code></td>
-				<td class="char-descr">latin capital letter I with grave</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&igrave;</td>
-				<td class="char-entity"><code>&amp;igrave;</code></td>
-				<td class="char-code"><code>\00EC</code></td>
-				<td class="char-descr">latin small letter i with grave</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&Iuml;</td>
-				<td class="char-entity"><code>&amp;Iuml;</code></td>
-				<td class="char-code"><code>\00CF</code></td>
-				<td class="char-descr">latin capital letter I with diaeresis</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&iuml;</td>
-				<td class="char-entity"><code>&amp;iuml;</code></td>
-				<td class="char-code"><code>\00EF</code></td>
-				<td class="char-descr">latin small letter i with diaeresis</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&Ntilde;</td>
-				<td class="char-entity"><code>&amp;Ntilde;</code></td>
-				<td class="char-code"><code>\00D1</code></td>
-				<td class="char-descr">latin capital letter N with tilde</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&ntilde;</td>
-				<td class="char-entity"><code>&amp;ntilde;</code></td>
-				<td class="char-code"><code>\00F1</code></td>
-				<td class="char-descr">latin small letter n with tilde</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&Oacute;</td>
-				<td class="char-entity"><code>&amp;Oacute;</code></td>
-				<td class="char-code"><code>\00D3</code></td>
-				<td class="char-descr">latin capital letter O with acute</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&oacute;</td>
-				<td class="char-entity"><code>&amp;oacute;</code></td>
-				<td class="char-code"><code>\00F3</code></td>
-				<td class="char-descr">latin small letter o with acute</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&Ocirc;</td>
-				<td class="char-entity"><code>&amp;Ocirc;</code></td>
-				<td class="char-code"><code>\00D4</code></td>
-				<td class="char-descr">latin capital letter O with circumflex</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&ocirc;</td>
-				<td class="char-entity"><code>&amp;ocirc;</code></td>
-				<td class="char-code"><code>\00F4</code></td>
-				<td class="char-descr">latin small letter o with circumflex</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&OElig;</td>
-				<td class="char-entity"><code>&amp;OElig;</code></td>
-				<td class="char-code"><code>\0152</code></td>
-				<td class="char-descr">latin capital ligature OE</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&oelig;</td>
-				<td class="char-entity"><code>&amp;oelig;</code></td>
-				<td class="char-code"><code>\0153</code></td>
-				<td class="char-descr">latin small ligature oe</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&Ograve;</td>
-				<td class="char-entity"><code>&amp;Ograve;</code></td>
-				<td class="char-code"><code>\00D2</code></td>
-				<td class="char-descr">latin capital letter O with grave</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&ograve;</td>
-				<td class="char-entity"><code>&amp;ograve;</code></td>
-				<td class="char-code"><code>\00F2</code></td>
-				<td class="char-descr">latin small letter o with grave</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&Oslash;</td>
-				<td class="char-entity"><code>&amp;Oslash;</code></td>
-				<td class="char-code"><code>\00D8</code></td>
-				<td class="char-descr">latin capital letter O with stroke = latin capital letter O slash</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&oslash;</td>
-				<td class="char-entity"><code>&amp;oslash;</code></td>
-				<td class="char-code"><code>\00F8</code></td>
-				<td class="char-descr">latin small letter o with stroke, = latin small letter o slash</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&Otilde;</td>
-				<td class="char-entity"><code>&amp;Otilde;</code></td>
-				<td class="char-code"><code>\00D5</code></td>
-				<td class="char-descr">latin capital letter O with tilde</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&otilde;</td>
-				<td class="char-entity"><code>&amp;otilde;</code></td>
-				<td class="char-code"><code>\00F5</code></td>
-				<td class="char-descr">latin small letter o with tilde</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&Ouml;</td>
-				<td class="char-entity"><code>&amp;Ouml;</code></td>
-				<td class="char-code"><code>\00D6</code></td>
-				<td class="char-descr">latin capital letter O with diaeresis</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&ouml;</td>
-				<td class="char-entity"><code>&amp;ouml;</code></td>
-				<td class="char-code"><code>\00F6</code></td>
-				<td class="char-descr">latin small letter o with diaeresis</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&Scaron;</td>
-				<td class="char-entity"><code>&amp;Scaron;</code></td>
-				<td class="char-code"><code>\0160</code></td>
-				<td class="char-descr">latin capital letter S with caron</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&scaron;</td>
-				<td class="char-entity"><code>&amp;scaron;</code></td>
-				<td class="char-code"><code>\0161</code></td>
-				<td class="char-descr">latin small letter s with caron</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&szlig;</td>
-				<td class="char-entity"><code>&amp;szlig;</code></td>
-				<td class="char-code"><code>\00DF</code></td>
-				<td class="char-descr">latin small letter sharp s = ess-zed</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&THORN;</td>
-				<td class="char-entity"><code>&amp;THORN;</code></td>
-				<td class="char-code"><code>\00DE</code></td>
-				<td class="char-descr">latin capital letter THORN</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&thorn;</td>
-				<td class="char-entity"><code>&amp;thorn;</code></td>
-				<td class="char-code"><code>\00FE</code></td>
-				<td class="char-descr">latin small letter thorn</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&Uacute;</td>
-				<td class="char-entity"><code>&amp;Uacute;</code></td>
-				<td class="char-code"><code>\00DA</code></td>
-				<td class="char-descr">latin capital letter U with acute</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&uacute;</td>
-				<td class="char-entity"><code>&amp;uacute;</code></td>
-				<td class="char-code"><code>\00FA</code></td>
-				<td class="char-descr">latin small letter u with acute</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&Ucirc;</td>
-				<td class="char-entity"><code>&amp;Ucirc;</code></td>
-				<td class="char-code"><code>\00DB</code></td>
-				<td class="char-descr">latin capital letter U with circumflex</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&ucirc;</td>
-				<td class="char-entity"><code>&amp;ucirc;</code></td>
-				<td class="char-code"><code>\00FB</code></td>
-				<td class="char-descr">latin small letter u with circumflex</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&Ugrave;</td>
-				<td class="char-entity"><code>&amp;Ugrave;</code></td>
-				<td class="char-code"><code>\00D9</code></td>
-				<td class="char-descr">latin capital letter U with grave</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&ugrave;</td>
-				<td class="char-entity"><code>&amp;ugrave;</code></td>
-				<td class="char-code"><code>\00F9</code></td>
-				<td class="char-descr">latin small letter u with grave</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&Uuml;</td>
-				<td class="char-entity"><code>&amp;Uuml;</code></td>
-				<td class="char-code"><code>\00DC</code></td>
-				<td class="char-descr">latin capital letter U with diaeresis</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&uuml;</td>
-				<td class="char-entity"><code>&amp;uuml;</code></td>
-				<td class="char-code"><code>\00FC</code></td>
-				<td class="char-descr">latin small letter u with diaeresis</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&Yacute;</td>
-				<td class="char-entity"><code>&amp;Yacute;</code></td>
-				<td class="char-code"><code>\00DD</code></td>
-				<td class="char-descr">latin capital letter Y with acute</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&yacute;</td>
-				<td class="char-entity"><code>&amp;yacute;</code></td>
-				<td class="char-code"><code>\00FD</code></td>
-				<td class="char-descr">latin small letter y with acute</td>
-			</tr>
-			<tr>
-				<td class="char-demo">&Yuml;</td>
-				<td class="char-entity"><code>&amp;Yuml;</code></td>
-				<td class="char-code"><code>\0178</code></td>
-				<td class="char-descr">latin capital letter Y with diaeresis</td>
-			</tr>		
-			<tr>
-				<td class="char-demo">&yuml;</td>
-				<td class="char-entity"><code>&amp;yuml;</code></td>
-				<td class="char-code"><code>\00FF</code></td>
-				<td class="char-descr">latin small letter y with diaeresis</td>
-			</tr>
-		</tbody>
-	</table>
+            <tr>
+                <td class="char-demo">&mdash;</td>
+                <td class="char-entity"><code>&amp;mdash;</code></td>
+                <td class="char-code"><code>\2014</code></td>
+                <td class="char-descr">em dash</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&ndash;</td>
+                <td class="char-entity"><code>&amp;ndash;</code></td>
+                <td class="char-code"><code>\2013</code></td>
+                <td class="char-descr">en dash</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&hellip;</td>
+                <td class="char-entity"><code>&amp;hellip;</code></td>
+                <td class="char-code"><code>\2026</code></td>
+                <td class="char-descr">horizontal ellipsis = three dot leader</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&iexcl;</td>
+                <td class="char-entity"><code>&amp;iexcl;</code></td>
+                <td class="char-code"><code>\00A1</code></td>
+                <td class="char-descr">inverted exclamation mark</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&iquest;</td>
+                <td class="char-entity"><code>&amp;iquest;</code></td>
+                <td class="char-code"><code>\00BF</code></td>
+                <td class="char-descr">inverted question mark = turned question mark</td>
+            </tr>
+
+            <tr class="ch-section" id="arrows">
+                <th colspan="4">
+                    Стрелки
+                </th>
+            </tr>
+
+            <tr>
+                <td class="char-demo">&larr;</td>
+                <td class="char-entity"><code>&amp;larr;</code></td>
+                <td class="char-code"><code>\2190</code></td>
+                <td class="char-descr">leftwards arrow</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&rarr;</td>
+                <td class="char-entity"><code>&amp;rarr;</code></td>
+                <td class="char-code"><code>\2192</code></td>
+                <td class="char-descr">rightwards arrow</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&uarr;</td>
+                <td class="char-entity"><code>&amp;uarr;</code></td>
+                <td class="char-code"><code>\2191</code></td>
+                <td class="char-descr">upwards arrow</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&darr;</td>
+                <td class="char-entity"><code>&amp;darr;</code></td>
+                <td class="char-code"><code>\2193</code></td>
+                <td class="char-descr">downwards arrow</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&lArr;</td>
+                <td class="char-entity"><code>&amp;lArr;</code></td>
+                <td class="char-code"><code>\21D0</code></td>
+                <td class="char-descr">leftwards double arrow</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&rArr;</td>
+                <td class="char-entity"><code>&amp;rArr;</code></td>
+                <td class="char-code"><code>\21D2</code></td>
+                <td class="char-descr">rightwards double arrow</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&uArr;</td>
+                <td class="char-entity"><code>&amp;uArr;</code></td>
+                <td class="char-code"><code>\21D1</code></td>
+                <td class="char-descr">upwards double arrow</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&dArr;</td>
+                <td class="char-entity"><code>&amp;dArr;</code></td>
+                <td class="char-code"><code>\21D3</code></td>
+                <td class="char-descr">downwards double arrow</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&harr;</td>
+                <td class="char-entity"><code>&amp;harr;</code></td>
+                <td class="char-code"><code>\2194</code></td>
+                <td class="char-descr">left right arrow</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&hArr;</td>
+                <td class="char-entity"><code>&amp;hArr;</code></td>
+                <td class="char-code"><code>\21D4</code></td>
+                <td class="char-descr">left right double arrow</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&crarr;</td>
+                <td class="char-entity"><code>&amp;crarr;</code></td>
+                <td class="char-code"><code>\21B5</code></td>
+                <td class="char-descr">downwards arrow with corner leftwards = carriage return</td>
+            </tr>
+
+            <tr class="ch-section" id="bullits">
+                <th colspan="4">
+                    Буллиты
+                </th>
+            </tr>
+
+            <tr>
+                <td class="char-demo">&bull;</td>
+                <td class="char-entity"><code>&amp;bull;</code></td>
+                <td class="char-code"><code>\2022</code></td>
+                <td class="char-descr">bullet</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&middot;</td>
+                <td class="char-entity"><code>&amp;middot;</code></td>
+                <td class="char-code"><code>\00B7</code></td>
+                <td class="char-descr">middle dot</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&sdot;</td>
+                <td class="char-entity"><code>&amp;sdot;</code></td>
+                <td class="char-code"><code>\22C5</code></td>
+                <td class="char-descr">dot operator</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&lowast;</td>
+                <td class="char-entity"><code>&amp;lowast;</code></td>
+                <td class="char-code"><code>\2217</code></td>
+                <td class="char-descr">low asterisk</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&clubs;</td>
+                <td class="char-entity"><code>&amp;clubs;</code></td>
+                <td class="char-code"><code>\2663</code></td>
+                <td class="char-descr">black club suit</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&diams;</td>
+                <td class="char-entity"><code>&amp;diams;</code></td>
+                <td class="char-code"><code>\2666</code></td>
+                <td class="char-descr">black diamond suit</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&hearts;</td>
+                <td class="char-entity"><code>&amp;hearts;</code></td>
+                <td class="char-code"><code>\2665</code></td>
+                <td class="char-descr">black heart suit</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&spades;</td>
+                <td class="char-entity"><code>&amp;spades;</code></td>
+                <td class="char-code"><code>\2660</code></td>
+                <td class="char-descr">black spade suit</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&loz;</td>
+                <td class="char-entity"><code>&amp;loz;</code></td>
+                <td class="char-code"><code>\25CA</code></td>
+                <td class="char-descr">lozenge</td>
+            </tr>
+
+            <tr class="ch-section" id="spaces">
+                <th colspan="4">
+                    Пробельные символы
+                </th>
+            </tr>
+
+            <tr>
+                <td class="char-demo char-spaces">m m</td>
+                <td class="char-entity"><code> </code></td>
+                <td class="char-code"><code>\0020</code></td>
+                <td class="char-descr">обыкновенный пробел</td>
+            </tr>
+            <tr>
+                <td class="char-demo char-spaces">m&nbsp;m</td>
+                <td class="char-entity"><code>&amp;nbsp;</code></td>
+                <td class="char-code"><code>\00A0</code></td>
+                <td class="char-descr">no-break space = non-breaking space</td>
+            </tr>
+            <tr>
+                <td class="char-demo char-spaces">n&ensp;n</td>
+                <td class="char-entity"><code>&amp;ensp;</code></td>
+                <td class="char-code"><code>\2002</code></td>
+                <td class="char-descr">en space</td>
+            </tr>
+            <tr>
+                <td class="char-demo char-spaces">m&emsp;m</td>
+                <td class="char-entity"><code>&amp;emsp;</code></td>
+                <td class="char-code"><code>\2003</code></td>
+                <td class="char-descr">em space</td>
+            </tr>
+            <tr>
+                <td class="char-demo char-spaces">_&thinsp;_</td>
+                <td class="char-entity"><code>&amp;thinsp;</code></td>
+                <td class="char-code"><code>\2009</code></td>
+                <td class="char-descr">thin space</td>
+            </tr>
+            <tr>
+                <td class="char-demo char-spaces">_&zwj;_</td>
+                <td class="char-entity"><code>&amp;zwj;</code></td>
+                <td class="char-code"><code>\200D</code></td>
+                <td class="char-descr">zero width joiner</td>
+            </tr>
+            <tr>
+                <td class="char-demo char-spaces">_&zwnj;_</td>
+                <td class="char-entity"><code>&amp;zwnj;</code></td>
+                <td class="char-code"><code>\200C</code></td>
+                <td class="char-descr">zero width non-joiner</td>
+            </tr>
+
+            <tr class="ch-section" id="math">
+                <th colspan="4">
+                    Математические символы
+                </th>
+            </tr>
+
+            <tr>
+                <td class="char-demo">&times;</td>
+                <td class="char-entity"><code>&amp;times;</code></td>
+                <td class="char-code"><code>\00D7</code></td>
+                <td class="char-descr">multiplication sign</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&divide;</td>
+                <td class="char-entity"><code>&amp;divide;</code></td>
+                <td class="char-code"><code>\00F7</code></td>
+                <td class="char-descr">division sign</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&frasl;</td>
+                <td class="char-entity"><code>&amp;frasl;</code></td>
+                <td class="char-code"><code>\2044</code></td>
+                <td class="char-descr">fraction slash</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&minus;</td>
+                <td class="char-entity"><code>&amp;minus;</code></td>
+                <td class="char-code"><code>\2212</code></td>
+                <td class="char-descr">minus sign</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&plusmn;</td>
+                <td class="char-entity"><code>&amp;plusmn;</code></td>
+                <td class="char-code"><code>\00B1</code></td>
+                <td class="char-descr">plus-minus sign = plus-or-minus sign</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&lt;</td>
+                <td class="char-entity"><code>&amp;lt;</code></td>
+                <td class="char-code"><code>\003C</code></td>
+                <td class="char-descr">less-than sign</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&gt;</td>
+                <td class="char-entity"><code>&amp;gt;</code></td>
+                <td class="char-code"><code>\003E</code></td>
+                <td class="char-descr">greater-than sign</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&le;</td>
+                <td class="char-entity"><code>&amp;le;</code></td>
+                <td class="char-code"><code>\2264</code></td>
+                <td class="char-descr">less-than or equal to</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&ge;</td>
+                <td class="char-entity"><code>&amp;ge;</code></td>
+                <td class="char-code"><code>\2265</code></td>
+                <td class="char-descr">greater-than or equal to</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&asymp;</td>
+                <td class="char-entity"><code>&amp;asymp;</code></td>
+                <td class="char-code"><code>\2248</code></td>
+                <td class="char-descr">almost equal to = asymptotic to</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&cong;</td>
+                <td class="char-entity"><code>&amp;cong;</code></td>
+                <td class="char-code"><code>\2245</code></td>
+                <td class="char-descr">approximately equal to</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&equiv;</td>
+                <td class="char-entity"><code>&amp;equiv;</code></td>
+                <td class="char-code"><code>\2261</code></td>
+                <td class="char-descr">identical to</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&ne;</td>
+                <td class="char-entity"><code>&amp;ne;</code></td>
+                <td class="char-code"><code>\2260</code></td>
+                <td class="char-descr">not equal to</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&deg;</td>
+                <td class="char-entity"><code>&amp;deg;</code></td>
+                <td class="char-code"><code>\00B0</code></td>
+                <td class="char-descr">degree sign</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&frac12;</td>
+                <td class="char-entity"><code>&amp;frac12;</code></td>
+                <td class="char-code"><code>\00BD</code></td>
+                <td class="char-descr">vulgar fraction one half = fraction one half</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&frac14;</td>
+                <td class="char-entity"><code>&amp;frac14;</code></td>
+                <td class="char-code"><code>\00BC</code></td>
+                <td class="char-descr">vulgar fraction one quarter = fraction one quarter</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&frac34;</td>
+                <td class="char-entity"><code>&amp;frac34;</code></td>
+                <td class="char-code"><code>\00BE</code></td>
+                <td class="char-descr">vulgar fraction three quarters = fraction three quarters</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&sup1;</td>
+                <td class="char-entity"><code>&amp;sup1;</code></td>
+                <td class="char-code"><code>\00B9</code></td>
+                <td class="char-descr">superscript one = superscript digit one</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&sup2;</td>
+                <td class="char-entity"><code>&amp;sup2;</code></td>
+                <td class="char-code"><code>\00B2</code></td>
+                <td class="char-descr">superscript two = superscript digit two = squared</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&sup3;</td>
+                <td class="char-entity"><code>&amp;sup3;</code></td>
+                <td class="char-code"><code>\00B3</code></td>
+                <td class="char-descr">superscript three = superscript digit three = cubed</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&amp;</td>
+                <td class="char-entity"><code>&amp;amp;</code></td>
+                <td class="char-code"><code>\0026</code></td>
+                <td class="char-descr">ampersand</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&sim;</td>
+                <td class="char-entity"><code>&amp;sim;</code></td>
+                <td class="char-code"><code>\223C</code></td>
+                <td class="char-descr">tilde operator = varies with = similar to</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&and;</td>
+                <td class="char-entity"><code>&amp;and;</code></td>
+                <td class="char-code"><code>\2227</code></td>
+                <td class="char-descr">logical and = wedge</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&or;</td>
+                <td class="char-entity"><code>&amp;or;</code></td>
+                <td class="char-code"><code>\2228</code></td>
+                <td class="char-descr">logical or = vee</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&not;</td>
+                <td class="char-entity"><code>&amp;not;</code></td>
+                <td class="char-code"><code>\00AC</code></td>
+                <td class="char-descr">not sign</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&alefsym;</td>
+                <td class="char-entity"><code>&amp;alefsym;</code></td>
+                <td class="char-code"><code>\2135</code></td>
+                <td class="char-descr">alef symbol = first transfinite cardinal</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&ang;</td>
+                <td class="char-entity"><code>&amp;ang;</code></td>
+                <td class="char-code"><code>\2220</code></td>
+                <td class="char-descr">angle</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&cap;</td>
+                <td class="char-entity"><code>&amp;cap;</code></td>
+                <td class="char-code"><code>\2229</code></td>
+                <td class="char-descr">intersection = cap</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&cup;</td>
+                <td class="char-entity"><code>&amp;cup;</code></td>
+                <td class="char-code"><code>\222A</code></td>
+                <td class="char-descr">union = cup</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&sub;</td>
+                <td class="char-entity"><code>&amp;sub;</code></td>
+                <td class="char-code"><code>\2282</code></td>
+                <td class="char-descr">subset of</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&sube;</td>
+                <td class="char-entity"><code>&amp;sube;</code></td>
+                <td class="char-code"><code>\2286</code></td>
+                <td class="char-descr">subset of or equal to</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&sup;</td>
+                <td class="char-entity"><code>&amp;sup;</code></td>
+                <td class="char-code"><code>\2283</code></td>
+                <td class="char-descr">superset of</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&supe;</td>
+                <td class="char-entity"><code>&amp;supe;</code></td>
+                <td class="char-code"><code>\2287</code></td>
+                <td class="char-descr">superset of or equal to</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&ni;</td>
+                <td class="char-entity"><code>&amp;ni;</code></td>
+                <td class="char-code"><code>\220B</code></td>
+                <td class="char-descr">contains as member</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&isin;</td>
+                <td class="char-entity"><code>&amp;isin;</code></td>
+                <td class="char-code"><code>\2208</code></td>
+                <td class="char-descr">element of</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&notin;</td>
+                <td class="char-entity"><code>&amp;notin;</code></td>
+                <td class="char-code"><code>\2209</code></td>
+                <td class="char-descr">not an element of</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&nsub;</td>
+                <td class="char-entity"><code>&amp;nsub;</code></td>
+                <td class="char-code"><code>\2284</code></td>
+                <td class="char-descr">not a subset of</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&exist;</td>
+                <td class="char-entity"><code>&amp;exist;</code></td>
+                <td class="char-code"><code>\2203</code></td>
+                <td class="char-descr">there exists</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&fnof;</td>
+                <td class="char-entity"><code>&amp;fnof;</code></td>
+                <td class="char-code"><code>\0192</code></td>
+                <td class="char-descr">latin small f with hook = function = florin</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&forall;</td>
+                <td class="char-entity"><code>&amp;forall;</code></td>
+                <td class="char-code"><code>\2200</code></td>
+                <td class="char-descr">for all</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&infin;</td>
+                <td class="char-entity"><code>&amp;infin;</code></td>
+                <td class="char-code"><code>\221E</code></td>
+                <td class="char-descr">infinity</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&int;</td>
+                <td class="char-entity"><code>&amp;int;</code></td>
+                <td class="char-code"><code>\222B</code></td>
+                <td class="char-descr">integral</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&lowast;</td>
+                <td class="char-entity"><code>&amp;lowast;</code></td>
+                <td class="char-code"><code>\2217</code></td>
+                <td class="char-descr">asterisk operator</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&micro;</td>
+                <td class="char-entity"><code>&amp;micro;</code></td>
+                <td class="char-code"><code>\00B5</code></td>
+                <td class="char-descr">micro sign</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&nabla;</td>
+                <td class="char-entity"><code>&amp;nabla;</code></td>
+                <td class="char-code"><code>\2207</code></td>
+                <td class="char-descr">nabla = backward difference</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&part;</td>
+                <td class="char-entity"><code>&amp;part;</code></td>
+                <td class="char-code"><code>\2202</code></td>
+                <td class="char-descr">partial differential</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&perp;</td>
+                <td class="char-entity"><code>&amp;perp;</code></td>
+                <td class="char-code"><code>\22A5</code></td>
+                <td class="char-descr">up tack = orthogonal to = perpendicular</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&prod;</td>
+                <td class="char-entity"><code>&amp;prod;</code></td>
+                <td class="char-code"><code>\220F</code></td>
+                <td class="char-descr">n-ary product = product sign</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&prop;</td>
+                <td class="char-entity"><code>&amp;prop;</code></td>
+                <td class="char-code"><code>\221D</code></td>
+                <td class="char-descr">proportional to</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&radic;</td>
+                <td class="char-entity"><code>&amp;radic;</code></td>
+                <td class="char-code"><code>\221A</code></td>
+                <td class="char-descr">square root = radical sign</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&sdot;</td>
+                <td class="char-entity"><code>&amp;sdot;</code></td>
+                <td class="char-code"><code>\22C5</code></td>
+                <td class="char-descr">dot operator</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&sum;</td>
+                <td class="char-entity"><code>&amp;sum;</code></td>
+                <td class="char-code"><code>\2211</code></td>
+                <td class="char-descr">n-ary sumation</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&empty;</td>
+                <td class="char-entity"><code>&amp;empty;</code></td>
+                <td class="char-code"><code>\2205</code></td>
+                <td class="char-descr">empty set = null set = diameter</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&oplus;</td>
+                <td class="char-entity"><code>&amp;oplus;</code></td>
+                <td class="char-code"><code>\2295</code></td>
+                <td class="char-descr">circled plus = direct sum</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&otimes;</td>
+                <td class="char-entity"><code>&amp;otimes;</code></td>
+                <td class="char-code"><code>\2297</code></td>
+                <td class="char-descr">circled times = vector product</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&there4;</td>
+                <td class="char-entity"><code>&amp;there4;</code></td>
+                <td class="char-code"><code>\2234</code></td>
+                <td class="char-descr">therefore</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&lang;</td>
+                <td class="char-entity"><code>&amp;lang;</code></td>
+                <td class="char-code"><code>\2329</code></td>
+                <td class="char-descr">left-pointing angle bracket = bra</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&rang;</td>
+                <td class="char-entity"><code>&amp;rang;</code></td>
+                <td class="char-code"><code>\232A</code></td>
+                <td class="char-descr">right-pointing angle bracket = ket</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&lceil;</td>
+                <td class="char-entity"><code>&amp;lceil;</code></td>
+                <td class="char-code"><code>\2308</code></td>
+                <td class="char-descr">left ceiling = apl upstile</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&lfloor;</td>
+                <td class="char-entity"><code>&amp;lfloor;</code></td>
+                <td class="char-code"><code>\230A</code></td>
+                <td class="char-descr">left floor = apl downstile</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&rceil;</td>
+                <td class="char-entity"><code>&amp;rceil;</code></td>
+                <td class="char-code"><code>\2309</code></td>
+                <td class="char-descr">right ceiling</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&rfloor;</td>
+                <td class="char-entity"><code>&amp;rfloor;</code></td>
+                <td class="char-code"><code>\230B</code></td>
+                <td class="char-descr">right floor</td>
+            </tr>
+
+            <tr class="ch-section" id="currency">
+                <th colspan="4">
+                    Знаки валют
+                </th>
+            </tr>
+
+            <tr>
+                <td class="char-demo">&curren;</td>
+                <td class="char-entity"><code>&amp;curren;</code></td>
+                <td class="char-code"><code>\00A4</code></td>
+                <td class="char-descr">currency sign</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&cent;</td>
+                <td class="char-entity"><code>&amp;cent;</code></td>
+                <td class="char-code"><code>\00A2</code></td>
+                <td class="char-descr">cent sign</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&euro;</td>
+                <td class="char-entity"><code>&amp;euro;</code></td>
+                <td class="char-code"><code>\20AC</code></td>
+                <td class="char-descr">euro sign</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&pound;</td>
+                <td class="char-entity"><code>&amp;pound;</code></td>
+                <td class="char-code"><code>\00A3</code></td>
+                <td class="char-descr">pound sign</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&yen;</td>
+                <td class="char-entity"><code>&amp;yen;</code></td>
+                <td class="char-code"><code>\00A5</code></td>
+                <td class="char-descr">yen sign = yuan sign</td>
+            </tr>
+
+            <tr class="ch-section" id="other">
+                <th colspan="4">
+                    Прочие символы
+                </th>
+            </tr>
+
+            <tr>
+                <td class="char-demo">&copy;</td>
+                <td class="char-entity"><code>&amp;copy;</code></td>
+                <td class="char-code"><code>\00A9</code></td>
+                <td class="char-descr">copyright sign</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&trade;</td>
+                <td class="char-entity"><code>&amp;trade;</code></td>
+                <td class="char-code"><code>\2122</code></td>
+                <td class="char-descr">trade mark sign</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&reg;</td>
+                <td class="char-entity"><code>&amp;reg;</code></td>
+                <td class="char-code"><code>\00AE</code></td>
+                <td class="char-descr">registered sign = registered trade mark sign</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&sect;</td>
+                <td class="char-entity"><code>&amp;sect;</code></td>
+                <td class="char-code"><code>\00A7</code></td>
+                <td class="char-descr">section sign</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&brvbar;</td>
+                <td class="char-entity"><code>&amp;brvbar;</code></td>
+                <td class="char-code"><code>\00A6</code></td>
+                <td class="char-descr">broken bar = broken vertical bar</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&dagger;</td>
+                <td class="char-entity"><code>&amp;dagger;</code></td>
+                <td class="char-code"><code>\2020</code></td>
+                <td class="char-descr">dagger</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&Dagger;</td>
+                <td class="char-entity"><code>&amp;Dagger;</code></td>
+                <td class="char-code"><code>\2021</code></td>
+                <td class="char-descr">double dagger</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&image;</td>
+                <td class="char-entity"><code>&amp;image;</code></td>
+                <td class="char-code"><code>\2111</code></td>
+                <td class="char-descr">blackletter capital I = imaginary part</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&real;</td>
+                <td class="char-entity"><code>&amp;real;</code></td>
+                <td class="char-code"><code>\211C</code></td>
+                <td class="char-descr">blackletter capital R = real part symbol</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&weierp;</td>
+                <td class="char-entity"><code>&amp;weierp;</code></td>
+                <td class="char-code"><code>\2118</code></td>
+                <td class="char-descr">script capital P = power set = Weierstrass p</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&oline;</td>
+                <td class="char-entity"><code>&amp;oline;</code></td>
+                <td class="char-code"><code>\203E</code></td>
+                <td class="char-descr">overline = spacing overscore</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&ordf;</td>
+                <td class="char-entity"><code>&amp;ordf;</code></td>
+                <td class="char-code"><code>\00AA</code></td>
+                <td class="char-descr">feminine ordinal indicator</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&ordm;</td>
+                <td class="char-entity"><code>&amp;ordm;</code></td>
+                <td class="char-code"><code>\00BA</code></td>
+                <td class="char-descr">masculine ordinal indicator</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&para;</td>
+                <td class="char-entity"><code>&amp;para;</code></td>
+                <td class="char-code"><code>\00B6</code></td>
+                <td class="char-descr">pilcrow sign = paragraph sign</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&permil;</td>
+                <td class="char-entity"><code>&amp;permil;</code></td>
+                <td class="char-code"><code>\2030</code></td>
+                <td class="char-descr">per mille sign</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&shy;</td>
+                <td class="char-entity"><code>&amp;shy;</code></td>
+                <td class="char-code"><code>\00AD</code></td>
+                <td class="char-descr">soft hyphen = discretionary hyphen</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&lrm;‎</td>
+                <td class="char-entity"><code>&amp;lrm;‎</code></td>
+                <td class="char-code"><code>\200E</code></td>
+                <td class="char-descr">left-to-right mark (for formatting only)</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&rlm;‏</td>
+                <td class="char-entity"><code>&amp;rlm;‏</code></td>
+                <td class="char-code"><code>\200F</code></td>
+                <td class="char-descr">right-to-left mark (for formatting only)</td>
+            </tr>
+
+            <tr class="ch-section" id="greek">
+                <th colspan="4">
+                    Греческий алфавит
+                </th>
+            </tr>
+
+            <tr>
+                <td class="char-demo">&Alpha;</td>
+                <td class="char-entity"><code>&amp;Alpha;</code></td>
+                <td class="char-code"><code>\0391</code></td>
+                <td class="char-descr">greek capital letter alpha</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&alpha;</td>
+                <td class="char-entity"><code>&amp;alpha;</code></td>
+                <td class="char-code"><code>\03B1</code></td>
+                <td class="char-descr">greek small letter alpha</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&Beta;</td>
+                <td class="char-entity"><code>&amp;Beta;</code></td>
+                <td class="char-code"><code>\0392</code></td>
+                <td class="char-descr">greek capital letter beta</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&beta;</td>
+                <td class="char-entity"><code>&amp;beta;</code></td>
+                <td class="char-code"><code>\03B2</code></td>
+                <td class="char-descr">greek small letter beta</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&Gamma;</td>
+                <td class="char-entity"><code>&amp;Gamma;</code></td>
+                <td class="char-code"><code>\0393</code></td>
+                <td class="char-descr">greek capital letter gamma</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&gamma;</td>
+                <td class="char-entity"><code>&amp;gamma;</code></td>
+                <td class="char-code"><code>\03B3</code></td>
+                <td class="char-descr">greek small letter gamma</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&Delta;</td>
+                <td class="char-entity"><code>&amp;Delta;</code></td>
+                <td class="char-code"><code>\0394</code></td>
+                <td class="char-descr">greek capital letter delta</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&delta;</td>
+                <td class="char-entity"><code>&amp;delta;</code></td>
+                <td class="char-code"><code>\03B4</code></td>
+                <td class="char-descr">greek small letter delta</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&Epsilon;</td>
+                <td class="char-entity"><code>&amp;Epsilon;</code></td>
+                <td class="char-code"><code>\0395</code></td>
+                <td class="char-descr">greek capital letter epsilon</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&epsilon;</td>
+                <td class="char-entity"><code>&amp;epsilon;</code></td>
+                <td class="char-code"><code>\03B5</code></td>
+                <td class="char-descr">greek small letter epsilon</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&Zeta;</td>
+                <td class="char-entity"><code>&amp;Zeta;</code></td>
+                <td class="char-code"><code>\0396</code></td>
+                <td class="char-descr">greek capital letter zeta</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&zeta;</td>
+                <td class="char-entity"><code>&amp;zeta;</code></td>
+                <td class="char-code"><code>\03B6</code></td>
+                <td class="char-descr">greek small letter zeta</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&Eta;</td>
+                <td class="char-entity"><code>&amp;Eta;</code></td>
+                <td class="char-code"><code>\0397</code></td>
+                <td class="char-descr">greek capital letter eta</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&eta;</td>
+                <td class="char-entity"><code>&amp;eta;</code></td>
+                <td class="char-code"><code>\03B7</code></td>
+                <td class="char-descr">greek small letter eta</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&Theta;</td>
+                <td class="char-entity"><code>&amp;Theta;</code></td>
+                <td class="char-code"><code>\0398</code></td>
+                <td class="char-descr">greek capital letter theta</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&theta;</td>
+                <td class="char-entity"><code>&amp;theta;</code></td>
+                <td class="char-code"><code>\03B8</code></td>
+                <td class="char-descr">greek small letter theta</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&thetasym;</td>
+                <td class="char-entity"><code>&amp;thetasym;</code></td>
+                <td class="char-code"><code>\03D1</code></td>
+                <td class="char-descr">greek small letter theta symbol</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&Iota;</td>
+                <td class="char-entity"><code>&amp;Iota;</code></td>
+                <td class="char-code"><code>\0399</code></td>
+                <td class="char-descr">greek capital letter iota</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&iota;</td>
+                <td class="char-entity"><code>&amp;iota;</code></td>
+                <td class="char-code"><code>\03B9</code></td>
+                <td class="char-descr">greek small letter iota</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&Kappa;</td>
+                <td class="char-entity"><code>&amp;Kappa;</code></td>
+                <td class="char-code"><code>\039A</code></td>
+                <td class="char-descr">greek capital letter kappa</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&kappa;</td>
+                <td class="char-entity"><code>&amp;kappa;</code></td>
+                <td class="char-code"><code>\03BA</code></td>
+                <td class="char-descr">greek small letter kappa</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&Lambda;</td>
+                <td class="char-entity"><code>&amp;Lambda;</code></td>
+                <td class="char-code"><code>\039B</code></td>
+                <td class="char-descr">greek capital letter lambda</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&lambda;</td>
+                <td class="char-entity"><code>&amp;lambda;</code></td>
+                <td class="char-code"><code>\03BB</code></td>
+                <td class="char-descr">greek small letter lambda</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&Mu;</td>
+                <td class="char-entity"><code>&amp;Mu;</code></td>
+                <td class="char-code"><code>\039C</code></td>
+                <td class="char-descr">greek capital letter mu</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&mu;</td>
+                <td class="char-entity"><code>&amp;mu;</code></td>
+                <td class="char-code"><code>\03BC</code></td>
+                <td class="char-descr">greek small letter mu</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&Nu;</td>
+                <td class="char-entity"><code>&amp;Nu;</code></td>
+                <td class="char-code"><code>\039D</code></td>
+                <td class="char-descr">greek capital letter nu</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&nu;</td>
+                <td class="char-entity"><code>&amp;nu;</code></td>
+                <td class="char-code"><code>\03BD</code></td>
+                <td class="char-descr">greek small letter nu</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&Xi;</td>
+                <td class="char-entity"><code>&amp;Xi;</code></td>
+                <td class="char-code"><code>\039E</code></td>
+                <td class="char-descr">greek capital letter xi</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&xi;</td>
+                <td class="char-entity"><code>&amp;xi;</code></td>
+                <td class="char-code"><code>\03BE</code></td>
+                <td class="char-descr">greek small letter xi</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&Omicron;</td>
+                <td class="char-entity"><code>&amp;Omicron;</code></td>
+                <td class="char-code"><code>\039F</code></td>
+                <td class="char-descr">greek capital letter omicron</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&omicron;</td>
+                <td class="char-entity"><code>&amp;omicron;</code></td>
+                <td class="char-code"><code>\03BF</code></td>
+                <td class="char-descr">greek small letter omicron</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&Pi;</td>
+                <td class="char-entity"><code>&amp;Pi;</code></td>
+                <td class="char-code"><code>\03A0</code></td>
+                <td class="char-descr">greek capital letter pi</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&pi;</td>
+                <td class="char-entity"><code>&amp;pi;</code></td>
+                <td class="char-code"><code>\03C0</code></td>
+                <td class="char-descr">greek small letter pi</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&piv;</td>
+                <td class="char-entity"><code>&amp;piv;</code></td>
+                <td class="char-code"><code>\03D6</code></td>
+                <td class="char-descr">greek pi symbol</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&Rho;</td>
+                <td class="char-entity"><code>&amp;Rho;</code></td>
+                <td class="char-code"><code>\03A1</code></td>
+                <td class="char-descr">greek capital letter rho</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&rho;</td>
+                <td class="char-entity"><code>&amp;rho;</code></td>
+                <td class="char-code"><code>\03C1</code></td>
+                <td class="char-descr">greek small letter rho</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&Sigma;</td>
+                <td class="char-entity"><code>&amp;Sigma;</code></td>
+                <td class="char-code"><code>\03A3</code></td>
+                <td class="char-descr">greek capital letter sigma</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&sigma;</td>
+                <td class="char-entity"><code>&amp;sigma;</code></td>
+                <td class="char-code"><code>\03C3</code></td>
+                <td class="char-descr">greek small letter sigma</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&sigmaf;</td>
+                <td class="char-entity"><code>&amp;sigmaf;</code></td>
+                <td class="char-code"><code>\03C2</code></td>
+                <td class="char-descr">greek small letter final sigma (note)</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&Tau;</td>
+                <td class="char-entity"><code>&amp;Tau;</code></td>
+                <td class="char-code"><code>\03A4</code></td>
+                <td class="char-descr">greek capital letter tau</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&tau;</td>
+                <td class="char-entity"><code>&amp;tau;</code></td>
+                <td class="char-code"><code>\03C4</code></td>
+                <td class="char-descr">greek small letter tau</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&Upsilon;</td>
+                <td class="char-entity"><code>&amp;Upsilon;</code></td>
+                <td class="char-code"><code>\03A5</code></td>
+                <td class="char-descr">greek capital letter upsilon</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&upsilon;</td>
+                <td class="char-entity"><code>&amp;upsilon;</code></td>
+                <td class="char-code"><code>\03C5</code></td>
+                <td class="char-descr">greek small letter upsilon</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&upsih;</td>
+                <td class="char-entity"><code>&amp;upsih;</code></td>
+                <td class="char-code"><code>\03D2</code></td>
+                <td class="char-descr">greek upsilon with hook symbol</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&Phi;</td>
+                <td class="char-entity"><code>&amp;Phi;</code></td>
+                <td class="char-code"><code>\03A6</code></td>
+                <td class="char-descr">greek capital letter phi</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&phi;</td>
+                <td class="char-entity"><code>&amp;phi;</code></td>
+                <td class="char-code"><code>\03C6</code></td>
+                <td class="char-descr">greek small letter phi</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&Chi;</td>
+                <td class="char-entity"><code>&amp;Chi;</code></td>
+                <td class="char-code"><code>\03A7</code></td>
+                <td class="char-descr">greek capital letter chi</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&chi;</td>
+                <td class="char-entity"><code>&amp;chi;</code></td>
+                <td class="char-code"><code>\03C7</code></td>
+                <td class="char-descr">greek small letter chi</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&Psi;</td>
+                <td class="char-entity"><code>&amp;Psi;</code></td>
+                <td class="char-code"><code>\03A8</code></td>
+                <td class="char-descr">greek capital letter psi</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&psi;</td>
+                <td class="char-entity"><code>&amp;psi;</code></td>
+                <td class="char-code"><code>\03C8</code></td>
+                <td class="char-descr">greek small letter psi</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&Omega;</td>
+                <td class="char-entity"><code>&amp;Omega;</code></td>
+                <td class="char-code"><code>\03A9</code></td>
+                <td class="char-descr">greek capital letter omega</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&omega;</td>
+                <td class="char-entity"><code>&amp;omega;</code></td>
+                <td class="char-code"><code>\03C9</code></td>
+                <td class="char-descr">greek small letter omega</td>
+            </tr>
+
+            <tr class="ch-section" id="diacritics">
+                <th colspan="4">
+                    Диакритические знаки
+                </th>
+            </tr>
+
+            <tr>
+                <td class="char-demo">&acute;</td>
+                <td class="char-entity"><code>&amp;acute;</code></td>
+                <td class="char-code"><code>\00B4</code></td>
+                <td class="char-descr">acute accent = spacing acute</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&cedil;</td>
+                <td class="char-entity"><code>&amp;cedil;</code></td>
+                <td class="char-code"><code>\00B8</code></td>
+                <td class="char-descr">cedilla = spacing cedilla</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&circ;</td>
+                <td class="char-entity"><code>&amp;circ;</code></td>
+                <td class="char-code"><code>\02C6</code></td>
+                <td class="char-descr">modifier letter circumflex accent</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&macr;</td>
+                <td class="char-entity"><code>&amp;macr;</code></td>
+                <td class="char-code"><code>\00AF</code></td>
+                <td class="char-descr">macron = spacing macron = overline = APL overbar</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&middot;</td>
+                <td class="char-entity"><code>&amp;middot;</code></td>
+                <td class="char-code"><code>\00B7</code></td>
+                <td class="char-descr">middle dot = Georgian comma = Greek middle dot</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&tilde;</td>
+                <td class="char-entity"><code>&amp;tilde;</code></td>
+                <td class="char-code"><code>\02DC</code></td>
+                <td class="char-descr">small tilde</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&uml;</td>
+                <td class="char-entity"><code>&amp;uml;</code></td>
+                <td class="char-code"><code>\00A8</code></td>
+                <td class="char-descr">diaeresis = spacing diaeresis</td>
+            </tr>
+
+            <tr class="ch-section" id="latin">
+                <th colspan="4">
+                    Латиница с диакритическими знаками
+                </th>
+            </tr>
+
+            <tr>
+                <td class="char-demo">&Aacute;</td>
+                <td class="char-entity"><code>&amp;Aacute;</code></td>
+                <td class="char-code"><code>\00C1</code></td>
+                <td class="char-descr">latin capital letter A with acute</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&aacute;</td>
+                <td class="char-entity"><code>&amp;aacute;</code></td>
+                <td class="char-code"><code>\00E1</code></td>
+                <td class="char-descr">latin small letter a with acute</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&Acirc;</td>
+                <td class="char-entity"><code>&amp;Acirc;</code></td>
+                <td class="char-code"><code>\00C2</code></td>
+                <td class="char-descr">latin capital letter A with circumflex</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&acirc;</td>
+                <td class="char-entity"><code>&amp;acirc;</code></td>
+                <td class="char-code"><code>\00E2</code></td>
+                <td class="char-descr">latin small letter a with circumflex</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&AElig;</td>
+                <td class="char-entity"><code>&amp;AElig;</code></td>
+                <td class="char-code"><code>\00C6</code></td>
+                <td class="char-descr">latin capital letter AE = latin capital ligature AE</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&aelig;</td>
+                <td class="char-entity"><code>&amp;aelig;</code></td>
+                <td class="char-code"><code>\00E6</code></td>
+                <td class="char-descr">latin small letter ae = latin small ligature ae</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&Agrave;</td>
+                <td class="char-entity"><code>&amp;Agrave;</code></td>
+                <td class="char-code"><code>\00C0</code></td>
+                <td class="char-descr">latin capital letter A with grave = latin capital letter A grave</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&agrave;</td>
+                <td class="char-entity"><code>&amp;agrave;</code></td>
+                <td class="char-code"><code>\00E0</code></td>
+                <td class="char-descr">latin small letter a with grave = latin small letter a grave</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&Aring;</td>
+                <td class="char-entity"><code>&amp;Aring;</code></td>
+                <td class="char-code"><code>\00C5</code></td>
+                <td class="char-descr">latin capital letter A with ring above = latin capital letter A ring</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&aring;</td>
+                <td class="char-entity"><code>&amp;aring;</code></td>
+                <td class="char-code"><code>\00E5</code></td>
+                <td class="char-descr">latin small letter a with ring above = latin small letter a ring</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&Atilde;</td>
+                <td class="char-entity"><code>&amp;Atilde;</code></td>
+                <td class="char-code"><code>\00C3</code></td>
+                <td class="char-descr">latin capital letter A with tilde</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&atilde;</td>
+                <td class="char-entity"><code>&amp;atilde;</code></td>
+                <td class="char-code"><code>\00E3</code></td>
+                <td class="char-descr">latin small letter a with tilde</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&Auml;</td>
+                <td class="char-entity"><code>&amp;Auml;</code></td>
+                <td class="char-code"><code>\00C4</code></td>
+                <td class="char-descr">latin capital letter A with diaeresis</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&auml;</td>
+                <td class="char-entity"><code>&amp;auml;</code></td>
+                <td class="char-code"><code>\00E4</code></td>
+                <td class="char-descr">latin small letter a with diaeresis</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&Ccedil;</td>
+                <td class="char-entity"><code>&amp;Ccedil;</code></td>
+                <td class="char-code"><code>\00C7</code></td>
+                <td class="char-descr">latin capital letter C with cedilla</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&ccedil;</td>
+                <td class="char-entity"><code>&amp;ccedil;</code></td>
+                <td class="char-code"><code>\00E7</code></td>
+                <td class="char-descr">latin small letter c with cedilla</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&Eacute;</td>
+                <td class="char-entity"><code>&amp;Eacute;</code></td>
+                <td class="char-code"><code>\00C9</code></td>
+                <td class="char-descr">latin capital letter E with acute</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&eacute;</td>
+                <td class="char-entity"><code>&amp;eacute;</code></td>
+                <td class="char-code"><code>\00E9</code></td>
+                <td class="char-descr">latin small letter e with acute</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&Ecirc;</td>
+                <td class="char-entity"><code>&amp;Ecirc;</code></td>
+                <td class="char-code"><code>\00CA</code></td>
+                <td class="char-descr">latin capital letter E with circumflex</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&ecirc;</td>
+                <td class="char-entity"><code>&amp;ecirc;</code></td>
+                <td class="char-code"><code>\00EA</code></td>
+                <td class="char-descr">latin small letter e with circumflex</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&Egrave;</td>
+                <td class="char-entity"><code>&amp;Egrave;</code></td>
+                <td class="char-code"><code>\00C8</code></td>
+                <td class="char-descr">latin capital letter E with grave</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&egrave;</td>
+                <td class="char-entity"><code>&amp;egrave;</code></td>
+                <td class="char-code"><code>\00E8</code></td>
+                <td class="char-descr">latin small letter e with grave</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&ETH;</td>
+                <td class="char-entity"><code>&amp;ETH;</code></td>
+                <td class="char-code"><code>\00D0</code></td>
+                <td class="char-descr">latin capital letter ETH</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&eth;</td>
+                <td class="char-entity"><code>&amp;eth;</code></td>
+                <td class="char-code"><code>\00F0</code></td>
+                <td class="char-descr">latin small letter eth</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&Euml;</td>
+                <td class="char-entity"><code>&amp;Euml;</code></td>
+                <td class="char-code"><code>\00CB</code></td>
+                <td class="char-descr">latin capital letter E with diaeresis</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&euml;</td>
+                <td class="char-entity"><code>&amp;euml;</code></td>
+                <td class="char-code"><code>\00EB</code></td>
+                <td class="char-descr">latin small letter e with diaeresis</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&Iacute;</td>
+                <td class="char-entity"><code>&amp;Iacute;</code></td>
+                <td class="char-code"><code>\00CD</code></td>
+                <td class="char-descr">latin capital letter I with acute</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&iacute;</td>
+                <td class="char-entity"><code>&amp;iacute;</code></td>
+                <td class="char-code"><code>\00ED</code></td>
+                <td class="char-descr">latin small letter i with acute</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&Icirc;</td>
+                <td class="char-entity"><code>&amp;Icirc;</code></td>
+                <td class="char-code"><code>\00CE</code></td>
+                <td class="char-descr">latin capital letter I with circumflex</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&icirc;</td>
+                <td class="char-entity"><code>&amp;icirc;</code></td>
+                <td class="char-code"><code>\00EE</code></td>
+                <td class="char-descr">latin small letter i with circumflex</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&Igrave;</td>
+                <td class="char-entity"><code>&amp;Igrave;</code></td>
+                <td class="char-code"><code>\00CC</code></td>
+                <td class="char-descr">latin capital letter I with grave</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&igrave;</td>
+                <td class="char-entity"><code>&amp;igrave;</code></td>
+                <td class="char-code"><code>\00EC</code></td>
+                <td class="char-descr">latin small letter i with grave</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&Iuml;</td>
+                <td class="char-entity"><code>&amp;Iuml;</code></td>
+                <td class="char-code"><code>\00CF</code></td>
+                <td class="char-descr">latin capital letter I with diaeresis</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&iuml;</td>
+                <td class="char-entity"><code>&amp;iuml;</code></td>
+                <td class="char-code"><code>\00EF</code></td>
+                <td class="char-descr">latin small letter i with diaeresis</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&Ntilde;</td>
+                <td class="char-entity"><code>&amp;Ntilde;</code></td>
+                <td class="char-code"><code>\00D1</code></td>
+                <td class="char-descr">latin capital letter N with tilde</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&ntilde;</td>
+                <td class="char-entity"><code>&amp;ntilde;</code></td>
+                <td class="char-code"><code>\00F1</code></td>
+                <td class="char-descr">latin small letter n with tilde</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&Oacute;</td>
+                <td class="char-entity"><code>&amp;Oacute;</code></td>
+                <td class="char-code"><code>\00D3</code></td>
+                <td class="char-descr">latin capital letter O with acute</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&oacute;</td>
+                <td class="char-entity"><code>&amp;oacute;</code></td>
+                <td class="char-code"><code>\00F3</code></td>
+                <td class="char-descr">latin small letter o with acute</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&Ocirc;</td>
+                <td class="char-entity"><code>&amp;Ocirc;</code></td>
+                <td class="char-code"><code>\00D4</code></td>
+                <td class="char-descr">latin capital letter O with circumflex</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&ocirc;</td>
+                <td class="char-entity"><code>&amp;ocirc;</code></td>
+                <td class="char-code"><code>\00F4</code></td>
+                <td class="char-descr">latin small letter o with circumflex</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&OElig;</td>
+                <td class="char-entity"><code>&amp;OElig;</code></td>
+                <td class="char-code"><code>\0152</code></td>
+                <td class="char-descr">latin capital ligature OE</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&oelig;</td>
+                <td class="char-entity"><code>&amp;oelig;</code></td>
+                <td class="char-code"><code>\0153</code></td>
+                <td class="char-descr">latin small ligature oe</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&Ograve;</td>
+                <td class="char-entity"><code>&amp;Ograve;</code></td>
+                <td class="char-code"><code>\00D2</code></td>
+                <td class="char-descr">latin capital letter O with grave</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&ograve;</td>
+                <td class="char-entity"><code>&amp;ograve;</code></td>
+                <td class="char-code"><code>\00F2</code></td>
+                <td class="char-descr">latin small letter o with grave</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&Oslash;</td>
+                <td class="char-entity"><code>&amp;Oslash;</code></td>
+                <td class="char-code"><code>\00D8</code></td>
+                <td class="char-descr">latin capital letter O with stroke = latin capital letter O slash</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&oslash;</td>
+                <td class="char-entity"><code>&amp;oslash;</code></td>
+                <td class="char-code"><code>\00F8</code></td>
+                <td class="char-descr">latin small letter o with stroke, = latin small letter o slash</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&Otilde;</td>
+                <td class="char-entity"><code>&amp;Otilde;</code></td>
+                <td class="char-code"><code>\00D5</code></td>
+                <td class="char-descr">latin capital letter O with tilde</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&otilde;</td>
+                <td class="char-entity"><code>&amp;otilde;</code></td>
+                <td class="char-code"><code>\00F5</code></td>
+                <td class="char-descr">latin small letter o with tilde</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&Ouml;</td>
+                <td class="char-entity"><code>&amp;Ouml;</code></td>
+                <td class="char-code"><code>\00D6</code></td>
+                <td class="char-descr">latin capital letter O with diaeresis</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&ouml;</td>
+                <td class="char-entity"><code>&amp;ouml;</code></td>
+                <td class="char-code"><code>\00F6</code></td>
+                <td class="char-descr">latin small letter o with diaeresis</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&Scaron;</td>
+                <td class="char-entity"><code>&amp;Scaron;</code></td>
+                <td class="char-code"><code>\0160</code></td>
+                <td class="char-descr">latin capital letter S with caron</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&scaron;</td>
+                <td class="char-entity"><code>&amp;scaron;</code></td>
+                <td class="char-code"><code>\0161</code></td>
+                <td class="char-descr">latin small letter s with caron</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&szlig;</td>
+                <td class="char-entity"><code>&amp;szlig;</code></td>
+                <td class="char-code"><code>\00DF</code></td>
+                <td class="char-descr">latin small letter sharp s = ess-zed</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&THORN;</td>
+                <td class="char-entity"><code>&amp;THORN;</code></td>
+                <td class="char-code"><code>\00DE</code></td>
+                <td class="char-descr">latin capital letter THORN</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&thorn;</td>
+                <td class="char-entity"><code>&amp;thorn;</code></td>
+                <td class="char-code"><code>\00FE</code></td>
+                <td class="char-descr">latin small letter thorn</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&Uacute;</td>
+                <td class="char-entity"><code>&amp;Uacute;</code></td>
+                <td class="char-code"><code>\00DA</code></td>
+                <td class="char-descr">latin capital letter U with acute</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&uacute;</td>
+                <td class="char-entity"><code>&amp;uacute;</code></td>
+                <td class="char-code"><code>\00FA</code></td>
+                <td class="char-descr">latin small letter u with acute</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&Ucirc;</td>
+                <td class="char-entity"><code>&amp;Ucirc;</code></td>
+                <td class="char-code"><code>\00DB</code></td>
+                <td class="char-descr">latin capital letter U with circumflex</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&ucirc;</td>
+                <td class="char-entity"><code>&amp;ucirc;</code></td>
+                <td class="char-code"><code>\00FB</code></td>
+                <td class="char-descr">latin small letter u with circumflex</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&Ugrave;</td>
+                <td class="char-entity"><code>&amp;Ugrave;</code></td>
+                <td class="char-code"><code>\00D9</code></td>
+                <td class="char-descr">latin capital letter U with grave</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&ugrave;</td>
+                <td class="char-entity"><code>&amp;ugrave;</code></td>
+                <td class="char-code"><code>\00F9</code></td>
+                <td class="char-descr">latin small letter u with grave</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&Uuml;</td>
+                <td class="char-entity"><code>&amp;Uuml;</code></td>
+                <td class="char-code"><code>\00DC</code></td>
+                <td class="char-descr">latin capital letter U with diaeresis</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&uuml;</td>
+                <td class="char-entity"><code>&amp;uuml;</code></td>
+                <td class="char-code"><code>\00FC</code></td>
+                <td class="char-descr">latin small letter u with diaeresis</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&Yacute;</td>
+                <td class="char-entity"><code>&amp;Yacute;</code></td>
+                <td class="char-code"><code>\00DD</code></td>
+                <td class="char-descr">latin capital letter Y with acute</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&yacute;</td>
+                <td class="char-entity"><code>&amp;yacute;</code></td>
+                <td class="char-code"><code>\00FD</code></td>
+                <td class="char-descr">latin small letter y with acute</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&Yuml;</td>
+                <td class="char-entity"><code>&amp;Yuml;</code></td>
+                <td class="char-code"><code>\0178</code></td>
+                <td class="char-descr">latin capital letter Y with diaeresis</td>
+            </tr>
+            <tr>
+                <td class="char-demo">&yuml;</td>
+                <td class="char-entity"><code>&amp;yuml;</code></td>
+                <td class="char-code"><code>\00FF</code></td>
+                <td class="char-descr">latin small letter y with diaeresis</td>
+            </tr>
+        </tbody>
+    </table>
 </div>

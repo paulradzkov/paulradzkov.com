@@ -1,0 +1,254 @@
+
+/* header contacts */
+.horizontal-nav {
+    text-align: center;
+}
+.horizontal-nav > * {
+    display: inline-block;
+    padding: 0 0.5em;
+}
+.horizontal-nav a {
+    padding: 8px;
+}
+.horizontal-nav .txt {
+    display: none;
+    margin-left: 0.3em;
+}
+@media screen and (min-width:48rem) {
+    .horizontal-nav .txt {
+        display: inline-block;
+    }
+}
+/* header contacts end */
+
+
+/* navigation */
+.nav-icon {
+    font-family: Arial;
+    display: block;
+    position: absolute;
+    z-index: 1;
+    font-size: 1.5em;
+    margin: 1em 0 1em 1em;
+    width: 2em;
+    height: 2em;
+    text-align: center;
+    line-height: 2;
+    border: 0;
+    background-color: #000;
+    background-repeat: no-repeat;
+    color: #FFF !important;
+    outline: none;
+    border-radius: 2px;
+    box-shadow: 0.2em 0.2em 0.3em -0.1em rgba(0, 0, 0, 0.4), inset 0 0 0 0 #0877db;
+    transition: all 0.5s;
+}
+.nav-icon:hover {
+    box-shadow: 0.2em 0.2em 0.3em -0.1em rgba(0, 0, 0, 0.4), inset 0 0 0 1em #0877db;
+}
+.no-boxshadow .nav-icon:hover {
+    background-color: #0877db;
+}
+.nav-icon:active {
+    box-shadow: inset 0.1em 0.1em 0.1em 0em rgba(0, 0, 0, 0.4), inset 0 0 0 1em #0877db;
+    transition: all 0.1s;
+}
+.nav-icon img {
+    max-width: none;
+    width: 28px;
+    height: 28px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.site-navigation .tooltip {
+    text-align: left;
+    white-space: nowrap;
+}
+
+@media screen and (max-width:64rem) {
+    .no-csstransforms3d .fixed.scrolldown .nav-icon {
+        top: -4em;
+        transition: top .3s;
+    }
+    .no-csstransforms3d .fixed.scrolltop .nav-icon {
+        top: 0;
+        transition: top .3s;
+    }
+    .csstransforms3d .fixed.scrolldown .nav-icon {
+        transform: translate3d(0, -4em, 0);
+        transition: transform .3s;
+    }
+    .csstransforms3d .fixed.scrolltop .nav-icon {
+        transform: translate3d(0, 0em, 0);
+        transition: transform .3s;
+    }
+}
+
+.layout-article .hold {
+    margin-top: -5px;
+}
+
+.sticky-nav {
+    z-index: 2;
+}
+
+
+
+/* siblings nav in page-header */
+
+.page-header {
+    position: relative;
+}
+.page-header .article-meta,
+.page-header .article-title {
+    position: relative;
+}
+
+.read-siblings {
+    display: none;
+}
+
+@media screen and (min-width: 60rem) {
+    .flexbox .read-siblings {
+        display: block;
+        max-width: none;
+        position: absolute;
+        bottom: 0;
+        top: 0;
+        margin: 0 -2em;
+        width: 100%;
+        overflow: hidden;
+
+        /*overflow-x: hidden; /* removes scroll in IE10 */
+    }
+    .read-siblings .navlinks {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: absolute;
+        width: 100%;
+        height: 0;
+        top: 12em;
+    }
+    .read-siblings a {
+        display: block;
+        z-index: 20;
+        width: 10em;
+        padding: 1em 2em;
+        font-size: 0.8em;
+        font-family: @fontmain;
+        font-weight: normal;
+        line-height: 1.2;
+        background-repeat: no-repeat;
+        transition: all 0.2s ease-out;
+    }
+    .read-siblings a:link                {color: @link2;}
+    .read-siblings a:visited             {color: @visited2;}
+    .read-siblings a:hover               {color: @hover2;}
+    .read-siblings a:visited:hover       {color: @visitedhover2;}
+    .read-siblings a:active              {color: @active2;}
+
+    .read-siblings .navlinks-prev {
+        text-align: left;
+        left: 0;
+        padding-right: 4em;
+        background-image: url(/i/chevron-left.svg);
+        background-position: 90% 50%;
+        border-radius: 0 3px 3px 0;
+        transform: translate3d(-12em,0,0);
+    }
+    .read-siblings .navlinks-next {
+        text-align: right;
+        right: 0;
+        padding-left: 4em;
+        background-image: url(/i/chevron-right.svg);
+        background-position: 10% 50%;
+        border-radius: 3px 0 0 3px;
+        transform: translate3d(12em,0,0);
+    }
+    .read-siblings a:hover,
+    .read-siblings a:focus {
+        background-color: #0877db;
+        transform: translate3d(0,0,0);
+    }
+    .read-siblings .navlinks-next:only-child {
+        position: relative;
+        left: 100%;
+        margin-left: -4em;
+        transform: translate3d(0,0,0);
+    }
+    .read-siblings .navlinks-next:only-child:hover,
+    .read-siblings .navlinks-next:only-child:focus {
+        transform: translate3d(-12em,0,0);
+    }
+}
+/* ie fallback */
+.no-mediaqueries.display-table .navlinks {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+}
+.no-mediaqueries.display-table .navlinks-prev,
+.no-mediaqueries.display-table .navlinks-next {
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 2em;
+    box-sizing: border-box;
+}
+/* siblings nav in header end */
+
+
+
+/* read next nav links */
+.read-next {
+    margin: 8em 0em 0;
+    margin: 8rem 0rem 0;
+    background: #EFEFEF;
+    padding: 1em 0 0;
+    box-shadow: inset 0 3px 6px -6px rgba(0, 0, 0, 0.45);
+    font-weight: bold;
+}
+.read-next-title {
+    font-size: 1.5em;
+    text-align: center;
+    color: #AAA;
+}
+.read-next .navlinks-prev,
+.read-next .navlinks-next {
+    display: block;
+    text-align: center;
+    padding: 1em 1em 1.5em;
+    font-size: 1.5em;
+    font-size: 1.5rem;
+    line-height: 1.1;
+}
+
+@media screen and (min-width: 40rem) {
+    .read-next .navlinks {
+        display: table;
+        width: 100%;
+        border-collapse: collapse;
+    }
+    .read-next .navlinks > a:only-child {
+        width: 100%;
+        text-align: center;
+    }
+    .read-next .navlinks-prev,
+    .read-next .navlinks-next {
+        display: table-cell;
+        vertical-align: middle;
+        width: 50%;
+        font-size: 2em;
+        font-size: 2rem;
+        box-sizing: border-box;
+    }
+    .read-next .navlinks-prev {
+        text-align: right;
+    }
+    .read-next .navlinks-next {
+        text-align: left;
+    }
+}
+
+/* read next nav links end */

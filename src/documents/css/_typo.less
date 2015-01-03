@@ -36,8 +36,7 @@ p kbd {
     h4,
     h5,
     h6,
-    .navlinks,
-    .nav-list a {
+    .navlinks {
         font-family: @fontsecond;
     }
 }
@@ -75,6 +74,8 @@ nav ul {
     padding-left: 0;
 }
 
+
+/* figures */
 figure {
   margin: 4em 0;
   margin: 4rem 0;
@@ -84,16 +85,18 @@ figure img {
     max-width: 100%;
     height: auto;
     -ms-interpolation-mode: bicubic;
-    -weblit-box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.4), 3px 3px 5px rgba(0, 0, 0, 0.3);
-       -moz-box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.4), 3px 3px 5px rgba(0, 0, 0, 0.3);
-            box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.4), 3px 3px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.3), 3px 3px 10px rgba(0, 0, 0, 0.3);
 }
-figure figcaption {
+
+figcaption {
     margin: 2em auto;
     margin: 2rem auto;
     max-width: 25em;
     font-size: 0.9em;
     font-size: 0.9rem;
+    text-align: left;
+}
+figure figcaption {
     text-align: center;
 }
 figure figcaption p {
@@ -103,6 +106,67 @@ figure figcaption p:only-child {
     display: inline-block;
 }
 
+
+blockquote {
+    margin: 2em 0;
+    margin: 2rem 0;
+    padding: 0 2.5em;
+    padding: 0 2.5rem;
+    background: rgba(0, 0, 0, 0.03);
+    border-radius: 2px;
+}
+
+blockquote:before,
+blockquote:after {
+    content: '';
+    clear: both;
+    display: block;
+    border-bottom: 3px solid #CCC;
+    width: 50%;
+    margin: 2em auto 2em;
+}
+
+blockquote + blockquote:before {
+    content: none;
+}
+
+
+pre {
+    background: #f8f8f8;
+    border-style: solid;
+    border-width: 1px 0;
+    border-color: #f1f1f1;
+    text-align: center;
+    text-shadow: 1px 1px 0px #FFF;
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+pre code {
+    display: block;
+    margin: 0;
+    padding: 1em 2em;
+    text-align: left;
+}
+
+
+
+
+/* cli */
+.cli {
+    border: 1px solid #f1f1f1;
+    border-radius: 3px;
+    padding: 0.2em 0.3em;
+    background: #f8f8f8;
+    font-weight: bold;
+}
+p .cli {
+    margin: 0 0.2em;
+}
+/* cli end */
+
+
+/* utility classes */
 .clear {
   clear: both;
 }

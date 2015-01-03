@@ -1,0 +1,71 @@
+// Tags
+
+/* tag cloud */
+.tags-page a {
+    display: inline-block;
+    padding: 5px 10px;
+}
+.tags-page a:after {
+    content: attr(data-tag-count);
+    display: inline-block;
+    padding: 3px 5px;
+    color: #666;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+/* tag cloud end */
+
+/* tags */
+.tags-list .tag {
+    display: inline-block;
+    padding: 0.1em 0.7em;
+    text-decoration: none;
+}
+.tags-list .tag:before {
+    content: '#';
+    opacity: 0.5;
+    text-decoration: none;
+}
+/* tags end */
+
+
+/* tags filter */
+.no-js .filters-container,
+.no-js .view-toggle {
+    display: none;
+}
+.btn-group.tags-list {
+    box-shadow: none;
+}
+.filters-container {
+    padding: 1em 0;
+}
+.filter-legend {
+    display: inline-block;
+    margin-right: 0.5em;
+    vertical-align: middle;
+}
+.tags-list .btn-label {
+    float: none;
+    display: inline-block;
+    padding: 0;
+    border-radius: 2px;
+}
+.btn-label .tag {
+    margin: 0;
+    color: @link;
+    font-size: 0.8em;
+}
+.not-tag {
+    font-size: 0.8em;
+    padding: 0.1em 0.7em;
+    color: @link;
+}
+.active .tag,
+.active .not-tag {
+    color: #000;
+}
+.btn:not(.active) {
+    cursor: pointer;
+}
+/* tags filter end */

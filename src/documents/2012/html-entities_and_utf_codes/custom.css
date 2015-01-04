@@ -5,6 +5,10 @@
   text-align: center;
 }
 
+.touch .table-switcher {
+    display: none;
+}
+
 table.chars {
   border-collapse: separate;
   margin: auto;

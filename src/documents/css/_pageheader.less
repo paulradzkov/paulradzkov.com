@@ -1,5 +1,5 @@
 .page-header {
-    padding: 3em 2em 3em;
+    padding: @pad*1.5 @pad @pad*1.5;
     text-align: center;
     color: #FFF;
     background-color: #000;
@@ -23,14 +23,16 @@
 .page-header h1 {
     margin-bottom: 0.2em;
 }
-.article-title {
-    font-size: 3.1em;
-}
-.article-title:before {
-    content: '~';
-    display: block;
-    text-align: center;
-    margin: 0 0 0.2em;
+@media screen and (min-width: 40rem) {
+    .article-title {
+        font-size: 3.1em;
+    }
+    .article-title:before {
+        content: '~';
+        display: block;
+        text-align: center;
+        margin: 0 0 0.2em;
+    }
 }
 
 .page-header h2 {

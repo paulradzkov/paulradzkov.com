@@ -5,55 +5,55 @@ scripts: ["/vendor/isotope.pkgd.min.js","/js/isotope-settings.js"]
 ---
 
 <div class="compound-header">
-	<h1>Блог <sup class="rss"><a href="/rss.xml">RSS</a></sup></h1>
-	<div class="view-toggle">
-		<a href="/search" class="btn" data-toggle="tooltip" data-placement="bottom" title="Поиск по сайту"><img src="/i/search.svg" class="btn-icon" width="14" height="14" alt="Поиск по сайту"></a>
-		<form name="blogroll-view" class="btn-group" data-toggle="buttons">
-			<label class="btn btn-primary active" data-toggle="tooltip" data-placement="bottom" title="Лента">
-				<input type="radio" name="view-options" id="full-view" checked>
-				<img src="/i/th-list.svg" class="btn-icon" width="14" height="14" alt="Лента">
-			</label>
-			<label class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="Список">
-				<input type="radio" name="view-options" id="short-view">
-				<img src="/i/list.svg" class="btn-icon" width="14" height="14" alt="Список">
-			</label>
-		</form>
-	</div>
+    <h1>Блог <sup class="rss"><a href="/rss.xml">RSS</a></sup></h1>
+    <div class="view-toggle">
+        <a href="/search" class="btn" data-toggle="tooltip" data-placement="bottom" title="Поиск по сайту"><img src="/i/search.svg" class="btn-icon" width="14" height="14" alt="Поиск по сайту"></a>
+        <form name="blogroll-view" class="btn-group" data-toggle="buttons">
+            <label class="btn btn-primary active" data-toggle="tooltip" data-placement="bottom" title="Лента">
+                <input type="radio" name="view-options" id="full-view" checked>
+                <img src="/i/th-list.svg" class="btn-icon" width="14" height="14" alt="Лента">
+            </label>
+            <label class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="Список">
+                <input type="radio" name="view-options" id="short-view">
+                <img src="/i/list.svg" class="btn-icon" width="14" height="14" alt="Список">
+            </label>
+        </form>
+    </div>
 </div>
 
 <div class="filters-container">
-	<form class="filters btn-group tags-list" data-toggle="buttons" id="filters">
-		<span class="filter-legend">Фильтр по тегам:</span>
-		<label class="btn btn-label active" data-filter="*">
-			<input type="radio" name="filters-options" id="view-all" checked>
-			<strong class="not-tag">Показать все</strong>
-		</label>
-		<% for tag, data of @getTagCloud(): %>
-			<label class="btn btn-label" data-filter=".<%= @wspToDash(tag) %>" data-tag-count="<%= data.count %>" data-tag-weight="<%= data.weight %>">
-				<input type="radio" name="filters-options">
-				<span class="tag"><%= tag %></span>
-			</label>
-		<% end %>
-	</form>
+    <form class="filters btn-group tags-list" data-toggle="buttons" id="filters">
+        <span class="filter-legend">Фильтр по тегам:</span>
+        <label class="btn btn-label active" data-filter="*">
+            <input type="radio" name="filters-options" id="view-all" checked>
+            <strong class="not-tag">Показать все</strong>
+        </label>
+        <% for tag, data of @getTagCloud(): %>
+            <label class="btn btn-label" data-filter=".<%= @wspToDash(tag) %>" data-tag-count="<%= data.count %>" data-tag-weight="<%= data.weight %>">
+                <input type="radio" name="filters-options">
+                <span class="tag"><%= tag %></span>
+            </label>
+        <% end %>
+    </form>
 </div>
 
 <div class="blogroll detailed-view js-isotope">
-	<% for page in @getCollection("articles").toJSON(): %>
-		<section class="post-tizer item <%= if page.id is @document.id then 'active' else 'inactive' %> <% for tag in page.tags : %> <%= @wspToDash(tag) %><% end %>">
-			<h2><a href="<%= page.url %>"><%= page.title %></a></h2>
-			<div class="before-cut"><%- @cuttedContent page.contentRenderedWithoutLayouts %></div>
+    <% for page in @getCollection("articles").toJSON(): %>
+        <section class="post-tizer item <%= if page.id is @document.id then 'active' else 'inactive' %> <% for tag in page.tags : %> <%= @wspToDash(tag) %><% end %>">
+            <h2><a href="<%= page.url %>"><%= page.title %></a></h2>
+            <div class="before-cut"><%- @cuttedContent page.contentRenderedWithoutLayouts %></div>
 
-			<aside class="blog-item-meta">
-				<ul class="meta-data">
-					<li class="date"><time datetime="<%= page.created_at %>"><%=@moment(page.created_at).format('DD MMMM YYYY') %></time></li>
-					<li class="comments"><a href="<%= page.url %>#disqus_thread" data-disqus-identifier="<%= page.disqusid %>" >Комментарии</a></li>
-					<li class="tags-list">
-						<% for tag in page.tags : %>
-						<a class="tag" href="<%= @getTagUrl(tag) %>"><span class="inner"><%= tag %></span></a>
-						<% end %>
-					</li>
-				</ul>
-			</aside>
-		</section>
-	<% end %>
+            <aside class="blog-item-meta">
+                <ul class="meta-data">
+                    <li class="date"><time datetime="<%= page.created_at %>"><%=@moment(page.created_at).format('DD MMMM YYYY') %></time></li>
+                    <li class="comments"><a href="<%= page.url %>#disqus_thread" data-disqus-identifier="<%= page.disqusid %>" >Комментарии</a></li>
+                    <li class="tags-list">
+                        <% for tag in page.tags : %>
+                        <a class="tag" href="<%= @getTagUrl(tag) %>"><span class="inner"><%= tag %></span></a>
+                        <% end %>
+                    </li>
+                </ul>
+            </aside>
+        </section>
+    <% end %>
 </div>

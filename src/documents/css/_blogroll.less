@@ -1,29 +1,43 @@
 
 .blogroll {
     padding-top: 3em;
-    padding-top: 3rem;
+    padding-top: @pad*1.5;
 }
 .post-tizer {
     background: #FFF;
-    margin: 1em 0 8em;
-    margin: 1rem 0 8em;
+    margin: 1em 0 4em;
+    margin: @pad/2 0 @pad*2;
+
+    @media (min-width: 40rem) {
+        margin: 1em 0 8em;
+        margin: @pad/2 0 @pad*4;
+    }
 }
 
 .post-tizer pre code {
     box-sizing: border-box;
 }
-
+@media screen and (max-width: 40rem) {
+    .post-tizer pre,
+    .post-tizer blockquote {
+        margin-left: -@pad;
+        margin-right: -@pad;
+    }
+}
 
 /* toggle view */
-.compound-header {
-    display: table;
-    width: 100%;
-}
-.compound-header > * {
-    display: table-cell;
-}
-.compound-header .view-toggle {
-    text-align: right;
+@media screen and (min-width: 25rem) {
+    .compound-header {
+        display: table;
+        width: 100%;
+    }
+    .compound-header > * {
+        display: table-cell;
+        vertical-align: middle;
+    }
+    .compound-header .view-toggle {
+        text-align: right;
+    }
 }
 .btn-group {
     position: relative;
@@ -32,6 +46,11 @@
     box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1);
     box-sizing: border-box;
 }
+
+.view-toggle a.btn {
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
 .btn {
     display: inline-block;
     vertical-align: middle;

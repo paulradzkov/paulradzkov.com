@@ -108,6 +108,34 @@
     display: none;
 }
 
+@media screen and (max-width: 59rem) {
+    .read-siblings {
+        display: block;
+        margin: -@pad*1.5 -@pad 0;
+        background: #000;
+        max-width: none;
+    }
+    .navlinks {
+        display: table;
+        width: 100vw;
+        table-layout: fixed;
+
+        > a {
+            display: table-cell;
+            padding: 0.5rem;
+            font-size: 0.8rem;
+            text-align: left;
+
+            &:last-child {
+                text-align: right;
+            }
+            &:only-child {
+                text-align: center;
+            }
+        }
+    }
+}
+
 @media screen and (min-width: 60rem) {
     .flexbox .read-siblings {
         display: block;
@@ -118,7 +146,6 @@
         margin: 0 -2em;
         width: 100%;
         overflow: hidden;
-
         /*overflow-x: hidden; /* removes scroll in IE10 */
     }
     .read-siblings .navlinks {

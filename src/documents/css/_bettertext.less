@@ -34,6 +34,21 @@ h6 {
     margin-bottom: 1em;
 }
 
+@media screen and (max-width: 40rem) {
+    h1 {
+        font-size: 2em;
+    }
+    h2 {
+        font-size: 1.5em;
+    }
+    h3, h4 {
+        font-size: 1.25em;
+    }
+    h5, h6 {
+        font-size: 1em;
+    }
+}
+
 /* double headers */
 h1 + h2,
 h2 + h3,
@@ -50,7 +65,7 @@ h3:first-child,
 h4:first-child,
 h5:first-child,
 h6:first-child {
-  margin-top: 0;
+    margin-top: 0;
 }
 
 p {
@@ -71,7 +86,7 @@ article ol:before,
 article ul:before {
     content: '';
     display: block;
-    width: 10em;
+    width: 5em;
     overflow: hidden;
 }
 li p:before {
@@ -81,9 +96,11 @@ li p:last-child {
     margin-bottom: 1em;
 }
 
+li code,
 p code {
     font-size: 1.1em;
     line-height: 0.8;
+    word-break: break-all;
 }
 sup,
 sub {
@@ -205,9 +222,11 @@ figcaption {
 }
 
 /* blockquotes */
-blockquote:not([class]) {
-    margin-left: 2.5em;
-    margin-right: 2.5em;
+@media screen and (min-width: 40rem) {
+    blockquote:not([class]) {
+        margin-left: 2.5em;
+        margin-right: 2.5em;
+    }
 }
 blockquote:not([class]) > cite {
     display: block;

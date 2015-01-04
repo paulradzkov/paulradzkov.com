@@ -10,20 +10,23 @@ html {
     flex-direction:column;
     min-height: 100vh;
 }
+
 .flexbox .page-content {
     flex-grow:1;
 }
+
 /* flex layout end */
 
 .page-content {
     padding: 4em 2em 4em;
-    padding: 4rem 2rem 4rem;
+    padding: @pad*2 @pad @pad*2;
 }
 
-@media screen and (max-width: 64rem) {
+@media screen and (max-width: (@mawtext + @pad*2 + 10rem)) {
 
+    /* 1 - placeholder for home button */
     .page-content {
-        padding-top: 6rem;
+        padding-top: @pad*3; /* 1 */
     }
 }
 
@@ -34,7 +37,8 @@ html {
     margin-right: auto;
 }
 
-/* images */
+/* Exclusions below: */
+/* 1. Images */
 .content-width > figure {
     max-width: none;
     text-align: center;
@@ -44,35 +48,28 @@ html {
     display: inline-block;
 }
 
-/* code blocks */
+/* 2. Code blocks */
 .content-width > pre {
     max-width: none;
     margin: 1em -2em;
-    margin: 1rem -2rem;
+    margin: 1rem -@pad;
 }
 
-@media screen and (min-width: 54em) {
+@media screen and (min-width: (@mawtext + @pad*2)) {
+
     pre code {
-        min-width: @mawtext;
+        min-width: (@mawtext + @pad*2);
         max-width: 100%;
-        padding-left: 0;
-        padding-right: 0;
         display: inline-block;
         box-sizing: border-box;
     }
+
     .post-tizer pre code {
         padding-left: 2em;
-        padding-right: 2em;
+        padding-right: @pad;
     }
 }
 
-@media screen and (min-width: 60rem) {
-    pre code {
-        position: relative;
-        z-index: 2;
-        background: #f8f8f8;
-    }
-}
 /* IE fallback */
 .no-mediaqueries.display-table pre code {
     min-width: 800px;

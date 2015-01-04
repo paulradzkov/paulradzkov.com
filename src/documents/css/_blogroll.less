@@ -8,7 +8,7 @@
     margin: 1em 0 4em;
     margin: @pad/2 0 @pad*2;
 
-    @media (min-width: 40rem) {
+    @media (min-width: @smscreen) {
         margin: 1em 0 8em;
         margin: @pad/2 0 @pad*4;
     }
@@ -17,7 +17,7 @@
 .post-tizer pre code {
     box-sizing: border-box;
 }
-@media screen and (max-width: 40rem) {
+@media screen and (max-width: @smscreen) {
     .post-tizer pre,
     .post-tizer blockquote {
         margin-left: -@pad;
@@ -26,7 +26,7 @@
 }
 
 /* toggle view */
-@media screen and (min-width: 25rem) {
+@media screen and (min-width: @xsscreen) {
     .compound-header {
         display: table;
         width: 100%;
@@ -43,7 +43,7 @@
     position: relative;
     display: inline-block;
     vertical-align: middle;
-    box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1);
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
 }
 

@@ -1,11 +1,11 @@
 /* meta */
 .article-meta {
     padding: 1em 2em 1em;
-    padding: 1rem @pad 1rem;
+    padding: @pad/2 @pad @pad/2;
 }
 .article-meta.inlined > * {
     display: inline-block;
-    margin: 0 1em;
+    margin: 0 @pad/2;
 }
 .meta a,
 .vertical-nav a {
@@ -16,9 +16,6 @@
     padding: 0;
     font-size: 0.8em;
     font-size: 0.8rem;
-}
-.article-meta .meta-data {
-    margin-bottom: 4em;
 }
 .meta-data li {
     display: inline-block;
@@ -32,22 +29,6 @@
 .meta-data li:last-child:after {
     content: '';
     display: none;
-}
-
-@media screen and (min-width: 80em) {
-    .article-meta .meta-data {
-        width: 13em;
-        float: left;
-        margin: 0 0 0 -15em;
-    }
-    .article-meta .meta-data li {
-        display: block;
-        margin-right: 0;
-    }
-    .article-meta .meta-data li:after {
-        content: '';
-        display: none;
-    }
 }
 .no-mediaqueries .article-meta {
     max-width: 800px;

@@ -1,8 +1,0 @@
-									<svg class="bg-blur">
-										<defs>
-											<filter id="blur" x="-200%" y="-200%" width="400%" height="400%">
-												<feGaussianBlur in="SourceGraphic" stdDeviation="25" />
-										    </filter>
-										</defs>
-										<image x="50" y="50" id="svg-image" width="120" height="120" xlink:href="/i/paulradzkov.jpg" filter="url(#blur)"/>
-									</svg>

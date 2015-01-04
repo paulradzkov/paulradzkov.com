@@ -1,5 +1,7 @@
 // Tags
 
+@tagxw: .7em;
+
 /* tag cloud */
 .tags-page a {
     display: inline-block;
@@ -18,13 +20,20 @@
 /* tags */
 .tags-list .tag {
     display: inline-block;
-    padding: 0.1em 0.7em 0.1em 0;
+    padding: 0.1em @tagxw;
     text-decoration: none;
 }
 .tags-list .tag:before {
     content: '#';
     opacity: 0.5;
     text-decoration: none;
+}
+.meta-data .tags-list .tag {
+    margin: 0 @tagxw 0 -@tagxw;
+
+    &:hover {
+        box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
+    }
 }
 /* tags end */
 
@@ -42,12 +51,13 @@
 }
 .filter-legend {
     display: inline-block;
-    margin-right: 0.5em;
+    margin-right: 0.5em + @tagxw;
     vertical-align: middle;
 }
 .tags-list .btn-label {
     float: none;
     display: inline-block;
+    margin: 0 @tagxw 0 -@tagxw;
     padding: 0;
     border-radius: 2px;
 }
@@ -58,7 +68,7 @@
 }
 .not-tag {
     font-size: 0.8em;
-    padding: 0.1em 0.7em;
+    padding: 0.1em @tagxw;
     color: @link;
 }
 .active .tag,

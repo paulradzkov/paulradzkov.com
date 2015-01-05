@@ -3,3 +3,4 @@ bower_components/
 out/
 rsync.bat
 .docpad.db
+.ftppass

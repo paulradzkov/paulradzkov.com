@@ -60,6 +60,7 @@
     "grunt-contrib-htmlmin": "^0.3.0",
     "grunt-contrib-jshint": "^0.10.0",
     "grunt-contrib-uglify": "^0.6.0",
+    "grunt-ftp-deploy": "^0.1.9",
     "grunt-modernizr": "^0.6.0"
   },
   "main": "node_modules/docpad/bin/docpad-server"

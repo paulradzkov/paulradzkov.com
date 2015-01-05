@@ -137,6 +137,20 @@ module.exports = (grunt) ->
 				# Have custom Modernizr tests? Add paths to their location here.
 				customTests: []
 
+		'ftp-deploy':
+			build:
+				auth:
+					host: 'paulradzkov.com'
+					port: 21
+					authPath: '.ftppass'
+					authKey: 'primary'
+				src: 'out/'
+				dest: '/www/paulradzkov.com'
+				exclusions: [
+					'out/**/.DS_Store'
+					'out/**/Thumbs.db'
+				]
+
 	# Build the available Grunt tasks.
 	grunt.loadNpmTasks 'grunt-autoprefixer'
 	grunt.loadNpmTasks 'grunt-contrib-cssmin'
@@ -145,7 +159,9 @@ module.exports = (grunt) ->
 	grunt.loadNpmTasks 'grunt-contrib-htmlmin'
 	grunt.loadNpmTasks 'grunt-contrib-uglify'
 	grunt.loadNpmTasks 'grunt-modernizr'
+	grunt.loadNpmTasks 'grunt-ftp-deploy'
 
 	# Register our Grunt tasks.
+	grunt.registerTask 'deploy',        ['ftp-deploy']
 	grunt.registerTask 'production',    ['default', 'cssmin', 'htmlmin', 'uglify', 'clean']
 	grunt.registerTask 'default',       ['autoprefixer']

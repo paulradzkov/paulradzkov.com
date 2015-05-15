@@ -2,55 +2,55 @@
 <html class="no-js" lang="ru">
 <%- @partial('html-head') %>
 <body class="layout-<%- @document.kind %>">
-	<% if ((!@document.kind) or (@document.kind != 'article')) : %>
-		<header class="page-header content-width">
-			<%- @partial('hero') %>
-		</header>
-	<% end %>
-	<% if (@document.kind == 'article') : %>
-	<header class="page-header content-width">
-		<nav class="read-siblings">
-			<%- @getNavLinks() %>
-		</nav>
-		<aside class="article-meta content-width">
-			<% if (@document.created_at) : %>
-			<p class="date"><time datetime="<%= @document.created_at %>"><%=@moment(@document.created_at).lang('ru').format('DD MMMM YYYY') %></time></p>
-			<% end %>
-		</aside>
-		<h1 class="article-title"><%- @document.title %></h1>
-		<aside class="article-meta content-width inlined">
-			<% if (@document.tags) : %>
-			<span class="tags-list">
-				<% for tag in @document.tags : %>
-					<a class="tag" href="<%= @getTagUrl(tag) %>"><%= tag %></a>
-				<% end %>
-			</span>
-			<% end %>
-			<% if ((@site.disqus_shortname) and (@document.disqusid)) : %>
-			<span class="comments"><a href="<%= @document.path %>#disqus_thread" data-disqus-identifier="<%= @document.disqusid %>" >Комментарии</a></span>
-			<% end %>
-		</aside>
+    <% if ((!@document.kind) or (@document.kind != 'article')) : %>
+        <header class="page-header content-width">
+            <%- @partial('hero') %>
+        </header>
+    <% end %>
+    <% if (@document.kind == 'article') : %>
+    <header class="page-header content-width">
+        <nav class="read-siblings">
+            <%- @getNavLinks() %>
+        </nav>
+        <aside class="article-meta content-width">
+            <% if (@document.created_at) : %>
+            <p class="date"><time datetime="<%= @document.created_at %>"><%=@moment(@document.created_at).lang('ru').format('DD MMMM YYYY') %></time></p>
+            <% end %>
+        </aside>
+        <h1 class="article-title"><%- @document.title %></h1>
+        <aside class="article-meta content-width inlined">
+            <% if (@document.tags) : %>
+            <span class="tags-list">
+                <% for tag in @document.tags : %>
+                    <a class="tag" href="<%= @getTagUrl(tag) %>"><%= tag %></a>
+                <% end %>
+            </span>
+            <% end %>
+            <% if ((@site.disqus_shortname) and (@document.disqusid)) : %>
+            <span class="comments"><a href="<%= @document.path %>#disqus_thread" data-disqus-identifier="<%= @document.disqusid %>" >Комментарии</a></span>
+            <% end %>
+        </aside>
 
-	</header>
-	<% end %>
-	<% if (@document.url != '/') : %>
-		<nav class="site-navigation sticky-nav" id="sticker">
-			<a class="nav-icon js-menu-trigger" href="/" data-toggle="tooltip" data-placement="right" title="На главную"><img src="/i/home.svg" width="28" height="28" alt="На главную" onerror="this.onerror=null; this.src='/i/home.png'" /><span class="visuallyhidden">На главную</span></a>
-		</nav>
-	<% end %>
-	<article class="page-content content-width" role="main">
-		<%- @content %>
-	</article>
-	<%- @partial('footer') %>
-	<% if ((@site.disqus_shortname) and (@document.kind == 'article')) : %>
-		<article id="disqus_thread"></article>
-	<% end %>
-	<% if (@document.kind == 'article') : %>
-	<nav class="read-next">
-		<h4 class="read-next-title">Читать дальше:</h4>
-		<%- @getNavLinks() %>
-	</nav>
-	<% end %>
-	<%- @partial('scripts') %>
+    </header>
+    <% end %>
+    <% if (@document.url != '/') : %>
+        <nav class="site-navigation sticky-nav" id="sticker">
+            <a class="nav-icon js-menu-trigger" href="/" data-toggle="tooltip" data-placement="right" title="На главную"><img src="/i/home.svg" width="28" height="28" alt="На главную" onerror="this.onerror=null; this.src='/i/home.png'" /><span class="visuallyhidden">На главную</span></a>
+        </nav>
+    <% end %>
+    <article class="page-content content-width" role="main">
+        <%- @content %>
+    </article>
+    <%- @partial('footer') %>
+    <% if ((@site.disqus_shortname) and (@document.kind == 'article')) : %>
+        <article id="disqus_thread"></article>
+    <% end %>
+    <% if (@document.kind == 'article') : %>
+    <nav class="read-next">
+        <h4 class="read-next-title">Читать дальше:</h4>
+        <%- @getNavLinks() %>
+    </nav>
+    <% end %>
+    <%- @partial('scripts') %>
 </body>
 </html>

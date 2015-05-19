@@ -137,6 +137,17 @@ module.exports = (grunt) ->
 				# Have custom Modernizr tests? Add paths to their location here.
 				customTests: []
 
+		# generate development
+		shell:
+			clean:
+				options:
+					stdout: true
+				command: 'docpad clean'
+			docpad:
+				options:
+					stdout: true
+				command: 'docpad generate --env static'
+
 		'ftp-deploy':
 			build:
 				auth:
@@ -159,9 +170,10 @@ module.exports = (grunt) ->
 	grunt.loadNpmTasks 'grunt-contrib-htmlmin'
 	grunt.loadNpmTasks 'grunt-contrib-uglify'
 	grunt.loadNpmTasks 'grunt-modernizr'
+	grunt.loadNpmTasks 'grunt-shell'
 	grunt.loadNpmTasks 'grunt-ftp-deploy'
 
 	# Register our Grunt tasks.
-	grunt.registerTask 'deploy',        ['ftp-deploy']
+	grunt.registerTask 'deploy',        ['shell:clean', 'shell:docpad', 'ftp-deploy']
 	grunt.registerTask 'production',    ['default', 'cssmin', 'htmlmin', 'uglify', 'clean']
 	grunt.registerTask 'default',       ['autoprefixer']

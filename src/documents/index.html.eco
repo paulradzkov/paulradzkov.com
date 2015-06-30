@@ -40,7 +40,7 @@ scripts: ["/vendor/isotope.pkgd.min.js","/js/isotope-settings.js"]
 <div class="blogroll detailed-view js-isotope">
     <% for page in @getCollection("articles").toJSON(): %>
         <section class="post-tizer item <%= if page.id is @document.id then 'active' else 'inactive' %> <% for tag in page.tags : %> <%= @wspToDash(tag) %><% end %>">
-            <h2><a href="<%= page.url %>"><%= page.title %></a></h2>
+            <h2 class="linked-header"><a href="<%= page.url %>"><u class="u"><%= page.title %></u></a></h2>
             <div class="before-cut"><%- @cuttedContent page.contentRenderedWithoutLayouts %></div>
 
             <aside class="blog-item-meta">

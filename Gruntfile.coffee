@@ -14,22 +14,30 @@ module.exports = (grunt) ->
 			files: [ './src/**/*.*' ]
 			out: ['out']
 
-		# add vendor prefixes
-		autoprefixer:
+		postcss:
 			options:
-				browsers: [
-					'Android 2.3'
-					'Android >= 4'
-					'Chrome >= 20'
-					'Firefox >= 24'
-					'Explorer >= 8'
-					'iOS >= 6'
-					'Opera >= 12'
-					'Safari >= 6'
+				# map: true # inline sourcemaps
+
+				# or
+				map:
+					inline: false # save all sourcemaps as separate files...
+					annotation: 'out/css/maps/' # ...to the specified directory
+
+				processors: [
+					require('pixrem')() # add fallbacks for rem units
+					require('autoprefixer-core')({browsers: [
+						'Android 2.3'
+						'Android >= 4'
+						'Chrome >= 20'
+						'Firefox >= 24'
+						'Explorer >= 8'
+						'iOS >= 6'
+						'Opera >= 12'
+						'Safari >= 6'
+					]}) # add vendor prefixes
+					# require('cssnano')() # minify the result
 				]
-			default:
-				options:
-					map: false
+			dist:
 				src: 'out/css/template.css'
 
 		#minify css
@@ -163,7 +171,6 @@ module.exports = (grunt) ->
 				]
 
 	# Build the available Grunt tasks.
-	grunt.loadNpmTasks 'grunt-autoprefixer'
 	grunt.loadNpmTasks 'grunt-contrib-cssmin'
 	grunt.loadNpmTasks 'grunt-contrib-jshint'
 	grunt.loadNpmTasks 'grunt-contrib-clean'
@@ -172,8 +179,9 @@ module.exports = (grunt) ->
 	grunt.loadNpmTasks 'grunt-modernizr'
 	grunt.loadNpmTasks 'grunt-shell'
 	grunt.loadNpmTasks 'grunt-ftp-deploy'
+	grunt.loadNpmTasks 'grunt-postcss'
 
 	# Register our Grunt tasks.
 	grunt.registerTask 'deploy',        ['shell:clean', 'shell:docpad', 'ftp-deploy']
 	grunt.registerTask 'production',    ['default', 'cssmin', 'htmlmin', 'uglify', 'clean']
-	grunt.registerTask 'default',       ['autoprefixer']
+	grunt.registerTask 'default',       ['postcss']

@@ -1,4 +1,4 @@
---- 
+---
 title: "CSS-селектор :not(). Полезные примеры"
 excerpt: "CSS3 селектор :not (negation). Примеры использования"
 description: "CSS3 селектор :not (negation). Примеры использования"
@@ -73,10 +73,10 @@ scripts: ['/vendor/caniuse.js']
 <p>Такой эффект можно реализовать без <code class="hljs-pseudo">:not</code> путем перезаписи значений. И это будет работать в бо́льшем количестве браузеров.</p>
 
 <pre><code class="language-css">/* с перезаписью свойств */
-.list.theme-1-2:hover .item {
+ul:hover li {
   opacity:0.5;
 }
-.list.theme-1-2:hover .item:hover {
+ul:hover li:hover {
   opacity:1;
 }
 </code></pre>
@@ -84,14 +84,14 @@ scripts: ['/vendor/caniuse.js']
 <p>Но если придется обнулять слишком много свойств, то есть смысл использовать <code class="hljs-pseudo">:not</code>.</p>
 
 <pre><code class="language-css">/* используя :not() */
-.list.theme-1:hover .item:not(:hover) {
+ul:hover li:not(:hover) {
   opacity:0.5;
 }
 </code></pre>
 
 <h2>Пример 3. Меню с разделителями между элементами</h2>
 <figure>
-	<a href="http://cssdeck.com/labs/dlg62kjv" target="_blank"><img src="<%= @document.url %>/sample3.png" width="600" height="200" alt="Меню с разделителями между элементами"/></a>
+    <a href="http://cssdeck.com/labs/dlg62kjv" target="_blank"><img src="<%= @document.url %>/sample3.png" width="600" height="200" alt="Меню с разделителями между элементами"/></a>
   <figcaption>
     <p style="text-align: center;"><a href="http://cssdeck.com/labs/dlg62kjv" class="link-to-demo" target="_blank">Пример</a></p>
   </figcaption>
@@ -159,18 +159,18 @@ textarea,
 <pre><code class="language-css">select,
 textarea,
 [type="text"],
-[type="password"], 
-[type="color"], 
-[type="date"], 
-[type="datetime"], 
-[type="datetime-local"], 
-[type="email"], 
-[type="number"], 
-[type="search"], 
-[type="tel"], 
-[type="time"], 
-[type="url"], 
-[type="month"], 
+[type="password"],
+[type="color"],
+[type="date"],
+[type="datetime"],
+[type="datetime-local"],
+[type="email"],
+[type="number"],
+[type="search"],
+[type="tel"],
+[type="time"],
+[type="url"],
+[type="month"],
 [type="week"] {
   /* стили для текстовых полей ввода */
 }

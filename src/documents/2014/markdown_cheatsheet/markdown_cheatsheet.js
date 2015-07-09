@@ -9,22 +9,22 @@ var languageOverrides = {
 }
 
 marked.setOptions({
-  highlight: function(code, lang){
-    if(languageOverrides[lang]) lang = languageOverrides[lang];
+  highlight: function (code, lang) {
+    if (languageOverrides[lang]) lang = languageOverrides[lang];
     return hljs.LANGUAGES[lang] ? hljs.highlight(lang, code).value : code;
   }
 });
 
-function update(e){
+function update(e) {
   var val = e.getValue();
 
   setOutput(val);
 
   clearTimeout(hashto);
-  hashto = setTimeout(updateHash, 1000);
+  //hashto = setTimeout(updateHash, 1000);
 }
 
-function setOutput(val){
+function setOutput(val) {
   val = val.replace(/<equation>((.*?\n)*?.*?)<\/equation>/ig, function(a, b){
     return '<img src="http://latex.codecogs.com/png.latex?' + encodeURIComponent(b) + '" />';
   });
@@ -41,7 +41,7 @@ var editor = CodeMirror.fromTextArea(document.getElementById('code'), {
   onChange: update
 });
 
-document.addEventListener('drop', function(e){
+document.addEventListener('drop', function(e) {
   e.preventDefault();
   e.stopPropagation();
 
@@ -87,21 +87,21 @@ document.addEventListener('keydown', function(e){
 
 var hashto;
 
-function updateHash(){
-  window.location.hash = btoa(RawDeflate.deflate(unescape(encodeURIComponent(editor.getValue()))))
+function updateHash() {
+  window.location.hash = btoa(RawDeflate.deflate(unescape(encodeURIComponent(editor.getValue()))));
 }
 
-if(window.location.hash){
+if (window.location.hash) {
   var h = window.location.hash.replace(/^#/, '');
-  if(h.slice(0,5) == 'view:'){
+  if (h.slice(0,5) == 'view:') {
     setOutput(decodeURIComponent(escape(RawDeflate.inflate(atob(h.slice(5))))));
     document.body.className = 'view';
-  }else{
-    editor.setValue(decodeURIComponent(escape(RawDeflate.inflate(atob(h)))))
+  } else {
+    editor.setValue(decodeURIComponent(escape(RawDeflate.inflate(atob(h)))));
     update(editor);
     editor.focus();
   }
-}else{
+} else {
   update(editor);
   editor.focus();
 }

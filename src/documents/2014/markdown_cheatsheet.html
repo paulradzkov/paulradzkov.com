@@ -1,4 +1,4 @@
---- 
+---
 title: "Краткое руководство по Маркдауну"
 excerpt: "Краткое руководство Markdown на русском"
 description: "Шпаргалка по синтаксису Маркдауна"
@@ -7,11 +7,11 @@ kind: article
 publish: true
 disqusid: markdown_cheatsheet
 tags: [tools, markdown]
-styles: 
+styles:
   - '/vendor/codemirror/lib/codemirror.css'
   - '/vendor/default.css'
   - '/2014/markdown_cheatsheet/markdown_cheatsheet.css'
-scripts: 
+scripts:
   - '/vendor/marked.js'
   - '/vendor/highlight.pack.js'
   - '/vendor/codemirror/lib/codemirror.js'
@@ -42,7 +42,7 @@ Markdown
 
 Абзацы создаются при помощи пустой строки.
 
-Чтобы сделать перенос строки вместо абзаца, нужно в конце строки оставить два пробела и нажать «enter» — сгенерируется тег `<br/>`.  
+Чтобы сделать перенос строки вместо абзаца, нужно в конце строки оставить два пробела и нажать «enter» — сгенерируется тег `<br/>`.
 Эта фраза начинается с новой строки, но не с нового абзаца.
 А это предложение продолжит строку, хотя в исходном коде оно с новой строки.
 
@@ -98,7 +98,7 @@ Markdown
 * Два абзац. Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.
 
 * Три абзац. Ea, quis, alias nobis porro quos laborum minus sed fuga odio dolore natus quas cum enim necessitatibus magni provident non saepe sequi?
-  
+
     Четыре абзац (Четыре пробела в начале или один tab).
 
 ### Цитаты
@@ -108,7 +108,7 @@ Markdown
 > This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
 > consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
 > Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
-> 
+>
 > Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
 > id sem consectetuer libero luctus adipiscing.
 
@@ -125,14 +125,14 @@ id sem consectetuer libero luctus adipiscing.
 
 
 > ## This is a header.
-> 
+>
 > 1.   This is the first list item.
 > 2.   This is the second list item.
-> 
+>
 > > Вложенная цитата.
 >
 > Here's some example code:
-> 
+>
 >     return shell_exec("echo $input | $markdown_script");
 
 ### Исходный код
@@ -176,7 +176,7 @@ id sem consectetuer libero luctus adipiscing.
 
 Это встроенная [ссылка с title элементом](http://example.com/link "Я ссылка"). Это — [без title](http://example.com/link).
 
-А вот [пример][1] [нескольких][2] [ссылок][id] с разметкой как у сносок. Прокатит и [короткая запись][] без указания id. 
+А вот [пример][1] [нескольких][2] [ссылок][id] с разметкой как у сносок. Прокатит и [короткая запись][] без указания id.
 
 [1]: http://example.com/ "Optional Title Here"
 [2]: http://example.com/some
@@ -211,6 +211,10 @@ id sem consectetuer libero luctus adipiscing.
 [image2]: http://placehold.it/200x100
 [image3]: http://placehold.it/150x100
 
+Картинки-ссылки:
+
+[![Alt text](http://placehold.it/150x100)](http://example.com/)
+
 
 ## Использование HTML внутри Markdown
 
@@ -218,7 +222,7 @@ Mожно смешивать Markdown и HTML. Можно использоват
 
 > Выделять слова можно при помощи * и _ . Например, это <em class="a1">italic</em> и это тоже <i class="a1">italic</i>. А вот так уже <b>strong</b>, и так тоже <strong>strong</strong>.
 
-А вот внутри HTML-тегов можно использовать только строчную маркдаун-разметку. 
+А вот внутри HTML-тегов можно использовать только строчную маркдаун-разметку.
 
 <section class="someclass">
 

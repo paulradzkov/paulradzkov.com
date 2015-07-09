@@ -6,62 +6,111 @@ window.saveAs = window.saveAs || window.webkitSaveAs || window.mozSaveAs || wind
 var languageOverrides = {
   js: 'javascript',
   html: 'xml'
-}
+};
 
-marked.setOptions({
-  highlight: function (code, lang) {
-    if (languageOverrides[lang]) lang = languageOverrides[lang];
-    return hljs.LANGUAGES[lang] ? hljs.highlight(lang, code).value : code;
+emojify.setConfig({ img_dir: 'emoji' });
+
+var md = markdownit({
+  html: true,
+  highlight: function(code, lang){
+    if(languageOverrides[lang]) lang = languageOverrides[lang];
+    if(lang && hljs.getLanguage(lang)){
+      try {
+        return hljs.highlight(lang, code).value;
+      }catch(e){}
+    }
+    return '';
   }
-});
+})
+  .use(markdownitFootnote);
 
-function update(e) {
-  var val = e.getValue();
 
-  setOutput(val);
+var hashto;
+
+function update(e){
+  setOutput(e.getValue());
 
   clearTimeout(hashto);
   //hashto = setTimeout(updateHash, 1000);
 }
 
-function setOutput(val) {
+function setOutput(val){
   val = val.replace(/<equation>((.*?\n)*?.*?)<\/equation>/ig, function(a, b){
     return '<img src="http://latex.codecogs.com/png.latex?' + encodeURIComponent(b) + '" />';
   });
 
-  document.getElementById('out').innerHTML = marked(val);
+  var out = document.getElementById('out');
+  var old = out.cloneNode(true);
+  out.innerHTML = md.render(val);
+  emojify.run(out);
+
+  var allold = old.getElementsByTagName("*");
+  if (allold === undefined) return;
+
+  var allnew = out.getElementsByTagName("*");
+  if (allnew === undefined) return;
+
+  for (var i = 0, max = Math.min(allold.length, allnew.length); i < max; i++) {
+    if (!allold[i].isEqualNode(allnew[i])) {
+      out.scrollTop = allnew[i].offsetTop;
+      return;
+    }
+  }
 }
 
 var editor = CodeMirror.fromTextArea(document.getElementById('code'), {
-  mode: 'markdown',
+  mode: 'gfm',
   lineNumbers: true,
   matchBrackets: true,
   lineWrapping: true,
   theme: 'default',
-  onChange: update
+  inputStyle: 'contenteditable',
+  viewportMargin: Infinity,
+  extraKeys: {"Enter": "newlineAndIndentContinueMarkdownList"}
 });
 
-document.addEventListener('drop', function(e) {
+editor.on('change', update);
+
+
+
+
+
+document.addEventListener('drop', function(e){
   e.preventDefault();
   e.stopPropagation();
 
-  var theFile = e.dataTransfer.files[0];
-  var theReader = new FileReader();
-  theReader.onload = function(e){
+  var reader = new FileReader();
+  reader.onload = function(e){
     editor.setValue(e.target.result);
   };
 
-  theReader.readAsText(theFile);
+  reader.readAsText(e.dataTransfer.files[0]);
 }, false);
 
-function save(){
-  var code = editor.getValue();
-  var blob = new Blob([code], { type: 'text/plain' });
-  saveBlob(blob);
+
+
+
+
+function saveAsMarkdown(){
+  save(editor.getValue(), "untitled.md");
 }
 
-function saveBlob(blob){
-  var name = "untitled.md";
+function saveAsHtml() {
+  save(document.getElementById('out').innerHTML, "untitled.html");
+}
+
+document.getElementById('saveas-markdown').addEventListener('click', function() {
+  saveAsMarkdown();
+  hideMenu();
+});
+
+document.getElementById('saveas-html').addEventListener('click', function() {
+  saveAsHtml();
+  hideMenu();
+});
+
+function save(code, name){
+  var blob = new Blob([code], { type: 'text/plain' });
   if(window.saveAs){
     window.saveAs(blob, name);
   }else if(navigator.saveBlob){
@@ -77,33 +126,79 @@ function saveBlob(blob){
   }
 }
 
-document.addEventListener('keydown', function(e){
-  if(e.keyCode == 83 && (e.ctrlKey || e.metaKey)){
-    e.preventDefault();
-    save();
-    return false;
-  }
-})
 
-var hashto;
 
-function updateHash() {
-  window.location.hash = btoa(RawDeflate.deflate(unescape(encodeURIComponent(editor.getValue()))));
+var menuVisible = false;
+var menu = document.getElementById('menu');
+
+function showMenu() {
+  menuVisible = true;
+  menu.style.display = 'block';
 }
 
-if (window.location.hash) {
+function hideMenu() {
+  menuVisible = false;
+  menu.style.display = 'none';
+}
+
+document.getElementById('close-menu').addEventListener('click', function(){
+  hideMenu();
+});
+
+
+
+
+document.addEventListener('keydown', function(e){
+  if(e.keyCode == 83 && (e.ctrlKey || e.metaKey)){
+    e.shiftKey ? showMenu() : saveAsMarkdown();
+
+    e.preventDefault();
+    return false;
+  }
+
+  if(e.keyCode === 27 && menuVisible){
+    hideMenu();
+
+    e.preventDefault();
+    return false;
+  }
+});
+
+
+
+
+function updateHash(){
+  window.location.hash = btoa( // base64 so url-safe
+    RawDeflate.deflate( // gzip
+      unescape(encodeURIComponent( // convert to utf8
+        editor.getValue()
+      ))
+    )
+  );
+}
+
+if(window.location.hash){
   var h = window.location.hash.replace(/^#/, '');
-  if (h.slice(0,5) == 'view:') {
-    setOutput(decodeURIComponent(escape(RawDeflate.inflate(atob(h.slice(5))))));
+  if(h.slice(0,5) == 'view:'){
+    //setOutput(decodeURIComponent(escape(RawDeflate.inflate(atob(h.slice(5))))));
     document.body.className = 'view';
-  } else {
-    editor.setValue(decodeURIComponent(escape(RawDeflate.inflate(atob(h)))));
+  }else{
+    editor.setValue(
+      decodeURIComponent(escape(
+        RawDeflate.inflate(
+          atob(
+            h
+          )
+        )
+      ))
+    );
     update(editor);
     editor.focus();
   }
-} else {
+}else{
   update(editor);
   editor.focus();
 }
 
-var GoSquared = { acct: 'GSN-265185-D' };
+update(editor);
+editor.focus();

@@ -1,12 +1,9 @@
-.textlist {
-  margin: 0;
-  padding: 0;
-  max-width: 50em;
+ul:not([class]),
+ol:not([class]) {
+  padding-left: 0;
+  padding-right: 2.5em;
 }
-.textlist > li {
-  margin: 0 0 .5em;
-  padding-left: 2em;
-  list-style-position: inside;
-  text-indent: -1em;
-  overflow: hidden;
+ul:not([class]) li,
+ol:not([class]) li {
+  transform: translateX(2.5em);
 }

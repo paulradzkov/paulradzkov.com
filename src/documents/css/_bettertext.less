@@ -128,13 +128,16 @@ abbr {
 /* lists without classes */
 article ul:not([class]),
 article ol:not([class]) {
-    list-style-type: none;
     padding-left: 0;
+    padding-right: 2.5em;
 }
 article ul:not([class]) li,
 article ol:not([class]) li {
-    overflow: hidden;
-    padding-left: 2.5em;
+    transform: translateX(2.5em);
+}
+/* custom bullets */
+article ul:not([class]) {
+    list-style-type: none;
 }
 article ul:not([class]) > li:before {
     content: '\2013'; /* mdash */
@@ -143,50 +146,19 @@ article ul:not([class]) > li:before {
     width: 1.3em;
     margin-left: -1.3em;
 }
-article ol:not([class]) {
-    counter-reset: olist;
-}
-article ol:not([class]) li:before {
-    direction: rtl;
-    content: "." counter(olist);
-    counter-increment: olist;
-    display: inline-block;
-    float: left;
-    width: 0;
-    margin-left: -0.5em;
-    margin-right: 0.5em;
-    text-align: right;
-}
+
 /* nested lists */
 article ul:not([class]) ul,
 article ol:not([class]) ol {
     margin-top: 0.5em;
 }
-article ul:not([class]) li li,
-article ol:not([class]) li li {
-    overflow: visible;
-}
+
 article ul:not([class]) li li:before {
     content: '\2212'; /* minus */
 }
 article ul:not([class]) li li li:before {
     content: '\22C5'; /* sdot */
 }
-article ol:not([class]) ol {
-    counter-reset: olist2;
-}
-article ol:not([class]) ol > li:before {
-    content: "." counter(olist) "." counter(olist2);
-    counter-increment: olist2;
-}
-article ol:not([class]) ol ol {
-    counter-reset: olist3;
-}
-article ol:not([class]) ol ol > li:before {
-    content: "." counter(olist) "." counter(olist2) "." counter(olist3);
-    counter-increment: olist3;
-}
-
 
 nav ol,
 nav ul {

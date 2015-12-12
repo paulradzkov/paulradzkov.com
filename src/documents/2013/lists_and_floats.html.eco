@@ -7,8 +7,9 @@ kind: article
 publish: true
 disqusid: lists-and-floats
 tags: [css, typography]
-styles: ["custom.css"]
 ---
+
+<p><strong>Обновлено 12 декабря 2015. Спустя три года после написания этого поста в голову пришло более простое и стабильное решение.</strong></p>
 
 <p>Для дефолтных браузерных стилей характерно такое поведение: если картинка обтекает список слева, маркеры списка налазят на картинку. От этого можно избавиться незначительно переписав стили. </p>
 
@@ -20,6 +21,9 @@ styles: ["custom.css"]
     <figcaption>Проблема: если картинка обтекает список, то маркеры списка налазят на картинку</figcaption>
 </figure>
 
+<p><a data-toggle="collapse" data-target="#oldSolution" aria-expanded="false" aria-controls="oldSolution">Старое решение</a></p>
+
+<div id="oldSolution" class="collapse">
 
 <p>Эту проблему можно решить, но придется переписать все отступы для тегов <code class="hljs-tag">ul</code>, <code class="hljs-tag">ol</code> и <code class="hljs-tag">li</code>. Так как <code class="hljs-tag nobr">ul > li</code> могут использоваться не только для текста с маркерами, но и для менюшек, слайдеров, списков новостей и других семантических конструкций, задавать стили напрямую тегам <code class="hljs-tag">ol</code>, <code class="hljs-tag">ul</code> и <code class="hljs-tag">li</code> опасно. Иначе в дальнейшем придется слишком часто эти стили обнулять. Поэтому создадим отдельный класс <code class="hljs-class">.textlist</code>, чтобы ставить его на наши <code class="hljs-tag">ul</code> и <code class="hljs-tag">ol</code>.</p>
 
@@ -42,22 +46,44 @@ styles: ["custom.css"]
 
 <p>А всё остальное, чтобы отступы выглядели как раньше.</p>
 
-<p><a href="http://cssdeck.com/labs/floated-images-and-lists" class="link-to-demo" target="_blank">демка</a></p>
-
 <figure>
     <img src="<%= @document.url %>/floated_images_and_lists_solution.png" width="800" height="580" alt="Маркеры списка не налазят на картинку"/>
     <figcaption>Маркеры списка больше не налазят на картинку</figcaption>
 </figure>
+
+<hr>
+
+</div>
+
+<h2>Новое решение</h2>
+
+<p>Для списков, у которых нет классов, перенесём дефолтный отступ 2.5em с левого края на правый, а сами <code class="hljs-tag nowrap">li</code> сдвинем на те же 2.5em вправо при помощи <code class="hljs-rule"><span class="hljs-attribute">transform</span>: <span class="hljs-value">translateX(2.5em)</span></code>.</p>
+
+<pre><code class="language-css">ul:not([class]),
+ol:not([class]) {
+    padding-left: 0;
+    padding-right: 2.5em;
+}
+ul:not([class]) li,
+ol:not([class]) li {
+    transform: translateX(2.5em);
+}
+</code></pre>
+
+<p>Списки, не имеющие класса, мы выбираем, чтобы не повредить меню, слайдеры и прочие конструкции, которые используют <code class="hljs-tag nowrap">ul li</code> в своей структуре. Подробнее про это в посте <a href="/2014/negation_css_selector/">про селектор :not()</a>.</p>
+
+<p>В отличие от старого решения, элементы списка обтекают картинку естественным образом, не оставляя зазоров под картинкой.</p>
+
+<p><a href="http://cssdeck.com/labs/floated-images-and-lists" class="link-to-demo" target="_blank">демка</a></p>
 
 <p>Живой пример:</p>
 
 <div class="demo">
     <img src="http://placehold.it/320x240" style="float:left; margin-right:1em;" alt="">
     <p>Lorem ipsum.</p>
-    <ul class="textlist">
+    <ul>
         <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat porro eligendi quod ratione quaerat dolores quia quasi provident. Veniam earum iste modi quam aliquam qui itaque corporis quia vel inventore.</li>
         <li>In dapibus dapibus risus in molestie. Vestibulum vestibulum, orci a aliquam iaculis, diam quam ultrices lacus, sed tincidunt augue elit vitae eros. </li>
-        <li>Nunc non arcu sed nibh fermentum venenatis ut quis ante. </li>
         <li>Nunc id mauris sit amet orci rhoncus lobortis eu mollis justo. Phasellus enim dolor, pretium sed commodo vitae, ultrices ac nibh. Vivamus et turpis odio, ac ultricies nibh. Donec erat augue, tempus et aliquet et, porttitor vitae ante. </li>
         <li>Quisque eu ante in nisl rutrum facilisis nec sed orci. Integer vel nibh sit amet libero convallis tempus sit amet a enim. Nullam felis velit, auctor eu tristique eu, lacinia vitae turpis. </li>
         <li>Praesent nisl felis, aliquet quis volutpat id, pretium sit amet elit. Mauris consequat vestibulum purus sit amet ornare. In euismod hendrerit quam vitae vehicula.</li>

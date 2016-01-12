@@ -14,6 +14,12 @@ module.exports = (grunt) ->
 			files: [ './src/**/*.*' ]
 			out: ['out']
 
+		less:
+			dev:
+				files: [
+					'out/css/template.css': 'src/raw/css/template.css.less'
+				]
+
 		postcss:
 			options:
 				# map: true # inline sourcemaps
@@ -171,6 +177,7 @@ module.exports = (grunt) ->
 				]
 
 	# Build the available Grunt tasks.
+	grunt.loadNpmTasks 'grunt-contrib-less'
 	grunt.loadNpmTasks 'grunt-contrib-cssmin'
 	grunt.loadNpmTasks 'grunt-contrib-jshint'
 	grunt.loadNpmTasks 'grunt-contrib-clean'
@@ -184,4 +191,4 @@ module.exports = (grunt) ->
 	# Register our Grunt tasks.
 	grunt.registerTask 'deploy',        ['shell:clean', 'shell:docpad', 'ftp-deploy']
 	grunt.registerTask 'production',    ['default', 'cssmin', 'htmlmin', 'uglify', 'clean']
-	grunt.registerTask 'default',       ['postcss']
+	grunt.registerTask 'default',       ['less', 'postcss']

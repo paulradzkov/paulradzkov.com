@@ -14,7 +14,7 @@
 	cd paulradzkov.com
 	npm install
 	bower install
-	docpad run
+	grunt
 	```
 
 1. [Open http://localhost:9778/](http://localhost:9778/)

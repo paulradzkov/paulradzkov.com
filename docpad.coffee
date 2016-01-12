@@ -2,6 +2,8 @@
 # It is simply a CoffeeScript Object which is parsed by CSON
 docpadConfig = {
 
+	ignoreCustomPatterns: /^_(\w*.less)?/gm
+	
 	# =================================
 	# Template Data
 	# These are variables that will be accessible via our templates
@@ -220,7 +222,7 @@ docpadConfig = {
 
 			plugins:
 				grunt:
-					writeAfter: ["default"]
+					writeAfter: false
 					writeBefore: false
 					renderBefore: false
 					renderAfter: false

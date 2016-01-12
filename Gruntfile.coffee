@@ -151,6 +151,11 @@ module.exports = (grunt) ->
 				# Have custom Modernizr tests? Add paths to their location here.
 				customTests: []
 
+		watch:
+			less:
+				files: ['src/raw/**/*.less']
+				tasks: ['less', 'postcss']
+
 		# generate development
 		shell:
 			clean:
@@ -161,6 +166,11 @@ module.exports = (grunt) ->
 				options:
 					stdout: true
 				command: 'docpad generate --env static'
+			run:
+				options:
+					stdout: true
+					async: true
+				command: 'docpad run'
 
 		'ftp-deploy':
 			build:
@@ -183,12 +193,14 @@ module.exports = (grunt) ->
 	grunt.loadNpmTasks 'grunt-contrib-clean'
 	grunt.loadNpmTasks 'grunt-contrib-htmlmin'
 	grunt.loadNpmTasks 'grunt-contrib-uglify'
+	grunt.loadNpmTasks 'grunt-contrib-watch'
 	grunt.loadNpmTasks 'grunt-modernizr'
-	grunt.loadNpmTasks 'grunt-shell'
+	grunt.loadNpmTasks 'grunt-shell-spawn'
 	grunt.loadNpmTasks 'grunt-ftp-deploy'
 	grunt.loadNpmTasks 'grunt-postcss'
 
 	# Register our Grunt tasks.
 	grunt.registerTask 'deploy',        ['shell:clean', 'shell:docpad', 'ftp-deploy']
-	grunt.registerTask 'production',    ['default', 'cssmin', 'htmlmin', 'uglify', 'clean']
-	grunt.registerTask 'default',       ['less', 'postcss']
+	grunt.registerTask 'production',    ['less', 'postcss', 'cssmin', 'htmlmin', 'uglify', 'clean']
+	grunt.registerTask 'run',           ['shell:run', 'less', 'postcss', 'watch:less']
+	grunt.registerTask 'default',       ['run']

@@ -1,77 +1,10 @@
 /* typography */
 
-body {
-    font-family: sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-}
-h1, h2, h3, h4 {
-    font-family: sans-serif;
-    letter-spacing: -0.04em;
-    font-weight: 700;
-    line-height: 1.1;
-}
-h1, h2 {
-    line-height: 1;
-}
-code, kbd, samp {
-    font-family: @fontmono;
-}
-
 /* making inline code same x-height as general text */
 p code,
 p kbd {
-    font-size: 1.06em;
-    line-height: 0.8;
-}
-
-/* Custom fonts applies and loaded only on large screens */
-@media screen and (min-width: 960px) {
-    body {
-        font-family: @fontmain;
-    }
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    .navlinks {
-        font-family: @fontsecond;
-    }
-}
-h1 a,
-h2 a,
-h3 a,
-h4 a,
-h5 a,
-h6 a,
-.navlinks a {
-    text-decoration: none;
-}
-.page-content > h1 {
-    font-size: 3em;
-    font-size: 3rem;
-}
-/* colors */
-a {
-    text-decoration: underline;
-    text-decoration-line: underline;
-    text-decoration-style: solid;
-}
-
-a:link          {color: @link;          -moz-text-decoration-color: fadeout(@link,        70%);}
-a:visited       {color: @visited;       -moz-text-decoration-color: fadeout(@visited,     70%);}
-a:visited:hover {color: @visitedhover;  -moz-text-decoration-color: fadeout(@visitedhover,70%);}
-a:hover         {color: @hover;         -moz-text-decoration-color: fadeout(@hover,       70%);}
-a:active        {color: @active;        -moz-text-decoration-color: fadeout(@active,      70%);}
-
-nav a {
-    text-decoration: none;
-}
-
-nav ul {
-    padding-left: 0;
+    //font-size: 1.06em;
+    //line-height: 0.8;
 }
 
 
@@ -105,31 +38,6 @@ figure figcaption p {
 figure figcaption p:only-child {
     display: inline-block;
 }
-
-
-blockquote {
-    margin: 2em 0;
-    margin: 2rem 0;
-    padding: 0 2.5em;
-    padding: 0 2.5rem;
-    background: rgba(0, 0, 0, 0.03);
-    border-radius: 2px;
-}
-
-blockquote:before,
-blockquote:after {
-    content: '';
-    clear: both;
-    display: block;
-    border-bottom: 3px solid #CCC;
-    width: 50%;
-    margin: 2em auto 2em;
-}
-
-blockquote + blockquote:before {
-    content: none;
-}
-
 
 pre {
     background: #f8f8f8;

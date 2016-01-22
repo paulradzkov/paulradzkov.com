@@ -43,6 +43,11 @@
     box-shadow: 0.2em 0.2em 0.3em -0.1em rgba(0, 0, 0, 0.4), inset 0 0 0 0 #0877db;
     transition: all 0.5s;
 }
+
+.nav-icon-centered {
+    margin-left: calc(~"50% - 1em");
+}
+
 .nav-icon:hover {
     box-shadow: 0.2em 0.2em 0.3em -0.1em rgba(0, 0, 0, 0.4), inset 0 0 0 1em #0877db;
 }
@@ -65,6 +70,18 @@
     white-space: nowrap;
 }
 
+.hold {
+    opacity: 0;
+    pointer-events: none;
+    transition: all .5s;
+
+    &.fixed {
+        opacity: 1;
+        pointer-events: auto;
+        transition-delay: 1s;
+    }
+}
+
 @media screen and (max-width:64rem) {
     .no-csstransforms3d .fixed.scrolldown .nav-icon {
         top: -4em;
@@ -84,34 +101,26 @@
     }
 }
 
-.layout-article .hold {
-    margin-top: -5px;
-}
-
 .sticky-nav {
     z-index: 2;
+    width: 100%;
 }
-
-
 
 /* siblings nav in page-header */
 
-.page-header {
-    position: relative;
-}
-.page-header .article-meta,
-.page-header .article-title {
-    position: relative;
-}
-
 .read-siblings {
     display: none;
+    box-sizing: content-box;
+
+    * {
+        box-sizing: content-box;
+    }
 }
 
 @media screen and (max-width: 59rem) {
     .read-siblings {
         display: block;
-        margin: -@pad*1.5 -@pad 0;
+        //margin: -@pad*1.5 -@pad 0;
         background: #000;
         max-width: none;
     }
@@ -143,7 +152,7 @@
         position: absolute;
         bottom: 0;
         top: 0;
-        margin: 0 -2em;
+        //margin: 0 -2em;
         width: 100%;
         overflow: hidden;
         /*overflow-x: hidden; /* removes scroll in IE10 */
@@ -168,6 +177,7 @@
         line-height: 1.2;
         background-repeat: no-repeat;
         transition: all 0.2s ease-out;
+        background-color: #000;
     }
     .read-siblings a:link                {color: @link2;}
     .read-siblings a:visited             {color: @visited2;}

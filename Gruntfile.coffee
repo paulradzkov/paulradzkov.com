@@ -16,8 +16,10 @@ module.exports = (grunt) ->
 
 		less:
 			dev:
+				options:
+					sourceMap: true
 				files: [
-					'out/css/template.css': 'src/raw/css/template.css.less'
+					'out/css/template.css': 'src/raw/css/template.less'
 				]
 
 		postcss:

@@ -1,0 +1,72 @@
+/* @stylesheet
+
+# border-underline
+
+usage:
+
+```html
+<a href="/" class="border-underline"><u class="u">Text</u></a>
+```
+
+ */
+
+@border-underline: border-underline;
+
+.border-underline-settings() {
+    //colors
+    @link:          #0877db;
+    @visited:       #9108db;
+    @hover:         #2b9aff;
+    @visitedhover:  #bc4df8;
+    @active:        #bc4df8;
+    @shift: .1em;
+    @bd-style: 1px solid;
+
+    //calculations
+    @bdc-link:          lighten(@link, 30%);
+    @bdc-visited:       lighten(@visited, 40%);
+    @bdc-hover:         lighten(@hover, 30%);
+    @bdc-visitedhover:  lighten(@visitedhover, 30%);
+    @bdc-active:        lighten(@active, 30%);
+}
+
+.@{border-underline} {
+    position: relative;
+    top: -@shift;
+    text-decoration: none;
+    border-bottom: @bd-style;
+
+    &:link          { border-color: @bdc-link; }
+    &:visited       { border-color: @bdc-visited; }
+    &:hover         { border-color: @bdc-hover; }
+    &:visited:hover { border-color: @bdc-visitedhover; }
+    &:active        { border-color: @bdc-active; }
+
+    &:link,
+    &:link *,
+    &:visited,
+    &:visited * {
+        transition:
+            color             .3s ease-out,
+            background-color  .3s ease-out,
+            border-color      .3s ease-out,
+            box-shadow        .3s ease-out;
+    }
+
+    &:hover,
+    &:hover * {
+        transition:
+            color             0s,
+            background-color  0s,
+            border-color      0s,
+            box-shadow        0s;
+    }
+
+    .u {
+        text-decoration: none;
+        position: relative;
+        top: @shift;
+    }
+
+    .border-underline-settings();
+}

@@ -2,8 +2,8 @@
 # It is simply a CoffeeScript Object which is parsed by CSON
 docpadConfig = {
 
-	ignoreCustomPatterns: /^_(\w*.less)?/gm
-	
+	ignoreCustomPatterns: /^\S*([.]less)/gm
+
 	# =================================
 	# Template Data
 	# These are variables that will be accessible via our templates

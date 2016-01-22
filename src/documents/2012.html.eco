@@ -4,7 +4,7 @@ title: 'Блог / Статьи 2012 года'
 ---
 
 <div class="compound-header">
-	<h1><a href="/">Блог</a> / 2012</h1>
+	<h1><a href="/"class="border-underline"><u class="u">Блог</u></a> / 2012</h1>
 	<div class="view-toggle">
 		<a href="/search" class="btn" data-toggle="tooltip" data-placement="bottom" title="Поиск по сайту"><img src="/i/search.svg" class="btn-icon" width="14" height="14" alt="Поиск по сайту"></a>
 		<form name="blogroll-view" class="btn-group" data-toggle="buttons">
@@ -23,7 +23,7 @@ title: 'Блог / Статьи 2012 года'
 <div class="blogroll detailed-view">
     <% for page in @getPostsByYear(2012).toJSON(): %>
 		<section class="post-tizer <%= if page.id is @document.id then 'active' else 'inactive' %>">
-			<h2><a href="<%= page.url %>"><%= page.title %></a></h2>
+			<h2><a href="<%= page.url %>" class="border-underline"><u class="u"><%= page.title %></u></a></h2>
 			<div class="before-cut"><%- @cuttedContent page.contentRenderedWithoutLayouts %></div>
 
 			<aside class="blog-item-meta">

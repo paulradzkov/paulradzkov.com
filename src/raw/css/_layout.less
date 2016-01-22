@@ -44,7 +44,8 @@ html {
     }
 }
 
-.content-width > * {
+.content-width > *,
+.content-width > blockquote:not([class]) {
     max-width: 800px;
     max-width: @mawtext;
     margin-left: auto;
@@ -96,4 +97,3 @@ html {
 .no-display-table.no-mediaqueries .content-width pre code {
     display: block;
 }
-

@@ -89,7 +89,13 @@ blockquote {
 <figcaption><p>Значения «bolder» и «lighter» в зависимости от наследуемого значения.</p></figcaption>
 </figure>
 
-<p>Но в браузерной CSS прописано <code class="css"><span class="hljs-tag">strong</span>, <span class="hljs-tag">b</span> <span class="hljs-rules">{<span class="hljs-rule"><span class="hljs-attribute">font-weight</span>:<span class="hljs-value">bold</span></span>;<span class="hljs-rule">}</span></span></code>, т.е. <em>унаследуется</em> значение «700», а потом оно ещё и увеличивается до «900». Поэтому кажется, что <code class="hljs-rule"><span class="hljs-value">bolder</span></code> работает неправильно.</p>
+<p><del>Но в браузерной CSS прописано <code class="css"><span class="hljs-tag">strong</span>, <span class="hljs-tag">b</span> <span class="hljs-rules">{<span class="hljs-rule"><span class="hljs-attribute">font-weight</span>:<span class="hljs-value">bold</span></span>;<span class="hljs-rule">}</span></span></code>, т.е. <em>унаследуется</em> значение «700», а потом оно ещё и увеличивается до «900». Поэтому кажется, что <code class="hljs-rule"><span class="hljs-value">bolder</span></code> работает неправильно.</del></p>
+
+<blockquote>
+    <p><strong>Добавлено 22 января 2016</strong></p>
+    <p>На самом деле это был баг и он присутствовал во всех браузерах на момент написания статьи. Позже баги в браузерах были исправлены.
+        А <a href="https://github.com/necolas/normalize.css/pull/342">мой пулл-реквест</a> был принят в <a href="https://github.com/necolas/normalize.css/blob/master/normalize.css#L113-L127">normalize.css</a>.</p>
+</blockquote>
 
 <p>Исправить это можно так:</p>
 
@@ -139,5 +145,3 @@ strong, b {
   font-weight: 600;
 }
 </code></pre>
-
-

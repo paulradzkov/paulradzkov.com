@@ -14,6 +14,11 @@ table.chars {
   margin: auto;
 }
 
+table.chars,
+table.chars * {
+    box-sizing: content-box;
+}
+
 table.chars td,
 table.chars th {
   border-style: dotted;

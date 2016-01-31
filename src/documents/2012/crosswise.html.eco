@@ -55,9 +55,9 @@ del.cross:before,
     <div class="media">
         <figure class="img">
             <div class="del-cross">
-                <img src="http://placekitten.com/g/300/200" width="300" height="200" alt="No kitten here"/>
+                <img src="http://placehold.it/300x200" width="300" height="200" alt="No kitten here"/>
             </div>
-            <figcaption><p>No kitten here</p></figcaption>
+            <figcaption><p>Image caption</p></figcaption>
         </figure>
         <div class="bd">
             <p class="del-cross">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet lectus in ante lobortis suscipit. Nullam sed augue id ante tempor ultrices ut eget nibh. Donec ultrices aliquam aliquet. Sed non velit at enim auctor euismod ut eget dolor. Sed rutrum lacinia tellus porta suscipit. Nam tincidunt odio sed ipsum faucibus semper. Fusce malesuada justo ut turpis fringilla a egestas sem scelerisque. Cras ligula neque, pellentesque a eleifend vitae, vulputate id sapien. Aliquam vestibulum aliquam pretium. Proin ut nulla dui.</p>

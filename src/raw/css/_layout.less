@@ -41,6 +41,15 @@ html {
     padding: @pad*2 @pad @pad*2;
 }
 
+.site-header {
+    padding: @pad @pad @pad;
+}
+
+.header-logo {
+    margin-bottom: 0;
+}
+
+
 @media screen and (max-width: (@mawtext + @pad*2 + 10rem)) {
 
     /* 1 - placeholder for home button */
@@ -76,8 +85,8 @@ html {
 /* 2. Code blocks */
 .content-width > pre {
     max-width: none;
-    margin: 1em -2em;
-    margin: 1rem -@pad;
+    margin-left: -@pad;
+    margin-right: -@pad;
 }
 
 @media screen and (min-width: (@mawtext + @pad*2)) {

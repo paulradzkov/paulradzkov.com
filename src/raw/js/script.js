@@ -9,19 +9,25 @@ $(document).ready(function(){
 	    var lastScrollTop = 0, delta = 5;
 	    $(window).scroll(function(event){
 	       var st = $(this).scrollTop();
-	       
+
 	       if(Math.abs(lastScrollTop - st) <= delta)
 	          return;
-	       
+
 	       if (st > lastScrollTop){
-	           // downscroll code
-	           $("#sticker-sticky-wrapper.fixed").removeClass("scrolltop").addClass("scrolldown");
+	            // downscroll code
+	            $("#sticker-sticky-wrapper.fixed").removeClass("scrolltop").addClass("scrolldown");
 	       } else {
-	          // upscroll code
-	          $("#sticker-sticky-wrapper.fixed").removeClass("scrolldown").addClass("scrolltop");
+	            // upscroll code
+	            $("#sticker-sticky-wrapper.fixed").removeClass("scrolldown").addClass("scrolltop");
 	       }
 	       lastScrollTop = st;
 	    });
+	});
+
+	// expired message
+	$('.expired-read').on('click', function(event) {
+		var target = $(this).data('target');
+		$(target).hide();
 	});
 });
 

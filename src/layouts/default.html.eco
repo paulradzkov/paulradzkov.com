@@ -3,7 +3,7 @@
 <%- @partial('html-head') %>
 <body class="layout-<%- @document.kind %>">
     <% if ((!@document.kind) or (@document.kind != 'article')) : %>
-        <header class="page-header content-width">
+        <header class="site-header content-width">
             <%- @partial('hero') %>
         </header>
     <% end %>
@@ -42,6 +42,9 @@
         <nav class="site-navigation sticky-nav" id="sticker">
             <a class="nav-icon js-menu-trigger" href="/" data-toggle="tooltip" data-placement="right" title="На главную"><img src="/i/home.svg" width="28" height="28" alt="На главную" onerror="this.onerror=null; this.src='/i/home.png'" /><span class="visuallyhidden">На главную</span></a>
         </nav>
+    <% end %>
+    <%if (@document.expired == true) : %>
+    <%- @partial('expired') %>
     <% end %>
     <article class="nav-placeholder page-content content-width" role="main">
         <%- @content %>

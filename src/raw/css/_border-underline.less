@@ -19,8 +19,9 @@ usage:
     @hover:         #2b9aff;
     @visitedhover:  #bc4df8;
     @active:        #bc4df8;
-    @shift: .1em;
-    @bd-style: 1px solid;
+    @shift:         .1em;
+    @bd-style:      1px solid;
+    @transition:    .3s ease-out;
 
     //modifiers
     @bd-style-dashed: 1px dashed;
@@ -38,6 +39,11 @@ usage:
     top: -@shift;
     text-decoration: none;
     border-bottom: @bd-style;
+    transition:
+        color             @transition,
+        background-color  @transition,
+        border-color      @transition,
+        box-shadow        @transition;
 
     &:link          { border-color: @bdc-link; }
     &:visited       { border-color: @bdc-visited; }
@@ -48,16 +54,20 @@ usage:
     &:link,
     &:link *,
     &:visited,
-    &:visited * {
+    &:visited *,
+    &:active,
+    &:active * {
         transition:
-            color             .3s ease-out,
-            background-color  .3s ease-out,
-            border-color      .3s ease-out,
-            box-shadow        .3s ease-out;
+            color             @transition,
+            background-color  @transition,
+            border-color      @transition,
+            box-shadow        @transition;
     }
 
     &:hover,
-    &:hover * {
+    &:hover *,
+    &:visited:hover,
+    &:visited:hover * {
         transition:
             color             0s,
             background-color  0s,

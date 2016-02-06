@@ -79,11 +79,9 @@
 }
 
 .blogroll.short-view .post-tizer {
-    margin: 1em 0 1.5em;
-    margin: 1rem 0 1.5rem;
+    margin: .5rem 0 .5rem;
     display: table;
     width: 100%;
-    border-bottom: 1px dotted #EEE;
 }
 .blogroll.short-view .post-tizer > h2 {
     font-size: 1em;
@@ -96,9 +94,16 @@
 }
 .blogroll.short-view .post-tizer > h2 a,
 .blogroll.short-view .date {
-    background: #FFF;
+    //background: #FFF;
     position: relative;
-    bottom: -5px;
+    //bottom: -5px;
+}
+.blogroll.short-view .linked-header {
+    a:link          { color: @link; }
+    a:visited       { color: @visited; }
+    a:visited:hover { color: @visitedhover; }
+    a:hover         { color: @hover; }
+    a:active        { color: @active; }
 }
 .blogroll.short-view .post-tizer > h2 a {
     padding-right: 5px;

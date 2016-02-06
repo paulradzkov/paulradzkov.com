@@ -117,14 +117,20 @@
     }
 }
 
-@media screen and (max-width: 59rem) {
+.read-siblings a:link                {color: @link2;}
+.read-siblings a:visited             {color: @visited2;}
+.read-siblings a:hover               {color: @hover2;}
+.read-siblings a:visited:hover       {color: @visitedhover2;}
+.read-siblings a:active              {color: @active2;}
+
+@media screen and (max-width: 59.99rem) {
     .read-siblings {
         display: block;
         //margin: -@pad*1.5 -@pad 0;
         background: #000;
         max-width: none;
     }
-    .navlinks {
+    .read-siblings .navlinks {
         display: table;
         width: 100%;
         table-layout: fixed;
@@ -179,11 +185,6 @@
         transition: all 0.2s ease-out;
         background-color: #000;
     }
-    .read-siblings a:link                {color: @link2;}
-    .read-siblings a:visited             {color: @visited2;}
-    .read-siblings a:hover               {color: @hover2;}
-    .read-siblings a:visited:hover       {color: @visitedhover2;}
-    .read-siblings a:active              {color: @active2;}
 
     .read-siblings .navlinks-prev {
         text-align: left;
@@ -239,14 +240,14 @@
 
 /* read next nav links */
 .read-next {
-    margin: 8em 0em 0;
-    margin: 8rem 0rem 0;
+    margin: 4rem 0rem 0;
     background: #EFEFEF;
-    padding: 1em 0 0;
+    padding: 1em 0;
     box-shadow: inset 0 3px 6px -6px rgba(0, 0, 0, 0.45);
     font-weight: bold;
 }
 .read-next-title {
+    margin: 0;
     font-size: 1.5em;
     text-align: center;
     color: #AAA;
@@ -255,11 +256,13 @@
 .read-next .navlinks-next {
     display: block;
     text-align: center;
-    padding: 1em 1em 1.5em;
-    font-size: 1.5em;
+    padding: 1em;
     font-size: 1.5rem;
     line-height: 1.1;
 }
+.read-next .navlinks-prev { padding-bottom: .5em; }
+.read-next .navlinks-next { padding-top: .5em; }
+
 
 @media screen and (min-width: 40rem) {
     .read-next .navlinks {
@@ -278,6 +281,7 @@
         width: 50%;
         font-size: 2em;
         font-size: 2rem;
+        padding: 1em;
         box-sizing: border-box;
     }
     .read-next .navlinks-prev {

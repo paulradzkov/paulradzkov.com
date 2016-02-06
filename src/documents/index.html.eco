@@ -26,7 +26,7 @@ scripts: ["/vendor/isotope.pkgd.min.js","/js/isotope-settings.js"]
         <span class="filter-legend">Фильтр по тегам:</span>
         <label class="btn btn-label active" data-filter="*">
             <input type="radio" name="filters-options" id="view-all" checked>
-            <strong class="not-tag">Показать все</strong>
+            <span class="not-tag">Показать все</span>
         </label>
         <% for tag, data of @getTagCloud(): %>
             <label class="btn btn-label" data-filter=".<%= @wspToDash(tag) %>" data-tag-count="<%= data.count %>" data-tag-weight="<%= data.weight %>">

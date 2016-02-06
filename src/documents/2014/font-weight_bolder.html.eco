@@ -94,7 +94,7 @@ blockquote {
 <blockquote>
     <p><strong>Добавлено 22 января 2016</strong></p>
     <p>На самом деле это был баг и он присутствовал во всех браузерах на момент написания статьи. Позже баги в браузерах были исправлены.
-        А <a href="https://github.com/necolas/normalize.css/pull/342">мой пулл-реквест</a> был принят в <a href="https://github.com/necolas/normalize.css/blob/master/normalize.css#L113-L127">normalize.css</a>.</p>
+        А <a href="https://github.com/necolas/normalize.css/pull/342">мой пулл-реквест</a> был принят в <a href="https://github.com/necolas/normalize.css">normalize.css</a>.</p>
 </blockquote>
 
 <p>Исправить это можно так:</p>

@@ -1,0 +1,20 @@
+@justified-blocks: justified-blocks;
+
+.@{justified-blocks} {
+    text-align: justify;
+    line-height: 0;
+
+    & > * {
+        display: inline-block;
+        text-align: left;
+        line-height: normal;
+        line-height: initial;
+    }
+
+    &:after {
+        content: '';
+        display: inline-block;
+        vertical-align: top;
+        width: 100%;
+    }
+}

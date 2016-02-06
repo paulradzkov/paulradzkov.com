@@ -1,3 +1,17 @@
+.justified-blocks {
+
+    .blog-title {
+        vertical-align: top;
+        line-height: 52px;
+    }
+
+    .view-toggle {
+        vertical-align: top;
+        margin-top: 10px;
+    }
+}
+
+
 
 .blogroll {
     padding-top: @pad*1.5;
@@ -9,7 +23,7 @@
 
     @media (min-width: @smscreen) {
         margin: 1em 0 8em;
-        margin: @pad/2 0 @pad*4;
+        margin: @pad/2 0 @pad*2;
     }
 }
 
@@ -54,21 +68,38 @@
     box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
 }
 
+.view-toggle > .btn,
+.view-toggle > .btn-group {
+    margin-bottom: 5px;
+}
+
 .btn {
     display: inline-block;
     vertical-align: middle;
     box-sizing: border-box;
     padding: 0.5em 0.7em;
+    font-size: 13px;
+    text-decoration: none;
+    color: #000;
 }
 .btn-group > .btn {
     float: left;
 }
 .btn-icon {
-    display: block;
+    display: inline-block;
     width: 14px;
     height: 14px;
     margin: 4px;
+    vertical-align: middle;
 }
+.btn-text {
+    margin: 4px;
+    line-height: 14px;
+    display: inline-block;
+    vertical-align: middle;
+    color: #000;
+}
+
 [data-toggle=buttons]>.btn>input[type=radio],
 [data-toggle=buttons]>.btn>input[type=checkbox] {
     display: none;
@@ -132,10 +163,11 @@
 
 /* rss */
 .rss {
-    top: -1.5em;
+    margin-left: 1em;
+    margin-right: 1em;
     font-size: 16px;
     font-family: @fontmain;
-    font-weight: 400;
+    font-weight: bold;
     letter-spacing: 0;
 }
 /* rss end */

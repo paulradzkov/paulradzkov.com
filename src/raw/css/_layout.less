@@ -38,7 +38,7 @@ html {
 /* flex layout end */
 
 .page-content {
-    padding: @pad*2 @pad @pad*2;
+    padding: @pad @pad @pad;
 }
 
 .site-header {
@@ -47,15 +47,7 @@ html {
 
 .header-logo {
     margin-bottom: 0;
-}
-
-
-@media screen and (max-width: (@mawtext + @pad*2 + 10rem)) {
-
-    /* 1 - placeholder for home button */
-    .page-content {
-        padding-top: @pad*3; /* 1 */
-    }
+    vertical-align: middle;
 }
 
 .content-width > *,

@@ -71,7 +71,7 @@ docpadConfig = {
 		getPreparedTitle: ->
 			# if we have a document title, then we should use that and suffix the site's title onto it
 			if @document.title
-				"#{@document.title} / #{@site.title}"
+				"#{@document.title}"
 			# if our document does not have it's own title, then we should just use the site's title
 			else
 				@site.title

@@ -1,13 +1,13 @@
-	<footer class="page-footer content-width">
-		<p class="copyrights">
-			© <a href="//plus.google.com/+ПавелРадьков?rel=author" class="author"><span class="author-label">Автор:</span><%- @site.author %></a>
-			<% if (@document.created_at) : %>
-				<%= @moment(@document.created_at).format('YYYY') %>
-			<% else : %>
-				2012&ndash;<%= @moment(@now).format('YYYY') %>
-			<% end %>
-		</p>
-		<% if ((!@document.kind) or (@document.kind != 'article')) : %>
-			<p>Блог работает на DocPad. <a href="https://github.com/interpaul/paulradzkov.com" target="_blank">Исходники</a> этого сайта на Гитхабе.</p>
+<footer class="page-footer content-width">
+	<p class="copyrights">
+		© <a href="//plus.google.com/+ПавелРадьков?rel=author" class="author"><span class="author-label">Автор:</span><%- @site.author %></a>
+		<% if (@document.created_at) : %>
+			<%= @moment(@document.created_at).format('YYYY') %>.
+		<% else : %>
+			2012&ndash;<%= @moment(@now).format('YYYY') %>.
 		<% end %>
-	</footer>
+		<% if ((!@document.kind) or (@document.kind != 'article')) : %>
+			Блог работает на DocPad. <a href="https://github.com/interpaul/paulradzkov.com" target="_blank">Исходники</a> этого сайта на Гитхабе.
+		<% end %>
+	</p>
+</footer>

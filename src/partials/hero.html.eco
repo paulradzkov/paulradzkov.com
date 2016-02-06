@@ -1,21 +1,33 @@
-<p class="header-logo">
-<% if (@document.url != '/') : %>
-	<a class="logo" href="/">
-<% else : %>
-	<span class="logo">
-<% end %>
+<div class="site-header-inner justified-blocks">
 
-		<span class="logo-icon">
-			<img src="/avatar/paulradzkov.jpg" width="120" height="120" alt="Павел Радьков">
-		</span>
-		<span class="logo-txt">
-			<span class="logo-name">Павел&nbsp;Радьков</span>
-			<span class="logo-title">Веб-разработчик</span>
-		</span>
+	<p class="header-logo">
+		<% if (@document.url != '/') : %>
+		<a class="logo" href="/">
+			<% else : %>
+			<span class="logo">
+				<% end %>
 
-<% if (@document.url != '/') : %>
-	</a>
-<% else : %>
-	</span>
-<% end %>
-</p>
+				<span class="logo-icon">
+					<img src="/avatar/paulradzkov.jpg" width="120" height="120" alt="Павел Радьков">
+				</span>
+				<span class="logo-txt">
+					<span class="logo-name">Павел&nbsp;Радьков</span>
+					<span class="logo-title">Веб-разработчик</span>
+				</span>
+
+				<% if (@document.url != '/') : %>
+			</a>
+			<% else : %>
+		</span>
+		<% end %>
+	</p>
+
+	<p class="header-contacts">
+		<a class="header-contacts-item border-underline" href="mailto:radzkov@gmail.com">radzkov@gmail.com</a>
+		<a class="header-contacts-item border-underline" href="https://github.com/interpaul" target="_blank">GitHub</a>
+		<a class="header-contacts-item border-underline" href="https://www.linkedin.com/in/paulradzkov" target="_blank">LinkedIn</a>
+		<a class="header-contacts-item border-underline" href="https://twitter.com/paul_radzkov" target="_blank">Twitter</a>
+		<a class="header-contacts-item border-underline" href="https://www.instagram.com/paulradzkov/" target="_blank">Instagram</a>
+	</p>
+
+</div>

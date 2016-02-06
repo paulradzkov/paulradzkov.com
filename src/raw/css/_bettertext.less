@@ -7,6 +7,7 @@
     @linel: 50em;
     @font1: sans-serif;
     @font2: sans-serif;
+    @font3: monospace;
     @scale1: 1.125;
     @scale2: 1.250;
 
@@ -258,12 +259,6 @@
         }
     }
 
-    /* code */
-
-    pre {
-        margin: (@m-default) 0;
-    }
-
     /* tables */
     table:not([class]) {
         margin-top: (@m-default * 2);
@@ -319,6 +314,10 @@
 
     pre {
         margin: @m-default 0;
+    }
+
+    code, kbd, var, samp, tt {
+        font-family: @font3;
     }
 
     .bettertext-settings();

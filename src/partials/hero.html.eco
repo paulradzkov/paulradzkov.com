@@ -1,5 +1,10 @@
 <p class="header-logo">
+<% if (@document.url != '/') : %>
 	<a class="logo" href="/">
+<% else : %>
+	<span class="logo">
+<% end %>
+
 		<span class="logo-icon">
 			<img src="/avatar/paulradzkov.jpg" width="120" height="120" alt="Павел Радьков">
 		</span>
@@ -7,5 +12,10 @@
 			<span class="logo-name">Павел&nbsp;Радьков</span>
 			<span class="logo-title">Веб-разработчик</span>
 		</span>
+
+<% if (@document.url != '/') : %>
 	</a>
+<% else : %>
+	</span>
+<% end %>
 </p>

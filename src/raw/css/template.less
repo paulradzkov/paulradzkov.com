@@ -1,9 +1,68 @@
-@import "_variables.less";
+//global variables
+
+//Fonts
+@fontmain: 'Noto Sans', 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Roboto', 'San Francisco', sans-serif;
+@fontsecond: 'Roboto', 'Helvetica Neue', 'Helvetica', 'San Francisco', sans-serif;
+@fontmono: 'Consolas', 'courier new', monospace;
+
+//link colors on white
+@link:          #0877db;
+@visited:       #9108db;
+@hover:         #2b9aff;
+@visitedhover:  #bc4df8;
+@active:        #bc4df8;
+
+//link colors on dark bg
+@link2:          #57AFFF;
+@visited2:       #E2ABFF;
+@hover2:         #C1DFFA;
+@visitedhover2:  #f2d9ff;
+@active2:        #f2d9ff;
+
+//media breakpoints:
+@mawtext: 50rem;
+@smscreen: 40rem;
+@xsscreen: 25rem;
+
+//comon variables
+@pad: 2rem;
+
+//end of global variables
+
 @import "_normalize.less";
 @import "_helpers.less";
 @import "_bettertext.less";
+
+.bettertext-settings() {
+
+    //settings
+    //@fz: 16px;
+    //@fz-small: 0.8em;
+    //@rythm: 24px;
+    //@linel: 50em;
+    @font1: @fontmain;
+    @font2: @fontsecond;
+    @font3: @fontmono;
+    //@scale1: 1.125;
+    //@scale2: 1.250;
+
+    //@bettertext-breakpoint: ~"(min-width: 768px)";
+
+}
+
 @import "_typo.less";
 @import "_links.less";
+
+.links-settings() {
+    //colors
+    @defaulttext:   #000;
+    @link:          #0877db;
+    @visited:       #9108db;
+    @hover:         #2b9aff;
+    @visitedhover:  #bc4df8;
+    @active:        #bc4df8;
+}
+
 @import "_border-underline.less";
 @import "_linked-header.less";
 @import "_layout.less";

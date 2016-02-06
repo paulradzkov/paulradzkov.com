@@ -1,42 +1,35 @@
 /* typography */
 
-/* making inline code same x-height as general text */
-p code,
-p kbd {
-    //font-size: 1.06em;
-    //line-height: 0.8;
-}
-
-
 /* figures */
 figure {
-  margin: 4em 0;
-  margin: 4rem 0;
-}
-figure img {
-    width: inherit;
-    max-width: 100%;
-    height: auto;
-    -ms-interpolation-mode: bicubic;
-    box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.3), 3px 3px 10px rgba(0, 0, 0, 0.3);
+    margin: 4rem 0;
+
+    img {
+        width: inherit;
+        max-width: 100%;
+        height: auto;
+        -ms-interpolation-mode: bicubic;
+        box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.3), 3px 3px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    figcaption {
+        text-align: center;
+
+        p {
+            text-align: left;
+
+            &:only-child {
+                display: inline-block;
+            }
+        }
+    }
 }
 
 figcaption {
-    margin: 2em auto;
     margin: 2rem auto;
     max-width: 25em;
-    font-size: 0.9em;
     font-size: 0.9rem;
     text-align: left;
-}
-figure figcaption {
-    text-align: center;
-}
-figure figcaption p {
-    text-align: left;
-}
-figure figcaption p:only-child {
-    display: inline-block;
 }
 
 pre {
@@ -49,17 +42,15 @@ pre {
     white-space: pre;
     white-space: pre-wrap;
     word-wrap: break-word;
+
+    code {
+        display: block;
+        margin: 0;
+        padding: 1em 2em;
+        text-align: left;
+        word-break: break-all;
+    }
 }
-pre code {
-    display: block;
-    margin: 0;
-    padding: 1em 2em;
-    text-align: left;
-    word-break: break-all;
-}
-
-
-
 
 /* cli */
 .cli {

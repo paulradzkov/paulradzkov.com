@@ -21,6 +21,5 @@
     <link rel="alternate" type="application/atom+xml" title="Atom" href="/atom.xml">
     <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml">
     <script src="/vendor/modernizr.js"></script>
-    <%- @partial('webfontsjs', { pathtofonts: '/fonts/webfonts.css?v=0.0.1' }) %>
-
+    <%- @partial('webfontsjs', { pathtofonts: './fonts/webfonts.css?v=0.0.1' }) %>
 </head>

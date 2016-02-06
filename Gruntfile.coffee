@@ -20,6 +20,7 @@ module.exports = (grunt) ->
 					sourceMap: true
 				files: [
 					'out/css/template.css': 'src/raw/css/template.less'
+					'out/fonts/webfonts.css': 'src/raw/fonts/webfonts.less'
 				]
 
 		postcss:
@@ -54,6 +55,7 @@ module.exports = (grunt) ->
 				files:
 					'out/css/template.css':'out/css/template.css'
 					'out/css/caniuse.css':'out/css/caniuse.css'
+					'out/fonts/webfonts.css':'out/fonts/webfonts.css'
 
 		#minify html
 		htmlmin:

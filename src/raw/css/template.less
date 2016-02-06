@@ -64,6 +64,25 @@
 }
 
 @import "_border-underline.less";
+
+.border-underline-settings() {
+    //colors
+    //@link:          #0877db;
+    //@visited:       #9108db;
+    //@hover:         #2b9aff;
+    //@visitedhover:  #bc4df8;
+    //@active:        #bc4df8;
+    //@shift: .1em;
+    //@bd-style: 1px solid;
+
+    //calculations
+    @bdc-link:          lighten(@link, 30%);
+    @bdc-visited:       lighten(@visitedhover, 30%);
+    @bdc-hover:         lighten(@hover, 30%);
+    @bdc-visitedhover:  lighten(@visitedhover, 30%);
+    @bdc-active:        lighten(@active, 30%);
+}
+
 @import "_linked-header.less";
 @import "_layout.less";
 @import "_pageheader.less";

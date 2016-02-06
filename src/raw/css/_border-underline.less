@@ -22,6 +22,9 @@ usage:
     @shift: .1em;
     @bd-style: 1px solid;
 
+    //modifiers
+    @bd-style-dashed: 1px dashed;
+
     //calculations
     @bdc-link:          lighten(@link, 30%);
     @bdc-visited:       lighten(@visited, 40%);
@@ -70,3 +73,11 @@ usage:
 
     .border-underline-settings();
 }
+
+@border-underline-dashed: {
+    .@{border-underline}-dashed {
+        border-bottom: @bd-style-dashed;
+    }
+
+    .border-underline-settings();
+};

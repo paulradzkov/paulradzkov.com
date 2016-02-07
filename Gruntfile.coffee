@@ -62,9 +62,9 @@ module.exports = (grunt) ->
 			out:
 				options:
 					removeComments: true
-					collapseWhitespace: true
+					collapseWhitespace: false
 					minifyJS: true
-					minifyCSS: true
+					minifyCSS: false
 				files: [
 					expand: true
 					cwd: 'out/'

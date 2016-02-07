@@ -189,7 +189,7 @@ table.chars th {
   white-space: pre;
   white-space: pre-wrap;
   word-wrap: break-word;
-  font-family: monospace, serif;
+  font-family: 'Consolas', 'Liberation Mono', 'Menlo', 'Courier New', 'Courier', 'Droid Sans Mono',  monospace, serif;
   text-align: left;
   background: #f8f8f8;
   text-shadow: 1px 1px 0px #FFF;
@@ -198,10 +198,9 @@ table.chars th {
   border-color: #f1f1f1;
 }
 
-@media screen and (min-width: @breakpointL) {
+@media screen and (min-width: 50em) {
   .demo-css-editable style {
     min-width: 50rem;
-    display: inline-block;
   }
 }
 

@@ -7,7 +7,7 @@ scripts: ["/vendor/isotope.pkgd.min.js","/js/isotope-settings.js"]
 <div class="justified-blocks">
     <h1 class="blog-title">
         Блог
-        <span class="rss"><a href="/rss.xml" class="border-underline" onClick="_gaq.push(['_trackEvent', 'Feed', 'Open', 'RSS Feed']);">Подписаться RSS</a></span>
+        <span class="rss"><a href="/rss.xml" class="border-underline" onClick="_gaq.push(['_trackEvent', 'Feed', 'Open', 'RSS Feed']);">Подписаться на RSS</a></span>
     </h1>
     <div class="view-toggle">
         <form name="blogroll-view" class="btn-group" data-toggle="buttons">

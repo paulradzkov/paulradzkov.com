@@ -34,6 +34,7 @@
             <% if ((@site.disqus_shortname) and (@document.disqusid)) : %>
             <span class="comments"><a href="<%= @document.path %>#disqus_thread" data-disqus-identifier="<%= @document.disqusid %>" >Комментарии</a></span>
             <% end %>
+            <span class="pageviews"></span>
         </aside>
 
     </header>

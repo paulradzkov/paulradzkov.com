@@ -1,7 +1,7 @@
---- 
+---
 title: "Pointer-events"
-excerpt: "Свойство <code class='key'>pointer-events</code> придет к нам с CSS4, но уже сейчас поддерживается более чем половиной браузеров. Если установить <code><span class='key'>pointer-events</span>: <span class='value'>none</span></code>, то элемент перестанет реагировать на hover, click и другие события мыши. Он станет «прозрачным» для взаимодействия, а hover и click будут передаваться элементу, лежащему под ним. Рассмотрим, для чего это можно использовать."
-description: "Свойство pointer-events придет к нам с CSS4, но уже сейчас поддерживается более чем половиной браузеров. Если установить pointer-events: none, то элемент перестанет реагировать на hover, click и другие события мыши. Он станет «прозрачным» для взаимодействия, а hover и click будут передаваться элементу, лежащему под ним. Рассмотрим, для чего это можно использовать."
+excerpt: "Свойство <code class='key'>pointer-events</code> придет к нам с CSS4-UI модулем, но уже сейчас поддерживается более чем половиной браузеров. Если установить <code><span class='key'>pointer-events</span>: <span class='value'>none</span></code>, то элемент перестанет реагировать на hover, click и другие события мыши. Он станет «прозрачным» для взаимодействия, а hover и click будут передаваться элементу, лежащему под ним. Рассмотрим, для чего это можно использовать."
+description: "Свойство pointer-events придет к нам с CSS4-UI модулем, но уже сейчас поддерживается более чем половиной браузеров. Если установить pointer-events: none, то элемент перестанет реагировать на hover, click и другие события мыши. Он станет «прозрачным» для взаимодействия, а hover и click будут передаваться элементу, лежащему под ним. Рассмотрим, для чего это можно использовать."
 created_at: 2012-12-09
 kind: article
 publish: true
@@ -13,7 +13,7 @@ scripts: ['/vendor/caniuse.js']
 
 <p>Представим ситуацию, когда у нас один html-элемент расположен поверх другого. Но нам нужно, чтобы нижний элемент был кликабельным или реагировал на hover.</p>
 
-<p>В CSS4 есть такое свойство — <code><a href="http://wiki.csswg.org/spec/css4-ui#pointer-events">pointer-events</a></code>.</p>
+<p>В модуле «CSS4-UI» есть такое свойство — <code><a href="http://wiki.csswg.org/spec/css4-ui#pointer-events">pointer-events</a></code>.</p>
 
 <!-- cut -->
 
@@ -37,14 +37,18 @@ scripts: ['/vendor/caniuse.js']
 
     <div class="demo-card">
     	<a href="#" class="demo-card-image-holder"><img src="http://placehold.it/300x200" alt=""></a>
-    	<h3 class="demo-card-title"><a href="#" class="demo-card-link">Esse iusto consectetur quibusdam quasi excepturi voluptatum architecto aliquid</a></h3>
-        <p class="demo-card-descr">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit ullam minus a ipsum eum rerum eaque maxime amet beatae modi qui incidunt voluptas quis maiores quos autem inventore! Mollitia praesentium. Impedit ullam minus a ipsum eum rerum eaque maxime amet beatae modi qui incidunt voluptas quis maiores quos autem inventore! Mollitia praesentium.</p>
+        <div class="demo-card-txt">
+            <h3 class="demo-card-title"><a href="#" class="demo-card-link">Pointer-events: none</a></h3>
+            <p class="demo-card-descr"><strong>Выдели меня курсором.</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit ullam minus a ipsum eum rerum eaque maxime amet beatae modi qui incidunt voluptas quis maiores quos autem inventore! Mollitia praesentium. Impedit ullam minus a ipsum eum rerum eaque maxime amet beatae modi qui incidunt voluptas quis maiores quos autem inventore!</p>
+        </div>
         <span class="demo-card-overlay" style="pointer-events:none;"><!--gradient overlay--></span>
     </div>
     <div class="demo-card">
     	<a href="#" class="demo-card-image-holder"><img src="http://placehold.it/300x200" alt=""></a>
-    	<h3 class="demo-card-title"><a href="#" class="demo-card-link">Esse iusto consectetur quibusdam quasi excepturi voluptatum architecto aliquid</a></h3>
-        <p class="demo-card-descr">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit ullam minus a ipsum eum rerum eaque maxime amet beatae modi qui incidunt voluptas quis maiores quos autem inventore! Mollitia praesentium. Impedit ullam minus a ipsum eum rerum eaque maxime amet beatae modi qui incidunt voluptas quis maiores quos autem inventore! Mollitia praesentium.</p>
+        <div class="demo-card-txt">
+            <h3 class="demo-card-title"><a href="#" class="demo-card-link">Pointer-events: auto</a></h3>
+            <p class="demo-card-descr"><strong>Выдели меня курсором.</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit ullam minus a ipsum eum rerum eaque maxime amet beatae modi qui incidunt voluptas quis maiores quos autem inventore! Mollitia praesentium. Impedit ullam minus a ipsum eum rerum eaque maxime amet beatae modi qui incidunt voluptas quis maiores quos autem inventore!</p>
+        </div>
         <span class="demo-card-overlay"><!--gradient overlay--></span>
     </div>
     <div class="clr"></div>
@@ -67,7 +71,7 @@ scripts: ['/vendor/caniuse.js']
         <li><a href="#archive">Archive</a></li>
         <li><a href="#contacts">Contacts</a></li>
     </ul>
-    
+
 </div>
 
 <p>Обычно в CMS уже есть какой-либо класс для индикации текущей страницы в меню. Допишем ему pointer-events:</p>
@@ -76,7 +80,7 @@ scripts: ['/vendor/caniuse.js']
     background: #AAA;
     color: #333;
     pointer-events: none; /* disables click event */
-} 
+}
 </code></pre>
 
 <% %>

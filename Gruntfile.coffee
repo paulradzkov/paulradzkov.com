@@ -86,9 +86,8 @@ module.exports = (grunt) ->
 				files:
 					'out/js/output.min.js':[
 						'out/vendor/jquery.sticky.js'
-						'out/js/script.js'
 						'out/vendor/bootstrap/js/bootstrap.min.js'
-						'out/js/tooltip.js'
+						'out/js/script.js'
 					]
 					'out/js/isotope-settings.js':'out/js/isotope-settings.js'
 
@@ -204,7 +203,7 @@ module.exports = (grunt) ->
 	grunt.loadNpmTasks 'grunt-postcss'
 
 	# Register our Grunt tasks.
-	grunt.registerTask 'deploy',        ['shell:clean', 'shell:docpad', 'ftp-deploy']
+	grunt.registerTask 'deploy',        ['shell:clean', 'shell:docpad', 'production', 'ftp-deploy']
 	grunt.registerTask 'production',    ['less', 'postcss', 'cssmin', 'htmlmin', 'uglify', 'clean']
 	grunt.registerTask 'run',           ['shell:run', 'less', 'postcss', 'watch:less']
 	grunt.registerTask 'default',       ['run']

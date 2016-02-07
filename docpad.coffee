@@ -160,7 +160,7 @@ docpadConfig = {
 						"""
 				)
 		grunt:
-			writeAfter: ["production"]
+			writeAfter: false
 			writeBefore: false
 			renderBefore: false
 			renderAfter: false
@@ -215,9 +215,8 @@ docpadConfig = {
 					# The website's scripts
 					scripts: [
 						'/vendor/jquery.sticky.js'
-						'/js/script.js'
 						'/vendor/bootstrap/js/bootstrap.min.js'
-						'/js/tooltip.js'
+						'/js/script.js'
 					]
 
 			plugins:

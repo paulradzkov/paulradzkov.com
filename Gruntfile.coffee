@@ -94,7 +94,7 @@ module.exports = (grunt) ->
 						'out/vendor/jquery.sticky.js'
 						'out/vendor/bootstrap/js/bootstrap.min.js'
 						'out/js/script.js'
-						'/vendor/likely/likely.js'
+						'out/vendor/likely/likely.js'
 					]
 					'out/js/isotope-settings.js':'out/js/isotope-settings.js'
 

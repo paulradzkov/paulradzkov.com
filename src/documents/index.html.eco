@@ -2,6 +2,8 @@
 layout: 'default'
 title: 'Блог Павла Радькова'
 scripts: ["/vendor/isotope.pkgd.min.js","/js/isotope-settings.js"]
+description: 'Заметки о вёрстке, дизайне, юзабилити, типографике, методологиях и процессах'
+og_image: '/i/og/og-index.png'
 ---
 
 <div class="justified-blocks">

@@ -138,7 +138,7 @@
                 if (!results.error) {
                     // Success. Do something cool!
                     console.log('Total pageviews since ' + startDate + ' : ' + results.rows);
-                    $('.pageviews').append('Просмотров: ' + results.rows);
+                    $('.pageviews').show().append('Просмотров: ' + results.rows);
                 } else {
                     console.log('There was an error: ' + results.message);
                 }

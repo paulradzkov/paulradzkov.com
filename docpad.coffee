@@ -31,6 +31,7 @@ docpadConfig = {
 
 			# Author name used in copyrights and meta data
 			author: "Павел Радьков"
+			twittername: "@paul_radzkov"
 
 			# Change to your disqus name or comment it out to disable comments
 			disqus_shortname: "paulradzkov"
@@ -127,6 +128,15 @@ docpadConfig = {
 		getTagUrl: (tag) ->
 			doc = @getFile({tag:tag})
 			return doc?.get('url') or ''
+
+		# Opengraph meta
+		getOpenGraph: ->
+			# if we have a opengraph inside document, then we should use that info
+			if @document.og
+
+			# if our document does not have it's own og object, then we should just use common data
+			else
+
 
 	collections:
 		articles: ->

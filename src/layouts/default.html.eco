@@ -50,6 +50,7 @@
     <article class="nav-placeholder page-content content-width" role="main">
         <%- @content %>
     </article>
+    <%- @partial('likely') %>
     <%- @partial('footer') %>
     <% if ((@site.disqus_shortname) and (@document.kind == 'article')) : %>
     <div class="disqus-wrapper">

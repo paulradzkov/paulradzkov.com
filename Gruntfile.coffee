@@ -14,6 +14,12 @@ module.exports = (grunt) ->
 			files: [ './src/**/*.*' ]
 			out: ['out']
 
+		copy:
+			main:
+				files: [
+					'./src/raw/vendor/likely/likely.js':'./bower_components/Likely/release/likely.js'
+				]
+
 		less:
 			dev:
 				options:
@@ -88,6 +94,7 @@ module.exports = (grunt) ->
 						'out/vendor/jquery.sticky.js'
 						'out/vendor/bootstrap/js/bootstrap.min.js'
 						'out/js/script.js'
+						'/vendor/likely/likely.js'
 					]
 					'out/js/isotope-settings.js':'out/js/isotope-settings.js'
 
@@ -190,6 +197,7 @@ module.exports = (grunt) ->
 				]
 
 	# Build the available Grunt tasks.
+	grunt.loadNpmTasks 'grunt-contrib-copy'
 	grunt.loadNpmTasks 'grunt-contrib-less'
 	grunt.loadNpmTasks 'grunt-contrib-cssmin'
 	grunt.loadNpmTasks 'grunt-contrib-jshint'

@@ -227,6 +227,7 @@ docpadConfig = {
 						'/vendor/jquery.sticky.js'
 						'/vendor/bootstrap/js/bootstrap.min.js'
 						'/js/script.js'
+						'/vendor/likely/likely.js'
 					]
 
 			plugins:

@@ -226,6 +226,6 @@ table.chars th {
   -moz-columns: 17em;
   columns: 17em;
 }
-:target {
+.ch-section:target {
   background-color: #F3F3A0;
 }

@@ -18,6 +18,8 @@ docpadConfig = {
 			# The production url of our website
 			url: "http://paulradzkov.com"
 
+			canonicalUrl: "http://paulradzkov.com"
+
 			# Here are some old site urls that you would like to redirect from
 			oldUrls: [
 				'www.paulradzkov.com'
@@ -169,13 +171,6 @@ docpadConfig = {
 						<%- @partial('tag', @) %>
 						"""
 				)
-		grunt:
-			writeAfter: false
-			writeBefore: false
-			renderBefore: false
-			renderAfter: false
-			generateBefore: false
-			generateAfter: false
 		prezip:
 			# Files with compression ratios below this value are not kept.
 			ratio: 0.95
@@ -217,6 +212,11 @@ docpadConfig = {
 	# DocPad Environments settings
 
 	environments:
+		ghpages:
+			templateData:
+				site:
+					url: 'https://paulradzkov.github.io'
+
 		development:
 			templateData:
 				site:
@@ -230,14 +230,6 @@ docpadConfig = {
 						'/vendor/likely/likely.js'
 					]
 
-			plugins:
-				grunt:
-					writeAfter: false
-					writeBefore: false
-					renderBefore: false
-					renderAfter: false
-					generateBefore: false
-					generateAfter: false
 
 
 	# =================================

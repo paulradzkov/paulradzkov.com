@@ -176,11 +176,23 @@ module.exports = (grunt) ->
 				options:
 					stdout: true
 				command: 'docpad generate --env static'
+			ghpages:
+				options:
+					stdout: true
+				command: 'docpad generate --env ghpages'
 			run:
 				options:
 					stdout: true
 					async: true
 				command: 'docpad run'
+
+		'gh-pages':
+			options:
+				base: 'out'
+				#remote: 'ghpages'
+				branch: 'master'
+				repo: 'https://github.com/paulradzkov/paulradzkov.github.io.git'
+			src: ['**/*']
 
 		'ftp-deploy':
 			build:
@@ -208,9 +220,11 @@ module.exports = (grunt) ->
 	grunt.loadNpmTasks 'grunt-modernizr'
 	grunt.loadNpmTasks 'grunt-shell-spawn'
 	grunt.loadNpmTasks 'grunt-ftp-deploy'
+	grunt.loadNpmTasks 'grunt-gh-pages'
 	grunt.loadNpmTasks 'grunt-postcss'
 
 	# Register our Grunt tasks.
+	grunt.registerTask 'ghpages',       ['shell:clean', 'shell:ghpages', 'production', 'gh-pages']
 	grunt.registerTask 'deploy',        ['shell:clean', 'shell:docpad', 'production', 'ftp-deploy']
 	grunt.registerTask 'production',    ['less', 'postcss', 'cssmin', 'htmlmin', 'uglify', 'clean']
 	grunt.registerTask 'run',           ['shell:run', 'less', 'postcss', 'watch:less']

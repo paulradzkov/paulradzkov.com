@@ -1,5 +1,9 @@
 <div class="likely-container content-width">
-    <div class="likely">
+    <% if (@document.kind == 'article') : %>
+    <div class="likely" data-url="<%= @site.canonicalUrl %><%= @document.url %>">
+    <% else : %>
+    <div class="likely" data-url="<%= @site.canonicalUrl %>" data-title="<%= @site.rssTitle %>">
+    <% end %>
         <div class="facebook">Поделиться</div>
         <div class="twitter" data-via="paul_radzkov">Твитнуть</div>
         <div class="gplus">Плюсануть</div>

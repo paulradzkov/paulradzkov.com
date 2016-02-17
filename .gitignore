@@ -5,3 +5,4 @@ rsync.bat
 .docpad.db
 .ftppass
 .DS_Store
+.grunt

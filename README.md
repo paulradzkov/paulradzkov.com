@@ -10,7 +10,7 @@
 4. Clone the project and run the server
 
 	``` bash
-	git clone https://github.com/interpaul/paulradzkov.com.git
+	git clone https://github.com/paulradzkov/paulradzkov.com.git
 	cd paulradzkov.com
 	npm install
 	bower install

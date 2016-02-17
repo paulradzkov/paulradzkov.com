@@ -7,7 +7,7 @@
 			2012&ndash;<%= @moment(@now).format('YYYY') %>.
 		<% end %>
 		<% if ((!@document.kind) or (@document.kind != 'article')) : %>
-			Блог работает на DocPad. <a href="https://github.com/interpaul/paulradzkov.com" target="_blank">Исходники</a> этого сайта на Гитхабе.
+			Блог работает на DocPad. <a href="https://github.com/paulradzkov/paulradzkov.com" target="_blank">Исходники</a> этого сайта на Гитхабе.
 		<% end %>
 	</p>
 </footer>

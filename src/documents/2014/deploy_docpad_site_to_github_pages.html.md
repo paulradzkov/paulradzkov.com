@@ -30,7 +30,7 @@ tags: [docpad, github pages]
 	templateData:
 		site:
 			# The production url of our website. Used in sitemap and rss feed
-			url: "http://interpaul.github.io/docpad-simpleblog"
+			url: "http://paulradzkov.github.io/docpad-simpleblog"
 ```
 
 И добавим отдельную конфигурацию для «development» окружения:
@@ -74,8 +74,8 @@ tags: [docpad, github pages]
 <ul class="nav-list">
 	<li><a href="/"><span>Blog</span></a></li>
 	<li><a href="/docs"><span>Documentation</span></a></li>
-	<li><a href="https://github.com/interpaul/docpad-simpleblog/issues"><span>Issues</span></a></li>
-	<li><a href="https://github.com/interpaul/docpad-simpleblog"><span>Source Code</span></a></li>
+	<li><a href="https://github.com/paulradzkov/docpad-simpleblog/issues"><span>Issues</span></a></li>
+	<li><a href="https://github.com/paulradzkov/docpad-simpleblog"><span>Source Code</span></a></li>
 </ul>
 ```
 
@@ -85,8 +85,8 @@ tags: [docpad, github pages]
 <ul class="nav-list">
 	<li><a href="<%= @getUrl('/') %>"><span>Blog</span></a></li>
 	<li><a href="<%= @getUrl('/docs') %>"><span>Documentation</span></a></li>
-	<li><a href="https://github.com/interpaul/docpad-simpleblog/issues"><span>Issues</span></a></li>
-	<li><a href="https://github.com/interpaul/docpad-simpleblog"><span>Source Code</span></a></li>
+	<li><a href="https://github.com/paulradzkov/docpad-simpleblog/issues"><span>Issues</span></a></li>
+	<li><a href="https://github.com/paulradzkov/docpad-simpleblog"><span>Source Code</span></a></li>
 </ul>
 ```
 

@@ -1,9 +1,9 @@
 {
-  "name": "html5-boilerplate.docpad",
+  "name": "paulradzkov.com",
   "version": "0.1.0",
   "private": true,
-  "description": "HTML5 Boilerplate skeleton for DocPad. Bare essentials for building a modern website with best practices.",
-  "homepage": "https://github.com/docpad/html5-boilerplate.docpad",
+  "description": "Blog running on DocPad",
+  "homepage": "https://github.com/paulradzkov/paulradzkov.com",
   "keywords": [
     "docpad-skeleton",
     "docpad",
@@ -12,19 +12,19 @@
     "html5 boilerplate",
     "h5bp"
   ],
-  "author": "Bevry Pty Ltd <us@bevry.me> (http://bevry.me)",
+  "author": "Paul Radzkov <radzkov@gmail.com> (http://paulradzkov.com)",
   "maintainers": [
-    "Benjamin Lupton <b@lupton.cc> (http://balupton.com)"
+    "Paul Radzkov <radzkov@gmail.com> (http://paulradzkov.com)"
   ],
   "contributors": [
-    "Benjamin Lupton <b@lupton.cc> (http://balupton.com)"
+    "Paul Radzkov <radzkov@gmail.com> (http://paulradzkov.com)"
   ],
   "bugs": {
-    "url": "https://github.com/docpad/html5-boilerplate.docpad/issues"
+    "url": "https://github.com/paulradzkov/paulradzkov.com/issues"
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/docpad/html5-boilerplate.docpad.git"
+    "url": "https://github.com/paulradzkov/paulradzkov.com.git"
   },
   "engines": {
     "node": "0.8.x",
@@ -36,7 +36,7 @@
     "docpad-plugin-coffeescript": "~2.5.0",
     "docpad-plugin-eco": "~2.1.0",
     "docpad-plugin-gist": "~2.1.1",
-    "docpad-plugin-grunt": "git://github.com/interpaul/docpad-plugin-grunt.git#v211compiled",
+    "docpad-plugin-grunt": "git://github.com/paulradzkov/docpad-plugin-grunt.git#v211compiled",
     "docpad-plugin-highlightjs": "~2.3.0",
     "docpad-plugin-less": "~2.4.1",
     "docpad-plugin-marked": "~2.3.0",

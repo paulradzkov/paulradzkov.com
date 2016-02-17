@@ -1,7 +1,7 @@
 {
   "name": "paulradzkov.com",
   "version": "0.0.0",
-  "homepage": "https://github.com/interpaul/paulradzkov.com",
+  "homepage": "https://github.com/paulradzkov/paulradzkov.com",
   "authors": [
     "Paul Radzkov <radzkov@gmail.com>"
   ],
@@ -19,6 +19,8 @@
   ],
   "dependencies": {
     "modernizr": "2.8.3",
-    "Likely": "ilyabirman-likely#~2.0.8"
+    "Likely": "ilyabirman-likely#~2.0.8",
+    "normalize-css": "git://github.com/necolas/normalize.css.git#3.0.3",
+    "jquery": "^2.2.0"
   }
 }

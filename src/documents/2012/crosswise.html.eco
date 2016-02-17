@@ -55,7 +55,7 @@ del.cross:before,
     <div class="media">
         <figure class="img">
             <div class="del-cross">
-                <img src="http://placehold.it/300x200" width="300" height="200" alt="No kitten here"/>
+                <img src="//placehold.it/300x200" width="300" height="200" alt="No kitten here"/>
             </div>
             <figcaption><p>Image caption</p></figcaption>
         </figure>

@@ -79,7 +79,7 @@ ol:not([class]) li {
 <p>Живой пример:</p>
 
 <div class="demo">
-    <img src="http://placehold.it/320x240" style="float:left; margin-right:1em;" alt="">
+    <img src="//placehold.it/320x240" style="float:left; margin-right:1em;" alt="">
     <p>Lorem ipsum.</p>
     <ul>
         <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat porro eligendi quod ratione quaerat dolores quia quasi provident. Veniam earum iste modi quam aliquam qui itaque corporis quia vel inventore.</li>

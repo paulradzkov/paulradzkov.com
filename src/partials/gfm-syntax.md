@@ -165,11 +165,11 @@ id sem consectetuer libero luctus adipiscing.
 
 Картинка без `alt` текста
 
-![](http://placehold.it/150x100)
+![](//placehold.it/150x100)
 
 Картинка с альтом и тайтлом:
 
-![Alt text](http://placehold.it/150x100 "Можно задать title")
+![Alt text](//placehold.it/150x100 "Можно задать title")
 
 Запомнить просто: синтаксис как у ссылок, только перед открывающей квадратной скобкой ставится восклицательный знак.
 
@@ -179,13 +179,13 @@ id sem consectetuer libero luctus adipiscing.
 ![Картинка][image2]
 ![Картинка][image3]
 
-[image1]: http://placehold.it/250x100
-[image2]: http://placehold.it/200x100
-[image3]: http://placehold.it/150x100
+[image1]: //placehold.it/250x100
+[image2]: //placehold.it/200x100
+[image3]: //placehold.it/150x100
 
 Картинки-ссылки:
 
-[![Alt text](http://placehold.it/150x100)](http://example.com/)
+[![Alt text](//placehold.it/150x100)](http://example.com/)
 
 
 ## Использование HTML внутри Markdown
@@ -231,4 +231,3 @@ Content Cell  | Content Cell
 Внутри таблиц можно использовать ссылки, наклонный, жирный или зачеркнутый текст.
 
 Для всего остального есть обычный HTML.
-

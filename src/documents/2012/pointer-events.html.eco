@@ -36,7 +36,7 @@ scripts: ['/vendor/caniuse.js']
 <div class="demo">
 
     <div class="demo-card">
-    	<a href="#" class="demo-card-image-holder"><img src="http://placehold.it/300x200" alt=""></a>
+    	<a href="#" class="demo-card-image-holder"><img src="//placehold.it/300x200" alt=""></a>
         <div class="demo-card-txt">
             <h3 class="demo-card-title"><a href="#" class="demo-card-link">Pointer-events: none</a></h3>
             <p class="demo-card-descr"><strong>Выдели меня курсором.</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit ullam minus a ipsum eum rerum eaque maxime amet beatae modi qui incidunt voluptas quis maiores quos autem inventore! Mollitia praesentium. Impedit ullam minus a ipsum eum rerum eaque maxime amet beatae modi qui incidunt voluptas quis maiores quos autem inventore!</p>
@@ -44,7 +44,7 @@ scripts: ['/vendor/caniuse.js']
         <span class="demo-card-overlay" style="pointer-events:none;"><!--gradient overlay--></span>
     </div>
     <div class="demo-card">
-    	<a href="#" class="demo-card-image-holder"><img src="http://placehold.it/300x200" alt=""></a>
+    	<a href="#" class="demo-card-image-holder"><img src="//placehold.it/300x200" alt=""></a>
         <div class="demo-card-txt">
             <h3 class="demo-card-title"><a href="#" class="demo-card-link">Pointer-events: auto</a></h3>
             <p class="demo-card-descr"><strong>Выдели меня курсором.</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit ullam minus a ipsum eum rerum eaque maxime amet beatae modi qui incidunt voluptas quis maiores quos autem inventore! Mollitia praesentium. Impedit ullam minus a ipsum eum rerum eaque maxime amet beatae modi qui incidunt voluptas quis maiores quos autem inventore!</p>

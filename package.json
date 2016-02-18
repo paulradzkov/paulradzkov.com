@@ -68,6 +68,7 @@
     "grunt-ftp-deploy": "^0.1.9",
     "grunt-gh-pages": "^1.0.0",
     "grunt-modernizr": "^0.6.0",
+    "grunt-pagespeed": "^2.0.0",
     "grunt-postcss": "^0.5.4",
     "grunt-shell": "^1.1.2",
     "grunt-shell-spawn": "^0.3.10",

@@ -235,6 +235,25 @@ module.exports = (grunt) ->
 					'out/**/Thumbs.db'
 				]
 
+		pagespeed:
+			options:
+				nokey: true
+				url: "http://paulradzkov.com"
+				locale: "ru_RU"
+			prod:
+				options:
+					url: "http://paulradzkov.com"
+					strategy: "desktop"
+					threshold: 90
+			paths:
+				options:
+					paths: [
+						"/"
+						"/2016/code_review/"
+						]
+					strategy: "desktop"
+					threshold: 80
+
 	# Build the available Grunt tasks.
 	grunt.loadNpmTasks 'grunt-contrib-copy'
 	grunt.loadNpmTasks 'grunt-contrib-less'
@@ -251,6 +270,7 @@ module.exports = (grunt) ->
 	grunt.loadNpmTasks 'grunt-ftp-deploy'
 	grunt.loadNpmTasks 'grunt-gh-pages'
 	grunt.loadNpmTasks 'grunt-postcss'
+	grunt.loadNpmTasks 'grunt-pagespeed'
 
 	# Register our Grunt tasks.
 	grunt.registerTask 'ghpages',       ['shell:clean', 'shell:ghpages', 'production', 'gh-pages']

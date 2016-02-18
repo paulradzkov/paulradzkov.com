@@ -114,6 +114,18 @@ module.exports = (grunt) ->
 						dest + src + '.gz'
 				]
 
+		# optimize images if possible
+		imagemin:
+			src:
+				options:
+					optimizationLevel: 3,
+				files: [
+					expand: true,
+					cwd: 'src/',
+					src: ['**/*.{png,jpg,jpeg,gif}'],
+					dest: 'src/'
+				]
+
 		#clean files
 		clean:
 			less:
@@ -227,11 +239,12 @@ module.exports = (grunt) ->
 	grunt.loadNpmTasks 'grunt-contrib-copy'
 	grunt.loadNpmTasks 'grunt-contrib-less'
 	grunt.loadNpmTasks 'grunt-contrib-cssmin'
-	grunt.loadNpmTasks 'grunt-contrib-jshint'
-	grunt.loadNpmTasks 'grunt-contrib-clean'
 	grunt.loadNpmTasks 'grunt-contrib-htmlmin'
+	grunt.loadNpmTasks 'grunt-contrib-imagemin'
 	grunt.loadNpmTasks 'grunt-contrib-uglify'
 	grunt.loadNpmTasks 'grunt-contrib-compress'
+	grunt.loadNpmTasks 'grunt-contrib-jshint'
+	grunt.loadNpmTasks 'grunt-contrib-clean'
 	grunt.loadNpmTasks 'grunt-contrib-watch'
 	grunt.loadNpmTasks 'grunt-modernizr'
 	grunt.loadNpmTasks 'grunt-shell-spawn'

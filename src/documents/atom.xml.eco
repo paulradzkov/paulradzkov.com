@@ -2,8 +2,8 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 	<title><%= @site.rssTitle %></title>
 	<subtitle><%= @site.description %></subtitle>
-	<link href="<%= @site.url %>/atom.xml" rel="self" />
-	<link href="<%= @site.url %>" />
+	<link href="<%= @site.canonicalUrl %>/atom.xml" rel="self" />
+	<link href="<%= @site.canonicalUrl %>" />
 	<updated><%= @site.date.toISOString() %></updated>
 	<id><%= @site.url %></id>
 	<author>
@@ -14,10 +14,10 @@
 	<% for document in @getCollection('articles').toJSON(): %>
 		<entry>
 			<title><%= document.title or document.name or @title.title %></title>
-			<link href="<%= @site.url %><%= document.url %>"/>
+			<link href="<%= @site.canonicalUrl %><%= document.url %>"/>
 			<updated><%= document.created_at.toISOString() %></updated>
-			<id><%= @site.url %><%= document.url %></id>
-			<content type="html"><%= @prepareFeed document.contentRenderedWithoutLayouts %></content>
+			<id><%= @site.canonicalUrl %><%= document.url %></id>
+			<content type="html"><%= document.contentRenderedWithoutLayouts %></content>
 		</entry>
 	<% end %>
 </feed>

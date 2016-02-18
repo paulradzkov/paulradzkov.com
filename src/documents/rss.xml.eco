@@ -3,7 +3,7 @@
 	<channel>
 		<% posts = @getCollection('articles').toJSON() %>
 		<title><%= @site.rssTitle %></title>
-		<link><%= @site.url %></link>
+		<link><%= @site.canonicalUrl %></link>
 		<description><%= @site.description %></description>
 		<lastBuildDate><%= posts[0].created_at.toUTCString() %></lastBuildDate>
 		<language>ru</language>
@@ -12,14 +12,14 @@
 		<% for post in posts: %>
 			<item>
 				<title><%= post.title %></title>
-				<link><%= @site.url %><%= post.url %></link>
+				<link><%= @site.canonicalUrl %><%= post.url %></link>
 				<description><%= post.blogExcerpt %></description>
 				<content:encoded>
 					<![CDATA[<%- post.contentRenderedWithoutLayouts %>]]>
 				</content:encoded>
 				<pubDate><%= post.created_at.toUTCString() %></pubDate>
-				<guid><%= @site.url %><%= post.url %></guid>
-				<comments><%= @site.url %><%= post.url %>#comments</comments>
+				<guid><%= @site.canonicalUrl %><%= post.url %></guid>
+				<comments><%= @site.canonicalUrl %><%= post.url %>#comments</comments>
 			</item>
 		<% end %>
 	</channel>

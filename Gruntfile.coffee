@@ -97,6 +97,22 @@ module.exports = (grunt) ->
 						'out/vendor/likely/likely.js'
 					]
 					'out/js/isotope-settings.js':'out/js/isotope-settings.js'
+		compress:
+			main:
+				options:
+					mode: 'gzip'
+				files: [
+					expand: true
+					cwd: 'out/'
+					src: [
+						'**/*.{html,css,js,xml,svg,ttf}'
+						'!google*.html'
+						'!yandex*.html'
+					]
+					dest: 'out/'
+					rename: (dest, src) ->
+						dest + src + '.gz'
+				]
 
 		#clean files
 		clean:
@@ -189,7 +205,6 @@ module.exports = (grunt) ->
 		'gh-pages':
 			options:
 				base: 'out'
-				#remote: 'ghpages'
 				branch: 'master'
 				repo: 'https://github.com/paulradzkov/paulradzkov.github.io.git'
 			src: ['**/*']
@@ -216,6 +231,7 @@ module.exports = (grunt) ->
 	grunt.loadNpmTasks 'grunt-contrib-clean'
 	grunt.loadNpmTasks 'grunt-contrib-htmlmin'
 	grunt.loadNpmTasks 'grunt-contrib-uglify'
+	grunt.loadNpmTasks 'grunt-contrib-compress'
 	grunt.loadNpmTasks 'grunt-contrib-watch'
 	grunt.loadNpmTasks 'grunt-modernizr'
 	grunt.loadNpmTasks 'grunt-shell-spawn'
@@ -226,6 +242,6 @@ module.exports = (grunt) ->
 	# Register our Grunt tasks.
 	grunt.registerTask 'ghpages',       ['shell:clean', 'shell:ghpages', 'production', 'gh-pages']
 	grunt.registerTask 'deploy',        ['shell:clean', 'shell:docpad', 'production', 'ftp-deploy']
-	grunt.registerTask 'production',    ['less', 'postcss', 'cssmin', 'htmlmin', 'uglify', 'clean']
+	grunt.registerTask 'production',    ['less', 'postcss', 'cssmin', 'htmlmin', 'uglify', 'compress', 'clean']
 	grunt.registerTask 'run',           ['shell:run', 'less', 'postcss', 'watch:less']
 	grunt.registerTask 'default',       ['run']

@@ -248,7 +248,6 @@ module.exports = (grunt) ->
 			paths:
 				options:
 					paths: [
-						"/"
 						"/2016/code_review/"
 						]
 					strategy: "desktop"

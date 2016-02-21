@@ -3,9 +3,9 @@ publish: true
 kind: article
 created_at: 2012-03-18
 tags: [photoshop]
-excerpt: 'При написании макросов в Фотошопе бывает нужно выбрать слой выше или ниже активного. В этом нам помогут горячие клавиши «<kbd>Alt + Shift + [</kbd>» и «<kbd>Alt + Shift + ]</kbd>».'
-description: "Полезные горячие клавиши в Photoshop."
-title: "Горячие клавиши для выбора предыдущего и следующего слоя в Photoshop"
+excerpt: 'При написании макросов в Фотошопе бывает нужно выбрать слой выше или ниже активного. В этом нам помогут горячие клавиши «<kbd>Alt + Shift + [</kbd>» и «<kbd>Alt + Shift + ]</kbd>».'
+description: "Полезные горячие клавиши в Photoshop."
+title: "Горячие клавиши для выбора предыдущего и следующего слоя в Photoshop"
 disqusid: nextprevlayer
 ---
 

@@ -1,7 +1,7 @@
---- 
-title: "Бесплатная замена платному Helvetica Neue"
-excerpt: "Подбирал бесплатные аналоги платному Helvetica Neue. До финала дошли TeX Gyre Heros, Arimo, Liberation Sans, Lato и Roboto. Лучшая замена — TeX Gyre Heros."
-description: "Подбирал бесплатные аналоги платному Helvetica Neue. До финала дошли TeX Gyre Heros, Arimo, Liberation Sans, Lato и Roboto. Лучшая замена — TeX Gyre Heros."
+---
+title: "Бесплатная замена платному Helvetica Neue"
+excerpt: "Подбирал бесплатные аналоги платному Helvetica Neue. До финала дошли TeX Gyre Heros, Arimo, Liberation Sans, Lato и Roboto. Лучшая замена — TeX Gyre Heros."
+description: "Подбирал бесплатные аналоги платному Helvetica Neue. До финала дошли TeX Gyre Heros, Arimo, Liberation Sans, Lato и Roboto. Лучшая замена — TeX Gyre Heros."
 created_at: 2014-05-01
 kind: article
 publish: true
@@ -17,7 +17,7 @@ tags: [fonts, typography]
 * [Lato](https://www.google.com/fonts/specimen/Lato)
 * [Roboto](https://www.google.com/fonts/specimen/Roboto)
 
-Победителем вышел **TeX Gyre Heros**, т.к. он очень похож на Helvetica Neue, поддерживает кириллицу и дополнительно у него есть 4 condenced начертания. 
+Победителем вышел **TeX Gyre Heros**, т.к. он очень похож на Helvetica Neue, поддерживает кириллицу и дополнительно у него есть 4 condenced начертания.
 
 <!-- cut -->
 

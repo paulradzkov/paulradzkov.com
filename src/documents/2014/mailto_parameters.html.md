@@ -1,7 +1,7 @@
 ---
-title: "Параметры subject и body в mailto ссылках"
-excerpt: "Как добавить тему письма и текст письма в mailto ссылку"
-description: "Как добавить тему письма и текст письма в mailto ссылку"
+title: "Параметры subject и body в mailto ссылках"
+excerpt: "Как добавить тему письма и текст письма в mailto ссылку"
+description: "Как добавить тему письма и текст письма в mailto ссылку"
 created_at: 2014-02-04
 kind: article
 publish: true

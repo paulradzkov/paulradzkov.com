@@ -1,11 +1,11 @@
 ---
-title: "Как отключить javascript в Google Chrome"
+title: "Как отключить javascript в Google Chrome"
 publish: true
 kind: article
 created_at: 2012-11-27
 tags: [Chrome]
-excerpt: 'Как в Гугл Хроме выключить яваскрипт, отключить кэш или поменять строку User Agent и эмулировать тач-события.'
-description: "Заметка о том, как в Хроме выключить яваскрипт, отключить кэш или поменять строку User Agent и эмулировать touch-events."
+excerpt: 'Как в Гугл Хроме выключить яваскрипт, отключить кэш или поменять строку User Agent и эмулировать тач-события.'
+description: "Как в Гугл Хроме выключить яваскрипт, отключить кэш или поменять строку User Agent и эмулировать тач-события."
 disqusid: chromedevtools
 ---
 

@@ -1,6 +1,7 @@
---- 
-title: "Автозаполнение форм в Google Chrome"
-excerpt: 'Как перекрасить желтые фоны на инпутах в Google Chrome.'
+---
+title: "Автозаполнение форм в Google Chrome"
+excerpt: 'Как перекрасить желтые фоны на инпутах в Google Chrome.'
+description: 'Как перекрасить желтые фоны на инпутах в Google Chrome.'
 created_at: 2012-02-12
 kind: article
 publish: true

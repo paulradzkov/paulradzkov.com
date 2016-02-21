@@ -21,6 +21,11 @@ tags: [css,Chrome,bug]
 
 **Обновлено 30 октября 2012.**
 
+<figure>
+    <img src="chrome-autocomplete-recolor.gif" width="998" height="659" alt="Жёлтые поля ввода можно перекрасить с помощью box-shadow"/>
+    <figcaption>Жёлтые поля ввода можно перекрасить при помощи <code class="hljs-attribute">box-shadow</code></figcaption>
+</figure>
+
 Поля c автокомплитом можно перекрасить при помощи трюка с <code class="hljs-attribute">box-shadow</code>:
 
 <pre><code class="css">input:-webkit-autofill {

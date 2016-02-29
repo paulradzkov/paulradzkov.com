@@ -153,9 +153,9 @@ AddType text/vtt                            vtt
 # Gzip compression
 # ----------------------------------------------------------------------
 
-#<IfModule mod_deflate.c>
-#
-#  # Force deflate for mangled headers developer.yahoo.com/blogs/ydn/posts/2010/12/pushing-beyond-gzipping/
+<IfModule mod_deflate.c>
+
+# Force deflate for mangled headers developer.yahoo.com/blogs/ydn/posts/2010/12/pushing-beyond-gzipping/
 #  <IfModule mod_setenvif.c>
 #    <IfModule mod_headers.c>
 #      SetEnvIfNoCase ^(Accept-EncodXng|X-cept-Encoding|X{15}|~{15}|-{15})$ ^((gzip|deflate)\s*,?\s*)+|[X~-]{4,13}$ HAVE_Accept-Encoding
@@ -194,7 +194,9 @@ AddOutputFilterByType DEFLATE text/plain
 AddOutputFilterByType DEFLATE text/html
 AddOutputFilterByType DEFLATE text/xml
 AddOutputFilterByType DEFLATE text/css
+AddOutputFilterByType DEFLATE image/svg+xml
 SetOutputFilter DEFLATE
+
 
 # ----------------------------------------------------------------------
 # Expires headers (for better cache control)

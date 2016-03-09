@@ -1,0 +1,69 @@
+/* read next nav links */
+/*
+
+```html
+<nav class="read-next">
+    <h4 class="read-next-title">...</h4>
+    <div class="navlinks">
+        <a href="/prev.html" class="navlinks-prev" title="Prev Post">...</a>
+        <a href="/next.html" class="navlinks-next" title="Next Post" >...</a>
+    </div>
+</nav>
+```
+*/
+
+@read-next: read-next;
+
+.@{read-next} {
+    margin: 4rem 0rem 0;
+    padding: 1em 0;
+    font-weight: bold;
+    background: #EFEFEF;
+    box-shadow: inset 0 3px 6px -6px rgba(0, 0, 0, 0.45);
+
+    &-title {
+        margin: 0;
+        font-size: 1.5em;
+        text-align: center;
+        color: #AAA;
+    }
+
+    .navlinks-prev,
+    .navlinks-next {
+        display: block;
+        text-align: center;
+        padding: 1em;
+        font-size: 1.5rem;
+        line-height: 1.1;
+    }
+
+    .navlinks-prev { padding-bottom: .5em; }
+    .navlinks-next { padding-top:    .5em; }
+
+    @media screen and (min-width: @smscreen) {
+
+        .navlinks {
+            display: table;
+            width: 100%;
+            border-collapse: collapse;
+
+            > a:only-child {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        .navlinks-prev,
+        .navlinks-next {
+            display: table-cell;
+            vertical-align: middle;
+            box-sizing: border-box;
+            width: 50%;
+            font-size: 2rem;
+            padding: 1em;
+        }
+
+        .navlinks-prev { text-align: right; }
+        .navlinks-next { text-align: left; }
+    }
+}

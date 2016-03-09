@@ -18,32 +18,36 @@
     &:active {
         color: #0877DB;
     }
-}
-/* decoration */
-.logo-icon {
-    position: relative;
-    display: table-cell;
-    vertical-align: middle;
-    border-radius: 50%;
-}
-.logo-txt {
-    display: table-cell;
-    vertical-align: middle;
-    line-height: 1.2;
-}
-.logo-icon img {
-    display: block;
-    width: 60px;
-    height: 60px;
-    position: relative;
-    z-index: 1;
-    background: #FFF;
-    border-radius: inherit;
-}
-.logo-name {
-    position: relative;
-    display: block;
-    font-family: @fontsecond;
-    font-weight: bold;
-    font-size: 20px;
+
+    /* decoration */
+    &-icon {
+        position: relative;
+        display: table-cell;
+        vertical-align: middle;
+        border-radius: 50%;
+
+        img {
+            display: block;
+            width: 60px;
+            height: 60px;
+            position: relative;
+            z-index: 1;
+            background: #FFF;
+            border-radius: inherit;
+        }
+    }
+
+    &-txt {
+        display: table-cell;
+        vertical-align: middle;
+        line-height: 1.2;
+    }
+    
+    &-name {
+        position: relative;
+        display: block;
+        font-family: @fontsecond;
+        font-weight: bold;
+        font-size: 20px;
+    }
 }

@@ -6,9 +6,8 @@ layout: default
 
 <h1>«Облако» тегов</h1>
 
-<nav class="tags-page">
-	<% for tag, data of @getTagCloud(): %>
-	    <a href="<%= data.url %>" data-tag-count="<%= data.count %>" data-tag-weight="<%= data.weight %>"><%= tag %></a> <br>
-	<% end %>
+<nav class="tags-page tags-page--multicolumn">
+    <% for tag, data of @getTagCloud(): %>
+        <a class="tags-page-item" href="<%= data.url %>" data-tag-count="<%= data.count %>" data-tag-weight="<%= data.weight %>"><span class="tags-page-tag-title"><%= tag %></span><span class="tags-page-tag-count"><%= data.count %></span></a>
+    <% end %>
 </nav>
-

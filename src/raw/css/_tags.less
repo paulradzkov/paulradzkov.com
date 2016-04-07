@@ -3,17 +3,30 @@
 @tagxw: .7em;
 
 /* tag cloud */
-.tags-page a {
-    display: inline-block;
-    padding: 5px 10px;
-}
-.tags-page a:after {
-    content: attr(data-tag-count);
-    display: inline-block;
-    padding: 3px 5px;
-    color: #666;
-    //font-size: 0.8em;
-    font-weight: bold;
+.tags-page {
+    &.tags-page--multicolumn {
+        columns: 8em 4;
+        column-gap: 4em;
+    }
+
+    &-item {
+        display: table;
+        width: 100%;
+        overflow: hidden;
+        margin-bottom: .5em;
+    }
+
+    &-tag-title {
+        display: table-cell;
+    }
+
+    &-tag-count {
+        display: table-cell;
+        text-align: right;
+        vertical-align: bottom;
+        width: 2em;
+        color: #666;
+    }
 }
 /* tag cloud end */
 

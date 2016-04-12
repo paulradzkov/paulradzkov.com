@@ -72,8 +72,6 @@
     <noscript><div><img src="//mc.yandex.ru/watch/22878469" style="position:absolute; left:-1px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
 
-    <%- @partial("chatra") %>
-
     <% if (@document.kind == "article") : %>
         <script defer src="https://apis.google.com/js/client.js?onload=gapiInit"></script>
         <script>

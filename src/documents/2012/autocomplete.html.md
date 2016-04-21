@@ -1,12 +1,12 @@
 ---
-title: "Автозаполнение форм в Google Chrome"
+title: "Как перекрасить поля с автозаполнением в Google Chrome"
 excerpt: 'Как перекрасить желтые фоны на инпутах в Google Chrome.'
 description: 'Как перекрасить желтые фоны на инпутах в Google Chrome.'
 created_at: 2012-02-12
 kind: article
 publish: true
 disqusid: chromeautocomplete
-tags: [css,Chrome,bug]
+tags: [css]
 ---
 
 В Google Chrome в user agent stylesheet для полей с автозаполнением прописан желтый фон (#FAFFBD) и черный цвет текста, причем оба правила усилены с помощью <code class="hljs-important">!important</code> и переопределить их в своей CSS нельзя. Но есть способы решить эту проблему обходными путями.

@@ -9,12 +9,14 @@
     <% end %>
     <% if (@document.kind == 'article') : %>
     <header class="page-header">
-        <nav class="read-siblings">
-            <%- @getNavLinks() %>
-        </nav>
-        <nav class="site-navigation">
-            <a class="nav-icon nav-icon-centered js-menu-trigger" href="/" data-toggle="tooltip" data-placement="right" title="На главную"><img src="/i/home.svg" width="28" height="28" alt="На главную" onerror="this.onerror=null; this.src='/i/home.png'" /><span class="visuallyhidden">На главную</span></a>
-        </nav>
+        <div class="article-nav">
+            <nav class="read-siblings">
+                <%- @getNavLinks() %>
+            </nav>
+            <nav class="site-navigation sticky-nav" id="sticker">
+                <a class="nav-icon nav-icon-centered js-menu-trigger" href="/" data-toggle="tooltip" data-placement="right" title="На главную"><img src="/i/home.svg" width="28" height="28" alt="На главную" onerror="this.onerror=null; this.src='/i/home.png'" /><span class="visuallyhidden">На главную</span></a>
+            </nav>
+        </div>
         <aside class="nav-placeholder article-meta content-width">
             <% if (@document.created_at) : %>
             <p class="date"><time datetime="<%= @document.created_at %>"><%=@moment(@document.created_at).lang('ru').format('DD MMMM YYYY') %></time></p>
@@ -39,11 +41,6 @@
 
     </header>
     <% end %>
-    <% if (@document.url != '/') : %>
-        <nav class="site-navigation sticky-nav" id="sticker">
-            <a class="nav-icon js-menu-trigger" href="/" data-toggle="tooltip" data-placement="right" title="На главную"><img src="/i/home.svg" width="28" height="28" alt="На главную" onerror="this.onerror=null; this.src='/i/home.png'" /><span class="visuallyhidden">На главную</span></a>
-        </nav>
-    <% end %>
     <%if (@document.expired == true) : %>
     <%- @partial('expired') %>
     <% end %>
@@ -58,8 +55,8 @@
     </div>
     <% end %>
     <% if (@document.kind == 'article') : %>
+    <h4 class="read-next-title">Читать дальше:</h4>
     <nav class="read-next">
-        <h4 class="read-next-title">Читать дальше:</h4>
         <%- @getNavLinks() %>
     </nav>
     <% end %>

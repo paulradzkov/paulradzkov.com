@@ -44,8 +44,14 @@
     transition: all 0.5s;
 }
 
-.nav-icon-centered {
-    margin-left: calc(~"50% - 1em");
+@media screen and (max-width: 35.99rem) {
+    .nav-icon-centered {
+        margin-left: calc(~"50% - 1em");
+    }
+
+    .fixed .nav-icon-centered {
+        margin-left: 1em;
+    }
 }
 
 .nav-icon:hover {
@@ -71,15 +77,7 @@
 }
 
 .hold {
-    opacity: 0;
-    pointer-events: none;
     transition: all .5s;
-
-    &.fixed {
-        opacity: 1;
-        pointer-events: auto;
-        transition-delay: 1s;
-    }
 }
 
 @media screen and (max-width:64rem) {
@@ -115,25 +113,50 @@
     * {
         box-sizing: content-box;
     }
+
+    .navlinks-prev,
+    .navlinks-next {
+        &:before {
+            display: block;
+            margin-bottom: .5em;
+            color: #888;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: .8em;
+        }
+    }
+
+    .navlinks-prev {
+        text-align: left;
+        left: 0;
+        padding-right: 2em;
+
+        &:before {
+            content: 'prev';
+        }
+    }
+
+    .navlinks-next {
+        text-align: right;
+        right: 0;
+        padding-left: 2em;
+
+        &:before {
+            content: 'next';
+        }
+    }
 }
 
-.read-siblings a:link                {color: @link2;}
-.read-siblings a:visited             {color: @visited2;}
-.read-siblings a:hover               {color: @hover2;}
-.read-siblings a:visited:hover       {color: @visitedhover2;}
-.read-siblings a:active              {color: @active2;}
-
-@media screen and (max-width: 59.99rem) {
+@media screen and (max-width: 35.99rem) {
     .read-siblings {
         display: block;
-        //margin: -@pad*1.5 -@pad 0;
-        background: #000;
         max-width: none;
     }
     .read-siblings .navlinks {
         display: table;
         width: 100%;
         table-layout: fixed;
+        border-bottom: 1px solid #f1f1f1;
 
         > a {
             display: table-cell;
@@ -151,74 +174,38 @@
     }
 }
 
-@media screen and (min-width: 60rem) {
+@media screen and (min-width: 36rem) {
     .flexbox .read-siblings {
         display: block;
         max-width: none;
         position: absolute;
-        bottom: 0;
-        top: 0;
-        //margin: 0 -2em;
         width: 100%;
-        overflow: hidden;
-        /*overflow-x: hidden; /* removes scroll in IE10 */
     }
-    .read-siblings .navlinks {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        position: absolute;
-        width: 100%;
-        height: 0;
-        top: 12em;
-    }
-    .read-siblings a {
-        display: block;
-        z-index: 20;
-        width: 10em;
-        padding: 1em 2em;
-        font-size: 0.8em;
-        font-family: @fontmain;
-        font-weight: normal;
-        line-height: 1.2;
-        background-repeat: no-repeat;
-        transition: all 0.2s ease-out;
-        background-color: #000;
+    .read-siblings {
+
+        .navlinks {
+            display: flex;
+            justify-content: end;
+            align-items: stretch;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        a {
+            display: block;
+            z-index: 20;
+            width: 14em;
+            padding: 1.5rem 2em;
+            font-size: 0.8em;
+            font-family: @fontmain;
+            font-weight: normal;
+            line-height: 1.2;
+            background-repeat: no-repeat;
+            transition: all 0.2s ease-out;
+        }
     }
 
-    .read-siblings .navlinks-prev {
-        text-align: left;
-        left: 0;
-        padding-right: 4em;
-        background-image: url(/i/chevron-left.svg);
-        background-position: 90% 50%;
-        border-radius: 0 3px 3px 0;
-        transform: translate3d(-12em,0,0);
-    }
-    .read-siblings .navlinks-next {
-        text-align: right;
-        right: 0;
-        padding-left: 4em;
-        background-image: url(/i/chevron-right.svg);
-        background-position: 10% 50%;
-        border-radius: 3px 0 0 3px;
-        transform: translate3d(12em,0,0);
-    }
-    .read-siblings a:hover,
-    .read-siblings a:focus {
-        background-color: #0877db;
-        transform: translate3d(0,0,0);
-    }
-    .read-siblings .navlinks-next:only-child {
-        position: relative;
-        left: 100%;
-        margin-left: -4em;
-        transform: translate3d(0,0,0);
-    }
-    .read-siblings .navlinks-next:only-child:hover,
-    .read-siblings .navlinks-next:only-child:focus {
-        transform: translate3d(-12em,0,0);
-    }
 }
 /* ie fallback */
 .no-mediaqueries.display-table .navlinks {

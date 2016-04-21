@@ -15,15 +15,24 @@
 
 .blogroll {
     padding-top: @pad*1.5;
+
+    .linked-header {
+        margin-top: 16px;
+        max-width: 14em;
+    }
 }
+
 .post-tizer {
     background: #FFF;
-    margin: @pad/2 0 @pad*2;
+    margin: @pad/2 0 @pad;
     max-width: 50em;
+}
 
-    @media (min-width: @smscreen) {
-        margin: 1em 0 8em;
-        margin: @pad/2 0 @pad*2;
+@media (min-width: 480px) {
+
+    .detailed-view .post-tizer {
+        padding: @pad @pad @pad/2;
+        border: 1px solid #f1f1f1;
     }
 }
 
@@ -109,12 +118,16 @@
     box-shadow: inset 1px 1px 3px rgba(0,0,0,0.5);
 }
 
+.blogroll.detailed-view .meta-data-props .date {
+    display: none;
+}
+
 .blogroll.short-view .post-tizer {
     margin: .5rem 0 .5rem;
     display: table;
     width: 100%;
 }
-.blogroll.short-view .post-tizer > h2 {
+.blogroll.short-view .post-tizer > .linked-header {
     font-size: 1em;
     font-family: @fontmain;
     font-weight: normal;
@@ -123,7 +136,7 @@
     padding-right: 1em;
     display: table-cell;
 }
-.blogroll.short-view .post-tizer > h2 a,
+.blogroll.short-view .post-tizer > .linked-header a,
 .blogroll.short-view .date {
     //background: #FFF;
     position: relative;
@@ -136,7 +149,7 @@
     a:hover         { color: @hover; }
     a:active        { color: @active; }
 }
-.blogroll.short-view .post-tizer > h2 a {
+.blogroll.short-view .post-tizer > .linked-header a {
     padding-right: 5px;
 }
 .blogroll.short-view .date {
@@ -154,6 +167,8 @@
 .blogroll.short-view .blog-item-meta .date {
     margin: 0;
 }
+
+.blogroll.short-view .meta-data-badge,
 .blogroll.short-view .blog-item-meta .date:after,
 .blogroll.short-view .blog-item-meta .comments,
 .blogroll.short-view .blog-item-meta .tags-list {

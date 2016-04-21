@@ -52,11 +52,14 @@ og_image: '/i/og/og-index.png'
 <div class="blogroll detailed-view js-isotope">
     <% for page in @getCollection("articles").toJSON(): %>
         <section class="post-tizer item <%= if page.id is @document.id then 'active' else 'inactive' %> <% for tag in page.tags : %> <%= @wspToDash(tag) %><% end %>">
+            <ul class="meta-data meta-data-badge">
+                <li class="date"><time datetime="<%= page.created_at %>"><%=@moment(page.created_at).format('DD MMMM YYYY') %></time></li>
+            </ul>
             <h2 class="linked-header"><a href="<%= page.url %>" class="border-underline"><u class="u"><%= page.title %></u></a></h2>
             <div class="before-cut"><%- @cuttedContent page.contentRenderedWithoutLayouts %></div>
 
             <aside class="blog-item-meta">
-                <ul class="meta-data">
+                <ul class="meta-data meta-data-props">
                     <li class="date"><time datetime="<%= page.created_at %>"><%=@moment(page.created_at).format('DD MMMM YYYY') %></time></li>
                     <li class="comments"><a href="<%= page.url %>#disqus_thread" data-disqus-identifier="<%= page.disqusid %>" >Комментарии</a></li>
                     <li class="tags-list">

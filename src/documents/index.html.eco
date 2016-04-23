@@ -67,6 +67,16 @@ og_image: '/i/og/og-index.png'
                         <a class="tag" href="<%= @getTagUrl(tag) %>"><span class="inner"><%= tag %></span></a>
                         <% end %>
                     </li>
+                    <li class="social">
+                      <div class="likely-inline-container">
+                          <div class="likely likely-small" data-url="<%= @site.canonicalUrl %><%= page.url %>" data-title="<%= page.title %>">
+                              <div class="facebook"></div>
+                              <div class="twitter" data-via="paul_radzkov"></div>
+                              <div class="gplus"></div>
+                              <div class="vkontakte"></div>
+                          </div>
+                      </div>
+                    </li>
                 </ul>
             </aside>
         </section>

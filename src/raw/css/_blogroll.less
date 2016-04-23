@@ -26,30 +26,51 @@
     background: #FFF;
     margin: @pad/2 0 @pad;
     max-width: 50em;
-}
 
-@media (min-width: 480px) {
+    @media (min-width: 480px) {
+        .detailed-view & {
+            padding: @pad @pad*1.5 @pad*0.75;
+            border: 1px solid #f1f1f1;
 
-    .detailed-view .post-tizer {
-        padding: @pad @pad @pad/2;
-        border: 1px solid #f1f1f1;
+            blockquote,
+            pre code {
+                padding-left: @pad*1.5;
+                padding-right: @pad*1.5;
+            }
+        }
+    }
+
+    blockquote,
+    pre code {
+        padding-left: @pad;
+        padding-right: @pad;
+    }
+
+    pre code {
+        box-sizing: border-box;
+        min-width: 0;
+        border-left: 1px solid #f1f1f1;
+        border-right: 1px solid #f1f1f1;
+    }
+
+
+    pre,
+    blockquote {
+        margin-left: -@pad*1.5;
+        margin-right: -@pad*1.5;
+    }
+
+    @media screen and (max-width: 480px) {
+        pre,
+        blockquote {
+            margin-left: -@pad;
+            margin-right: -@pad;
+        }
     }
 }
 
-.post-tizer pre code {
-    box-sizing: border-box;
-    min-width: 0;
-    border-left: 1px solid #f1f1f1;
-    border-right: 1px solid #f1f1f1;
-}
 
-@media screen and (max-width: @smscreen) {
-    .post-tizer pre,
-    .post-tizer blockquote {
-        margin-left: -@pad;
-        margin-right: -@pad;
-    }
-}
+
 
 /* toggle view */
 @media screen and (min-width: @xsscreen) {
@@ -122,6 +143,10 @@
     display: none;
 }
 
+.blogroll.detailed-view .meta-data-props .social {
+    margin-right: 0;
+}
+
 .blogroll.short-view .post-tizer {
     margin: .5rem 0 .5rem;
     display: table;
@@ -171,7 +196,8 @@
 .blogroll.short-view .meta-data-badge,
 .blogroll.short-view .blog-item-meta .date:after,
 .blogroll.short-view .blog-item-meta .comments,
-.blogroll.short-view .blog-item-meta .tags-list {
+.blogroll.short-view .blog-item-meta .tags-list,
+.blogroll.short-view .blog-item-meta .social {
     display: none;
 }
 /* toggle view end */
@@ -186,3 +212,8 @@
     letter-spacing: 0;
 }
 /* rss end */
+
+/* likely */
+.post-tizer:not(:hover) .likely .likely__widget {
+    fill: #999;
+}

@@ -42,6 +42,12 @@
     a:hover         {color: @hover;         text-decoration-color: fadeout(@hover,       70%);}
     a:active        {color: @active;        text-decoration-color: fadeout(@active,      70%);}
 
+    a:focus {
+        color: @hover;
+        background: fadeout(@hover, 80%);
+        outline: none;
+    }
+
     nav a {
         text-decoration: none;
     }

@@ -29,25 +29,15 @@
 
 //end of global variables
 
-@import "_normalize.less";
+@import (less) "../../../bower_components/normalize.css/normalize.css";
 @import "_helpers.less";
-@import "_bettertext.less";
+@import (less) "../../../bower_components/bettertext.css/bettertext.less";
 
 .bettertext-settings() {
-
-    //settings
-    //@fz: 16px;
-    //@fz-small: 0.8em;
-    //@rythm: 24px;
     @linel: @mawtext;
-    @font1: @fontmain;
-    @font2: @fontsecond;
-    @font3: @fontmono;
-    //@scale1: 1.125;
-    //@scale2: 1.250;
-
-    //@bettertext-breakpoint: ~"(min-width: 768px)";
-
+    @font-body: @fontmain;
+    @font-headers: @fontsecond;
+    @font-code: @fontmono;
 }
 
 @import "_typo.less";

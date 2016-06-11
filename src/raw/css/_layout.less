@@ -6,107 +6,11 @@
 
 html {
     min-width: 320px;
-    background: #FFF;
+    background: #fff;
+    color: #000;
 }
 
 body {
     scroll-behavior: smooth;
-    background: #FFF;
-}
-
-/* flex layout */
-body {
-    display:flex;
-    flex-direction:column;
-    min-height: 100vh;
-    align-items: stretch;
-    align-content: stretch;
-}
-
-@media screen and (min-width: 1440px) {
-
-    body {
-        max-width: 1440px;
-        margin: 0 auto;
-        background: #FFF;
-        box-shadow: 0 0 0 1px #f1f1f1;
-    }
-}
-
-.page-content {
-    flex-grow:1;
-}
-
-/* flex layout end */
-
-.page-content {
-    padding: @pad;
-}
-
-.site-header {
-    padding: @pad;
-}
-
-.header-logo {
-    margin-bottom: 0;
-    vertical-align: middle;
-}
-
-.content-width > *,
-.content-width > blockquote:not([class]) {
-    max-width: @mawtext;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.content-width > ul,
-.content-width > ol {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Exclusions below: */
-/* 1. Images */
-.content-width > figure {
-    max-width: none;
-    text-align: center;
-}
-
-.content-width > figure img {
-    display: inline-block;
-}
-
-/* 2. Code blocks */
-.content-width > pre {
-    max-width: none;
-    margin-left: -@pad;
-    margin-right: -@pad;
-}
-
-@media screen and (min-width: (@mawtext + @pad*2)) {
-
-    pre code {
-        min-width: (@mawtext + @pad*2);
-        max-width: 100%;
-        display: inline-block;
-        box-sizing: border-box;
-    }
-
-    .post-tizer pre code {
-        padding-left: @pad;
-        padding-right: @pad;
-    }
-}
-
-/* IE fallback */
-.no-mediaqueries.display-table pre code {
-    min-width: 800px;
-    display: inline-block;
-}
-.no-display-table.no-mediaqueries .content-width pre {
-    display: block;
-    text-align: left;
-}
-.no-display-table.no-mediaqueries .content-width pre code {
-    display: block;
+    background: #fff;
 }

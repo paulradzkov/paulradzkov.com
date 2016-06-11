@@ -1,0 +1,118 @@
+/* siblings nav in page-header */
+
+.read-siblings {
+    display: none;
+    box-sizing: content-box;
+
+    * {
+        box-sizing: content-box;
+    }
+
+    .navlinks-prev,
+    .navlinks-next {
+        &:before {
+            display: block;
+            margin-bottom: .5em;
+            color: #888;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: .8em;
+        }
+    }
+
+    .navlinks-prev {
+        text-align: left;
+        left: 0;
+        padding-right: 2em;
+
+        &:before {
+            content: 'prev';
+        }
+    }
+
+    .navlinks-next {
+        text-align: right;
+        right: 0;
+        padding-left: 2em;
+
+        &:before {
+            content: 'next';
+        }
+    }
+}
+
+@media screen and (max-width: 35.99rem) {
+    .read-siblings {
+        display: block;
+        max-width: none;
+    }
+    .read-siblings .navlinks {
+        display: table;
+        width: 100%;
+        table-layout: fixed;
+        border-bottom: 1px solid #f1f1f1;
+
+        > a {
+            display: table-cell;
+            padding: 0.5rem;
+            font-size: 0.8rem;
+            text-align: left;
+
+            &:last-child {
+                text-align: right;
+            }
+            &:only-child {
+                text-align: center;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 36rem) {
+    .flexbox .read-siblings {
+        display: block;
+        max-width: none;
+        position: absolute;
+        width: 100%;
+    }
+    .read-siblings {
+
+        .navlinks {
+            display: flex;
+            justify-content: end;
+            align-items: stretch;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        a {
+            display: block;
+            z-index: 20;
+            width: 14em;
+            padding: 1.5rem 2em;
+            font-size: 0.8em;
+            font-family: @fontmain;
+            font-weight: normal;
+            line-height: 1.2;
+            background-repeat: no-repeat;
+            transition: all 0.2s ease-out;
+        }
+    }
+
+}
+/* ie fallback */
+.no-mediaqueries.display-table .navlinks {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+}
+.no-mediaqueries.display-table .navlinks-prev,
+.no-mediaqueries.display-table .navlinks-next {
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 2em;
+    box-sizing: border-box;
+}
+/* siblings nav in header end */

@@ -12,16 +12,15 @@
         color: #000;
     }
 
-    &:hover,
-    &:visited:hover,
-    &:focus,
-    &:active {
+    a&:hover,
+    a&:visited:hover,
+    a&:focus,
+    a&:active {
         color: #0877DB;
     }
 
     /* decoration */
     &-icon {
-        position: relative;
         display: table-cell;
         vertical-align: middle;
         border-radius: 50%;
@@ -30,8 +29,6 @@
             display: block;
             width: 60px;
             height: 60px;
-            position: relative;
-            z-index: 1;
             background: #FFF;
             border-radius: inherit;
         }
@@ -42,7 +39,7 @@
         vertical-align: middle;
         line-height: 1.2;
     }
-    
+
     &-name {
         position: relative;
         display: block;

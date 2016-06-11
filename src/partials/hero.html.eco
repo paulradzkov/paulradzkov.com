@@ -1,6 +1,6 @@
 <div class="site-header-inner justified-blocks">
 
-	<p class="header-logo">
+	<p class="site-header-logo">
 		<% if (@document.url != '/') : %>
 		<a class="logo" href="/">
 			<% else : %>

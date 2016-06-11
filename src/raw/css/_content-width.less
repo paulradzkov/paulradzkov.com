@@ -1,0 +1,47 @@
+.content-width {
+
+    & > *,
+    & > blockquote:not([class]) {
+        max-width: @mawtext;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    & > ul,
+    & > ol {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Exclusions below: */
+    /* 1. Images */
+    & > figure {
+        max-width: none;
+        text-align: center;
+
+        img {
+            display: inline-block;
+        }
+    }
+
+    /* 2. Code blocks */
+    & > pre {
+        max-width: none;
+        margin-left: -@pad;
+        margin-right: -@pad;
+    }
+}
+
+
+/* IE fallback */
+.no-mediaqueries.display-table pre code {
+    min-width: 800px;
+    display: inline-block;
+}
+.no-display-table.no-mediaqueries .content-width pre {
+    display: block;
+    text-align: left;
+}
+.no-display-table.no-mediaqueries .content-width pre code {
+    display: block;
+}

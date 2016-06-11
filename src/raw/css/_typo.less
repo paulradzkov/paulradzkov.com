@@ -63,6 +63,21 @@ pre {
     }
 }
 
+@media screen and (min-width: (@mawtext + @pad*2)) {
+
+    pre code {
+        min-width: (@mawtext + @pad*2);
+        max-width: 100%;
+        display: inline-block;
+        box-sizing: border-box;
+    }
+
+    .post-tizer pre code {
+        padding-left: @pad;
+        padding-right: @pad;
+    }
+}
+
 p code,
 li code {
     word-break: break-word;

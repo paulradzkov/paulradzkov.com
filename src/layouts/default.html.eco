@@ -23,6 +23,7 @@
     <link rel="alternate" type="application/atom+xml" title="Atom" href="/atom.xml">
     <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml">
     <link rel="canonical" href="<%= @site.canonicalUrl %><%= @document.url %>">
+    <meta property="fb:pages" content="297287297277384" />
 
     <%- @partial('webfontsjs', { pathtofonts: '/fonts/webfonts.css?v=0.0.1' }) %>
     <%- @partial('opengraph') %>

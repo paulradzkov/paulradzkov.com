@@ -34,7 +34,7 @@ og_image: '/i/og/og-index.png'
 </div>
 
 <div class="collapse filters-container">
-    <form class="filters btn-group tags-list" data-toggle="buttons" id="filters">
+    <form class="filters tags-list" data-toggle="buttons" id="filters">
         <span class="filter-legend">Фильтр по тегам:</span>
         <label class="btn btn-label active" data-filter="*">
             <input type="radio" name="filters-options" id="view-all" checked>

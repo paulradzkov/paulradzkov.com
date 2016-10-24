@@ -2,7 +2,7 @@
 title: Сниппеты
 description: "Блог Павла Радькова."
 is_hidden: true
-layout: 'default'
+layout: 'homepage'
 ---
 
 <h1>Сниппеты</h1>

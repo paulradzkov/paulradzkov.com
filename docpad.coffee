@@ -56,7 +56,6 @@ docpadConfig = {
 
 			# The website's styles
 			styles: [
-				'/css/template.css'
 			]
 
 			# The website's production scripts.

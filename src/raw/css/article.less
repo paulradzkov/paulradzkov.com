@@ -1,0 +1,108 @@
+//global variables
+
+//Fonts
+@fontmain: -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+@fontsecond: @fontmain;
+@fontmono: 'Consolas', 'Liberation Mono', 'Menlo', 'Courier New', 'Courier', 'Droid Sans Mono',  monospace, monospace, serif;
+
+//link colors on light bg
+@link:          #0877db;
+@visited:       #9108db;
+@hover:         #2b9aff;
+@visitedhover:  #bc4df8;
+@active:        #bc4df8;
+
+//link colors on dark bg
+@link2:          #57AFFF;
+@visited2:       #E2ABFF;
+@hover2:         #C1DFFA;
+@visitedhover2:  #f2d9ff;
+@active2:        #f2d9ff;
+
+//media breakpoints:
+@mawtext: 40rem;
+@smscreen: 40rem;
+@xsscreen: 25rem;
+
+//comon variables
+@pad: 2rem;
+
+//end of global variables
+
+@import (less) "../../../bower_components/normalize.css/normalize.css";
+@import "_helpers.less";
+@import (less) "../../../bower_components/bettertext.css/bettertext.less";
+
+.bettertext-settings() {
+    @linel: @mawtext;
+    @font-body: @fontmain;
+    @font-headers: @fontsecond;
+    @font-code: @fontmono;
+}
+
+@import "_typo.less";
+@import "../../../bower_components/links.less/links.less";
+
+.links-settings() {
+    @text-decoration: none;
+    //colors
+    @defaulttext:   #000;
+    @link:          #0877db;
+    @visited:       #9108db;
+    @hover:         #2b9aff;
+    @visitedhover:  #bc4df8;
+    @active:        #bc4df8;
+}
+
+@import "_border-underline.less";
+
+.border-underline-settings() {
+    //colors
+    //@link:          #0877db;
+    //@visited:       #9108db;
+    //@hover:         #2b9aff;
+    //@visitedhover:  #bc4df8;
+    //@active:        #bc4df8;
+    //@shift: .1em;
+    //@bd-style: 1px solid;
+
+    //calculations
+    @bdc-link:          lighten(@hover, 30%);
+    @bdc-visited:       lighten(@visitedhover, 30%);
+    @bdc-hover:         lighten(@hover, 30%);
+    @bdc-visitedhover:  lighten(@visitedhover, 30%);
+    @bdc-active:        lighten(@active, 30%);
+}
+@import "../../../bower_components/flxgrid.css/flxgrid.less";
+@import "_layout.less";
+@import "_allpage.less";
+@import "_content-width.less";
+@import "_site-header.less";
+@import "_page-header.less";
+@import "_logo.less";
+@import "_header-contacts.less";
+@import "_nav.less";
+@import "_read-siblings.less";
+@import "_read-next.less";
+@import "_justified-blocks.less";
+//@import "_blogroll.less";
+@import "_page-footer.less";
+@import "_meta.less";
+@import "_tags.less";
+@import "_bootstrap-tooltips.less";
+@import "_bootstrap-collapse.less";
+@import "_bootstrap-btn.less";
+@import "_cta.less";
+@import "_github.less";
+@import "_disqus.less";
+@import "_fotorama.less";
+//@import "_googlesearch.less";
+@import "_expired.less";
+@import "_print.less";
+@import "_overrides.less";
+
+@import (less) "../../../bower_components/Likely/release/likely.css";
+@import "_likely.less";

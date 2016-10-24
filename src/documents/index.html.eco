@@ -1,5 +1,5 @@
 ---
-layout: 'default'
+layout: 'homepage'
 title: 'Блог Павла Радькова'
 scripts: ["/vendor/isotope.pkgd.min.js","/js/isotope-settings.js"]
 description: 'Заметки о вёрстке, дизайне, юзабилити, типографике, методологиях и процессах'

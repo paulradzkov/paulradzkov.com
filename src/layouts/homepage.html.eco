@@ -15,7 +15,7 @@
     <%- @getBlock('meta').toHTML() %>
 
     <!-- DocPad Styles + Our Own -->
-    <link rel="stylesheet" href="/css/article.css">
+    <link rel="stylesheet" href="/css/template.css">
     <%- @getBlock('styles').add([].concat(@site.styles or []).concat(@document.styles or [])).toHTML() %>
 
     <!-- Icons -->
@@ -33,12 +33,18 @@
     <link rel="canonical" href="<%= @site.canonicalUrl %><%= @document.url %>">
     <meta property="fb:pages" content="297287297277384" />
 
-    <%- @partial('webfontsjs', { pathtofonts: '/fonts/webfonts.css?v=0.0.1' }) %>
+    <% #@partial('webfontsjs', { pathtofonts: '/fonts/webfonts.css?v=0.0.1' }) %>
     <%- @partial('opengraph') %>
     <%- @partial('twittercard') %>
     <%- @partial('googleAnalytics') %>
 </head>
 <body class="allpage allpage-max-width allpage-stickyfooter layout-<%- @document.kind %>">
+    <% if ((!@document.kind) or (@document.kind != 'article')) : %>
+        <header class="site-header content-width">
+            <%- @partial('hero') %>
+        </header>
+    <% end %>
+    <% if (@document.kind == 'article') : %>
     <header class="allpage--header page-header">
         <div class="article-nav">
             <nav class="read-siblings">
@@ -58,23 +64,24 @@
         <div class="content-width">
             <h1 class="article-title"><%- @document.title %></h1>
         </div>
+        <aside class="content-width">
+            <div class="article-meta inlined">
+                <% if (@document.tags) : %>
+                <span class="tags-list">
+                    <% for tag in @document.tags : %>
+                        <a class="tag" href="<%= @getTagUrl(tag) %>"><%= tag %></a>
+                    <% end %>
+                </span>
+                <% end %>
+                <% if ((@site.disqus_shortname) and (@document.disqusid)) : %>
+                <span class="comments"><a href="<%= @document.path %>#disqus_thread" data-disqus-identifier="<%= @document.disqusid %>" >Комментарии</a></span>
+                <% end %>
+                <span class="pageviews" style="display:none"></span>
+            </div>
+        </aside>
 
     </header>
-    <aside class="content-width" style="display:none">
-        <div class="article-meta inlined">
-            <% if (@document.tags) : %>
-            <span class="tags-list">
-                <% for tag in @document.tags : %>
-                <a class="tag" href="<%= @getTagUrl(tag) %>"><%= tag %></a>
-                <% end %>
-            </span>
-            <% end %>
-            <% if ((@site.disqus_shortname) and (@document.disqusid)) : %>
-            <span class="comments"><a href="<%= @document.path %>#disqus_thread" data-disqus-identifier="<%= @document.disqusid %>" >Комментарии</a></span>
-            <% end %>
-            <span class="pageviews" style="display:none"></span>
-        </div>
-    </aside>
+    <% end %>
     <%if (@document.expired == true) : %>
     <%- @partial('expired') %>
     <% end %>
@@ -83,12 +90,17 @@
     </article>
     <%- @partial('likely') %>
     <%- @partial('footer') %>
+    <% if ((@site.disqus_shortname) and (@document.kind == 'article')) : %>
     <div class="disqus-wrapper">
         <article id="disqus_thread" class="disqus-container"></article>
     </div>
+    <% end %>
+    <% if (@document.kind == 'article') : %>
+    <h4 class="read-next-title">Читать дальше:</h4>
     <nav class="read-next">
         <%- @getNavLinks() %>
     </nav>
+    <% end %>
     <%- @partial('scripts') %>
 </body>
 </html>

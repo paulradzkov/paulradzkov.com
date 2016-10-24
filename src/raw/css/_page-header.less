@@ -1,8 +1,8 @@
 .page-header {
     text-align: center;
     position: relative;
-    padding-bottom: 3rem;
-    margin-bottom: 3rem;
+    //padding-bottom: 3rem;
+    //margin-bottom: 3rem;
     //background-color: #F1F1F1;
 
     .article-meta,
@@ -20,9 +20,10 @@
     }
 
     .article-title {
-        padding-left: @pad;
-        padding-right: @pad;
+        padding-left: @pad * 2;
+        padding-right: @pad * 2;
         font-size: calc(~"1em + 4vw");
+        max-width: none;
 
         @media (min-width: 1200px) {
             font-size: 64px;

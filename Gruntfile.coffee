@@ -26,6 +26,7 @@ module.exports = (grunt) ->
 					sourceMap: true
 				files: [
 					'out/css/template.css': 'src/raw/css/template.less'
+					'out/css/article.css': 'src/raw/css/article.less'
 					'out/fonts/webfonts.css': 'src/raw/fonts/webfonts.less'
 				]
 
@@ -60,6 +61,7 @@ module.exports = (grunt) ->
 			combine:
 				files:
 					'out/css/template.css':'out/css/template.css'
+					'out/css/article.css':'out/css/article.css'
 					'out/css/caniuse.css':'out/css/caniuse.css'
 					'out/fonts/webfonts.css':'out/fonts/webfonts.css'
 

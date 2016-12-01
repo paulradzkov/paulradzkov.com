@@ -11,7 +11,7 @@
     margin: 2em -2em;
     margin: 2rem -2rem;
     max-width: none;
-    border: 1px solid #DDD;
+    border: 1px solid #f1f1f1;
     border-width: 1px 0;
     background: #FFF;
 }
@@ -78,7 +78,7 @@
 }
 #out p code {
     padding: 0 0.3em;
-    border: 1px solid #DDD;
+    border: 1px solid #f1f1f1;
     border-radius: 2px;
     background: #F7F7F0;
     color: #000;

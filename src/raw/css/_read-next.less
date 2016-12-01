@@ -42,6 +42,12 @@
             text-transform: uppercase;
             font-weight: bold;
             font-size: 1rem;
+            opacity: .4;
+            transition: opacity .3s;
+        }
+
+        &:hover:before {
+            opacity: .6;
         }
     }
 
@@ -50,9 +56,10 @@
 
     .navlinks-prev {
         text-align: left;
+        border-right: 1px solid #f1f1f1;
 
         &:before {
-            content: 'prev';
+            content: url(/i/ic_fast_rewind_24px.svg);
         }
     }
 
@@ -60,7 +67,7 @@
         text-align: right;
 
         &:before {
-            content: 'next';
+            content: url(/i/ic_fast_forward_24px.svg);
         }
     }
 

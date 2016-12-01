@@ -8,5 +8,6 @@
         <div class="twitter" data-via="paul_radzkov">Твитнуть</div>
         <div class="gplus">Плюсануть</div>
         <div class="vkontakte">Поделиться</div>
+        <div class="telegram">Телеграфировать</div>
     </div>
 </div>

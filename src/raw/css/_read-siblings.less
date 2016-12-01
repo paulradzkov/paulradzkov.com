@@ -17,6 +17,12 @@
             text-transform: uppercase;
             font-weight: bold;
             font-size: .8em;
+            opacity: .4;
+            transition: opacity .3s;
+        }
+
+        &:hover:before {
+            opacity: .6;
         }
     }
 
@@ -26,7 +32,7 @@
         padding-right: 2em;
 
         &:before {
-            content: 'prev';
+            content: url(/i/ic_fast_rewind_24px.svg);
         }
     }
 
@@ -36,7 +42,7 @@
         padding-left: 2em;
 
         &:before {
-            content: 'next';
+            content: url(/i/ic_fast_forward_24px.svg);
         }
     }
 }

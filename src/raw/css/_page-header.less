@@ -20,10 +20,15 @@
     }
 
     .article-title {
-        padding-left: @pad * 2;
-        padding-right: @pad * 2;
+        padding-left: @pad;
+        padding-right: @pad;
         font-size: calc(~"1em + 4vw");
-        max-width: none;
+        max-width: 70rem;
+
+        @media (min-width: 50rem) {
+            //padding-left: calc( @pad * 2 ~" + 15vw" ) ;
+            //padding-right: calc( @pad * 2 ~" + 15vw" );
+        }
 
         @media (min-width: 1200px) {
             font-size: 64px;

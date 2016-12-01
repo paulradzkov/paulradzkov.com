@@ -38,14 +38,27 @@
     <%- @partial('twittercard') %>
     <%- @partial('googleAnalytics') %>
 </head>
-<body class="allpage allpage-max-width allpage-stickyfooter layout-<%- @document.kind %>">
+<body class="allpage allpage-max-width allpage-stickyfooter layout-<%- @document.kind %>" id="top">
     <header class="allpage--header page-header">
         <div class="article-nav">
             <nav class="read-siblings">
                 <%- @getNavLinks() %>
             </nav>
             <nav class="site-navigation sticky-nav" id="sticker">
-                <a class="nav-icon nav-icon-centered js-menu-trigger" href="/" data-toggle="tooltip" data-placement="right" title="На главную"><img src="/i/home.svg" width="28" height="28" alt="На главную" onerror="this.onerror=null; this.src='/i/home.png'" /><span class="visuallyhidden">На главную</span></a>
+                <div class="nav-icon nav-icon-centered">
+                    <a class="nav-icon-home" href="/" data-toggle="tooltip" data-placement="right" title="На главную">
+                        <svg id="ic-arrow-back-24px" viewBox="0 0 24 24" width="24" height="24">
+                            <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+                        </svg>
+                        <span class="visuallyhidden">На главную</span>
+                    </a>
+                    <a class="nav-icon-top" href="#top" data-toggle="tooltip" data-placement="right" title="Наверх">
+                        <svg id="ic-arrow-upward-24px" viewBox="0 0 24 24" width="24" height="24">
+                            <path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"/>
+                        </svg>
+                        <span class="visuallyhidden">Наверх</span>
+                    </a>
+                </div>
             </nav>
         </div>
         <aside class="nav-placeholder content-width">
@@ -58,7 +71,7 @@
         <div class="content-width">
             <h1 class="article-title"><%- @document.title %></h1>
         </div>
-
+        <%- @partial('likelybig') %>
     </header>
     <aside class="content-width" style="display:none">
         <div class="article-meta inlined">
@@ -81,8 +94,16 @@
     <article class="allpage--body nav-placeholder content-width" role="main">
         <%- @content %>
     </article>
-    <%- @partial('likely') %>
-    <%- @partial('footer') %>
+    <div class="content-width allpage--article-footer">
+        <div class="row row-between-xs row-center-xs">
+            <div class="col-xs-12 col-sm-shrink col-zero-gutter">
+                <%- @partial('footer') %>
+            </div>
+            <div class="col-xs-12 col-sm-shrink col-zero-gutter">
+                <%- @partial('likely') %>
+            </div>
+        </div>
+    </div>
     <div class="disqus-wrapper">
         <article id="disqus_thread" class="disqus-container"></article>
     </div>

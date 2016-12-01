@@ -1,9 +1,12 @@
 /* typography */
-hr {
+hr:not([class]) {
     border: none;
     text-align: center;
     height: 2em;
     font-size: 1.4em;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
 
     &:before {
         content: '\2217 \2217 \2217';
@@ -19,8 +22,9 @@ figure {
         width: inherit;
         max-width: 100%;
         height: auto;
+        max-height: 90vh;
         -ms-interpolation-mode: bicubic;
-        box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.3), 3px 3px 10px rgba(0, 0, 0, 0.3);
+        box-shadow: 5px 5px 35px rgba(0, 0, 0, 0.1), 1px 3px 5px rgba(0, 0, 0, 0.1);
     }
 
     figcaption {

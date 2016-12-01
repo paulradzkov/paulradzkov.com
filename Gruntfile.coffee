@@ -275,7 +275,7 @@ module.exports = (grunt) ->
 
 	# Register our Grunt tasks.
 	grunt.registerTask 'ghpages',       ['shell:clean', 'shell:ghpages', 'production', 'gh-pages']
-	grunt.registerTask 'deploy',        ['shell:clean', 'shell:docpad', 'production', 'ftp-deploy']
+	grunt.registerTask 'deploy',        ['shell:clean', 'shell:ghpages', 'production', 'gh-pages']
 	grunt.registerTask 'production',    ['less', 'postcss', 'cssmin', 'htmlmin', 'uglify', 'compress', 'clean']
 	grunt.registerTask 'run',           ['shell:run', 'less', 'postcss', 'watch:less']
 	grunt.registerTask 'cdn',           ['shell:clean', 'shell:docpad', 'production']

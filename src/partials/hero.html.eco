@@ -19,7 +19,7 @@
 				</span>
 				<span class="logo-txt">
 					<span class="logo-name">Павел&nbsp;Радьков</span>
-					<span class="logo-title">Веб-разработчик</span>
+					<span class="logo-title">фронтенд&nbsp;дизайнер</span>
 				</span>
 
 				<% if (@document.url != '/') : %>

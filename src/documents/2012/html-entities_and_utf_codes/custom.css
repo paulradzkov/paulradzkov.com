@@ -21,7 +21,6 @@ table.chars * {
 
 table.chars td,
 table.chars th {
-  border-style: dotted;
   border-color: #CCC;
   border-width: 0 0 1px 0;
   padding: 0.5em 2em;
@@ -110,7 +109,7 @@ table.chars th {
   display: table-cell;
   vertical-align: middle;
   width: 118px;
-  height: 119px;
+  height: 116px;
   background: #FFF;
   padding: 0 10px;
 }

@@ -1,11 +1,8 @@
 //global variables
 
 //Fonts
-@fontmain: -apple-system, BlinkMacSystemFont,
-    "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans",
-    "Droid Sans", "Helvetica Neue", sans-serif;
-@fontsecond: @fontmain;
+@fontmain: 'Noto Sans', 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Roboto', 'San Francisco', sans-serif;
+@fontsecond: 'Roboto', 'Noto Sans', 'Open Sans', 'Helvetica Neue', 'Helvetica', 'San Francisco', sans-serif;
 @fontmono: 'Consolas', 'Liberation Mono', 'Menlo', 'Courier New', 'Courier', 'Droid Sans Mono',  monospace, monospace, serif;
 
 //link colors on light bg
@@ -23,7 +20,7 @@
 @active2:        #f2d9ff;
 
 //media breakpoints:
-@mawtext: 40rem;
+@mawtext: 50rem;
 @smscreen: 40rem;
 @xsscreen: 25rem;
 
@@ -43,13 +40,17 @@
     @font-code: @fontmono;
 }
 
+body {
+    color: #464053;
+}
+
 @import "_typo.less";
 @import "../../../bower_components/links.less/links.less";
 
 .links-settings() {
     @text-decoration: none;
     //colors
-    @defaulttext:   #000;
+    @defaulttext:   #464053;
     @link:          #0877db;
     @visited:       #9108db;
     @hover:         #2b9aff;
@@ -77,6 +78,12 @@
     @bdc-active:        lighten(@active, 30%);
 }
 @import "../../../bower_components/flxgrid.css/flxgrid.less";
+
+.col-zero-gutter {
+    padding-left: 0;
+    padding-right: 0;
+}
+
 @import "_layout.less";
 @import "_allpage.less";
 @import "_content-width.less";

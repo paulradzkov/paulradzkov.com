@@ -1,10 +1,14 @@
 .likely-container {
-    padding: @pad @pad @pad;
+    margin: @pad auto @pad;
     text-align: center;
 }
 
-.likely .likely__widget:not(:hover) {
+.likely:not(.likely-big) .likely__widget:not(:hover) {
     background: rgba(231, 231, 231, 0.0);
+}
+
+.likely {
+    vertical-align: top;
 }
 
 .likely .likely__counter.likely__counter {
@@ -22,4 +26,8 @@
             margin-bottom: 0;
         }
     }
+}
+
+.likely-big {
+    min-height: 50px;
 }

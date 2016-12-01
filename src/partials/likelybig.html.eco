@@ -1,0 +1,13 @@
+<div class="likely-container content-width">
+    <% if (@document.kind == 'article') : %>
+    <div class="likely likely-big" data-url="<%= @site.canonicalUrl %><%= @document.url %>">
+    <% else : %>
+    <div class="likely likely-big" data-url="<%= @site.canonicalUrl %>" data-title="<%= @site.rssTitle %>">
+    <% end %>
+        <div class="facebook"></div>
+        <div class="twitter" data-via="paul_radzkov"></div>
+        <div class="gplus"></div>
+        <div class="vkontakte"></div>
+        <div class="telegram"></div>
+    </div>
+</div>

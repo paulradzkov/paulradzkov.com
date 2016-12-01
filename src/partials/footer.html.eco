@@ -1,4 +1,4 @@
-<footer class="allpage--footere page-footer content-width">
+<footer class="allpage--footer page-footer content-width">
 	<p>
 		© <a href="//plus.google.com/+ПавелРадьков?rel=author" class="author"><span class="author-label">Автор:</span><%- @site.author %></a>
 		<% if (@document.created_at) : %>

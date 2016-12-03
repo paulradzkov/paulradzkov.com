@@ -1,0 +1,10 @@
+<nav class="navigation row">
+    <% for page in @getCollection("articles").toJSON(): %>
+        <section class="col-xs-min navigation-item <%= if page.id is @document.id then 'active' else 'inactive' %> <% for tag in page.tags : %> <%= @wspToDash(tag) %><% end %>">
+            <ul class="meta-data meta-data-badge">
+                <li class="date"><time datetime="<%= page.created_at %>"><%=@moment(page.created_at).format('DD MMMM YYYY') %></time></li>
+            </ul>
+            <p><a href="<%= page.url %>"><%= page.title %></a></p>
+        </section>
+    <% end %>
+</nav>

@@ -35,7 +35,81 @@ $(document).ready(function(){
                 }, 1000);
                 return false;
             }
+            $(this).blur();
         }
+    });
+
+    // optimized resize function
+    var optimizedResize = (function() {
+
+        var callbacks = [],
+            running = false;
+
+        // fired on resize event
+        function resize() {
+
+            if (!running) {
+                running = true;
+
+                if (window.requestAnimationFrame) {
+                    window.requestAnimationFrame(runCallbacks);
+                } else {
+                    setTimeout(runCallbacks, 66);
+                }
+            }
+
+        }
+
+        // run the actual callbacks
+        function runCallbacks() {
+
+            callbacks.forEach(function(callback) {
+                callback();
+            });
+
+            running = false;
+        }
+
+        // adds callback to loop
+        function addCallback(callback) {
+
+            if (callback) {
+                callbacks.push(callback);
+            }
+
+        }
+
+        return {
+            // public method to add additional callback
+            add: function(callback) {
+                if (!callbacks.length) {
+                    window.addEventListener('resize', resize);
+                }
+                addCallback(callback);
+            }
+        }
+    }());
+
+
+    // Bottom navigation positioning
+    function scrollNavigation() {
+        $('.navigation').scrollLeft(0);
+        if ($('.navigation').offset().left > 0) {
+            $('.navigation').scrollLeft(
+                $('.navigation-item.active').offset().left + $('.navigation-item.active').outerWidth() / 2 - $('.navigation').width() / 2 - $('.navigation').offset().left
+            );
+        } else {
+            $('.navigation').scrollLeft(
+                $('.navigation-item.active').offset().left + $('.navigation-item.active').outerWidth() / 2 - $('.navigation').width() / 2
+            );
+        }
+    };
+
+    window.onload = scrollNavigation();
+
+    // start process
+    optimizedResize.add(function() {
+        scrollNavigation();
     });
 
 	// expired message

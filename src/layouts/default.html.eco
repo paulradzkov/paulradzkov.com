@@ -107,9 +107,10 @@
     <div class="disqus-wrapper">
         <article id="disqus_thread" class="disqus-container"></article>
     </div>
-    <nav class="read-next">
+    <!--nav class="read-next">
         <%- @getNavLinks() %>
-    </nav>
+    </nav-->
+    <%- @partial('navigation') %>
     <%- @partial('scripts') %>
 </body>
 </html>

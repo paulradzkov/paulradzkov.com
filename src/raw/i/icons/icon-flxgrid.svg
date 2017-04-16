@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <rect id="a" width="48" height="48" rx="4"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <mask id="b" fill="white">
+      <use xlink:href="#a"/>
+    </mask>
+    <use fill="#1565C0" xlink:href="#a"/>
+    <polygon fill="#000000" fill-opacity=".198" points="48 0 48 48 0 48" style="mix-blend-mode:multiply" mask="url(#b)"/>
+    <polygon fill="#FFFFFF" points="15 11 33.001 11 33.001 15.553 20.379 15.553 20.379 21.512 31 21.512 31 26.012 20.379 26.012 20.379 37 15 37" mask="url(#b)"/>
+    <rect width="1" height="48" x="15" fill="#FFFFFF" fill-opacity=".197" mask="url(#b)"/>
+    <rect width="1" height="48" x="32" fill="#FFFFFF" fill-opacity=".197" mask="url(#b)"/>
+    <rect width="48" height="1" y="11" fill="#FFFFFF" fill-opacity=".197" mask="url(#b)"/>
+    <rect width="48" height="1" y="36" fill="#FFFFFF" fill-opacity=".197" mask="url(#b)"/>
+    <rect width="48" height="1" y="23" fill="#FFFFFF" fill-opacity=".197" mask="url(#b)"/>
+  </g>
+</svg>

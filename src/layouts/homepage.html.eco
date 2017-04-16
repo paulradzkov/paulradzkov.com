@@ -14,93 +14,86 @@
     <!-- DocPad Meta -->
     <%- @getBlock('meta').toHTML() %>
 
-    <!-- DocPad Styles + Our Own -->
-    <link rel="stylesheet" href="/css/template.css">
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/homepage.css">
     <%- @getBlock('styles').add([].concat(@site.styles or []).concat(@document.styles or [])).toHTML() %>
 
-    <!-- Icons -->
     <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=A0RJW2vMdo">
-    <link rel="icon" type="image/png" href="/favicon-32x32.png?v=A0RJW2vMdo" sizes="32x32">
-    <link rel="icon" type="image/png" href="/favicon-16x16.png?v=A0RJW2vMdo" sizes="16x16">
-    <link rel="manifest" href="/manifest.json?v=A0RJW2vMdo">
-    <link rel="shortcut icon" href="/favicon.ico?v=A0RJW2vMdo">
-    <meta name="theme-color" content="#ffffff">
+    <%- @partial('favicon') %>
 
     <!-- Feeds -->
-    <link rel="alternate" type="application/atom+xml" title="Atom" href="/atom.xml">
-    <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml">
+    <%- @partial('feeds') %>
+
+    <!-- Social -->
     <link rel="canonical" href="<%= @site.canonicalUrl %><%= @document.url %>">
     <meta property="fb:pages" content="297287297277384" />
-
-    <% #@partial('webfontsjs', { pathtofonts: '/fonts/webfonts.css?v=0.0.1' }) %>
     <%- @partial('opengraph') %>
     <%- @partial('twittercard') %>
     <%- @partial('googleAnalytics') %>
 </head>
-<body class="allpage allpage-max-width allpage-stickyfooter layout-<%- @document.kind %>">
-    <% if ((!@document.kind) or (@document.kind != 'article')) : %>
-        <header class="site-header content-width">
-            <%- @partial('hero') %>
-        </header>
-    <% end %>
-    <% if (@document.kind == 'article') : %>
-    <header class="allpage--header page-header">
-        <div class="article-nav">
-            <nav class="read-siblings">
-                <%- @getNavLinks() %>
-            </nav>
-            <nav class="site-navigation sticky-nav" id="sticker">
-                <a class="nav-icon nav-icon-centered js-menu-trigger" href="/" data-toggle="tooltip" data-placement="right" title="На главную"><img src="/i/home.svg" width="28" height="28" alt="На главную" onerror="this.onerror=null; this.src='/i/home.png'" /><span class="visuallyhidden">На главную</span></a>
-            </nav>
-        </div>
-        <aside class="nav-placeholder content-width">
-            <div class="article-meta ">
-            <% if (@document.created_at) : %>
-                <p class="date"><time datetime="<%= @document.created_at %>"><%=@moment(@document.created_at).lang('ru').format('DD MMMM YYYY') %></time></p>
-            <% end %>
-            </div>
-        </aside>
-        <div class="content-width">
-            <h1 class="article-title"><%- @document.title %></h1>
-        </div>
-        <aside class="content-width">
-            <div class="article-meta inlined">
-                <% if (@document.tags) : %>
-                <span class="tags-list">
-                    <% for tag in @document.tags : %>
-                        <a class="tag" href="<%= @getTagUrl(tag) %>"><%= tag %></a>
-                    <% end %>
+<body class="col-flex-xs space-in-mili-xs space-in-base-sm space-in-kilo-lg">
+    <header class="row row-middle-md space-out-bottom-kilo-xs space-out-bottom-mega-lg">
+        <div class="col-xs-12 col-md-shrink">
+            <% if (@document.url != '/') : %><a class="logo link" href="/"><% else : %><span class="logo"><% end %>
+                <span class="logo-icon">
+                    <img srcset="
+                        /avatar/paulradzkov_120x120.jpg 2x,
+                        /avatar/paulradzkov_240x240.jpg 4x
+                        " src="/avatar/paulradzkov_60x60.jpg" width="48" height="48" alt="Павел Радьков">
                 </span>
-                <% end %>
-                <% if ((@site.disqus_shortname) and (@document.disqusid)) : %>
-                <span class="comments"><a href="<%= @document.path %>#disqus_thread" data-disqus-identifier="<%= @document.disqusid %>" >Комментарии</a></span>
-                <% end %>
-                <span class="pageviews" style="display:none"></span>
-            </div>
-        </aside>
-
+                <span class="logo-txt">
+                    <span class="logo-name">Павел&nbsp;Радьков</span>
+                </span>
+            <% if (@document.url != '/') : %></a><% else : %></span><% end %>
+        </div>
+        <div class="col-xs-12 col-md">
+            <nav class="row space-in-left-kilo-xs space-in-left-micro-md">
+                <a class="link col-xs-12 col-sm-shrink space-in-bottom-nano-xs space-in-v-nano-sm" href="#"><strong>Проекты</strong></a>
+                <a class="link col-xs-12 col-sm-shrink space-in-bottom-nano-xs space-in-v-nano-sm" href="#"><strong>Статьи</strong></a>
+                <a class="link col-xs-12 col-sm-shrink space-in-bottom-nano-xs space-in-v-nano-sm" href="http://paulradzkov.com/codestyle"><strong>Codestyle</strong></a>
+                <a class="link col-xs-12 col-sm-shrink space-in-bottom-nano-xs space-in-v-nano-sm space-auto-left-sm" href="/search">Поиск</a>
+            </nav>
+        </div>
     </header>
-    <% end %>
-    <%if (@document.expired == true) : %>
-    <%- @partial('expired') %>
-    <% end %>
-    <article class="allpage--body nav-placeholder content-width" role="main">
+    <article class="flex-grow-xs" role="main">
         <%- @content %>
     </article>
     <%- @partial('likely') %>
-    <%- @partial('footer') %>
-    <% if ((@site.disqus_shortname) and (@document.kind == 'article')) : %>
-    <div class="disqus-wrapper">
-        <article id="disqus_thread" class="disqus-container"></article>
+
+
+    <div class="row row-bottom-lg space-out-top-kilo-xs">
+        <div class="col-xs-12 col-lg-8 ">
+            <section class="space-in-left-kilo-md">
+                <p class="space-minus-left-kilo-md space-out-bottom-zero-md">
+                    <span class="logo">
+                        <span class="logo-icon">
+                            <img srcset="
+                                /avatar/paulradzkov_120x120.jpg 2x,
+                                /avatar/paulradzkov_240x240.jpg 4x
+                                " src="/avatar/paulradzkov_60x60.jpg" width="48" height="48" alt="Павел Радьков">
+                        </span>
+                        <span class="logo-txt">
+                            <span class="logo-name">Павел&nbsp;Радьков</span>
+                        </span>
+                    </span>
+                </p>
+                <p>Дизайнер интерфейсов и верстальщик из Минска. Специализируюсь на проектировании сайтов и сервисов, рисую интерфейсы, верстаю прототипы, создаю npm-пакеты, которые помогают быстрее и аккуратнее делать проекты. Связаться: <a  href="mailto:radzkov@gmail.com">radzkov@gmail.com</a></p>
+                <p class="space-out-bottom-micro-xs">
+                    <a class="contact-link link" href="https://github.com/paulradzkov" target="_blank">GitHub</a>
+                    <a class="contact-link link" href="https://codepen.io/paulradzkov/" target="_blank">Codepen</a>
+                    <a class="contact-link link" href="https://www.linkedin.com/in/paulradzkov" target="_blank">LinkedIn</a>
+                    <a class="contact-link link" href="https://twitter.com/paul_radzkov" target="_blank">Twitter</a>
+                    <a class="contact-link link" href="https://toster.ru/user/paulradzkov" target="_blank">Toster.ru</a>
+                    <a class="contact-link link" href="https://www.instagram.com/paulradzkov/" target="_blank">Instagram</a>
+                </p>
+            </section>
+        </div>
+        <div class="col-xs-12 col-lg-4 ">
+            <div class="space-in-left-kilo-md">
+                <%- @partial('footer') %>
+            </div>
+        </div>
     </div>
-    <% end %>
-    <% if (@document.kind == 'article') : %>
-    <h4 class="read-next-title">Читать дальше:</h4>
-    <nav class="read-next">
-        <%- @getNavLinks() %>
-    </nav>
-    <% end %>
     <%- @partial('scripts') %>
 </body>
 </html>

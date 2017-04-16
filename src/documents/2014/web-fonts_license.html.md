@@ -7,6 +7,7 @@ kind: article
 publish: true
 disqusid: web-fonts_license
 tags: [fonts, typography]
+starred: true
 styles: ["/vendor/fotorama/fotorama.css"]
 scripts: ["/vendor/fotorama/fotorama.js"]
 ---

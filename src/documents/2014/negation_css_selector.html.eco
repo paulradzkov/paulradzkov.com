@@ -7,6 +7,7 @@ kind: article
 publish: true
 disqusid: negation-css-selector
 tags: [css]
+starred: true
 styles: ['/css/caniuse.css']
 scripts: ['/vendor/caniuse.js']
 ---

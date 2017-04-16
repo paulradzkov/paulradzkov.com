@@ -1,22 +1,36 @@
 /* logo */
+.logo-settings() {
+    @logo-margin: 0;
+    @logo-width: 15em;
+    @logo-icon-width: 60px;
+    @logo-gutter-width: 16px;
+    @logo-fz-primary: 20px;
+    @logo-fz-secondary: 14px;
+    @logo-txt-color: #000;
+    @logo-hover-color: #0877DB;
+    @logo-icon-bg: #FFF;
+}
+
 .logo {
-    margin: 0;
+    .logo-settings();
+
+    margin: @logo-margin;
     display: table;
-    width: 15em;
+    width: @logo-width;
     text-align: left;
     text-decoration: none;
-    color: #000;
+    color: @logo-txt-color;
 
     &:link,
     &:visited {
-        color: #000;
+        color: @logo-txt-color;
     }
 
     a&:hover,
     a&:visited:hover,
     a&:focus,
     a&:active {
-        color: #0877DB;
+        color: @logo-hover-color;
     }
 
     /* decoration */
@@ -24,12 +38,13 @@
         display: table-cell;
         vertical-align: middle;
         border-radius: 50%;
+        width: @logo-icon-width + @logo-gutter-width;
 
         img {
             display: block;
-            width: 60px;
-            height: 60px;
-            background: #FFF;
+            width: @logo-icon-width;
+            height: @logo-icon-width;
+            background: @logo-icon-bg;
             border-radius: inherit;
         }
     }
@@ -44,11 +59,11 @@
         position: relative;
         display: block;
         font-family: @fontsecond;
+        font-size: @logo-fz-primary;
         font-weight: bold;
-        font-size: 20px;
     }
 
     &-title {
-        font-size: 14px;
+        font-size: @logo-fz-secondary;
     }
 }

@@ -1,0 +1,97 @@
+.blogwall-settings() {
+
+}
+
+.blogwall {
+    .blogwall-settings();
+
+
+    border-style: solid;
+    border-color: #E6E6E6;
+    border-width: 0;
+
+    &:before,
+    &:after {
+        content:"";
+        display:block;
+    }
+
+    &:after {
+        clear:both;
+    }
+
+    @media (min-width: 576px) {
+        border-width: 1px 0 0 1px;
+    }
+
+    &-item {
+        //margin-top: -1px;
+        position: relative;
+        overflow: hidden;
+        border-style: inherit;
+        border-color: inherit;
+        border-width: 0 0 1px;
+        padding: 24px 24px 16px;
+        background-color: #FFF;
+
+        @media (min-width: 576px) {
+            float: left;
+            width: ~"calc(50% + 1px)";
+            height: 200px;
+            margin-left: -1px;
+            border-width: 0 1px 1px;
+            padding-left: 40px;
+            padding-right: 40px;
+            box-shadow: 0 0 0 0 rgba(0,0,0,0.6);
+            transition: box-shadow 0.3s, z-index 0.3s 0.15s;
+            z-index: 0;
+
+            &:hover {
+                z-index: 1;
+                box-shadow: 0 8px 64px -16px rgba(0,0,0,0.3);
+                transition: box-shadow 0.3s, z-index 0.3s 0s;
+            }
+        }
+
+        @media (min-width: 992px) {
+            width: ~"calc(33.333% + 1px)";
+        }
+
+        @media (min-width: 1200px) {
+            width: ~"calc(25% + 1px)";
+        }
+
+        @media (min-width: 1600px) {
+            width: ~"calc(20% + 1px)";
+        }
+
+        &-promo {
+            width: ~"calc(100% + 1px)";
+
+            @media (min-width: 576px) {
+                height: 400px;
+            }
+
+            @media (min-width: 992px) {
+                width: ~"calc(66.666% + 1px)";
+            }
+
+            @media (min-width: 1200px) {
+                width: ~"calc(50% + 1px)";
+            }
+
+            @media (min-width: 1600px) {
+                width: ~"calc(40% + 1px)";
+            }
+        }
+
+        &-star {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 16px;
+            color: #FFB300;
+        }
+    }
+
+}

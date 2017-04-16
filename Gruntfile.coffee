@@ -17,7 +17,7 @@ module.exports = (grunt) ->
 		copy:
 			main:
 				files: [
-					'./src/raw/vendor/likely/likely.js':'./bower_components/Likely/release/likely.js'
+					'./src/raw/vendor/ilyabirman-likely/likely.js':'./npm_modules/ilyabirman-likely/release/likely.js'
 				]
 
 		less:
@@ -25,6 +25,7 @@ module.exports = (grunt) ->
 				options:
 					sourceMap: true
 				files: [
+					'out/css/homepage.css': 'src/raw/css/homepage.less'
 					'out/css/template.css': 'src/raw/css/template.less'
 					'out/css/article.css': 'src/raw/css/article.less'
 					'out/fonts/webfonts.css': 'src/raw/fonts/webfonts.less'
@@ -54,12 +55,17 @@ module.exports = (grunt) ->
 					# require('cssnano')() # minify the result
 				]
 			dist:
-				src: 'out/css/template.css'
+				src: [
+						'out/css/homepage.css'
+						'out/css/template.css'
+						'out/css/article.css'
+					]
 
 		#minify css
 		cssmin:
 			combine:
 				files:
+					'out/css/homepage.css':'out/css/homepage.css'
 					'out/css/template.css':'out/css/template.css'
 					'out/css/article.css':'out/css/article.css'
 					'out/css/caniuse.css':'out/css/caniuse.css'
@@ -96,7 +102,7 @@ module.exports = (grunt) ->
 						'out/vendor/jquery.sticky.js'
 						'out/vendor/bootstrap/js/bootstrap.min.js'
 						'out/js/script.js'
-						'out/vendor/likely/likely.js'
+						'out/vendor/ilyabirman-likely/likely.js'
 					]
 					'out/js/isotope-settings.js':'out/js/isotope-settings.js'
 		compress:

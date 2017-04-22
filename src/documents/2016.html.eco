@@ -3,39 +3,36 @@ layout: 'homepage'
 title: 'Блог / Статьи 2016 года'
 ---
 
-<div class="compound-header">
-	<h1><a href="/"class="border-underline"><u class="u">Блог</u></a> / 2016</h1>
-	<div class="view-toggle">
-		<a href="/search" class="btn" data-toggle="tooltip" data-placement="bottom" title="Поиск по сайту"><img src="/i/search.svg" class="btn-icon" width="14" height="14" alt="Поиск по сайту"></a>
-		<form name="blogroll-view" class="btn-group" data-toggle="buttons">
-			<label class="btn btn-primary active" data-toggle="tooltip" data-placement="bottom" title="Лента">
-				<input type="radio" name="view-options" id="full-view" checked>
-				<img src="/i/th-list.svg" class="btn-icon" width="14" height="14" alt="Лента">
-			</label>
-			<label class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="Список">
-				<input type="radio" name="view-options" id="short-view">
-				<img src="/i/list.svg" class="btn-icon" width="14" height="14" alt="Список">
-			</label>
-		</form>
-	</div>
+<div class="row row-bottom-sm" style="align-items: baseline;">
+    <div class="col-xs-12 col-sm-shrink">
+        <h1 class="space-in-right-mili-lg">Статьи за 2016 год</h1>
+    </div>
+    <div class="col-xs-12 col-sm-shrink">
+        <p>Подписаться на обновления:
+            <a class="link space-in-wide-micro-xs" href="/rss.xml" onClick="_gaq.push(['_trackEvent', 'Feed', 'Open', 'RSS Feed']);">RSS</a>
+        </p>
+    </div>
 </div>
-
-<div class="blogroll detailed-view">
+<div class="blogwall space-minus-h-mili-xs space-out-h-zero-sm space-out-top-micro-xs">
     <% for page in @getPostsByYear(2016).toJSON(): %>
-		<section class="post-tizer <%= if page.id is @document.id then 'active' else 'inactive' %>">
-			<h2><a href="<%= page.url %>" class="border-underline"><u class="u"><%= page.title %></u></a></h2>
-			<div class="before-cut"><%- @cuttedContent page.contentRenderedWithoutLayouts %></div>
-			<aside class="blog-item-meta">
-				<ul class="meta-data">
-					<li class="date"><time datetime="<%= page.created_at %>"><%=@moment(page.created_at).format('DD MMMM YYYY') %></time></li>
-					<li class="comments"><a href="<%= page.url %>#disqus_thread" data-disqus-identifier="<%= page.disqusid %>" >Комментарии</a></li>
-					<li class="tags-list">
-						<% for tag in page.tags : %>
-						<a class="tag" href="<%= @getTagUrl(tag) %>"><%= tag %></a>
-						<% end %>
-					</li>
-				</ul>
-			</aside>
-		</section>
+        <section class="blogwall-item blogwall-gridcell col-flex-sm">
+            <% if (page.starred) : %>
+                <div class="blogwall-item-star">★</div>
+            <% end %>
+            <p class="txt-date space-out-zero-xs">
+                <% if (page.badge) : %>
+                <span class="badge space-out-right-nano-xs <% if (page.badgetype) : %><%= page.badgetype %><% end %>"><%= page.badge %></span>
+                <% end %>
+                <time datetime="<%= page.created_at %>">
+                    <%=@moment(page.created_at).format('DD MMMM YYYY') %>
+                </time>
+            </p>
+            <p class="space-out-top-nano-xs">
+                <a href="<%= page.url %>" ><%= page.title %></a>
+            </p>
+            <aside class="space-auto-top-sm">
+                <a class="txt-comments link" href="<%= page.url %>#disqus_thread" data-disqus-identifier="<%= page.disqusid %>" ></a>
+            </aside>
+        </section>
     <% end %>
 </div>

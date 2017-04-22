@@ -21,27 +21,46 @@
     }
 
     @media (min-width: 576px) {
-        border-width: 1px 0 0 1px;
+        //border-width: 1px 0 0 1px;
     }
 
     &-item {
         //margin-top: -1px;
         position: relative;
         overflow: hidden;
-        border-style: inherit;
-        border-color: inherit;
-        border-width: 0 0 1px;
         padding: 24px 24px 16px;
         background-color: #FFF;
 
         @media (min-width: 576px) {
-            float: left;
-            width: ~"calc(50% + 1px)";
-            height: 200px;
-            margin-left: -1px;
-            border-width: 0 1px 1px;
             padding-left: 40px;
             padding-right: 40px;
+        }
+
+        &-star {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 16px;
+            color: #FFB300;
+        }
+    }
+
+    &-gridcell {
+        border-style: inherit;
+        border-color: inherit;
+        border-width: 0 0 1px;
+
+        &:first-child {
+            border-top-width: 1px;
+        }
+
+        @media (min-width: 576px) {
+            float: left;
+            width: ~"calc(50% + 1px)";
+            height: ~"calc(200px + 1px)";
+            margin-left: -1px;
+            margin-top: -1px;
+            border-width: 1px;
             box-shadow: 0 0 0 0 rgba(0,0,0,0.6);
             transition: box-shadow 0.3s, z-index 0.3s 0.15s;
             z-index: 0;
@@ -69,7 +88,7 @@
             width: ~"calc(100% + 1px)";
 
             @media (min-width: 576px) {
-                height: 400px;
+                height: ~"calc(400px + 1px)";
             }
 
             @media (min-width: 992px) {
@@ -83,14 +102,6 @@
             @media (min-width: 1600px) {
                 width: ~"calc(40% + 1px)";
             }
-        }
-
-        &-star {
-            position: absolute;
-            top: 0;
-            right: 0;
-            padding: 16px;
-            color: #FFB300;
         }
     }
 

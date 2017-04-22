@@ -8,7 +8,7 @@
 		<% end %>
         <br>
 		<% if ((!@document.kind) or (@document.kind != 'article')) : %>
-            Сайт работает на DocPad и хостится на GitHub Pages. <a href="https://github.com/paulradzkov/paulradzkov.com" target="_blank">Исходники сайта</a> на Гитхабе.
+            Сайт работает на DocPad и хостится на GitHub Pages. <a class="link-inherit" href="https://github.com/paulradzkov/paulradzkov.com" target="_blank">Исходники сайта</a> на Гитхабе.
 		<% end %>
 	</p>
 </footer>

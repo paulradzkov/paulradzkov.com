@@ -31,7 +31,7 @@
     <%- @partial('twittercard') %>
     <%- @partial('googleAnalytics') %>
 </head>
-<body class="col-flex-xs space-in-mili-xs space-in-base-sm space-in-kilo-lg">
+<body class="global-maw col-flex-xs space-in-mili-xs space-in-base-sm space-in-wide-kilo-lg">
     <header class="row row-middle-md space-out-bottom-kilo-xs space-out-bottom-mega-lg">
         <div class="col-xs-12 col-md-shrink">
             <% if (@document.url != '/') : %><a class="logo link" href="/"><% else : %><span class="logo"><% end %>
@@ -48,10 +48,10 @@
         </div>
         <div class="col-xs-12 col-md">
             <nav class="row space-in-left-kilo-xs space-in-left-micro-md">
-                <a class="link col-xs-12 col-sm-shrink space-in-bottom-nano-xs space-in-v-nano-sm" href="#"><strong>Проекты</strong></a>
-                <a class="link col-xs-12 col-sm-shrink space-in-bottom-nano-xs space-in-v-nano-sm" href="#"><strong>Статьи</strong></a>
-                <a class="link col-xs-12 col-sm-shrink space-in-bottom-nano-xs space-in-v-nano-sm" href="http://paulradzkov.com/codestyle"><strong>Codestyle</strong></a>
-                <a class="link col-xs-12 col-sm-shrink space-in-bottom-nano-xs space-in-v-nano-sm space-auto-left-sm" href="/search">Поиск</a>
+                <a class="link-novisited col-xs-12 col-sm-shrink space-in-bottom-nano-xs space-in-v-nano-sm" href="/#projects"><strong>Проекты</strong></a>
+                <a class="link-novisited col-xs-12 col-sm-shrink space-in-bottom-nano-xs space-in-v-nano-sm" href="/#blog"><strong>Статьи</strong></a>
+                <a class="link-novisited col-xs-12 col-sm-shrink space-in-bottom-nano-xs space-in-v-nano-sm" href="http://paulradzkov.com/codestyle"><strong>Codestyle</strong></a>
+                <a class="link-novisited col-xs-12 col-sm-shrink space-in-bottom-nano-xs space-in-v-nano-sm space-auto-left-sm" href="/search">Поиск</a>
             </nav>
         </div>
     </header>
@@ -60,40 +60,20 @@
     </article>
     <%- @partial('likely') %>
 
-
-    <div class="row row-bottom-lg space-out-top-kilo-xs">
-        <div class="col-xs-12 col-lg-8 ">
-            <section class="space-in-left-kilo-md">
-                <p class="space-minus-left-kilo-md space-out-bottom-zero-md">
-                    <span class="logo">
-                        <span class="logo-icon">
-                            <img srcset="
-                                /avatar/paulradzkov_120x120.jpg 2x,
-                                /avatar/paulradzkov_240x240.jpg 4x
-                                " src="/avatar/paulradzkov_60x60.jpg" width="48" height="48" alt="Павел Радьков">
-                        </span>
-                        <span class="logo-txt">
-                            <span class="logo-name">Павел&nbsp;Радьков</span>
-                        </span>
-                    </span>
-                </p>
-                <p>Дизайнер интерфейсов и верстальщик из Минска. Специализируюсь на проектировании сайтов и сервисов, рисую интерфейсы, верстаю прототипы, создаю npm-пакеты, которые помогают быстрее и аккуратнее делать проекты. Связаться: <a  href="mailto:radzkov@gmail.com">radzkov@gmail.com</a></p>
-                <p class="space-out-bottom-micro-xs">
-                    <a class="contact-link link" href="https://github.com/paulradzkov" target="_blank">GitHub</a>
-                    <a class="contact-link link" href="https://codepen.io/paulradzkov/" target="_blank">Codepen</a>
-                    <a class="contact-link link" href="https://www.linkedin.com/in/paulradzkov" target="_blank">LinkedIn</a>
-                    <a class="contact-link link" href="https://twitter.com/paul_radzkov" target="_blank">Twitter</a>
-                    <a class="contact-link link" href="https://toster.ru/user/paulradzkov" target="_blank">Toster.ru</a>
-                    <a class="contact-link link" href="https://www.instagram.com/paulradzkov/" target="_blank">Instagram</a>
-                </p>
-            </section>
-        </div>
-        <div class="col-xs-12 col-lg-4 ">
-            <div class="space-in-left-kilo-md">
-                <%- @partial('footer') %>
+    <% if (@document.url == '/') : %>
+        <div class="row row-bottom-lg space-out-top-kilo-xs">
+            <div class="col-xs-12 col-lg-8 ">
+                <%- @partial('about') %>
+            </div>
+            <div class="col-xs-12 col-lg-4 ">
+                <div class="space-in-left-kilo-md">
+                    <%- @partial('footer') %>
+                </div>
             </div>
         </div>
-    </div>
+    <% else : %>
+        <%- @partial('footer') %>
+    <% end %>
     <%- @partial('scripts') %>
 </body>
 </html>

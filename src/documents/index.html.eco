@@ -5,7 +5,7 @@ description: 'Заметки о вёрстке, дизайне, юзабилит
 og_image: '/i/og/og-index.png'
 ---
 
-<section class="">
+<section class="" id="projects">
     <h1>Проекты и продукты</h1>
     <div class="row space-out-top-base-xs">
         <section class="col-xs-12 col-sm-6 col-lg-4 col-xl-3 col-flex-sm">
@@ -39,7 +39,7 @@ og_image: '/i/og/og-index.png'
     </div>
 </section>
 
-<section class="space-out-top-base-xs space-out-top-kilo-lg">
+<section class="space-out-top-base-xs space-out-top-kilo-lg" id="blog">
     <div class="row row-bottom-sm" style="align-items: baseline;">
         <div class="col-xs-12 col-sm-shrink">
             <h1 class="space-in-right-mili-lg">Статьи</h1>
@@ -52,7 +52,7 @@ og_image: '/i/og/og-index.png'
     </div>
     <div class="blogwall space-minus-h-mili-xs space-out-h-zero-sm space-out-top-micro-xs">
         <% for page in @getCollection("articles").toJSON().slice(0,1): %>
-            <section class="blogwall-item blogwall-item-promo">
+            <section class="blogwall-item blogwall-gridcell blogwall-gridcell-promo ">
                 <% if (page.starred) : %>
                     <div class="blogwall-item-star">★</div>
                 <% end %>
@@ -75,7 +75,7 @@ og_image: '/i/og/og-index.png'
             </section>
         <% end %>
         <% for page in @getCollection("articles").toJSON().slice(1): %>
-            <section class="blogwall-item col-flex-sm">
+            <section class="blogwall-item blogwall-gridcell col-flex-sm">
                 <% if (page.starred) : %>
                     <div class="blogwall-item-star">★</div>
                 <% end %>

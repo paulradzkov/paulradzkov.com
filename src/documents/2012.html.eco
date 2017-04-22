@@ -15,24 +15,6 @@ title: 'Блог / Статьи 2012 года'
 </div>
 <div class="blogwall space-minus-h-mili-xs space-out-h-zero-sm space-out-top-micro-xs">
     <% for page in @getPostsByYear(2012).toJSON(): %>
-        <section class="blogwall-item blogwall-gridcell col-flex-sm">
-            <% if (page.starred) : %>
-                <div class="blogwall-item-star">★</div>
-            <% end %>
-            <p class="txt-date space-out-zero-xs">
-                <% if (page.badge) : %>
-                <span class="badge space-out-right-nano-xs <% if (page.badgetype) : %><%= page.badgetype %><% end %>"><%= page.badge %></span>
-                <% end %>
-                <time datetime="<%= page.created_at %>">
-                    <%=@moment(page.created_at).format('DD MMMM YYYY') %>
-                </time>
-            </p>
-            <p class="space-out-top-nano-xs">
-                <a href="<%= page.url %>" ><%= page.title %></a>
-            </p>
-            <aside class="space-auto-top-sm">
-                <a class="txt-comments link" href="<%= page.url %>#disqus_thread" data-disqus-identifier="<%= page.disqusid %>" ></a>
-            </aside>
-        </section>
+        <%- @partial('blogwallitem', true, {page: page}) %>
     <% end %>
 </div>

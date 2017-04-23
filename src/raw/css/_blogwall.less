@@ -5,7 +5,6 @@
 .blogwall {
     .blogwall-settings();
 
-
     border-style: solid;
     border-color: #E6E6E6;
     border-width: 0;
@@ -20,20 +19,16 @@
         clear:both;
     }
 
-    @media (min-width: 576px) {
-        //border-width: 1px 0 0 1px;
-    }
-
     &-item {
-        //margin-top: -1px;
         position: relative;
         overflow: hidden;
-        padding: 24px 24px 16px;
+        padding: 24px 24px;
         background-color: #FFF;
 
         @media (min-width: 576px) {
             padding-left: 40px;
             padding-right: 40px;
+            padding-bottom: 16px;
         }
 
         &-star {
@@ -47,12 +42,26 @@
 
     &-gridcell {
         border-style: inherit;
-        border-color: inherit;
-        border-width: 0 0 1px;
+        border-width: 1px;
+        border-top-color: transparent;
+        border-left-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: inherit;
+        transition: box-shadow 0.3s, border-color 0.3s, z-index 0s;
+        z-index: 0;
 
         &:first-child {
-            border-top-width: 1px;
+            border-top-color: inherit;
         }
+
+        &:hover {
+            position: relative;
+            z-index: 1;
+            border-color: #2b9aff;
+            box-shadow: inset 0 0 0 4px rgba(43, 154, 255, 0.2);
+            transition: box-shadow 0s, border-color 0s, z-index 0s;
+        }
+
 
         @media (min-width: 576px) {
             float: left;
@@ -60,16 +69,7 @@
             height: (200px + 1px);
             margin-left: -1px;
             margin-top: -1px;
-            border-width: 1px;
-            box-shadow: 0 0 0 0 rgba(0,0,0,0.6);
-            transition: box-shadow 0.3s, z-index 0.3s 0.15s;
-            z-index: 0;
-
-            &:hover {
-                z-index: 1;
-                box-shadow: 0 8px 64px -16px rgba(0,0,0,0.3);
-                transition: box-shadow 0.3s, z-index 0.3s 0s;
-            }
+            border-color: inherit;
         }
 
         @media (min-width: 992px) {
@@ -85,9 +85,8 @@
         }
 
         &-promo {
-            width: ~"calc(100% + 1px)";
-
             @media (min-width: 576px) {
+                width: ~"calc(100% + 1px)";
                 height: (400px + 1px);
             }
 
@@ -123,6 +122,7 @@
             border-width: 1px;
             border-style: solid;
             border-color: transparent;
+            border-radius: 0;
 
             &:focus {
                 border-color: #2b9aff;

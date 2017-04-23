@@ -52,10 +52,7 @@ og_image: '/i/og/og-index.png'
     </div>
     <div class="blogwall space-minus-h-mili-xs space-out-h-zero-sm space-out-top-micro-xs">
         <% for page in @getCollection("articles").toJSON().slice(0,1): %>
-            <section class="blogwall-item blogwall-gridcell blogwall-gridcell-promo ">
-                <% if (page.starred) : %>
-                    <div class="blogwall-item-star">★</div>
-                <% end %>
+            <section class="blogwall-item blogwall-gridcell blogwall-gridcell-promo blogwall-fauxlink">
                 <p class="txt-date space-out-zero-xs">
                     <% if (page.badge) : %>
                     <span class="badge space-out-right-nano-xs <% if (page.badgetype) : %><%= page.badgetype %><% end %>"><%= page.badge %></span>
@@ -64,14 +61,17 @@ og_image: '/i/og/og-index.png'
                         <%=@moment(page.created_at).format('DD MMMM YYYY') %>
                     </time>
                 </p>
+                <% if (@page.starred) : %>
+                    <div class="blogwall-item-star">★ <span class="blogwall-readable-only">Популярная статья</span></div>
+                <% end %>
                 <h3 class="space-out-top-nano-xs">
-                    <a href="<%= page.url %>" ><%= page.title %></a>
+                    <a href="<%= page.url %>" class="link blogwall-link" tabindex="-1"><%= page.title %></a>
                 </h3>
                 <div><%- @cuttedContent page.contentRenderedWithoutLayouts %></div>
-
                 <aside>
-                    <a href="<%= page.url %>#disqus_thread" data-disqus-identifier="<%= page.disqusid %>" >Комментарии</a>
+                    <a href="<%= page.url %>#disqus_thread" data-disqus-identifier="<%= page.disqusid %>" tabindex="-1">Комментарии</a>
                 </aside>
+                <a href="<%= page.url %>" class="link blogwall-fauxlink--overlay"><span class="blogwall-readable-only"><%= page.title %></span></a>
             </section>
         <% end %>
         <% for page in @getCollection("articles").toJSON().slice(1): %>

@@ -38,7 +38,7 @@ module.exports = (grunt) ->
 				# or
 				map:
 					inline: false # save all sourcemaps as separate files...
-					annotation: 'out/css/maps/' # ...to the specified directory
+					annotation: 'out/css/' # ...to the specified directory
 
 				processors: [
 					require('pixrem')() # add fallbacks for rem units
@@ -223,6 +223,21 @@ module.exports = (grunt) ->
 					async: true
 				command: 'docpad run'
 
+		# to remove unused in markup classes from css
+		uncss:
+			homepage:
+				files:
+					'out/css/homepage.css': [
+						'out/index.html'
+						'out/search.html'
+						'out/2012.html'
+						'out/2013.html'
+						'out/2014.html'
+						'out/2016.html'
+						'out/demo.html'
+						'out/tags.html'
+					]
+
 		'gh-pages':
 			options:
 				base: 'out'
@@ -279,11 +294,13 @@ module.exports = (grunt) ->
 	grunt.loadNpmTasks 'grunt-gh-pages'
 	grunt.loadNpmTasks 'grunt-postcss'
 	grunt.loadNpmTasks 'grunt-pagespeed'
+	grunt.loadNpmTasks 'grunt-uncss'
 
 	# Register our Grunt tasks.
+	grunt.registerTask 'testnow',       ['shell:clean', 'shell:ghpages', 'production']
 	grunt.registerTask 'ghpages',       ['shell:clean', 'shell:ghpages', 'production', 'gh-pages']
 	grunt.registerTask 'deploy',        ['shell:clean', 'shell:ghpages', 'production', 'gh-pages']
-	grunt.registerTask 'production',    ['less', 'postcss', 'cssmin', 'htmlmin', 'uglify', 'compress', 'clean']
-	grunt.registerTask 'run',           ['shell:run', 'less', 'postcss', 'cssmin', 'htmlmin', 'uglify', 'watch:less']
+	grunt.registerTask 'production',    ['less', 'postcss', 'uncss', 'cssmin', 'htmlmin', 'uglify', 'compress', 'clean']
+	grunt.registerTask 'run',           ['shell:run', 'less', 'postcss', 'uglify', 'watch:less']
 	grunt.registerTask 'cdn',           ['shell:clean', 'shell:docpad', 'production']
 	grunt.registerTask 'default',       ['run']

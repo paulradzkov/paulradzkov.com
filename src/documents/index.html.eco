@@ -61,7 +61,7 @@ og_image: '/i/og/og-index.png'
                         <%=@moment(page.created_at).format('DD MMMM YYYY') %>
                     </time>
                 </p>
-                <% if (@page.starred) : %>
+                <% if (page.starred) : %>
                     <div class="blogwall-item-star">★ <span class="blogwall-readable-only">Популярная статья</span></div>
                 <% end %>
                 <h3 class="space-out-top-nano-xs">

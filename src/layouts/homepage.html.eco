@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js" lang="ru">
+<html class="" lang="ru">
 <head>
     <!-- Standard Meta -->
     <meta charset="utf-8" />
@@ -74,6 +74,8 @@
     <% else : %>
         <%- @partial('footer') %>
     <% end %>
-    <%- @partial('scripts') %>
+    <%- @partial('docpadscripts') %>
+    <%- @partial('discusscripts') %>
+    <%- @partial('yandexmetrika') %>
 </body>
 </html>

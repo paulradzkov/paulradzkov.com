@@ -109,6 +109,7 @@ docpadConfig = {
 				.replace /src="\//g, "src=\"#{@site.url}/"
 			)
 
+		# converts whitespaces into dashes "
 		wspToDash: (s) ->
 			s and (s
 				.replace /\ /g, "-"
@@ -215,9 +216,6 @@ docpadConfig = {
 
 					# The website's scripts
 					scripts: [
-						'/vendor/jquery.sticky.js'
-						'/vendor/bootstrap/js/bootstrap.min.js'
-						'/js/script.js'
 						'/vendor/likely/likely.js'
 					]
 

@@ -99,12 +99,13 @@ module.exports = (grunt) ->
 			out:
 				files:
 					'out/js/output.min.js':[
-						'out/vendor/jquery.sticky.js'
-						'out/vendor/bootstrap/js/bootstrap.min.js'
-						'out/js/script.js'
-						'out/vendor/ilyabirman-likely/likely.js'
+						'src/raw/vendor/ilyabirman-likely/likely.js'
 					]
-					'out/js/isotope-settings.js':'out/js/isotope-settings.js'
+					'out/js/article.min.js':[
+						'src/raw/vendor/jquery.sticky.js'
+						'src/raw/vendor/bootstrap/js/bootstrap.min.js'
+						'src/raw/js/script.js'
+					]
 		compress:
 			main:
 				options:

@@ -17,7 +17,7 @@ module.exports = (grunt) ->
 		copy:
 			main:
 				files: [
-					'./src/raw/vendor/ilyabirman-likely/likely.js':'./npm_modules/ilyabirman-likely/release/likely.js'
+					'./src/raw/vendor/ilyabirman-likely/likely.js':'./node_modules/ilyabirman-likely/release/likely.js'
 				]
 
 		less:

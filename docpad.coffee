@@ -216,7 +216,7 @@ docpadConfig = {
 
 					# The website's scripts
 					scripts: [
-						'/vendor/likely/likely.js'
+						'/vendor/ilyabirman-likely/likely.js'
 					]
 
 

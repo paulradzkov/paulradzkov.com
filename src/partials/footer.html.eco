@@ -1,5 +1,5 @@
 <footer class="allpage--footer page-footer content-width copyright">
-	<p>
+	<p class="space-out-bottom-mili-xs">
 		© <%- @site.author %>
 		<% if (@document.created_at) : %>
 			<%= @moment(@document.created_at).format('YYYY') %>.

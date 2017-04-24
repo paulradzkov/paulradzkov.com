@@ -193,14 +193,6 @@
     // suffixes-count = breakpoints-count + 1
 }
 
-@import (less) "../../../node_modules/ilyabirman-likely/release/likely.css";
-@import (less) "_likely.less";
-.likely-settings() {
-    @likely-margin: @kilo 0;
-    @likely-align: left;
-    @likely-valign: top;
-}
-
 @import (less) "_logo.less";
 .logo-settings() {
     @logo-margin: 0;
@@ -231,3 +223,11 @@
 
 @import (less) "_tags.less";
 @import (less) "_googlesearch.less";
+
+@import (less) "../../../node_modules/ilyabirman-likely/release/likely.css";
+@import (less) "_likely.less";
+.likely-settings() {
+    @likely-margin: @kilo 0;
+    @likely-align: left;
+    @likely-valign: top;
+}

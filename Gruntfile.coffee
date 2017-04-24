@@ -226,17 +226,25 @@ module.exports = (grunt) ->
 		# to remove unused in markup classes from css
 		uncss:
 			homepage:
-				files:
-					'out/css/homepage.css': [
-						'out/index.html'
-						'out/search.html'
-						'out/2012.html'
-						'out/2013.html'
-						'out/2014.html'
-						'out/2016.html'
-						'out/demo.html'
-						'out/tags.html'
+				options:
+					timeout: 5000
+					ignore: [
+						/\.likely([-a-zA-Z0-9_:>\*\s\[=\]])*/
 					]
+					stylesheets: [
+						'css/homepage.css'
+					]
+				src: [
+						'out/index.html'
+						'out/2012/index.html'
+						'out/2013/index.html'
+						'out/2014/index.html'
+						'out/2016/index.html'
+						'out/demo/index.html'
+						'out/tags/index.html'
+						'out/search/index.html'
+					]
+				dest: 'out/css/homepage.css'
 
 		'gh-pages':
 			options:
@@ -300,7 +308,7 @@ module.exports = (grunt) ->
 	grunt.registerTask 'testnow',       ['shell:clean', 'shell:ghpages', 'production']
 	grunt.registerTask 'ghpages',       ['shell:clean', 'shell:ghpages', 'production', 'gh-pages']
 	grunt.registerTask 'deploy',        ['shell:clean', 'shell:ghpages', 'production', 'gh-pages']
-	grunt.registerTask 'production',    ['less', 'postcss', 'uncss', 'cssmin', 'htmlmin', 'uglify', 'compress', 'clean']
+	grunt.registerTask 'production',    ['less', 'uncss', 'postcss', 'cssmin', 'htmlmin', 'uglify', 'compress', 'clean']
 	grunt.registerTask 'run',           ['shell:run', 'less', 'postcss', 'uglify', 'watch:less']
 	grunt.registerTask 'cdn',           ['shell:clean', 'shell:docpad', 'production']
 	grunt.registerTask 'default',       ['run']

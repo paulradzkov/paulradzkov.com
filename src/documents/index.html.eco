@@ -12,7 +12,7 @@ og_image: '/i/og/og-index.png'
             <a class="flex-grow-xs project-card project-card-link link" href="//paulradzkov.com/bettertext.css/">
                 <p class="project-card-icon"><img srcset="/i/icons/icon-bettertext@2x.png 2x" src="/i/icons/icon-bettertext.png" width="48" height="48" alt="bettertext.css"></p>
                 <h4 class="project-card-title">bettertext.css</h4>
-                <p class="project-card-details">умная типографика для сайтов</p>
+                <p class="project-card-details">универсальная типографика для сайтов, сервисов и документации</p>
             </a>
         </section>
         <section class="col-xs-12 col-sm-6 col-lg-4 col-xl-3 col-flex-sm">

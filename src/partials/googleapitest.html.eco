@@ -1,0 +1,58 @@
+<% if (@document.kind == "article") : %>
+    <script defer src="https://apis.google.com/js/client.js?onload=gapiInit"></script>
+    <script>
+
+        // Api Key generated from the developer console.
+        var apiKey = 'AIzaSyCHQx2_4Kc-GL0eRB1wH9EfnraIVyAQueA';
+
+        // Replace with your client ID from the developer console.
+        var clientId = '666487715579-h8ds9j92rsfrjtqho1u1oqldda9gm0gm.apps.googleusercontent.com';
+
+        // Set authorized scope.
+        var scopes = ['https://www.googleapis.com/auth/analytics.readonly'];
+
+        // Set Table IDs to search for
+        var tableIDs = 'ga:56553165';
+
+        // Start date
+        var startDate = '<%= @moment(@document.created_at).format("YYYY-MM-DD") %>';
+
+        // Filters
+        var searchFilters = 'ga:pagePath==<%= @document.url %>';
+
+        function gapiInit() {
+            gapi.client.setApiKey(apiKey);
+            gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, handleAuthResult);
+        }
+
+        function handleAuthResult(authResult) {
+            if (authResult && !authResult.error) {
+                gapi.client.load('analytics', 'v3', makeApiCall);
+            } else {
+                console.log('Not authorized');
+            }
+        }
+
+        function makeApiCall() {
+            var apiQuery = gapi.client.analytics.data.ga.get({
+                'ids': tableIDs,
+                'start-date': startDate,
+                'end-date': 'today',
+                'metrics': 'ga:pageviews',
+                'filters': searchFilters
+            });
+
+            apiQuery.execute(handleCoreReportingResults);
+        }
+
+        function handleCoreReportingResults(results) {
+            if (!results.error) {
+                // Success. Do something cool!
+                console.log('Total pageviews since ' + startDate + ' : ' + results.rows);
+                $('.pageviews').show().append('Просмотров: ' + results.rows);
+            } else {
+                console.log('There was an error: ' + results.message);
+            }
+        }
+    </script>
+<% end %>

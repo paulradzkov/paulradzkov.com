@@ -17,7 +17,7 @@ module.exports = (grunt) ->
 		copy:
 			main:
 				files: [
-					'./src/raw/vendor/likely/likely.js':'./bower_components/Likely/release/likely.js'
+					'./src/raw/vendor/ilyabirman-likely/likely.js':'./node_modules/ilyabirman-likely/release/likely.js'
 				]
 
 		less:
@@ -25,6 +25,7 @@ module.exports = (grunt) ->
 				options:
 					sourceMap: true
 				files: [
+					'out/css/homepage.css': 'src/raw/css/homepage.less'
 					'out/css/template.css': 'src/raw/css/template.less'
 					'out/css/article.css': 'src/raw/css/article.less'
 					'out/fonts/webfonts.css': 'src/raw/fonts/webfonts.less'
@@ -37,7 +38,7 @@ module.exports = (grunt) ->
 				# or
 				map:
 					inline: false # save all sourcemaps as separate files...
-					annotation: 'out/css/maps/' # ...to the specified directory
+					annotation: 'out/css/' # ...to the specified directory
 
 				processors: [
 					require('pixrem')() # add fallbacks for rem units
@@ -54,12 +55,17 @@ module.exports = (grunt) ->
 					# require('cssnano')() # minify the result
 				]
 			dist:
-				src: 'out/css/template.css'
+				src: [
+						'out/css/homepage.css'
+						'out/css/template.css'
+						'out/css/article.css'
+					]
 
 		#minify css
 		cssmin:
 			combine:
 				files:
+					'out/css/homepage.css':'out/css/homepage.css'
 					'out/css/template.css':'out/css/template.css'
 					'out/css/article.css':'out/css/article.css'
 					'out/css/caniuse.css':'out/css/caniuse.css'
@@ -93,12 +99,13 @@ module.exports = (grunt) ->
 			out:
 				files:
 					'out/js/output.min.js':[
-						'out/vendor/jquery.sticky.js'
-						'out/vendor/bootstrap/js/bootstrap.min.js'
-						'out/js/script.js'
-						'out/vendor/likely/likely.js'
+						'src/raw/vendor/ilyabirman-likely/likely.js'
 					]
-					'out/js/isotope-settings.js':'out/js/isotope-settings.js'
+					'out/js/article.min.js':[
+						'src/raw/vendor/jquery.sticky.js'
+						'src/raw/vendor/bootstrap/js/bootstrap.min.js'
+						'src/raw/js/script.js'
+					]
 		compress:
 			main:
 				options:
@@ -216,6 +223,29 @@ module.exports = (grunt) ->
 					async: true
 				command: 'docpad run'
 
+		# to remove unused in markup classes from css
+		uncss:
+			homepage:
+				options:
+					timeout: 5000
+					ignore: [
+						/\.likely([-a-zA-Z0-9_:>\*\s\[=\]])*/
+					]
+					stylesheets: [
+						'css/homepage.css'
+					]
+				src: [
+						'out/index.html'
+						'out/2012/index.html'
+						'out/2013/index.html'
+						'out/2014/index.html'
+						'out/2016/index.html'
+						'out/demo/index.html'
+						'out/tags/index.html'
+						'out/search/index.html'
+					]
+				dest: 'out/css/homepage.css'
+
 		'gh-pages':
 			options:
 				base: 'out'
@@ -272,11 +302,13 @@ module.exports = (grunt) ->
 	grunt.loadNpmTasks 'grunt-gh-pages'
 	grunt.loadNpmTasks 'grunt-postcss'
 	grunt.loadNpmTasks 'grunt-pagespeed'
+	grunt.loadNpmTasks 'grunt-uncss'
 
 	# Register our Grunt tasks.
+	grunt.registerTask 'testnow',       ['shell:clean', 'shell:ghpages', 'production']
 	grunt.registerTask 'ghpages',       ['shell:clean', 'shell:ghpages', 'production', 'gh-pages']
 	grunt.registerTask 'deploy',        ['shell:clean', 'shell:ghpages', 'production', 'gh-pages']
-	grunt.registerTask 'production',    ['less', 'postcss', 'cssmin', 'htmlmin', 'uglify', 'compress', 'clean']
-	grunt.registerTask 'run',           ['shell:run', 'less', 'postcss', 'cssmin', 'htmlmin', 'uglify', 'watch:less']
+	grunt.registerTask 'production',    ['less', 'uncss', 'postcss', 'cssmin', 'htmlmin', 'uglify', 'compress', 'clean']
+	grunt.registerTask 'run',           ['shell:run', 'less', 'postcss', 'uglify', 'watch:less']
 	grunt.registerTask 'cdn',           ['shell:clean', 'shell:docpad', 'production']
 	grunt.registerTask 'default',       ['run']

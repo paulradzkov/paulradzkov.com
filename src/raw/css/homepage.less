@@ -1,0 +1,233 @@
+//global variables
+
+//Fonts
+@fontmain: sans-serif;
+@fontsecond: sans-serif;
+@fontmono: 'Consolas', 'Liberation Mono', 'Menlo', 'Courier New', 'Courier', 'Droid Sans Mono',  monospace, serif;
+
+//link colors on light bg
+@color-text:          #000000;
+@color-muted:         #9B9B9B;
+@color-link:          #0877db;
+@color-visited:       #9108db;
+@color-hover:         #2b9aff;
+@color-visitedhover:  #bc4df8;
+@color-active:        #bc4df8;
+
+//media breakpoints:
+@screen-xs: "";
+@screen-sm: ~"(min-width: 576px)";
+@screen-md: ~"(min-width: 768px)";
+@screen-lg: ~"(min-width: 992px)";
+@screen-xl: ~"(min-width: 1200px)";
+
+//comon variables
+@zero: 0;
+@nano: 8px;
+@micro: 16px;
+@mili: 24px;
+@base: 40px;
+@kilo: 64px;
+@mega: 104px;
+@giga: 168px;
+
+//end of global variables
+
+
+@import (less) "_global.less";
+@import (less) "../../../node_modules/normalize.css/normalize.css";
+@import (less) "../../../node_modules/bettertext.css/bettertext.less";
+
+.bettertext-settings() {
+
+    @font-body: @fontmain;
+    @font-headers: @fontsecond;
+    @font-code: @fontmono;
+
+    // margins for body, articles and sections
+    @space-around: @base;
+
+    // breakpoint to switch from 'mobile' to 'desktop'
+    @bettertext-breakpoint: @screen-md;
+
+}
+
+.bettertext-calculations() {
+
+    //calculations
+    // you almost never need to edit below
+
+    // one rem is 16px by default
+    @onerem: 16px;
+
+    // base font-size in ems
+    @fz-ems: unit(((round( @onerem)) / @fz), em);
+
+    // unitless line-height
+    @lh: unit((@rythm / @fz));
+
+    // margins for paragraphs, lists and other tags
+    @m-default: unit(@lh, em);
+
+    // small font-size in ems
+    @fz-small-ems:  unit(((round( @fz-small)) / @fz), em);
+
+    //headers size calculations for small screens
+    @h1-fz: unit(((round( @fz * pow(@scale1, 4))) / @fz), em);
+    @h2-fz: unit(((round( @fz * pow(@scale1, 3))) / @fz), em);
+    @h3-fz: unit(((round( @fz * pow(@scale1, 2))) / @fz), em);
+    @h4-fz: unit(((round( @fz * pow(@scale1, 1))) / @fz), em);
+    @h5-fz: unit(((round( @fz * pow(@scale1, 0))) / @fz), em);
+    @h6-fz: unit(((round( @fz * pow(@scale1, 0))) / @fz), em);
+
+    //headers size calculations for large screens
+    @h1-l-fz: unit(((round( @fz * pow(@scale2, 4))) / @fz), em);
+    @h2-l-fz: unit(((round( @fz * pow(@scale2, 3))) / @fz), em);
+    @h3-l-fz: unit(((round( @fz * pow(@scale2, 2))) / @fz), em);
+    @h4-l-fz: unit(((round( @fz * pow(@scale2, 1))) / @fz), em);
+
+    //headers lihe-height
+    @h1-lh: 1.2308;
+    @h2-lh: 1.2903;
+    @h3-lh: 1.28;
+    @h4-lh: 1.2;
+    @h5-lh: unit((@rythm / @fz));
+    @h6-lh: unit((@rythm / @fz));
+
+    //headers margin-top
+    @h1-mt: 3.3846em;
+    @h2-mt: 3.1304em;
+    @h3-mt: 2.8em;
+    @h4-mt: 2.2222em;
+    @h5-mt: unit((@lh / @h5-fz), em);
+    @h6-mt: unit((@lh / @h6-fz), em);
+
+    //headers margin-top for large screens
+    @h1-l-mt: 4.3077em;
+    @h2-l-mt: 3.3548em;
+    @h3-l-mt: 2.56em;
+    @h4-l-mt: 2em;
+
+    //headers margin-bottom
+    @h1-mb: unit((@lh / @h1-fz), em);
+    @h2-mb: unit((@lh / @h2-fz), em);
+    @h3-mb: unit((@lh / @h3-fz), em);
+    @h4-mb: unit((@lh / @h4-fz), em);
+    @h5-mb: 0;
+    @h6-mb: 0;
+
+    //headers margin-bottom for large screens
+    @h1-l-mb: unit((@lh / @h1-l-fz), em);
+    @h2-l-mb: unit((@lh / @h2-l-fz), em);
+    @h3-l-mb: unit((@lh / @h3-l-fz), em);
+    @h4-l-mb: unit((@lh / @h4-l-fz), em);
+
+    //double headers margin-top
+    @h1h2-mt: unit( @h2-lh ,em);
+    @h2h3-mt: unit( @h3-lh ,em);
+    @h3h4-mt: unit( @h4-lh ,em);
+    @h4h5-mt: unit((@lh / @h5-fz), em);
+    @h5h6-mt: unit((@lh / @h6-fz), em);
+}
+
+@import "../../../node_modules/links.less/links.less";
+
+.links-settings() {
+    @links-text-decoration: none;
+    //colors
+    @links-defaulttext:   @color-text;
+    @links-link:          @color-link;
+    @links-visited:       @color-visited;
+    @links-hover:         @color-hover;
+    @links-visitedhover:  @color-visitedhover;
+    @links-active:        @color-active;
+}
+
+@import (less) "../../../node_modules/flxgrid.css/flxgrid.less";
+.grid-settings() {
+
+    // settings
+    @grid-columns: 12;   // number of columns
+    @gutter-width: 40px; // gap between columns
+
+    // media breakpoints (default: as on bootstrap)
+    @breakpoints:
+        @screen-sm,
+        @screen-md,
+        @screen-lg,
+        @screen-xl;
+
+    // max-width of containers according breakpoints
+    @container-maw:
+        none,
+        none,
+        680px,
+        920px,
+        1140px;
+
+    // names for breakpoint suffixes
+    @suffixes: xs, sm, md, lg, xl;
+
+    // IMPORTANT: suffixes count should be bigger than breakpoints count by 1
+    // suffixes-count = breakpoints-count + 1
+
+}
+
+@import (less) "../../../node_modules/space.less/space.less";
+.space-settings() {
+
+    @spaces: 0, 8px, 16px, 24px, 40px, 64px, 104px, 168px;
+    @spacealias: zero, nano, micro, mili, base, kilo, mega, giga;
+
+    // media breakpoints
+    @breakpoints:
+        @screen-sm,
+        @screen-md,
+        @screen-lg,
+        @screen-xl;
+
+    // names for breakpoint suffixes
+    @suffixes: xs, sm, md, lg, xl;
+
+    // IMPORTANT: suffixes count should be bigger than breakpoints count by 1
+    // suffixes-count = breakpoints-count + 1
+}
+
+@import (less) "_logo.less";
+.logo-settings() {
+    @logo-margin: 0;
+    @logo-width: auto;
+    @logo-icon-width: 48px;
+    @logo-gutter-width: 16px;
+    @logo-fz-primary: 20px;
+    @logo-fz-secondary: 14px;
+    @logo-txt-color: @color-text;
+    @logo-hover-color: @color-hover;
+    @logo-icon-bg: #FFF;
+}
+
+@import (less) "_project-card.less";
+
+@import (less) "_txt.less";
+
+@import (less) "_blogwall.less";
+@import (less) "_badge.less";
+
+@import (less) "_copyright.less";
+.copyright-settings() {
+    @c-textcolor: @color-muted;
+    @c-fz: 0.875em;
+}
+
+@import (less) "_contact-link.less";
+
+@import (less) "_tags.less";
+@import (less) "_googlesearch.less";
+
+@import (less) "../../../node_modules/ilyabirman-likely/release/likely.css";
+@import (less) "_likely.less";
+.likely-settings() {
+    @likely-margin: @kilo 0;
+    @likely-align: left;
+    @likely-valign: top;
+}

@@ -1,84 +1,93 @@
 ---
 layout: 'homepage'
 title: 'Блог Павла Радькова'
-scripts: ["/vendor/isotope.pkgd.min.js","/js/isotope-settings.js"]
 description: 'Заметки о вёрстке, дизайне, юзабилити, типографике, методологиях и процессах'
 og_image: '/i/og/og-index.png'
 ---
 
-<div class="justified-blocks">
-    <h1 class="blog-title">
-        Блог
-        <span class="rss"><a href="/rss.xml" class="border-underline" onClick="_gaq.push(['_trackEvent', 'Feed', 'Open', 'RSS Feed']);">Подписаться на RSS</a></span>
-    </h1>
-    <div class="view-toggle">
-        <form name="blogroll-view" class="btn-group" data-toggle="buttons">
-            <label class="btn btn-primary active">
-                <input type="radio" name="view-options" id="full-view" checked>
-                <img src="/i/th-list.svg" class="btn-icon" width="14" height="14" alt=""><span class="btn-text">Подробно</span>
-            </label>
-            <label class="btn btn-primary">
-                <input type="radio" name="view-options" id="short-view">
-                <img src="/i/list.svg" class="btn-icon" width="14" height="14" alt=""><span class="btn-text">Кратко</span>
-            </label>
-        </form>
-        <div name="blogroll-view" class="btn-group" data-toggle="collapse" data-target=".filters-container">
-            <label for="view-all" class="btn btn-primary" data-toggle="button" autocomplete="off">
-                <img src="/i/th-large.svg" class="btn-icon" width="14" height="14" alt=""><span class="btn-text">По тегам</span>
-            </label>
-        </div>
-        <a href="/search/" class="btn">
-            <img src="/i/search.svg" class="btn-icon" width="14" height="14" alt=""><span class="btn-text">Поиск</span>
-        </a>
-    </div>
-</div>
-
-<div class="collapse filters-container">
-    <form class="filters tags-list" data-toggle="buttons" id="filters">
-        <span class="filter-legend">Фильтр по тегам:</span>
-        <label class="btn btn-label active" data-filter="*">
-            <input type="radio" name="filters-options" id="view-all" checked>
-            <span class="not-tag">Показать все</span>
-        </label>
-        <% for tag, data of @getTagCloud(): %>
-            <label class="btn btn-label" data-filter=".<%= @wspToDash(tag) %>" data-tag-count="<%= data.count %>" data-tag-weight="<%= data.weight %>">
-                <input type="radio" name="filters-options">
-                <span class="tag"><%= tag %></span>
-            </label>
-        <% end %>
-    </form>
-</div>
-
-<div class="blogroll detailed-view js-isotope">
-    <% for page in @getCollection("articles").toJSON(): %>
-        <section class="post-tizer item <%= if page.id is @document.id then 'active' else 'inactive' %> <% for tag in page.tags : %> <%= @wspToDash(tag) %><% end %>">
-            <ul class="meta-data meta-data-badge">
-                <li class="date"><time datetime="<%= page.created_at %>"><%=@moment(page.created_at).format('DD MMMM YYYY') %></time></li>
-            </ul>
-            <h2 class="linked-header"><a href="<%= page.url %>" class="border-underline"><u class="u"><%= page.title %></u></a></h2>
-            <div class="before-cut"><%- @cuttedContent page.contentRenderedWithoutLayouts %></div>
-
-            <aside class="blog-item-meta">
-                <ul class="meta-data meta-data-props">
-                    <li class="date"><time datetime="<%= page.created_at %>"><%=@moment(page.created_at).format('DD MMMM YYYY') %></time></li>
-                    <li class="comments"><a href="<%= page.url %>#disqus_thread" data-disqus-identifier="<%= page.disqusid %>" >Комментарии</a></li>
-                    <li class="tags-list">
-                        <% for tag in page.tags : %>
-                        <a class="tag" href="<%= @getTagUrl(tag) %>"><span class="inner"><%= tag %></span></a>
-                        <% end %>
-                    </li>
-                    <li class="social">
-                      <div class="likely-inline-container">
-                          <div class="likely likely-small" data-url="<%= @site.canonicalUrl %><%= page.url %>" data-title="<%= page.title %>">
-                              <div class="facebook"></div>
-                              <div class="twitter" data-via="paul_radzkov"></div>
-                              <div class="gplus"></div>
-                              <div class="vkontakte"></div>
-                          </div>
-                      </div>
-                    </li>
-                </ul>
-            </aside>
+<section class="" id="projects">
+    <h1 class="space-in-bottom-micro-xs">Проекты и продукты</h1>
+    <div class="row space-out-top-base-xs">
+        <section class="col-xs-12 col-sm-6 col-lg-4 col-xl-3 col-flex-sm">
+            <a class="flex-grow-sm project-card project-card-link link col-flex-xs" href="//paulradzkov.com/bettertext.css/">
+                <p class="project-card-icon"><img srcset="/i/icons/icon-bettertext@2x.png 2x" src="/i/icons/icon-bettertext.png" width="48" height="48" alt="bettertext.css"></p>
+                <h4 class="project-card-title">bettertext.css</h4>
+                <p class="project-card-details">универсальная типографика для сайтов, сервисов и документации</p>
+                <p class="space-auto-top-sm space-out-bottom-nano-xs">
+                    <img src="https://badge.fury.io/js/bettertext.css.svg" alt="npm version">
+                </p>
+            </a>
         </section>
-    <% end %>
-</div>
+        <section class="col-xs-12 col-sm-6 col-lg-4 col-xl-3 col-flex-sm">
+            <a class="flex-grow-sm project-card project-card-link link col-flex-xs" href="https://github.com/paulradzkov/flxgrid.css">
+                <p class="project-card-icon"><img srcset="/i/icons/icon-flxgrid@2x.png 2x" src="/i/icons/icon-flxgrid.png" width="48" height="48" alt="flxgrid.css"></p>
+                <h4 class="project-card-title">flxgrid.css</h4>
+                <p class="project-card-details">настраиваемая адаптивная модульная HTML-сетка на флексах</p>
+                <p class="space-auto-top-sm space-out-bottom-nano-xs">
+                    <img src="https://badge.fury.io/js/flxgrid.css.svg" alt="npm version">
+                </p>
+            </a>
+        </section>
+        <section class="col-xs-12 col-sm-6 col-lg-4 col-xl-3 col-flex-sm">
+            <a class="flex-grow-sm project-card project-card-link link col-flex-xs" href="//paulradzkov.com/space.less/">
+                <p class="project-card-icon"><img srcset="/i/icons/icon-space@2x.png 2x" src="/i/icons/icon-space.png" width="48" height="48" alt="space.less"></p>
+                <h4 class="project-card-title">space.less</h4>
+                <p class="project-card-details">генератор классов для управления пустым простанством в адаптивной вёрстке</p>
+                <p class="space-auto-top-sm space-out-bottom-nano-xs">
+                    <img src="https://badge.fury.io/js/space.less.svg" alt="npm version">
+                </p>
+            </a>
+        </section>
+        <section class="col-xs-12 col-sm-6 col-lg-4 col-xl-3 col-flex-sm">
+            <a class="flex-grow-sm project-card project-card-link link col-flex-xs" href="https://github.com/paulradzkov/links.less">
+                <p class="project-card-icon"><img srcset="/i/icons/icon-links@2x.png 2x" src="/i/icons/icon-links.png" width="48" height="48" alt="links.less"></p>
+                <h4 class="project-card-title">links.less</h4>
+                <p class="project-card-details">стили для ссылок с “:фокусом” и анимацией</p>
+                <p class="space-auto-top-sm space-out-bottom-nano-xs">
+                    <img src="https://badge.fury.io/js/links.less.svg" alt="npm version">
+                </p>
+            </a>
+        </section>
+    </div>
+</section>
+
+<section class="space-out-top-base-xs space-out-top-kilo-lg" id="blog">
+    <div class="row row-bottom-sm" style="align-items: baseline;">
+        <div class="col-xs-12 col-sm-shrink">
+            <h1 class="space-in-right-mili-lg">Статьи</h1>
+        </div>
+        <div class="col-xs-12 col-sm-shrink">
+            <p>Подписаться на обновления:
+                <a class="link space-in-wide-micro-xs" href="/rss.xml" onClick="_gaq.push(['_trackEvent', 'Feed', 'Open', 'RSS Feed']);">RSS</a>
+            </p>
+        </div>
+    </div>
+    <div class="blogwall space-minus-h-mili-xs space-out-h-zero-sm space-out-top-micro-xs">
+        <% for page in @getCollection("articles").toJSON().slice(0,1): %>
+            <section class="blogwall-item blogwall-gridcell blogwall-gridcell-promo blogwall-fauxlink">
+                <p class="txt-date space-out-zero-xs">
+                    <% if (page.badge) : %>
+                    <span class="badge space-out-right-nano-xs <% if (page.badgetype) : %><%= page.badgetype %><% end %>"><%= page.badge %></span>
+                    <% end %>
+                    <time datetime="<%= page.created_at %>">
+                        <%=@moment(page.created_at).format('DD MMMM YYYY') %>
+                    </time>
+                </p>
+                <% if (page.starred) : %>
+                    <div class="blogwall-item-star">★ <span class="blogwall-readable-only">Популярная статья</span></div>
+                <% end %>
+                <h3 class="space-out-top-nano-xs">
+                    <a href="<%= page.url %>" class="link blogwall-link" tabindex="-1"><%= page.title %></a>
+                </h3>
+                <div><%- @cuttedContent page.contentRenderedWithoutLayouts %></div>
+                <aside>
+                    <a href="<%= page.url %>#disqus_thread" data-disqus-identifier="<%= page.disqusid %>" tabindex="-1">Комментарии</a>
+                </aside>
+                <a href="<%= page.url %>" class="link blogwall-fauxlink--overlay"><span class="blogwall-readable-only"><%= page.title %></span></a>
+            </section>
+        <% end %>
+        <% for page in @getCollection("articles").toJSON().slice(1): %>
+            <%- @partial('blogwallitem', true, {page: page}) %>
+        <% end %>
+    </div>
+</section>

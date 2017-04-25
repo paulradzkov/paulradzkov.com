@@ -1,13 +1,14 @@
-<footer class="allpage--footer page-footer content-width">
-	<p>
-		© <a href="//plus.google.com/+ПавелРадьков?rel=author" class="author"><span class="author-label">Автор:</span><%- @site.author %></a>
+<footer class="allpage--footer page-footer content-width copyright">
+	<p class="space-out-bottom-mili-xs">
+		© <%- @site.author %>
 		<% if (@document.created_at) : %>
 			<%= @moment(@document.created_at).format('YYYY') %>.
 		<% else : %>
 			2012&ndash;<%= @moment(@now).format('YYYY') %>.
 		<% end %>
+        <br>
 		<% if ((!@document.kind) or (@document.kind != 'article')) : %>
-			Блог работает на DocPad. <a href="https://github.com/paulradzkov/paulradzkov.com" target="_blank">Исходники</a> этого сайта на Гитхабе.
+            Сайт работает на DocPad и хостится на GitHub Pages. <a class="link-inherit" href="https://github.com/paulradzkov/paulradzkov.com" target="_blank">Исходники сайта</a> на Гитхабе.
 		<% end %>
 	</p>
 </footer>

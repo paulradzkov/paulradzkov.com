@@ -1,8 +1,8 @@
 //global variables
 
 //Fonts
-@fontmain: 'Noto Sans', 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Roboto', 'San Francisco', sans-serif;
-@fontsecond: 'Roboto', 'Noto Sans', 'Open Sans', 'Helvetica Neue', 'Helvetica', 'San Francisco', sans-serif;
+@fontmain: sans-serif;
+@fontsecond: sans-serif;
 @fontmono: 'Consolas', 'Liberation Mono', 'Menlo', 'Courier New', 'Courier', 'Droid Sans Mono',  monospace, monospace, serif;
 
 //link colors on light bg
@@ -29,9 +29,11 @@
 
 //end of global variables
 
-@import (less) "../../../bower_components/normalize.css/normalize.css";
+@import (less) "_global.less";
+
+@import (less) "../../../node_modules/normalize.css/normalize.css";
 @import "_helpers.less";
-@import (less) "../../../bower_components/bettertext.css/bettertext.less";
+@import (less) "../../../node_modules/bettertext.css/bettertext.less";
 
 .bettertext-settings() {
     @linel: @mawtext;
@@ -40,22 +42,96 @@
     @font-code: @fontmono;
 }
 
-body {
-    color: #464053;
+.bettertext-calculations() {
+
+    //calculations
+    // you almost never need to edit below
+
+    // one rem is 16px by default
+    @onerem: 16px;
+
+    // base font-size in ems
+    @fz-ems: unit(((round( @onerem)) / @fz), em);
+
+    // unitless line-height
+    @lh: unit((@rythm / @fz));
+
+    // margins for paragraphs, lists and other tags
+    @m-default: unit(@lh, em);
+
+    // small font-size in ems
+    @fz-small-ems:  unit(((round( @fz-small)) / @fz), em);
+
+    //headers size calculations for small screens
+    @h1-fz: unit(((round( @fz * pow(@scale1, 4))) / @fz), em);
+    @h2-fz: unit(((round( @fz * pow(@scale1, 3))) / @fz), em);
+    @h3-fz: unit(((round( @fz * pow(@scale1, 2))) / @fz), em);
+    @h4-fz: unit(((round( @fz * pow(@scale1, 1))) / @fz), em);
+    @h5-fz: unit(((round( @fz * pow(@scale1, 0))) / @fz), em);
+    @h6-fz: unit(((round( @fz * pow(@scale1, 0))) / @fz), em);
+
+    //headers size calculations for large screens
+    @h1-l-fz: unit(((round( @fz * pow(@scale2, 4))) / @fz), em);
+    @h2-l-fz: unit(((round( @fz * pow(@scale2, 3))) / @fz), em);
+    @h3-l-fz: unit(((round( @fz * pow(@scale2, 2))) / @fz), em);
+    @h4-l-fz: unit(((round( @fz * pow(@scale2, 1))) / @fz), em);
+
+    //headers lihe-height
+    @h1-lh: 1.2308;
+    @h2-lh: 1.2903;
+    @h3-lh: 1.28;
+    @h4-lh: 1.2;
+    @h5-lh: unit((@rythm / @fz));
+    @h6-lh: unit((@rythm / @fz));
+
+    //headers margin-top
+    @h1-mt: 3.3846em;
+    @h2-mt: 3.1304em;
+    @h3-mt: 2.8em;
+    @h4-mt: 2.2222em;
+    @h5-mt: unit((@lh / @h5-fz), em);
+    @h6-mt: unit((@lh / @h6-fz), em);
+
+    //headers margin-top for large screens
+    @h1-l-mt: 4.3077em;
+    @h2-l-mt: 3.3548em;
+    @h3-l-mt: 2.56em;
+    @h4-l-mt: 2em;
+
+    //headers margin-bottom
+    @h1-mb: unit((@lh / @h1-fz), em);
+    @h2-mb: unit((@lh / @h2-fz), em);
+    @h3-mb: unit((@lh / @h3-fz), em);
+    @h4-mb: unit((@lh / @h4-fz), em);
+    @h5-mb: 0;
+    @h6-mb: 0;
+
+    //headers margin-bottom for large screens
+    @h1-l-mb: unit((@lh / @h1-l-fz), em);
+    @h2-l-mb: unit((@lh / @h2-l-fz), em);
+    @h3-l-mb: unit((@lh / @h3-l-fz), em);
+    @h4-l-mb: unit((@lh / @h4-l-fz), em);
+
+    //double headers margin-top
+    @h1h2-mt: unit( @h2-lh ,em);
+    @h2h3-mt: unit( @h3-lh ,em);
+    @h3h4-mt: unit( @h4-lh ,em);
+    @h4h5-mt: unit((@lh / @h5-fz), em);
+    @h5h6-mt: unit((@lh / @h6-fz), em);
 }
 
 @import "_typo.less";
-@import "../../../bower_components/links.less/links.less";
+@import "../../../node_modules/links.less/links.less";
 
 .links-settings() {
-    @text-decoration: none;
+    @links-text-decoration: none;
     //colors
-    @defaulttext:   #464053;
-    @link:          #0877db;
-    @visited:       #9108db;
-    @hover:         #2b9aff;
-    @visitedhover:  #bc4df8;
-    @active:        #bc4df8;
+    @links-defaulttext:   #000;
+    @links-link:          #0877db;
+    @links-visited:       #9108db;
+    @links-hover:         #2b9aff;
+    @links-visitedhover:  #bc4df8;
+    @links-active:        #bc4df8;
 }
 
 @import "_border-underline.less";

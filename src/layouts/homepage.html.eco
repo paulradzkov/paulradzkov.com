@@ -50,7 +50,7 @@
             <nav class="row space-in-left-kilo-xs space-in-left-micro-md">
                 <a class="link-novisited col-xs-12 col-sm-shrink space-in-bottom-nano-xs space-in-v-nano-sm" href="/#projects"><strong>Проекты</strong></a>
                 <a class="link-novisited col-xs-12 col-sm-shrink space-in-bottom-nano-xs space-in-v-nano-sm" href="/#blog"><strong>Статьи</strong></a>
-                <a class="link-novisited col-xs-12 col-sm-shrink space-in-bottom-nano-xs space-in-v-nano-sm" href="http://paulradzkov.com/codestyle"><strong>Codestyle</strong></a>
+                <a class="link-novisited col-xs-12 col-sm-shrink space-in-bottom-nano-xs space-in-v-nano-sm" href="/#faq"><strong>FAQ</strong></a>
                 <a class="link-novisited col-xs-12 col-sm-shrink space-in-bottom-nano-xs space-in-v-nano-sm space-auto-left-sm" href="/search">Поиск</a>
             </nav>
         </div>

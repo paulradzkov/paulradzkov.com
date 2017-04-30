@@ -14,7 +14,7 @@
         <a href="<%= @page.url %>" class="link blogwall-link" tabindex="-1"><%= @page.title %></a>
     </p>
     <aside class="space-auto-top-sm txt-comments">
-        <a class="link-inherit" href="<%= @page.url %>#disqus_thread" data-disqus-identifier="<%= @page.disqusid %>" tabindex="-1"></a>
+        <a class="link-inherit link-noline" href="<%= @page.url %>#disqus_thread" data-disqus-identifier="<%= @page.disqusid %>" tabindex="-1"></a>
     </aside>
     <a href="<%= @page.url %>" class="link blogwall-fauxlink--overlay"><span class="blogwall-readable-only">Читать статью «<%= @page.title %>»</span></a>
 </section>

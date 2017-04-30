@@ -42,7 +42,7 @@ og_image: '/i/og/og-index.png'
             <a class="flex-grow-sm project-card project-card-link link col-flex-xs" href="https://github.com/paulradzkov/links.less">
                 <p class="project-card-icon"><img srcset="/i/icons/icon-links@2x.png 2x" src="/i/icons/icon-links.png" width="48" height="48" alt="links.less"></p>
                 <h4 class="project-card-title">links.less</h4>
-                <p class="project-card-details">стили для ссылок с “:фокусом” и анимацией</p>
+                <p class="project-card-details">стили для ссылок с “:фокусом”, анимацией и бледным подчеркиванием</p>
                 <p class="space-auto-top-sm space-out-bottom-nano-xs">
                     <img src="https://badge.fury.io/js/links.less.svg" alt="npm version">
                 </p>
@@ -97,7 +97,7 @@ og_image: '/i/og/og-index.png'
     <p>На сайте <a href="https://toster.ru/user/paulradzkov">toster.ru</a> отвечаю на вопросы и даю советы по дизайну, вёрстке, организации труда и веб-разработке в целом. Если вы хотите задать мне вопрос, оформите его на <a href="https://toster.ru/">тостере</a> и скиньте ссылку на почту <a href="mailto:radzkov@gmail.com">radzkov@gmail.com</a>.</p>
     <p>Вот ссылки на некоторые ответы:</p>
 
-    <div class="row">
+    <div class="row faq">
         <div class="col-xs-12 col-md-6 col-lg-4 col-xl-3">
             <h5 class="space-out-bottom-nano-xs">Вёрстка, технические советы</h5>
             <p><a target="_blank" href="https://toster.ru/q/395313#answer_971510">Как открыть цифровую клавиатуру на телефоне при вводе в input type="text"?</a></p>
@@ -116,23 +116,25 @@ og_image: '/i/og/og-index.png'
             <p><a target="_blank" href="https://toster.ru/q/165927#answer_458185">Почему могут слетать шрифты, после заливки на хостинг?</a></p>
         </div>
         <div class="col-xs-12 col-md-6 col-lg-4 col-xl-3">
-            <h5 class="space-out-bottom-nano-xs">Дизайн, эргономика, UX</h5>
+            <h5 class="space-out-bottom-nano-xs">Дизайн, проектирование, UX</h5>
             <p><a target="_blank" href="https://toster.ru/q/324761#answer_828684">Стоит ли делать залипающее меню?</a></p>
             <p><a target="_blank" href="https://toster.ru/q/326107#answer_828672">Как лучше сделать вывод новостных материалов?</a></p>
             <p><a target="_blank" href="https://toster.ru/q/301214#answer_778399">Какой лучший движок для информационных сайтов?</a></p>
             <p><a target="_blank" href="https://toster.ru/q/267588#answer_716858">Почему многие популярные интернет издания используют шрифт с засечками для основного текста, хотя это дурной тон?</a></p>
             <p><a target="_blank" href="https://toster.ru/q/273248#answer_716833">Как веб-дизайнеру избавиться от топорности в своих работах?</a></p>
             <p><a target="_blank" href="https://toster.ru/q/256968#answer_702422">Нормален ли такой подход для работы с git'ом (хранение дизайна и кода в одном репозитории)?</a></p>
-            <p><a target="_blank" href="https://toster.ru/q/264931#answer_702211">Как вы делаете дизайн сайта?</a></p>
+            <p><a target="_blank" href="https://toster.ru/q/264931#answer_702211">Как вы делаете дизайн сайта? Про этапы разработки</a></p>
             <p><a target="_blank" href="https://toster.ru/q/218213#answer_591152">Мобильный сайт? Мобильная версия сайта или мобильное приложение?</a></p>
             <p><a target="_blank" href="https://toster.ru/q/219222#answer_591123">Под какие разрешения рисовать адаптивный дизайн?</a></p>
         </div>
         <div class="col-xs-12 col-md-6 col-lg-4 col-xl-3">
             <h5 class="space-out-bottom-nano-xs">Организация труда</h5>
+            <p><a target="_blank" href="https://toster.ru/q/420931#answer_1013532">Как вы организуете свою работу? Про GitHub</a></p>
             <p><a target="_blank" href="https://toster.ru/q/323298#answer_822968">Распараллеливание процесса вёрстки между верстальщиками?</a></p>
             <p><a target="_blank" href="https://toster.ru/q/326938#answer_830276">Как собеседовать/тестировать верстальщика, если ты сам не верстальщик?</a></p>
             <p><a target="_blank" href="https://toster.ru/q/326246#answer_828973">Что показать работодателю при устройстве стажером в веб-разработку?</a></p>
             <h5 class="space-out-bottom-nano-xs">Самообразование</h5>
+            <p><a target="_blank" href="https://toster.ru/q/421295#answer_1014403">Как строить карьеру в дизайне? Про уровни дизайнеров</a></p>
             <p><a target="_blank" href="https://toster.ru/q/326719#answer_830295">Из каких англоязычных ресурсов предпочитаете получать свежую информацию из мира UI / UX / Web Design?</a></p>
             <p><a target="_blank" href="https://toster.ru/q/227107#answer_608544">Где посмотреть примеры качественного кода вёрстки сайтов, лендингов, веб-приложений?</a></p>
         </div>

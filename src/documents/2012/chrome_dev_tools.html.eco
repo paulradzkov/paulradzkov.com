@@ -7,6 +7,7 @@ tags: [Chrome]
 excerpt: 'Как в Гугл Хроме выключить яваскрипт, отключить кэш или поменять строку User Agent и эмулировать тач-события.'
 description: "Как в Гугл Хроме выключить яваскрипт, отключить кэш или поменять строку User Agent и эмулировать тач-события."
 disqusid: chromedevtools
+og_image: '/i/og/og-paulradzkov-2012-chrome_dev_tools.png'
 ---
 
 <p><em>Статья обновлена 6 февраля 2014.</em></p>

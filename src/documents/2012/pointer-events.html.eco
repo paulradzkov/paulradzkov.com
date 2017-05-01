@@ -10,6 +10,7 @@ starred: true
 tags: [css,progressive enhancement]
 styles: ['/css/caniuse.css', '/2012/pointer-events/custom.css']
 scripts: ['/vendor/caniuse.js']
+og_image: '/i/og/og-paulradzkov-2012-pointer-events.png'
 ---
 
 <p>Представим ситуацию, когда у нас один html-элемент расположен поверх другого. Но нам нужно, чтобы нижний элемент был кликабельным или реагировал на hover.</p>

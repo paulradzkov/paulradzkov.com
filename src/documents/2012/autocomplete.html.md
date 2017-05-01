@@ -7,6 +7,7 @@ kind: article
 publish: true
 disqusid: chromeautocomplete
 tags: [css]
+og_image: '/i/og/og-paulradzkov-2012-autocomplete.png'
 ---
 
 В Google Chrome в user agent stylesheet для полей с автозаполнением прописан желтый фон (#FAFFBD) и черный цвет текста, причем оба правила усилены с помощью <code class="hljs-important">!important</code> и переопределить их в своей CSS нельзя. Но есть способы решить эту проблему обходными путями.

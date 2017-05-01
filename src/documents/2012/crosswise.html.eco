@@ -8,6 +8,7 @@ publish: true
 disqusid: crosswise
 tags: [svg,css]
 styles: ["custom.css"]
+og_image: '/i/og/og-paulradzkov-2012-crosswise.png'
 ---
 
 <p>Итак, задача: перечеркнуть слово или блок текста или картинку диагональными линиями крест-накрест. Нам поможет SVG.</p>

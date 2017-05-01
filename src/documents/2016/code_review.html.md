@@ -7,6 +7,7 @@ kind: article
 publish: true
 disqusid: code_review
 tags: [faq, code review]
+og_image: '/i/og/og-paulradzkov-2016-code_review.png'
 ---
 
 **По мотивам вопроса на тостере «[Где найти того, кто оценит твой код?](https://toster.ru/q/289819)»**

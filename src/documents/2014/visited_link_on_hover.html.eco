@@ -7,6 +7,7 @@ kind: article
 publish: true
 disqusid: visited_link_on_hover
 tags: [css]
+og_image: '/i/og/og-paulradzkov-2014-visited_link_on_hover.png'
 ---
 
 <p>Век живи — век учись. Недавно узнал, что можно задавать посещённой ссылке отдельный цвет при наведении комбинируя два псевдокласса: <code class="css"><span class="hljs-tag">a</span><span class="hljs-pseudo">:visited</span><span class="hljs-pseudo">:hover</span> <span class="hljs-rules">{<span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"><span class="hljs-hexcolor">#9501B3</span></span></span></span>}</code>.</p>

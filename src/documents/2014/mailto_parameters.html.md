@@ -7,6 +7,7 @@ kind: article
 publish: true
 disqusid: mailto_parameters
 tags: [html, usability]
+og_image: '/i/og/og-paulradzkov-2014-mailto_parameters.png'
 ---
 
 В письмах от сервисов и электронных магазинов, приходящих в ответ на заказ услуги или покупку товара, часто есть подобная фраза:

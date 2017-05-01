@@ -7,6 +7,7 @@ kind: article
 publish: true
 disqusid: designer-superstar
 tags: [people]
+og_image: '/i/og/og-paulradzkov-2014-designer-superstar.png'
 ---
 
 В [совете](http://artgorbunov.ru/bb/soviet/20140206/) Николай Товеровский классифицировал верстальщиков на три категории: «Неандертальцы», «Планктон» и «Суперзвёзды».

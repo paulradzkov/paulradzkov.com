@@ -8,6 +8,7 @@ publish: true
 disqusid: adobeshadow
 tags: [tools]
 expired: true
+og_image: '/i/og/og-paulradzkov-2012-mobile_developing.png'
 ---
 
 <p>7 марта Abobe <a href="http://tv.adobe.com/watch/adobe-technology-sneaks-2012/adobe-shadow" title="Смотрим презентацию" target="_blank">представила</a> замечательный комплекс программ, позволяющий синхронно просматривать и проводить отладку сайтов в браузерах Webkit на компе и нескольких планшетах и смартфонах одновременно. Количество подключаемых устройств не ограничено. Поддерживаются как iOS, так и Android.</p>

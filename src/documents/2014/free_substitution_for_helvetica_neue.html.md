@@ -7,6 +7,7 @@ kind: article
 publish: true
 disqusid: free_substitution_for_helvetica_neue
 tags: [fonts, typography]
+og_image: '/i/og/og-paulradzkov-2014-free_substitution_for_helvetica_neue.png'
 ---
 
 Подбирал бесплатную замену платному Helvetica Neue. До финала дошли:

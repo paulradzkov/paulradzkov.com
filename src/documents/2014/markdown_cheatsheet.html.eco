@@ -31,6 +31,7 @@ scripts:
   - '/vendor/rawinflate.js'
   - '/vendor/rawdeflate.js'
   - '/2014/markdown_cheatsheet/markdown_cheatsheet.js'
+og_image: '/i/og/og-paulradzkov-2014-markdown_cheatsheet.png'
 ---
 
 <p><strong>12 июля 2015: Обновил руководство до Github Flavoured Markdown. Предыдущее <a href="http://codepen.io/paulradzkov/pen/ZGoLgr" target="_blank">руководство с традиционным Маркдауном</a>.</strong>

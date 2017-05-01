@@ -7,6 +7,7 @@ kind: article
 publish: true
 disqusid: deploy_docpad_site_to_github_pages
 tags: [docpad, github pages]
+og_image: '/i/og/og-paulradzkov-2014-deploy_docpad_site_to_github_pages.png'
 ---
 
 При деплое [Docpad](http://docpad.org/)-сайта на [GitHub Pages](https://pages.github.com/) столкнулся с некоторыми проблемами.

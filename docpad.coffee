@@ -207,7 +207,7 @@ docpadConfig = {
 		ghpages:
 			templateData:
 				site:
-					url: 'https://paulradzkov.github.io'
+					url: 'http://paulradzkov.com'
 
 		development:
 			templateData:

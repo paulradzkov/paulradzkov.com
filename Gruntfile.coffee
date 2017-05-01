@@ -2,6 +2,8 @@
 # http://gruntjs.com/getting-started#an-example-gruntfile
 
 module.exports = (grunt) ->
+	require('time-grunt')(grunt);
+	require('load-grunt-tasks')(grunt);
 
 	# Initiate the Grunt configuration.
 	grunt.initConfig
@@ -19,6 +21,15 @@ module.exports = (grunt) ->
 				files: [
 					'./src/raw/vendor/ilyabirman-likely/likely.js':'./node_modules/ilyabirman-likely/release/likely.js'
 				]
+			ogimages:
+				files: [
+					expand: true
+					cwd: 'src/raw/i/og/'
+					src: ['*']
+					dest: 'src/raw/i/og/'
+					rename: (dest, src) ->
+						dest + src.replace('127.0.0.1!8080!','paulradzkov-').replace('!','-')
+				]
 
 		less:
 			dev:
@@ -28,6 +39,7 @@ module.exports = (grunt) ->
 					'out/css/homepage.css': 'src/raw/css/homepage.less'
 					'out/css/template.css': 'src/raw/css/template.less'
 					'out/css/article.css': 'src/raw/css/article.less'
+					'out/ui/screenshot/screenshot.css': 'src/raw/ui/screenshot/screenshot.less'
 					'out/fonts/webfonts.css': 'src/raw/fonts/webfonts.less'
 				]
 
@@ -53,12 +65,17 @@ module.exports = (grunt) ->
 						'Safari >= 6'
 					]}) # add vendor prefixes
 					# require('cssnano')() # minify the result
+					#require('postcss-base64')({
+					#	extensions: ['.png']
+					#	root: 'src/raw/ui/screenshot/'
+					#	})
 				]
 			dist:
 				src: [
 						'out/css/homepage.css'
 						'out/css/template.css'
 						'out/css/article.css'
+						'out/ui/screenshot/screenshot.css'
 					]
 
 		#minify css
@@ -139,6 +156,10 @@ module.exports = (grunt) ->
 		clean:
 			less:
 				'out/css/*.less'
+			ogimages:
+				'src/raw/i/og/og-127.0.0.1*'
+			ogimagestemp:
+				'src/raw/i/og/*.{png,jpg}.*'
 
 		modernizr:
 			dist:
@@ -222,6 +243,11 @@ module.exports = (grunt) ->
 					stdout: true
 					async: true
 				command: 'docpad run'
+			server:
+				options:
+					stdout: true
+					async: true
+				command: 'http-server ./out'
 
 		# to remove unused in markup classes from css
 		uncss:
@@ -284,27 +310,44 @@ module.exports = (grunt) ->
 						]
 					strategy: "desktop"
 					threshold: 80
-
-	# Build the available Grunt tasks.
-	grunt.loadNpmTasks 'grunt-contrib-copy'
-	grunt.loadNpmTasks 'grunt-contrib-less'
-	grunt.loadNpmTasks 'grunt-contrib-cssmin'
-	grunt.loadNpmTasks 'grunt-contrib-htmlmin'
-	grunt.loadNpmTasks 'grunt-contrib-imagemin'
-	grunt.loadNpmTasks 'grunt-contrib-uglify'
-	grunt.loadNpmTasks 'grunt-contrib-compress'
-	grunt.loadNpmTasks 'grunt-contrib-jshint'
-	grunt.loadNpmTasks 'grunt-contrib-clean'
-	grunt.loadNpmTasks 'grunt-contrib-watch'
-	grunt.loadNpmTasks 'grunt-modernizr'
-	grunt.loadNpmTasks 'grunt-shell-spawn'
-	grunt.loadNpmTasks 'grunt-ftp-deploy'
-	grunt.loadNpmTasks 'grunt-gh-pages'
-	grunt.loadNpmTasks 'grunt-postcss'
-	grunt.loadNpmTasks 'grunt-pagespeed'
-	grunt.loadNpmTasks 'grunt-uncss'
+		pageres:
+			ogimages:
+				options:
+					urls: [
+						'http://127.0.0.1:8080/2016/code_review/'
+						'http://127.0.0.1:8080/2014/web-fonts_license/'
+						'http://127.0.0.1:8080/2014/free_substitution_for_helvetica_neue/'
+						'http://127.0.0.1:8080/2014/deploy_docpad_site_to_github_pages/'
+						'http://127.0.0.1:8080/2014/markdown_cheatsheet/'
+						'http://127.0.0.1:8080/2014/designer-superstar/'
+						'http://127.0.0.1:8080/2014/capture_screen_to_gif/'
+						'http://127.0.0.1:8080/2014/font-weight_bolder/'
+						'http://127.0.0.1:8080/2014/mailto_parameters/'
+						'http://127.0.0.1:8080/2014/visited_link_on_hover/'
+						'http://127.0.0.1:8080/2014/negation_css_selector/'
+						'http://127.0.0.1:8080/2013/lists_and_floats/'
+						'http://127.0.0.1:8080/2012/pointer-events/'
+						'http://127.0.0.1:8080/2012/chrome_dev_tools/'
+						'http://127.0.0.1:8080/2012/crosswise/'
+						'http://127.0.0.1:8080/2012/mobile_developing/'
+						'http://127.0.0.1:8080/2012/photoshop_next_and_previous_layer/'
+						'http://127.0.0.1:8080/2012/html-entities_and_utf_codes/'
+						'http://127.0.0.1:8080/2012/photoshop_new_layer_based_slice/'
+						'http://127.0.0.1:8080/2012/autocomplete/'
+						]
+					sizes: ['1500x788']
+					dest: 'src/raw/i/og'
+					#filename: 'og-{{url}}-{{size}}{{crop}}'
+					filename: 'og-{{url}}'
+					crop: true
+					css: 'out/ui/screenshot/screenshot.css'
+					delay: 5 #seconds
+					timeout: 120 #seconds
+					scale: 0.8 #scales images down to 1200x630
+					format: 'png' #jpg smaller, png looks better
 
 	# Register our Grunt tasks.
+	grunt.registerTask 'ogimages',      ['shell:server', 'pageres', 'copy:ogimages', 'clean:ogimages', 'imagemin' ]
 	grunt.registerTask 'testnow',       ['shell:clean', 'shell:ghpages', 'production']
 	grunt.registerTask 'ghpages',       ['shell:clean', 'shell:ghpages', 'production', 'gh-pages']
 	grunt.registerTask 'deploy',        ['shell:clean', 'shell:ghpages', 'production', 'gh-pages']

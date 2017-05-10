@@ -66,7 +66,7 @@ og_image: '/i/og/og-paulradzkov-2014-negation_css_selector.png'
 <h2>Пример 2. Изменение внешнего вида всех элементов, кроме наведенного</h2>
 
 <figure>
-  <a href="http://cssdeck.com/labs/dlg62kjv" target="_blank"><img src="<%= @document.url %>/sample2.gif" width="600" height="150" alt="Изменение внешнего вида всех элементов, кроме наведенного"/></a>
+  <a href="http://cssdeck.com/labs/dlg62kjv" target="_blank"><img src="<%= @document.url %>sample2.gif" width="600" height="150" alt="Изменение внешнего вида всех элементов, кроме наведенного"/></a>
   <figcaption>
     <p style="text-align: center;"><a href="http://cssdeck.com/labs/dlg62kjv" class="link-to-demo" target="_blank">Пример</a></p>
   </figcaption>
@@ -93,7 +93,7 @@ ul:hover li:not(:hover) {
 
 <h2>Пример 3. Меню с разделителями между элементами</h2>
 <figure>
-    <a href="http://cssdeck.com/labs/dlg62kjv" target="_blank"><img src="<%= @document.url %>/sample3.png" width="600" height="200" alt="Меню с разделителями между элементами"/></a>
+    <a href="http://cssdeck.com/labs/dlg62kjv" target="_blank"><img src="<%= @document.url %>sample3.png" width="600" height="200" alt="Меню с разделителями между элементами"/></a>
   <figcaption>
     <p style="text-align: center;"><a href="http://cssdeck.com/labs/dlg62kjv" class="link-to-demo" target="_blank">Пример</a></p>
   </figcaption>

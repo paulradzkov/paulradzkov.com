@@ -1,23 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-	<title><%= @site.rssTitle %></title>
-	<subtitle><%= @site.description %></subtitle>
-	<link href="<%= @site.canonicalUrl %>/atom.xml" rel="self" />
-	<link href="<%= @site.canonicalUrl %>" />
-	<updated><%= @site.date.toISOString() %></updated>
-	<id><%= @site.url %></id>
-	<author>
-		<name><%= @site.author %></name>
-		<email><%= @site.email %></email>
-	</author>
-
-	<% for document in @getCollection('articles').toJSON(): %>
-		<entry>
-			<title><%= document.title or document.name or @title.title %></title>
-			<link href="<%= @site.canonicalUrl %><%= document.url %>"/>
-			<updated><%= document.created_at.toISOString() %></updated>
-			<id><%= @site.canonicalUrl %><%= document.url %></id>
-			<content type="html"><%= document.contentRenderedWithoutLayouts %></content>
-		</entry>
-	<% end %>
+    <title><%= @site.rssTitle %></title>
+    <subtitle><%= @site.description %></subtitle>
+    <link href="<%= @site.canonicalUrl %>/atom.xml" rel="self" />
+    <link href="<%= @site.canonicalUrl %>" />
+    <updated><%= @site.date.toISOString() %></updated>
+    <id><%= @site.url %></id>
+    <author>
+        <name><%= @site.author %></name>
+        <email><%= @site.email %></email>
+    </author>
+    <entry>
+        <title>Эта лента мертва (×_×)</title>
+        <link href="<%= @site.canonicalUrl %>/rss.xml"/>
+        <updated>2017-05-01</updated>
+        <id><%= @site.canonicalUrl %>/rss.xml</id>
+        <content type="html">Эта лента мертва! Если тут еще есть кто-то живой, переподпишитесь на http://paulradzkov.com/rss.xml</content>
+    </entry>
+    <% for document in @getCollection('articles').toJSON(): %>
+        <entry>
+            <title><%= document.title or document.name or @title.title %></title>
+            <link href="<%= @site.canonicalUrl %><%= document.url %>"/>
+            <updated><%= document.created_at.toISOString() %></updated>
+            <id><%= @site.canonicalUrl %><%= document.url %></id>
+            <content type="html"><%= document.contentRenderedWithoutLayouts %></content>
+        </entry>
+    <% end %>
 </feed>

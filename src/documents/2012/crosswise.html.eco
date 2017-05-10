@@ -7,7 +7,6 @@ kind: article
 publish: true
 disqusid: crosswise
 tags: [svg,css]
-styles: ["custom.css"]
 og_image: '/i/og/og-paulradzkov-2012-crosswise.png'
 ---
 
@@ -51,21 +50,13 @@ del.cross:before,
 </aside>
 
 <p>Пример:</p>
-<div class="demo">
-    <div style="font:bold 18px/1.2 Arial;">components / com_content / <del class="cross">views</del> / category / <del class="cross">tmpl</del> / blog.php <span>&rarr;</span> components / com_content /  category / blog.php</div>
-    <div class="media">
-        <figure class="img">
-            <div class="del-cross">
-                <img src="//placehold.it/300x200" width="300" height="200" alt="No kitten here"/>
-            </div>
-            <figcaption><p>Image caption</p></figcaption>
-        </figure>
-        <div class="bd">
-            <p class="del-cross">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet lectus in ante lobortis suscipit. Nullam sed augue id ante tempor ultrices ut eget nibh. Donec ultrices aliquam aliquet. Sed non velit at enim auctor euismod ut eget dolor. Sed rutrum lacinia tellus porta suscipit. Nam tincidunt odio sed ipsum faucibus semper. Fusce malesuada justo ut turpis fringilla a egestas sem scelerisque. Cras ligula neque, pellentesque a eleifend vitae, vulputate id sapien. Aliquam vestibulum aliquam pretium. Proin ut nulla dui.</p>
-            <p class="del-cross">Cras placerat elit sed nisi accumsan at porta elit lacinia. Aliquam erat volutpat. Mauris eu ipsum in urna gravida tristique rutrum ac est. Phasellus vulputate sagittis congue. Aenean nec justo eu neque vehicula imperdiet. Nunc eleifend, diam eu aliquam ullamcorper, ligula felis interdum nunc, ut tincidunt enim erat at orci.</p>
-        </div>
-    </div>
-</div>
+
+<figure>
+    <p data-height="600" data-theme-id="16915" data-slug-hash="GmERJb" data-default-tab="result" data-user="paulradzkov" data-embed-version="2" data-pen-title="2012-crosswise-demo" data-preview="false" class="codepen">See the Pen <a href="https://codepen.io/paulradzkov/pen/GmERJb/">2012-crosswise-demo</a> by Paul Radzkov (<a href="http://codepen.io/paulradzkov">@paulradzkov</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+</figure>
+
+
 <p>Для картинок класс <code class="hljs-class">.del-cross</code> нужно ставить на их обёртку. Тег <code class="hljs-tag">img</code> не имеет псевдокласса <code class="hljs-pseudo">:before</code>.</p>
 <p>А теперь посмотрим, что внутри SVG-файла, и как настроить цвет и толщину линий.</p>
 <p><a href="/demo/crosswise/cross_old.svg">cross_old.svg</a>:</p>
@@ -97,7 +88,3 @@ del.cross:before,
 </code></pre>
 
 <p>Задавая координаты линий в процентах, мы избавляемся от необходимости применять <code class="hljs-tag"><span class="hljs-attribute">vector-effect</span>=<span class="hljs-value">&quot;non-scaling-stroke&quot;</span></code>, который не работает в IE9 и IE10.</p>
-
-<p>
-    <a href="/demo/crosswise/" class="link-to-demo">Демка</a>
-</p>

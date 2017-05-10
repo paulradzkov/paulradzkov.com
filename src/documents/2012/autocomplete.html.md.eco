@@ -18,29 +18,34 @@ og_image: '/i/og/og-paulradzkov-2012-autocomplete.png'
 
 Автозаполнение можно выключить с помощью <code class="hljs-tag"><span class="hljs-attribute">autocomplete</span>=<span class="hljs-value">"off"</span></code>:
 
-	<form action="…" method="post" autocomplete="off">
+```html
+<form action="…" method="post" autocomplete="off">
+```
 
 **Обновлено 30 октября 2012.**
 
 <figure>
-    <img src="chrome-autocomplete-recolor.gif" width="998" height="659" alt="Жёлтые поля ввода можно перекрасить с помощью box-shadow"/>
+    <img src="<%= @document.url %>chrome-autocomplete-recolor.gif" width="998" height="659" alt="Жёлтые поля ввода можно перекрасить с помощью box-shadow"/>
     <figcaption>Жёлтые поля ввода можно перекрасить при помощи <code class="hljs-attribute">box-shadow</code></figcaption>
 </figure>
 
 Поля c автокомплитом можно перекрасить при помощи трюка с <code class="hljs-attribute">box-shadow</code>:
 
-<pre><code class="css">input:-webkit-autofill {
-        -webkit-box-shadow: inset 0 0 0 50px white; /* цвет вашего фона */
-        -webkit-text-fill-color: black; /* цвет текста */
-    }</code>
-</pre>
+```css
+input:-webkit-autofill {
+    -webkit-box-shadow: inset 0 0 0 50px white; /* цвет вашего фона */
+    -webkit-text-fill-color: black; /* цвет текста */
+}
+```
 
 Если вы для <code class="hljs-pseudo">:focus</code> состояния задавали стили с использованием <code class="hljs-attribute">box-shadow</code>, то вам придется заново их переопределить:
 
-	input:-webkit-autofill:focus {
-        -webkit-box-shadow: 0 0 5px 0    blue,   /* ваш box-shadow для :focus */
-                      inset 0 0 0   50px white;  /* цвет вашего фона */
-        -webkit-text-fill-color: black; /* цвет текста */
-    }
+```css
+input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 5px 0    blue,   /* ваш box-shadow для :focus */
+                  inset 0 0 0   50px white;  /* цвет вашего фона */
+    -webkit-text-fill-color: black;          /* цвет текста */
+}
+```
 
 При помощи нескольких теней можно <a href="/demo/box-shadow_instead_gradient/">имитировать градиент</a>.

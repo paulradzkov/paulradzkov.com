@@ -20,7 +20,7 @@ og_image: '/i/og/og-paulradzkov-2014-capture_screen_to_gif.png'
 <p>Пользоваться легко, смотрите сами:</p>
 
 <figure>
-    <img src="<%= @document.url %>/licecap-demo.gif" alt="LICEcap — захват экрана в GIF">
+    <img src="<%= @document.url %>licecap-demo.gif" alt="LICEcap — захват экрана в GIF">
     <figcaption><p>Захват экрана в GIF в программе LICEcap</p></figcaption>
 </figure>
 

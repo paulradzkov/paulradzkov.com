@@ -144,6 +144,10 @@ docpadConfig = {
 
 	# Plugins configurations
 	plugins:
+		rss:
+			default:
+				collection: 'articles'
+				url: '/newrss.xml' # optional, this is the default
 		sitemap:
 			cachetime: 600000
 			changefreq: 'weekly'

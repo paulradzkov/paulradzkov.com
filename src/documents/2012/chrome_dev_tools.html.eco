@@ -18,7 +18,7 @@ og_image: '/i/og/og-paulradzkov-2012-chrome_dev_tools.png'
 <p>Чтобы попасть в настройки, откроем Developer Tools (<kbd>F12</kbd>) и нажмем иконку шестеренки в заголовке справа (<kbd>F1</kbd>).</p>
 
 <figure>
-	<img src="<%= @document.url %>/disable_javascript_in_chome.gif" width="830" height="870" alt="Как отлючить кэш и яваскрипт в Гугл Хроме"/>
+	<img src="<%= @document.url %>disable_javascript_in_chome.gif" width="830" height="870" alt="Как отлючить кэш и яваскрипт в Гугл Хроме"/>
 	<figcaption>
         <p>Developer Tools (<kbd>F12</kbd>) → General Settings (<kbd>F1</kbd>). Настройки инспектора кода: отключение кэша и яваскрипта.</p>
 	</figcaption>
@@ -26,7 +26,7 @@ og_image: '/i/og/og-paulradzkov-2012-chrome_dev_tools.png'
 <p>Обратите внимание группу опций «Rendering». «Show paint rectangles» — позволяет увидеть, какие области перерисовывает браузер в ответ на какие-либо события или в результате работы скриптов. Полезно для профилирования и оптимизации.</p>
 
 <figure>
-	<img src="<%= @document.url %>/chome_devtools_shortkeys.png" width="830" height="1010" alt="Горячие клавиши в инспекторе Гугл Хрома"/>
+	<img src="<%= @document.url %>chome_devtools_shortkeys.png" width="830" height="1010" alt="Горячие клавиши в инспекторе Гугл Хрома"/>
 	<figcaption>
 		<p>Горячие клавиши Developers Tools.</p>
 	</figcaption>

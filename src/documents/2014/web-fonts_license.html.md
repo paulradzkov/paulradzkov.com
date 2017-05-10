@@ -58,12 +58,12 @@ og_image: '/i/og/og-paulradzkov-2014-web-fonts_license.png'
 [typekit]: https://typekit.com/plans/business
 
 <div class="fotorama">
-    ![Настольная лицензия на сайте Linotype стоит 116€](linotype-helvetica-desktop.png)
-    ![Веб-шрифт на Linotype стоит 309€ за 1,5 млн. просмотров](linotype-helvetica-web.png)
-    ![Цены на Helvetica на MyFonts.com](myfonts-helvetica-1500000.png)
-    ![Тарифные планы на Fonts.com](font-com-pricing.png)
-    ![У Adobe Typekit можно взять недорогой план для сайтов с малым посещением](typekit-annual-pricing.png)
-    ![Самым выгодным вариантом является Adobe Typekit c его предложением 40$ в месяц за 2 млн. просмотров](typekit-business-pricing.png)
+    ![Настольная лицензия на сайте Linotype стоит 116€](/2014/web-fonts_license/linotype-helvetica-desktop.png)
+    ![Веб-шрифт на Linotype стоит 309€ за 1,5 млн. просмотров](/2014/web-fonts_license/linotype-helvetica-web.png)
+    ![Цены на Helvetica на MyFonts.com](/2014/web-fonts_license/myfonts-helvetica-1500000.png)
+    ![Тарифные планы на Fonts.com](/2014/web-fonts_license/font-com-pricing.png)
+    ![У Adobe Typekit можно взять недорогой план для сайтов с малым посещением](/2014/web-fonts_license/typekit-annual-pricing.png)
+    ![Самым выгодным вариантом является Adobe Typekit c его предложением 40$ в месяц за 2 млн. просмотров](/2014/web-fonts_license/typekit-business-pricing.png)
 </div>
 
 ## Выводы

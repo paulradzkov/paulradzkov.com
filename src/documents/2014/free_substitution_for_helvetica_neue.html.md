@@ -24,7 +24,7 @@ og_image: '/i/og/og-paulradzkov-2014-free_substitution_for_helvetica_neue.png'
 
 <figure>
 	<a href="/demo/free_substitutes_for_helvetica_neue/">
-	![TeX Gyre Heros — бесплатная альтернатива Helvetica Neue](helvetica-neue-vs-tex-gyre-heros.png)
+	![TeX Gyre Heros — бесплатная альтернатива Helvetica Neue](/2014/free_substitution_for_helvetica_neue/helvetica-neue-vs-tex-gyre-heros.png)
 	</a>
 	<figcaption>Слева Helvetica Neue, справа TeX Gyre Heros</figcaption>
 </figure>

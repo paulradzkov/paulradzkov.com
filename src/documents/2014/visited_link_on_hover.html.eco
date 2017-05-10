@@ -17,7 +17,7 @@ og_image: '/i/og/og-paulradzkov-2014-visited_link_on_hover.png'
 <!-- cut -->
 
 <figure>
-  <a href="http://cssdeck.com/labs/visited_link_on_hover" target="_blank"><img src="<%= @document.url %>/sample.gif" width="600" height="150" alt="Посещенная ссылка и не посещенная при наведении имеют разные цвета"></a>
+  <a href="http://cssdeck.com/labs/visited_link_on_hover" target="_blank"><img src="<%= @document.url %>sample.gif" width="600" height="150" alt="Посещенная ссылка и не посещенная при наведении имеют разные цвета"></a>
   <figcaption>
     <p style="text-align: center;">Посещённая ссылка и не посещённая при наведении и фокусе имеют разные цвета</p>
   </figcaption>

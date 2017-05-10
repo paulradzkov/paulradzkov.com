@@ -130,7 +130,7 @@ og_image: '/i/og/og-paulradzkov-2014-deploy_docpad_site_to_github_pages.png'
 В репозитории создадим ветку «`gh-pages`». По инструкции это должна быть пустая ветка без истории, но об этом в дальнейшем позаботится плагин для деплоя.
 
 <figure>
-	![В репозитории проекта создадим ветку с именем «gh-pages»](new_branch_gh-pages.png)
+	![В репозитории проекта создадим ветку с именем «gh-pages»](/2014/deploy_docpad_site_to_github_pages/new_branch_gh-pages.png)
 	<figcaption>В репозитории проекта создадим ветку с именем «`gh-pages`»</figcaption>
 </figure>
 
@@ -139,7 +139,7 @@ og_image: '/i/og/og-paulradzkov-2014-deploy_docpad_site_to_github_pages.png'
 При попытке выполнить <kbd class="cli" contenteditable="true">&zwj;<span contenteditable="false">docpad deploy-ghpages --env static</span>&zwj;</kbd> у меня появляется ошибка:
 
 <figure>
-	![could not read Username for ’http://github.com’: No such file or directory](gh-pages_deploy_error.png)
+	![could not read Username for ’http://github.com’: No such file or directory](/2014/deploy_docpad_site_to_github_pages/gh-pages_deploy_error.png)
 	<figcaption>`could not read Username for ’http://github.com’: No such file or directory`</figcaption>
 </figure>
 
@@ -154,7 +154,7 @@ og_image: '/i/og/og-paulradzkov-2014-deploy_docpad_site_to_github_pages.png'
 «`github.com/repo_owner/repo_name.git`» — путь к репозиторию проекта, в котором у вас есть права на запись. Это не обязательно должен быть ваш репозиторий, если вы коллаборатор, и у вас есть доступ на запись — вы можете деплоить туда проект.
 
 <figure>
-	![Добавление нового «remote» c логином и паролем](adding_another_remote.png)
+	![Добавление нового «remote» c логином и паролем](/2014/deploy_docpad_site_to_github_pages/adding_another_remote.png)
 	<figcaption>Добавление нового «remote» c логином и паролем. Эту процедуру нужно выполнить один раз для каждого локального репозитория</figcaption>
 </figure>
 

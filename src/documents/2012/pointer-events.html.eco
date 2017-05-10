@@ -8,7 +8,7 @@ publish: true
 disqusid: pointer-events
 starred: true
 tags: [css,progressive enhancement]
-styles: ['/css/caniuse.css', '/2012/pointer-events/custom.css']
+styles: ['/css/caniuse.css']
 scripts: ['/vendor/caniuse.js']
 og_image: '/i/og/og-paulradzkov-2012-pointer-events.png'
 ---
@@ -35,26 +35,11 @@ og_image: '/i/og/og-paulradzkov-2012-pointer-events.png'
 
 <p>Рассмотрим на практике.</p>
 
-<div class="demo">
+<figure>
+    <p data-height="600" data-theme-id="16915" data-slug-hash="bWLPYM" data-default-tab="result" data-user="paulradzkov" data-embed-version="2" data-pen-title="2012-pointer-events-1" class="codepen">See the Pen <a href="https://codepen.io/paulradzkov/pen/bWLPYM/">2012-pointer-events-1</a> by Paul Radzkov (<a href="http://codepen.io/paulradzkov">@paulradzkov</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+    <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+</figure>
 
-    <div class="demo-card">
-    	<a href="#" class="demo-card-image-holder"><img src="//placehold.it/300x200" alt=""></a>
-        <div class="demo-card-txt">
-            <h3 class="demo-card-title"><a href="#" class="demo-card-link">Pointer-events: none</a></h3>
-            <p class="demo-card-descr"><strong>Выдели меня курсором.</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit ullam minus a ipsum eum rerum eaque maxime amet beatae modi qui incidunt voluptas quis maiores quos autem inventore! Mollitia praesentium. Impedit ullam minus a ipsum eum rerum eaque maxime amet beatae modi qui incidunt voluptas quis maiores quos autem inventore!</p>
-        </div>
-        <span class="demo-card-overlay" style="pointer-events:none;"><!--gradient overlay--></span>
-    </div>
-    <div class="demo-card">
-    	<a href="#" class="demo-card-image-holder"><img src="//placehold.it/300x200" alt=""></a>
-        <div class="demo-card-txt">
-            <h3 class="demo-card-title"><a href="#" class="demo-card-link">Pointer-events: auto</a></h3>
-            <p class="demo-card-descr"><strong>Выдели меня курсором.</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit ullam minus a ipsum eum rerum eaque maxime amet beatae modi qui incidunt voluptas quis maiores quos autem inventore! Mollitia praesentium. Impedit ullam minus a ipsum eum rerum eaque maxime amet beatae modi qui incidunt voluptas quis maiores quos autem inventore!</p>
-        </div>
-        <span class="demo-card-overlay"><!--gradient overlay--></span>
-    </div>
-    <div class="clr"></div>
-</div>
 
 <p>В первом примере для белого градиента, накрывающего текст, <code class="hljs-rule"><span class="hljs-attribute">pointer-events</span></code> установлен в none. Текст легко выделяется мышью сквозь градиент. Даже курсор меняет свою форму со стрелки на выделение текста.</p>
 
@@ -64,17 +49,10 @@ og_image: '/i/og/og-paulradzkov-2012-pointer-events.png'
 
 <p>Задача: сделать так, чтобы ссылка в меню становилась некликабельной, если она ведет на эту же страницу.</p>
 
-<div class="demo">
-
-    <ul class="demo-menu">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#blog" class="current">Blog</a></li>
-        <li><a href="#works">Works</a></li>
-        <li><a href="#archive">Archive</a></li>
-        <li><a href="#contacts">Contacts</a></li>
-    </ul>
-
-</div>
+<figure>
+    <p data-height="300" data-theme-id="16915" data-slug-hash="oWErMY" data-default-tab="result" data-user="paulradzkov" data-embed-version="2" data-pen-title="2012-pointer-events-demo-2" class="codepen ">See the Pen <a href="https://codepen.io/paulradzkov/pen/oWErMY/">2012-pointer-events-demo-2</a> by Paul Radzkov (<a href="http://codepen.io/paulradzkov">@paulradzkov</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+</figure>
 
 <p>Обычно в CMS уже есть какой-либо класс для индикации текущей страницы в меню. Допишем ему pointer-events:</p>
 

@@ -18,7 +18,7 @@ og_image: '/i/og/og-paulradzkov-2014-font-weight_bolder.png'
 <p>Возьмём для примера Open Sans.</p>
 
 <figure>
-  <img src="<%= @document.url %>/open-sans.png" width="847" height="345" alt="Open Sans и все его начертания">
+  <img src="<%= @document.url %>open-sans.png" width="847" height="345" alt="Open Sans и все его начертания">
   <figcaption>
   	<p>Open Sans имеет пять начертаний: Light 300, Normal 400, Semi-Bold 600, Bold 700 и Extra-Bold 800. <br> Цифры соответствуют значению <code class="hljs-attribute">font-weight</code>.</p>
   </figcaption>
@@ -117,7 +117,7 @@ strong, b {
 <p>Теперь нам не придётся заботиться о вложенности элементов — каскад всё сделает автоматически. Мы можем вкладывать теги <code class="hljs-tag">strong</code> друг в друга.</p>
 
 <figure>
-    <a href="http://cssdeck.com/labs/x20utix0" target="_blank"><img src="<%= @document.url %>/nested-tags-with-font-weight-bolder.png" alt=""></a>
+    <a href="http://cssdeck.com/labs/x20utix0" target="_blank"><img src="<%= @document.url %>nested-tags-with-font-weight-bolder.png" alt=""></a>
     <figcaption>
         <p>Вложенные теги «strong». Толщина шрифта определяется исходя из значения родительского элемента.</p>
         <p style="text-align: center;"><a href="http://cssdeck.com/labs/x20utix0" target="_blank" class="link-to-demo">Демка</a></p>

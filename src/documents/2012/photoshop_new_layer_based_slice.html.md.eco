@@ -15,7 +15,7 @@ og_image: '/i/og/og-paulradzkov-2012-photoshop_new_layer_based_slice.png'
 <!-- cut -->
 
 <figure>
-    <img src="<%= @document.url %>/Photoshop-New-Layer-Based-Slice.png" width="875" height="735" alt="New Layer Based Slice"/>
+    <img src="<%= @document.url %>Photoshop-New-Layer-Based-Slice.png" width="875" height="735" alt="New Layer Based Slice"/>
     <figcaption>Layer &rarr; New Layer Based Slice (Alt+L)+(Alt+B)</figcaption>
 </figure>
 
@@ -26,6 +26,6 @@ New Layer Based Slice захватывает и границы эффектов 
 Для ускорения процесса нарезки на это действие можно повесить своё сочетание горячих клавиш, но лучше привыкнуть к двум стандартными сочетаниями: <kbd>(Alt+L)+(Alt+B)</kbd>.
 
 <figure>
-    <img src="<%= @document.url %>/Photoshop-Layer-with-Shadow.png" width="570" height="565" alt="Layer with Shadow"/>
+    <img src="<%= @document.url %>Photoshop-Layer-with-Shadow.png" width="570" height="565" alt="Layer with Shadow"/>
 	<figcaption>Слой со смещенной тенью шириной в 30px. Рамкой трансформации выделены границы самого слоя. Слайс создан по границам тени.</figcaption>
 </figure>

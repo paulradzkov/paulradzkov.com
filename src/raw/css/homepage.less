@@ -1,18 +1,18 @@
 //global variables
 
 //Fonts
-@fontmain: sans-serif;
-@fontsecond: sans-serif;
-@fontmono: 'Consolas', 'Liberation Mono', 'Menlo', 'Courier New', 'Courier', 'Droid Sans Mono',  monospace, serif;
+@g-fontmain: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+@g-fontsecond: @g-fontmain;
+@g-fontmono: 'Consolas', 'Liberation Mono', 'Menlo', 'Courier New', 'Courier', 'Droid Sans Mono',  monospace, serif;
 
 //link colors on light bg
-@color-text:          #000000;
-@color-muted:         #9B9B9B;
-@color-link:          #0877db;
-@color-visited:       #9108db;
-@color-hover:         #2b9aff;
-@color-visitedhover:  #bc4df8;
-@color-active:        #bc4df8;
+@g-color-text:          #313131;
+@g-color-muted:         #9B9B9B;
+@g-color-link:          #0877db;
+@g-color-visited:       #9108db;
+@g-color-hover:         #2b9aff;
+@g-color-visitedhover:  #bc4df8;
+@g-color-active:        #bc4df8;
 
 //media breakpoints:
 @screen-xs: "";
@@ -34,15 +34,21 @@
 //end of global variables
 
 
-@import (less) "_global.less";
+@import (less) "../ui/global/global.less";
+
+.global-settings() {
+    @txt-color: @g-color-text; // text color
+}
+
+
 @import (less) "../../../node_modules/normalize.css/normalize.css";
 @import (less) "../../../node_modules/bettertext.css/bettertext.less";
 
 .bettertext-settings() {
 
-    @font-body: @fontmain;
-    @font-headers: @fontsecond;
-    @font-code: @fontmono;
+    @font-body: @g-fontmain;
+    @font-headers: @g-fontsecond;
+    @font-code: @g-fontmono;
 
     // margins for body, articles and sections
     @space-around: @base;
@@ -136,12 +142,12 @@
 .links-settings() {
     @links-text-decoration: none;
     //colors
-    @links-defaulttext:   @color-text;
-    @links-link:          @color-link;
-    @links-visited:       @color-visited;
-    @links-hover:         @color-hover;
-    @links-visitedhover:  @color-visitedhover;
-    @links-active:        @color-active;
+    @links-defaulttext:   @g-color-text;
+    @links-link:          @g-color-link;
+    @links-visited:       @g-color-visited;
+    @links-hover:         @g-color-hover;
+    @links-visitedhover:  @g-color-visitedhover;
+    @links-active:        @g-color-active;
 }
 
 
@@ -195,7 +201,7 @@
     // suffixes-count = breakpoints-count + 1
 }
 
-@import (less) "_logo.less";
+@import (less) "../ui/logo/logo.less";
 .logo-settings() {
     @logo-margin: 0;
     @logo-width: auto;
@@ -203,31 +209,25 @@
     @logo-gutter-width: 16px;
     @logo-fz-primary: 20px;
     @logo-fz-secondary: 14px;
-    @logo-txt-color: @color-text;
-    @logo-hover-color: @color-hover;
+    @logo-txt-color: @g-color-text;
+    @logo-hover-color: @g-color-hover;
     @logo-icon-bg: #FFF;
 }
 
 @import (less) "_project-card.less";
-
 @import (less) "_txt.less";
-
-@import (less) "_blogwall.less";
+@import (less) "../ui/blogwall/blogwall.less";
 @import (less) "_badge.less";
-
 @import (less) "_faq.less";
-
 @import (less) "_copyright.less";
 .copyright-settings() {
-    @c-textcolor: @color-muted;
+    @c-textcolor: @g-color-muted;
     @c-fz: 0.875em;
 }
 
 @import (less) "_contact-link.less";
-
 @import (less) "_tags.less";
 @import (less) "_googlesearch.less";
-
 @import (less) "../../../node_modules/ilyabirman-likely/release/likely.css";
 @import (less) "_likely.less";
 .likely-settings() {

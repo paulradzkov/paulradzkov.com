@@ -1,9 +1,11 @@
 //global variables
 
 //Fonts
-@fontmain: sans-serif;
-@fontsecond: sans-serif;
+@fontmain: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+@fontsecond: @fontmain;
 @fontmono: 'Consolas', 'Liberation Mono', 'Menlo', 'Courier New', 'Courier', 'Droid Sans Mono',  monospace, monospace, serif;
+
+@g-color-text: #313131;
 
 //link colors on light bg
 @link:          #0877db;
@@ -29,7 +31,10 @@
 
 //end of global variables
 
-@import (less) "_global.less";
+@import (less) "../ui/global/global.less";
+.global-settings() {
+    @txt-color: @g-color-text; // text color
+}
 
 @import (less) "../../../node_modules/normalize.css/normalize.css";
 @import "_helpers.less";
@@ -126,7 +131,7 @@
 .links-settings() {
     @links-text-decoration: none;
     //colors
-    @links-defaulttext:   #000;
+    @links-defaulttext:   @g-color-text;
     @links-link:          #0877db;
     @links-visited:       #9108db;
     @links-hover:         #2b9aff;
@@ -160,12 +165,11 @@
     padding-right: 0;
 }
 
-@import "_layout.less";
 @import "_allpage.less";
 @import "_content-width.less";
 @import "_site-header.less";
 @import "_page-header.less";
-@import "_logo.less";
+@import "../ui/logo/logo.less";
 @import "_header-contacts.less";
 @import "_nav.less";
 @import "_read-siblings.less";

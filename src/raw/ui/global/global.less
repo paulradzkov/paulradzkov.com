@@ -1,0 +1,51 @@
+.global-settings() {
+    @bg-color: #FFF;  // background
+    @txt-color: #000; // text color
+    @root-fz: 16px;   // root fonts size
+    @root-fz-small: 14px; // root fonts size for small screens
+    @screen-breakpoint-small: 374px; // breakpoint for small screens
+    @global-miw: 320px;  // minimum site width
+    @global-maw: 1920px; // maximum site width
+}
+
+
+@global-render: {
+    .global-settings();
+
+    * {
+        box-sizing: border-box;
+
+        &:before,
+        &after {
+            box-sizing: inherit;
+        }
+    }
+
+    html, body {
+        min-height: 100vh;
+    }
+
+    html {
+        background-color: @bg-color;
+        color: @txt-color;
+        font-size: @root-fz;
+        min-width: @global-miw;
+
+        @media (max-width: @screen-breakpoint-small) {
+            font-size: @root-fz-small;
+        }
+    }
+
+    body {
+        margin: 0;
+        scroll-behavior: smooth;
+    }
+
+    .global-maw {
+        max-width: @global-maw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+};
+
+@global-render();

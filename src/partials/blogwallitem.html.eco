@@ -3,7 +3,7 @@
         <% if (@page.badge) : %>
         <span class="badge space-out-right-nano-xs <% if (@page.badgetype) : %><%= @page.badgetype %><% end %>"><%= @page.badge %></span>
         <% end %>
-        <time datetime="<%= @page.created_at %>">
+        <time class="blogwall-date" datetime="<%= @page.created_at %>">
             <span class="blogwall-readable-only">Дата публикации:</span> <%=@moment(@page.created_at).format('DD MMMM YYYY') %>
         </time>
     </p>

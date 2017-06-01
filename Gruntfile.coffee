@@ -314,6 +314,7 @@ module.exports = (grunt) ->
 			ogimages:
 				options:
 					urls: [
+						'http://127.0.0.1:8080/2017/local_variables/'
 						'http://127.0.0.1:8080/2016/code_review/'
 						'http://127.0.0.1:8080/2014/web-fonts_license/'
 						'http://127.0.0.1:8080/2014/free_substitution_for_helvetica_neue/'

@@ -4,10 +4,10 @@
     <% else : %>
     <div class="likely" data-url="<%= @site.canonicalUrl %>" data-title="<%= @site.rssTitle %>">
     <% end %>
-        <div class="facebook">Поделиться</div>
-        <div class="twitter" data-via="paul_radzkov">Твитнуть</div>
-        <div class="gplus">Плюсануть</div>
-        <div class="vkontakte">Поделиться</div>
-        <div class="telegram">Телеграфировать</div>
+        <div class="facebook"  tabindex="0" role="link" aria-label="Поделиться в Фейсбуке">Поделиться</div>
+        <div class="twitter"   tabindex="0" role="link" aria-label="Поделиться в Твиттере" data-via="paul_radzkov">Твитнуть</div>
+        <div class="gplus"     tabindex="0" role="link" aria-label="Поделиться в Гугл Плюсе">Плюсануть</div>
+        <div class="vkontakte" tabindex="0" role="link" aria-label="Поделиться в Контакте">Поделиться</div>
+        <div class="telegram"  tabindex="0" role="link" aria-label="Поделиться в Телеграме">Телеграфировать</div>
     </div>
 </div>

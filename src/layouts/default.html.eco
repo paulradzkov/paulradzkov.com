@@ -113,7 +113,6 @@
     <%- @partial('navigation') %>
     <%- @partial('scripts') %>
     <%- @partial('docpadscripts') %>
-    <%- @partial('discusscripts') %>
     <%- @partial('yandexmetrika') %>
 </body>
 </html>

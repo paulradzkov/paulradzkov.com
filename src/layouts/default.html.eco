@@ -105,7 +105,9 @@
         </div>
     </div>
     <div class="disqus-wrapper">
-        <article id="disqus_thread" class="disqus-container"></article>
+        <article id="disqus_thread" class="disqus-container">
+            <noscript>Включите Javascript, чтобы увидеть комментарии.</noscript>
+        </article>
     </div>
     <!--nav class="read-next">
         <%- @getNavLinks() %>
@@ -113,7 +115,7 @@
     <%- @partial('navigation') %>
     <%- @partial('scripts') %>
     <%- @partial('docpadscripts') %>
-    <%- @partial('discusscripts') %>
+    <%- @partial('disqusscripts') %>
     <%- @partial('yandexmetrika') %>
 </body>
 </html>

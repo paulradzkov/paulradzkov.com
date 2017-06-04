@@ -75,7 +75,7 @@
         <%- @partial('footer') %>
     <% end %>
     <%- @partial('docpadscripts') %>
-    <%- @partial('discusscripts') %>
+    <%- @partial('disqusscripts') %>
     <%- @partial('yandexmetrika') %>
 </body>
 </html>

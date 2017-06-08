@@ -1,6 +1,7 @@
 .global-settings() {
     @bg-color: #FFF;  // background
     @txt-color: #000; // text color
+    @h-color: @txt-color; // headers color
     @root-fz: 16px;   // root fonts size
     @root-fz-small: 14px; // root fonts size for small screens
     @screen-breakpoint-small: 374px; // breakpoint for small screens
@@ -13,7 +14,7 @@
     .global-settings();
 
     * {
-        box-sizing: border-box;
+        box-sizing: inherit;
 
         &:before,
         &after {
@@ -23,6 +24,7 @@
 
     html, body {
         min-height: 100vh;
+        box-sizing: border-box;
     }
 
     html {
@@ -45,6 +47,10 @@
         max-width: @global-maw;
         margin-left: auto;
         margin-right: auto;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        color: @h-color;
     }
 };
 

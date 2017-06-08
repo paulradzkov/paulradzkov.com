@@ -6,6 +6,7 @@
 @g-fontmono: 'Consolas', 'Liberation Mono', 'Menlo', 'Courier New', 'Courier', 'Droid Sans Mono',  monospace, serif;
 
 //link colors on light bg
+@g-color-h:             #111111;
 @g-color-text:          #313131;
 @g-color-muted:         #9B9B9B;
 @g-color-link:          #0877db;
@@ -20,6 +21,7 @@
 @screen-md: ~"(min-width: 768px)";
 @screen-lg: ~"(min-width: 992px)";
 @screen-xl: ~"(min-width: 1200px)";
+@screen-xxl: ~"(min-width: 1400px)";
 
 //comon variables
 @zero: 0;
@@ -38,6 +40,7 @@
 
 .global-settings() {
     @txt-color: @g-color-text; // text color
+    @h-color: @g-color-h; // text color
 }
 
 
@@ -163,7 +166,8 @@
         @screen-sm,
         @screen-md,
         @screen-lg,
-        @screen-xl;
+        @screen-xl,
+        @screen-xxl;
 
     // max-width of containers according breakpoints
     @container-maw:
@@ -171,10 +175,11 @@
         none,
         680px,
         920px,
-        1140px;
+        1140px,
+        1320px;
 
     // names for breakpoint suffixes
-    @suffixes: xs, sm, md, lg, xl;
+    @suffixes: xs, sm, md, lg, xl, xxl;
 
     // IMPORTANT: suffixes count should be bigger than breakpoints count by 1
     // suffixes-count = breakpoints-count + 1
@@ -192,10 +197,11 @@
         @screen-sm,
         @screen-md,
         @screen-lg,
-        @screen-xl;
+        @screen-xl,
+        @screen-xxl;
 
     // names for breakpoint suffixes
-    @suffixes: xs, sm, md, lg, xl;
+    @suffixes: xs, sm, md, lg, xl, xxl;
 
     // IMPORTANT: suffixes count should be bigger than breakpoints count by 1
     // suffixes-count = breakpoints-count + 1

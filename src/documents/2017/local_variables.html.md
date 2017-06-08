@@ -71,11 +71,9 @@ styles: '/ui/browserframe/browserframe.css'
   background-color: #fff;
 }
 ```
-    
+
 </figure>
 
-
-Представим компонент для стилизации страницы:
 
 ```css
 /* page.css */

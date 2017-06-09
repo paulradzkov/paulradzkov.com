@@ -96,10 +96,10 @@
     </article>
     <div class="content-width allpage--article-footer">
         <div class="row row-between-xs row-center-xs">
-            <div class="col-xs-12 col-sm-shrink col-zero-gutter">
+            <div class="col-xs-12 col-sm-shrink space-in-h-zero-xs">
                 <%- @partial('footer') %>
             </div>
-            <div class="col-xs-12 col-sm-shrink col-zero-gutter">
+            <div class="col-xs-12 col-sm-shrink space-in-h-zero-xs">
                 <%- @partial('likely') %>
             </div>
         </div>

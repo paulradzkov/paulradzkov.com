@@ -116,7 +116,7 @@ og_image: '/i/og/og-paulradzkov-2017-local_variables.png'
             <div class="browserframe" data-title="page.less">
                 <%- @partial("2017/local_variables_fig-2") %>
             </div>
-            <figcaption><strong>Стало.</strong> Локальные переменные объявлены внутри селектора и не создают конфликта имён.</figcaption>
+            <figcaption><strong>Стало.</strong> Переменные объявлены внутри селектора и не создают конфликта имён, потому что теперь они локальные.</figcaption>
         </section>
     </div>
 </figure>

@@ -39,6 +39,7 @@ module.exports = (grunt) ->
 					'out/css/homepage.css': 'src/raw/css/homepage.less'
 					'out/css/template.css': 'src/raw/css/template.less'
 					'out/css/article.css': 'src/raw/css/article.less'
+					'out/ui/article.css': 'src/raw/ui/article.less'
 					'out/ui/screenshot/screenshot.css': 'src/raw/ui/screenshot/screenshot.less'
 					'out/fonts/webfonts.css': 'src/raw/fonts/webfonts.less'
 				]
@@ -75,6 +76,7 @@ module.exports = (grunt) ->
 						'out/css/homepage.css'
 						'out/css/template.css'
 						'out/css/article.css'
+						'out/ui/article.css'
 						'out/ui/screenshot/screenshot.css'
 					]
 
@@ -85,6 +87,7 @@ module.exports = (grunt) ->
 					'out/css/homepage.css':'out/css/homepage.css'
 					'out/css/template.css':'out/css/template.css'
 					'out/css/article.css':'out/css/article.css'
+					'out/ui/article.css':'out/ui/article.css'
 					'out/css/caniuse.css':'out/css/caniuse.css'
 					'out/fonts/webfonts.css':'out/fonts/webfonts.css'
 

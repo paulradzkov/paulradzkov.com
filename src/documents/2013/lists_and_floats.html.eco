@@ -16,7 +16,7 @@ og_image: '/i/og/og-paulradzkov-2013-lists_and_floats.png'
 
 <!-- cut -->
 
-<p><a href="http://cssdeck.com/labs/floated-images-and-lists" class="link-to-demo" target="_blank">демка</a></p>
+<p><a href="https://codepen.io/paulradzkov/full/PmQMby/" class="link-to-demo" target="_blank">демка</a></p>
 <figure>
     <img src="<%= @document.url %>floated_images_and_lists_problem.png" width="800" height="560" alt="Если картинка обтекает список, маркеры списка налазят на картинку"/>
     <figcaption>Проблема: если картинка обтекает список, то маркеры списка налазят на картинку</figcaption>
@@ -58,6 +58,8 @@ og_image: '/i/og/og-paulradzkov-2013-lists_and_floats.png'
 
 <h2>Новое решение</h2>
 
+<p><strong>Обновлено 11 июня 2017. Пофикшен баг с наплывом маркеров на картинку при первой загрузке или когда выключен кэш.</strong></p>
+
 <p>Для списков, у которых нет классов, перенесём дефолтный отступ 2.5em с левого края на правый, а сами <code class="hljs-tag nowrap">li</code> сдвинем на те же 2.5em вправо при помощи <code class="hljs-rule"><span class="hljs-attribute">transform</span>: <span class="hljs-value">translateX(2.5em)</span></code>.</p>
 
 <pre><code class="language-css">ul:not([class]),
@@ -68,6 +70,16 @@ ol:not([class]) {
 ul:not([class]) li,
 ol:not([class]) li {
     transform: translateX(2.5em);
+    animation: fixlists 1s;
+}
+
+@keyframes fixlists {
+    0% {
+        text-indent: -0.001em;
+    }
+    100% {
+        text-indent: 0;
+    }
 }
 </code></pre>
 
@@ -75,7 +87,7 @@ ol:not([class]) li {
 
 <p>В отличие от старого решения, элементы списка обтекают картинку естественным образом, не оставляя зазоров под картинкой.</p>
 
-<p><a href="http://cssdeck.com/labs/floated-images-and-lists" class="link-to-demo" target="_blank">демка</a></p>
+<p>Чтобы починить <a href="https://github.com/paulradzkov/bettertext.css/issues/4" target="_blank">баг</a> в Хроме, Опере и других браузерах на движке Blink, пришлось добавить невидимую анимацию. Она заставляет браузер пересчитать размеры элементов списка и поставить маркеры на место.</p>
 
 <p>Живой пример:</p>
 

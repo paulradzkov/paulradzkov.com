@@ -70,8 +70,11 @@ og_image: '/i/og/og-index.png'
     </div>
     <div class="blogwall space-minus-h-mili-xs space-out-h-zero-sm space-out-top-micro-xs">
         <% for page in @getCollection("articles").toJSON().slice(0,1): %>
-            <section class="blogwall-item blogwall-gridcell blogwall-gridcell-promo blogwall-fauxlink">
-                <p class="txt-date space-out-zero-xs">
+            <section class="blogwall-item blogwall-gridcell blogwall-gridcell-promo blogwall-fauxlink col-flex-sm">
+                <figure class="space-minus-v-mili-xs space-minus-h-base-xs">
+                    <img src="<%= page.url %><%= page.cover %>" alt="<%= page.title %>">
+                </figure>
+                <p class="txt-date space-auto-top-xs space-out-bottom-zero-xs">
                     <% if (page.badge) : %>
                     <span class="badge space-out-right-nano-xs <% if (page.badgetype) : %><%= page.badgetype %><% end %>"><%= page.badge %></span>
                     <% end %>
@@ -86,8 +89,17 @@ og_image: '/i/og/og-index.png'
                     <a href="<%= page.url %>" class="link blogwall-link" tabindex="-1"><%= page.title %></a>
                 </h3>
                 <div><%- @cuttedContent page.contentRenderedWithoutLayouts %></div>
-                <aside>
-                    <a href="<%= page.url %>#disqus_thread" data-disqus-identifier="<%= page.disqusid %>" tabindex="-1">Комментарии</a>
+                <aside class="space-auto-top-xs row row-between-xs">
+                    <a class="link col-xs-shrink" href="<%= page.url %>#disqus_thread" data-disqus-identifier="<%= page.disqusid %>" tabindex="-1">Комментарии</a>
+                    <div class="likely-inline-container col-xs-shrink">
+                        <div class="likely likely-small" data-url="<%= @site.canonicalUrl %><%= page.url %>" data-title="<%= page.title %>">
+                            <div class="facebook"  tabindex="0" role="link" aria-label="Поделиться в Фейсбуке"></div>
+                            <div class="twitter"   tabindex="0" role="link" aria-label="Поделиться в Твиттере" data-via="paul_radzkov"></div>
+                            <div class="gplus"     tabindex="0" role="link" aria-label="Поделиться в Гугл Плюсе"></div>
+                            <div class="vkontakte" tabindex="0" role="link" aria-label="Поделиться в Контакте"></div>
+                            <div class="telegram"  tabindex="0" role="link" aria-label="Поделиться в Телеграме"></div>
+                        </div>
+                    </div>
                 </aside>
                 <a href="<%= page.url %>" class="link blogwall-fauxlink--overlay"><span class="blogwall-readable-only"><%= page.title %></span></a>
             </section>

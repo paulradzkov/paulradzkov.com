@@ -71,9 +71,11 @@ og_image: '/i/og/og-index.png'
     <div class="blogwall space-minus-h-mili-xs space-out-h-zero-sm space-out-top-micro-xs">
         <% for page in @getCollection("articles").toJSON().slice(0,1): %>
             <section class="blogwall-item blogwall-gridcell blogwall-gridcell-promo blogwall-fauxlink col-flex-sm">
+                <% if (page.cover) : %>
                 <figure class="space-minus-v-mili-xs space-minus-h-base-xs">
                     <img src="<%= page.url %><%= page.cover %>" alt="<%= page.title %>">
                 </figure>
+                <% end %>
                 <p class="txt-date space-auto-top-xs space-out-bottom-zero-xs">
                     <% if (page.badge) : %>
                     <span class="badge space-out-right-nano-xs <% if (page.badgetype) : %><%= page.badgetype %><% end %>"><%= page.badge %></span>
@@ -101,7 +103,7 @@ og_image: '/i/og/og-index.png'
                         </div>
                     </div>
                 </aside>
-                <a href="<%= page.url %>" class="link blogwall-fauxlink--overlay"><span class="blogwall-readable-only"><%= page.title %></span></a>
+                <a href="<%= page.url %>" class="link blogwall-fauxlink--overlay"><span class="blogwall-readable-only">Читать статью «<%= page.title %>»</span></a>
             </section>
         <% end %>
         <% for page in @getCollection("articles").toJSON().slice(1): %>

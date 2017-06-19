@@ -6,7 +6,17 @@ og_image: '/i/og/og-index.png'
 ---
 
 <section class="" id="projects">
-    <h1 class="space-in-bottom-micro-xs">Проекты и продукты</h1>
+    <div class="row row-bottom-sm">
+        <div class="col-xs-12 col-sm-shrink">
+            <h1 class="space-in-right-mili-lg">Проекты и продукты</h1>
+        </div>
+        <div class="col-xs-12 col-sm-shrink">
+            <p>
+                <a class="github-button" href="https://github.com/paulradzkov" data-size="large" aria-label="Follow @paulradzkov on GitHub">Follow @paulradzkov</a>
+            </p>
+        </div>
+    </div>
+
     <div class="row space-out-top-base-xs">
         <section class="col-xs-12 col-sm-6 col-lg-4 col-xl-3 col-flex-sm">
             <a class="flex-grow-sm project-card project-card-link link col-flex-xs" href="//paulradzkov.com/bettertext.css/">
@@ -110,8 +120,7 @@ og_image: '/i/og/og-index.png'
 
 <section class="space-out-top-kilo-xs space-out-top-mega-lg space-out-bottom-base-xs" id="faq">
     <h1>Ответы на вопросы сообщества</h1>
-    <p>На сайте <a href="https://toster.ru/user/paulradzkov">toster.ru</a> отвечаю на вопросы и даю советы по дизайну, вёрстке, организации труда и веб-разработке в целом. Если вы хотите задать мне вопрос, оформите его на <a href="https://toster.ru/">тостере</a> и скиньте ссылку на почту <a href="mailto:radzkov@gmail.com">radzkov@gmail.com</a>.</p>
-    <p>Вот ссылки на некоторые ответы:</p>
+    <p>На сайте <a href="https://toster.ru/user/paulradzkov">toster.ru</a> отвечаю на вопросы и даю советы по дизайну, вёрстке, организации труда и веб-разработке в целом. Если вы хотите задать мне вопрос, оформите его на <a href="https://toster.ru/">тостере</a> и скиньте ссылку на почту <a href="mailto:radzkov@gmail.com">radzkov@gmail.com</a>. Вот ссылки на некоторые ответы:</p>
 
     <div class="row faq">
         <div class="col-xs-12 col-md-6 col-lg-4 col-xl-3">
@@ -156,3 +165,5 @@ og_image: '/i/og/og-index.png'
         </div>
     </div>
 </section>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>

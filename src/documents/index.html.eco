@@ -8,7 +8,7 @@ og_image: '/i/og/og-index.png'
 <section class="" id="projects">
     <h1 class="space-in-bottom-micro-xs">Проекты и продукты</h1>
     <div class="row space-out-top-base-xs">
-        <section class="col-xs-12 col-sm-6 col-lg-4 col-xl-3 col-xxl col-flex-sm">
+        <section class="col-xs-12 col-sm-6 col-lg-4 col-xl-3 col-flex-sm">
             <a class="flex-grow-sm project-card project-card-link link col-flex-xs" href="//paulradzkov.com/bettertext.css/">
                 <p class="project-card-icon"><img srcset="/i/icons/icon-bettertext@2x.png 2x" src="/i/icons/icon-bettertext.png" width="48" height="48" alt="bettertext.css"></p>
                 <h4 class="project-card-title">bettertext.css</h4>
@@ -18,7 +18,7 @@ og_image: '/i/og/og-index.png'
                 </p>
             </a>
         </section>
-        <section class="col-xs-12 col-sm-6 col-lg-4 col-xl-3 col-xxl col-flex-sm">
+        <section class="col-xs-12 col-sm-6 col-lg-4 col-xl-3 col-flex-sm">
             <a class="flex-grow-sm project-card project-card-link link col-flex-xs" href="https://github.com/paulradzkov/flxgrid.css">
                 <p class="project-card-icon"><img srcset="/i/icons/icon-flxgrid@2x.png 2x" src="/i/icons/icon-flxgrid.png" width="48" height="48" alt="flxgrid.css"></p>
                 <h4 class="project-card-title">flxgrid.css</h4>
@@ -28,7 +28,7 @@ og_image: '/i/og/og-index.png'
                 </p>
             </a>
         </section>
-        <section class="col-xs-12 col-sm-6 col-lg-4 col-xl-3 col-xxl col-flex-sm">
+        <section class="col-xs-12 col-sm-6 col-lg-4 col-xl-3 col-flex-sm">
             <a class="flex-grow-sm project-card project-card-link link col-flex-xs" href="//paulradzkov.com/space.less/">
                 <p class="project-card-icon"><img srcset="/i/icons/icon-space@2x.png 2x" src="/i/icons/icon-space.png" width="48" height="48" alt="space.less"></p>
                 <h4 class="project-card-title">space.less</h4>
@@ -38,7 +38,7 @@ og_image: '/i/og/og-index.png'
                 </p>
             </a>
         </section>
-        <section class="col-xs-12 col-sm-6 col-lg-4 col-xl-3 col-xxl col-flex-sm">
+        <section class="col-xs-12 col-sm-6 col-lg-4 col-xl-3 col-flex-sm">
             <a class="flex-grow-sm project-card project-card-link link col-flex-xs" href="https://github.com/paulradzkov/links.less">
                 <p class="project-card-icon"><img srcset="/i/icons/icon-links@2x.png 2x" src="/i/icons/icon-links.png" width="48" height="48" alt="links.less"></p>
                 <h4 class="project-card-title">links.less</h4>
@@ -48,7 +48,17 @@ og_image: '/i/og/og-index.png'
                 </p>
             </a>
         </section>
-        <section class="col-xs-12 col-sm-6 col-lg-4 col-xl-3 col-xxl col-flex-sm">
+        <section class="col-xs-12 col-sm-6 col-lg-4 col-xl-3 col-flex-sm">
+            <a class="flex-grow-sm project-card project-card-link link col-flex-xs" href="https://github.com/paulradzkov/hidden.less">
+                <p class="project-card-icon"><img srcset="/i/icons/icon-hidden@2x.png 2x" src="/i/icons/icon-hidden.png" width="48" height="48" alt="hidden.less"></p>
+                <h4 class="project-card-title">hidden.less</h4>
+                <p class="project-card-details">классы для скрытия контента в адаптивной вёрстке</p>
+                <p class="space-auto-top-sm space-out-bottom-nano-xs">
+                    <img src="https://badge.fury.io/js/hidden.less.svg" alt="npm version">
+                </p>
+            </a>
+        </section>
+        <section class="col-xs-12 col-sm-6 col-lg-4 col-xl-3 col-flex-sm">
             <a class="flex-grow-sm project-card project-card-link link col-flex-xs" href="https://github.com/paulradzkov/codestyle">
                 <h4 class="project-card-title space-out-top-micro-xs">CSS Codestyle</h4>
                 <p class="project-card-details">Руководство по стилю для CSS: форматирование, селекторы и правила именования, хорошие и плохие практики с примерами</p>

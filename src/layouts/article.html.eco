@@ -91,7 +91,7 @@
     <%if (@document.expired == true) : %>
     <%- @partial('expired') %>
     <% end %>
-    <article class="allpage--body nav-placeholder content-width" role="main">
+    <article class="allpage--body nav-placeholder content-width article-grid" role="main">
         <%- @content %>
     </article>
     <div class="content-width allpage--article-footer">

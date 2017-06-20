@@ -2,7 +2,7 @@
 ---
 
 ```less
-// page.less
+// page.less v0.3
 
 .page-settings() {
   @padding: 40px;

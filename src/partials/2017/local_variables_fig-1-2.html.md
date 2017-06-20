@@ -2,7 +2,7 @@
 ---
 
 ```less
-// page.less
+// page.less v0.1
 
 @padding: 40px;
 @txt-color: #000;

@@ -2,7 +2,7 @@
 ---
 
 ```scss
-// page.scss
+// page.scss v0.1
 
 $page-settings: (
     padding: 40px,

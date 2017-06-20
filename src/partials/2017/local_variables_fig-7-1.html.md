@@ -9,5 +9,5 @@
 @import: 'normalize';
 @import: 'typography';
 @import: 'page';
-// other files here...
+// и много других компонентов...
 ```

@@ -6,7 +6,7 @@ og_image: '/i/og/og-index.png'
 ---
 
 <section class="" id="projects">
-    <div class="row row-bottom-sm">
+    <div class="row row-bottom-sm row-between-sm">
         <div class="col-xs-12 col-sm-shrink">
             <h1 class="space-in-right-mili-lg">Проекты и продукты</h1>
         </div>

@@ -3,7 +3,7 @@
     @blogwall-background-color: #FFF;
     @blogwall-star-color: #FFB300;
     @blogwall-border-width: 1px;
-    @blogwall-cell-height: 200px;
+    @blogwall-cell-height: 210px;
     @blogwall-cell-focus-color: #2b9aff;
     @blogwall-cell-focus-bxshadow: inset 0 0 0 4px fade(@blogwall-cell-focus-color, 20%);
 
@@ -56,6 +56,7 @@
     }
 
     &-gridcell {
+        box-sizing: border-box;
         border-style: inherit;
         border-width: @blogwall-border-width;
         border-top-color: transparent;
@@ -102,11 +103,12 @@
         &-promo {
             @media (min-width: @blogwall-screen-breakpoint-1) {
                 width: ~"calc(100% + @{blogwall-border-width})";
-                height: (@blogwall-cell-height * 3 + @blogwall-border-width);
+                height: auto;
             }
 
             @media (min-width: @blogwall-screen-breakpoint-2) {
                 width: ~"calc(66.666% + @{blogwall-border-width})";
+                height: (@blogwall-cell-height * 3 + @blogwall-border-width);
             }
 
             @media (min-width: @blogwall-screen-breakpoint-3) {

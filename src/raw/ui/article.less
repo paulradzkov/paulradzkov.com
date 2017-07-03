@@ -1,0 +1,206 @@
+//global variables
+
+//Fonts
+@fontmain: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+@fontsecond: @fontmain;
+@fontmono: Consolas, Liberation Mono, Menlo, Courier New, Courier, Droid Sans Mono, monospace, monospace, serif;
+
+@g-color-text: #313131;
+
+//link colors on light bg
+@link:          #0877db;
+@visited:       #9108db;
+@hover:         #2b9aff;
+@visitedhover:  #bc4df8;
+@active:        #bc4df8;
+
+//link colors on dark bg
+@link2:          #57AFFF;
+@visited2:       #E2ABFF;
+@hover2:         #C1DFFA;
+@visitedhover2:  #f2d9ff;
+@active2:        #f2d9ff;
+
+//media breakpoints:
+@mawtext: 50rem;
+@smscreen: 40rem;
+@xsscreen: 25rem;
+
+//comon variables
+@pad: 2rem;
+
+//media breakpoints:
+@g-screen-xs: "";
+@g-screen-sm: ~"(min-width: 576px)";
+@g-screen-md: ~"(min-width: 768px)";
+@g-screen-lg: ~"(min-width: 992px)";
+@g-screen-xl: ~"(min-width: 1200px)";
+@g-screen-xxl: ~"(min-width: 1400px)";
+
+//end of global variables
+
+@import (less) "../ui/global/global.less";
+.global-settings() {
+    @txt-color: @g-color-text; // text color
+}
+
+@import (less) "../../../node_modules/normalize.css/normalize.css";
+@import "../css/_helpers.less";
+@import (less) "../../../node_modules/bettertext.css/bettertext.less";
+
+.bettertext-settings() {
+    @linel: @mawtext;
+    @font-body: @fontmain;
+    @font-headers: @fontsecond;
+    @font-code: @fontmono;
+}
+
+.bettertext-calculations() {
+
+    //calculations
+    // you almost never need to edit below
+
+    // one rem is 16px by default
+    @onerem: 16px;
+
+    // base font-size in ems
+    @fz-ems: unit(((round( @onerem)) / @fz), em);
+
+    // unitless line-height
+    @lh: unit((@rythm / @fz));
+
+    // margins for paragraphs, lists and other tags
+    @m-default: unit(@lh, em);
+
+    // small font-size in ems
+    @fz-small-ems:  unit(((round( @fz-small)) / @fz), em);
+
+    //headers size calculations for small screens
+    @h1-fz: unit(((round( @fz * pow(@scale1, 4))) / @fz), em);
+    @h2-fz: unit(((round( @fz * pow(@scale1, 3))) / @fz), em);
+    @h3-fz: unit(((round( @fz * pow(@scale1, 2))) / @fz), em);
+    @h4-fz: unit(((round( @fz * pow(@scale1, 1))) / @fz), em);
+    @h5-fz: unit(((round( @fz * pow(@scale1, 0))) / @fz), em);
+    @h6-fz: unit(((round( @fz * pow(@scale1, 0))) / @fz), em);
+
+    //headers size calculations for large screens
+    @h1-l-fz: unit(((round( @fz * pow(@scale2, 4))) / @fz), em);
+    @h2-l-fz: unit(((round( @fz * pow(@scale2, 3))) / @fz), em);
+    @h3-l-fz: unit(((round( @fz * pow(@scale2, 2))) / @fz), em);
+    @h4-l-fz: unit(((round( @fz * pow(@scale2, 1))) / @fz), em);
+
+    //headers lihe-height
+    @h1-lh: 1.2308;
+    @h2-lh: 1.2903;
+    @h3-lh: 1.28;
+    @h4-lh: 1.2;
+    @h5-lh: unit((@rythm / @fz));
+    @h6-lh: unit((@rythm / @fz));
+
+    //headers margin-top
+    @h1-mt: 3.3846em;
+    @h2-mt: 3.1304em;
+    @h3-mt: 2.8em;
+    @h4-mt: 2.2222em;
+    @h5-mt: unit((@lh / @h5-fz), em);
+    @h6-mt: unit((@lh / @h6-fz), em);
+
+    //headers margin-top for large screens
+    @h1-l-mt: 4.3077em;
+    @h2-l-mt: 3.3548em;
+    @h3-l-mt: 2.56em;
+    @h4-l-mt: 2em;
+
+    //headers margin-bottom
+    @h1-mb: unit((@lh / @h1-fz), em);
+    @h2-mb: unit((@lh / @h2-fz), em);
+    @h3-mb: unit((@lh / @h3-fz), em);
+    @h4-mb: unit((@lh / @h4-fz), em);
+    @h5-mb: 0;
+    @h6-mb: 0;
+
+    //headers margin-bottom for large screens
+    @h1-l-mb: unit((@lh / @h1-l-fz), em);
+    @h2-l-mb: unit((@lh / @h2-l-fz), em);
+    @h3-l-mb: unit((@lh / @h3-l-fz), em);
+    @h4-l-mb: unit((@lh / @h4-l-fz), em);
+
+    //double headers margin-top
+    @h1h2-mt: unit( @h2-lh ,em);
+    @h2h3-mt: unit( @h3-lh ,em);
+    @h3h4-mt: unit( @h4-lh ,em);
+    @h4h5-mt: unit((@lh / @h5-fz), em);
+    @h5h6-mt: unit((@lh / @h6-fz), em);
+}
+
+@import "../ui/typography/typo.less";
+@import "../css/_txt.less";
+@import "../../../node_modules/links.less/links.less";
+
+.links-settings() {
+    @links-text-decoration: none;
+    //colors
+    @links-defaulttext:   @g-color-text;
+    @links-link:          #0877db;
+    @links-visited:       #9108db;
+    @links-hover:         #2b9aff;
+    @links-visitedhover:  #bc4df8;
+    @links-active:        #bc4df8;
+}
+
+@import "../css/_links.extend.less";
+@import "../css/_border-underline.less";
+
+.border-underline-settings() {
+    //colors
+    //@link:          #0877db;
+    //@visited:       #9108db;
+    //@hover:         #2b9aff;
+    //@visitedhover:  #bc4df8;
+    //@active:        #bc4df8;
+    //@shift: .1em;
+    //@bd-style: 1px solid;
+
+    //calculations
+    @bdc-link:          lighten(@hover, 30%);
+    @bdc-visited:       lighten(@visitedhover, 30%);
+    @bdc-hover:         lighten(@hover, 30%);
+    @bdc-visitedhover:  lighten(@visitedhover, 30%);
+    @bdc-active:        lighten(@active, 30%);
+}
+
+@import "../css/_allpage.less";
+@import "../css/_content-width.less";
+@import "../ui/article-grid/article-grid.less";
+@import "../css/_site-header.less";
+@import "../css/_page-header.less";
+@import "../ui/logo/logo.less";
+//@import "../css/_header-contacts.less";
+@import "../css/_nav.less";
+@import "../css/_read-siblings.less";
+//@import "_read-next.less";
+@import "../css/_justified-blocks.less";
+//@import "_blogroll.less";
+@import "../css/_page-footer.less";
+@import "../css/_meta.less";
+@import "../css/_tags.less";
+@import "../css/_bootstrap-tooltips.less";
+@import "../css/_bootstrap-collapse.less";
+@import "../css/_bootstrap-btn.less";
+@import "../css/_cta.less";
+@import "../css/_github.less";
+@import "../css/_disqus.less";
+@import "../css/_fotorama.less";
+//@import "_googlesearch.less";
+@import "../css/_expired.less";
+@import "../css/_print.less";
+@import "../css/_navigation.less";
+@import "../css/_overrides.less";
+
+@import "../css/_codepen.less";
+
+@import (less) "../../../bower_components/Likely/release/likely.css";
+@import "../css/_likely.less";
+
+@import "../ui/browserframe/browserframe.css";
+@import (less) "../ui/local-nav/local-nav.less";

@@ -39,6 +39,8 @@ module.exports = (grunt) ->
 					'out/css/homepage.css': 'src/raw/css/homepage.less'
 					'out/css/template.css': 'src/raw/css/template.less'
 					'out/css/article.css': 'src/raw/css/article.less'
+					'out/ui/article.css': 'src/raw/ui/article.less'
+					'out/ui/framework.css': 'src/raw/ui/framework.less'
 					'out/ui/screenshot/screenshot.css': 'src/raw/ui/screenshot/screenshot.less'
 					'out/fonts/webfonts.css': 'src/raw/fonts/webfonts.less'
 				]
@@ -75,6 +77,8 @@ module.exports = (grunt) ->
 						'out/css/homepage.css'
 						'out/css/template.css'
 						'out/css/article.css'
+						'out/ui/article.css'
+						'out/ui/framework.css'
 						'out/ui/screenshot/screenshot.css'
 					]
 
@@ -85,6 +89,10 @@ module.exports = (grunt) ->
 					'out/css/homepage.css':'out/css/homepage.css'
 					'out/css/template.css':'out/css/template.css'
 					'out/css/article.css':'out/css/article.css'
+					'out/ui/article.css':[
+						'out/ui/framework.css'
+						'out/ui/article.css'
+					]
 					'out/css/caniuse.css':'out/css/caniuse.css'
 					'out/fonts/webfonts.css':'out/fonts/webfonts.css'
 
@@ -256,6 +264,14 @@ module.exports = (grunt) ->
 					timeout: 5000
 					ignore: [
 						/\.likely([-a-zA-Z0-9_:>\*\s\[=\]])*/
+						/\.tooltip([-a-zA-Z0-9_:>\*\s\[=\]])*/
+						".hold"
+						".fixed"
+						".scrolltop"
+						".scrolldown"
+						".fade"
+						".in"
+						".right"
 					]
 					stylesheets: [
 						'css/homepage.css'
@@ -271,6 +287,18 @@ module.exports = (grunt) ->
 						'out/search/index.html'
 					]
 				dest: 'out/css/homepage.css'
+			articles:
+				options:
+					timeout: 5000
+					ignore: [
+						/\.likely([-a-zA-Z0-9_:>\*\s\[=\]])*/
+					]
+					stylesheets: [
+						'../../ui/framework.css'
+					]
+				files: 'out/ui/framework.css': [
+						'out/2017/*/*.html'
+					]
 
 		'gh-pages':
 			options:
@@ -307,7 +335,7 @@ module.exports = (grunt) ->
 				options:
 					paths: [
 						"/2016/code_review/"
-						]
+					]
 					strategy: "desktop"
 					threshold: 80
 		pageres:
@@ -335,7 +363,22 @@ module.exports = (grunt) ->
 						'http://127.0.0.1:8080/2012/html-entities_and_utf_codes/'
 						'http://127.0.0.1:8080/2012/photoshop_new_layer_based_slice/'
 						'http://127.0.0.1:8080/2012/autocomplete/'
-						]
+					]
+					sizes: ['1500x788']
+					dest: 'src/raw/i/og'
+					#filename: 'og-{{url}}-{{size}}{{crop}}'
+					filename: 'og-{{url}}'
+					crop: true
+					css: 'out/ui/screenshot/screenshot.css'
+					delay: 5 #seconds
+					timeout: 120 #seconds
+					scale: 0.8 #scales images down to 1200x630
+					format: 'png' #jpg smaller, png looks better
+			oglatest:
+				options:
+					urls: [
+						'http://127.0.0.1:8080/2017/local_variables/'
+					]
 					sizes: ['1500x788']
 					dest: 'src/raw/i/og'
 					#filename: 'og-{{url}}-{{size}}{{crop}}'
@@ -348,11 +391,11 @@ module.exports = (grunt) ->
 					format: 'png' #jpg smaller, png looks better
 
 	# Register our Grunt tasks.
-	grunt.registerTask 'ogimages',      ['shell:server', 'pageres', 'copy:ogimages', 'clean:ogimages', 'imagemin' ]
+	grunt.registerTask 'ogimages',      ['shell:server', 'pageres:oglatest', 'copy:ogimages', 'clean:ogimages', 'imagemin' ]
 	grunt.registerTask 'testnow',       ['shell:clean', 'shell:ghpages', 'production']
 	grunt.registerTask 'ghpages',       ['shell:clean', 'shell:ghpages', 'production', 'gh-pages']
 	grunt.registerTask 'deploy',        ['shell:clean', 'shell:ghpages', 'production', 'gh-pages']
 	grunt.registerTask 'production',    ['less', 'uncss', 'postcss', 'cssmin', 'htmlmin', 'uglify', 'compress', 'clean']
-	grunt.registerTask 'run',           ['shell:run', 'less', 'postcss', 'uglify', 'watch:less']
+	grunt.registerTask 'run',           ['shell:run', 'less', 'postcss', 'cssmin', 'uglify', 'watch:less']
 	grunt.registerTask 'cdn',           ['shell:clean', 'shell:docpad', 'production']
 	grunt.registerTask 'default',       ['run']

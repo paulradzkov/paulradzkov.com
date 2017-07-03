@@ -1,0 +1,60 @@
+//media breakpoints:
+@g-screen-xs: "";
+@g-screen-sm: ~"(min-width: 576px)";
+@g-screen-md: ~"(min-width: 768px)";
+@g-screen-lg: ~"(min-width: 992px)";
+@g-screen-xl: ~"(min-width: 1200px)";
+@g-screen-xxl: ~"(min-width: 1400px)";
+
+@import (less) "../../../node_modules/flxgrid.css/flxgrid.less";
+.grid-settings() {
+
+    // settings
+    @grid-columns: 12;   // number of columns
+    @gutter-width: 40px; // gap between columns
+
+    // media breakpoints (default: as on bootstrap)
+    @breakpoints:
+        @g-screen-sm,
+        @g-screen-md,
+        @g-screen-lg,
+        @g-screen-xl,
+        @g-screen-xxl;
+
+    // max-width of containers according breakpoints
+    @container-maw:
+        none,
+        none,
+        680px,
+        920px,
+        1140px,
+        1320px;
+
+    // names for breakpoint suffixes
+    @suffixes: xs, sm, md, lg, xl, xxl;
+
+    // IMPORTANT: suffixes count should be bigger than breakpoints count by 1
+    // suffixes-count = breakpoints-count + 1
+
+}
+
+@import (less) "../../../node_modules/space.less/space.less";
+.space-settings() {
+
+    @spaces: 0, 8px, 16px, 24px, 40px, 64px, 104px, 168px;
+    @spacealias: zero, nano, micro, mili, base, kilo, mega, giga;
+
+    // media breakpoints
+    @breakpoints:
+        @g-screen-sm,
+        @g-screen-md,
+        @g-screen-lg,
+        @g-screen-xl,
+        @g-screen-xxl;
+
+    // names for breakpoint suffixes
+    @suffixes: xs, sm, md, lg, xl, xxl;
+
+    // IMPORTANT: suffixes count should be bigger than breakpoints count by 1
+    // suffixes-count = breakpoints-count + 1
+}

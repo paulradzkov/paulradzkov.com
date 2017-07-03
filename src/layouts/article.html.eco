@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ru">
+<head>
+    <!-- Standard Meta -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <!-- Site Properities -->
+    <title><%= @getPreparedTitle() %></title>
+    <meta name="description" content="<%= @getPreparedDescription() %>" />
+    <meta name="keywords" content="<%= @getPreparedKeywords() %>" />
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+
+    <!-- DocPad Meta -->
+    <%- @getBlock('meta').toHTML() %>
+
+    <!-- DocPad Styles + Our Own -->
+    <link rel="stylesheet" href="/ui/article.css">
+    <%- @getBlock('styles').add([].concat(@site.styles or []).concat(@document.styles or [])).toHTML() %>
+
+    <!-- Icons -->
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=A0RJW2vMdo">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png?v=A0RJW2vMdo" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png?v=A0RJW2vMdo" sizes="16x16">
+    <link rel="manifest" href="/manifest.json?v=A0RJW2vMdo">
+    <link rel="shortcut icon" href="/favicon.ico?v=A0RJW2vMdo">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Feeds -->
+    <link rel="alternate" type="application/atom+xml" title="Atom" href="/atom.xml">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml">
+    <link rel="canonical" href="<%= @site.canonicalUrl %><%= @document.url %>">
+    <meta property="fb:pages" content="297287297277384" />
+
+    <%- @partial('webfontsjs', { pathtofonts: '/fonts/webfonts.css?v=0.0.1' }) %>
+    <%- @partial('opengraph') %>
+    <%- @partial('twittercard') %>
+    <%- @partial('googleAnalytics') %>
+</head>
+<body class="allpage allpage-max-width allpage-stickyfooter layout-<%- @document.kind %>" id="top">
+    <header class="allpage--header page-header">
+        <div class="article-nav">
+            <nav class="read-siblings">
+                <%- @getNavLinks() %>
+            </nav>
+            <nav class="site-navigation sticky-nav" id="sticker">
+                <div class="nav-icon nav-icon-centered">
+                    <a class="nav-icon-home" href="/" data-toggle="tooltip" data-placement="right" title="На главную">
+                        <svg id="ic-arrow-back-24px" viewBox="0 0 24 24" width="24" height="24">
+                            <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+                        </svg>
+                        <span class="visuallyhidden">На главную</span>
+                    </a>
+                    <a class="nav-icon-top" href="#top" data-toggle="tooltip" data-placement="right" title="Наверх">
+                        <svg id="ic-arrow-upward-24px" viewBox="0 0 24 24" width="24" height="24">
+                            <path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"/>
+                        </svg>
+                        <span class="visuallyhidden">Наверх</span>
+                    </a>
+                </div>
+            </nav>
+        </div>
+        <aside class="nav-placeholder content-width">
+            <div class="article-meta ">
+            <% if (@document.created_at) : %>
+                <p class="date"><time datetime="<%= @document.created_at %>"><%=@moment(@document.created_at).lang('ru').format('DD MMMM YYYY') %></time></p>
+            <% end %>
+            </div>
+        </aside>
+        <div class="content-width">
+            <h1 class="article-title"><%- @document.title %></h1>
+        </div>
+        <%- @partial('likelybig') %>
+    </header>
+    <aside class="content-width" style="display:none">
+        <div class="article-meta inlined">
+            <% if (@document.tags) : %>
+            <span class="tags-list">
+                <% for tag in @document.tags : %>
+                <a class="tag" href="<%= @getTagUrl(tag) %>"><%= tag %></a>
+                <% end %>
+            </span>
+            <% end %>
+            <% if ((@site.disqus_shortname) and (@document.disqusid)) : %>
+            <span class="comments"><a href="<%= @document.path %>#disqus_thread" data-disqus-identifier="<%= @document.disqusid %>" >Комментарии</a></span>
+            <% end %>
+            <span class="pageviews" style="display:none"></span>
+        </div>
+    </aside>
+    <%if (@document.expired == true) : %>
+    <%- @partial('expired') %>
+    <% end %>
+    <article class="allpage--body nav-placeholder content-width article-grid" role="main">
+        <%- @content %>
+    </article>
+    <div class="content-width allpage--article-footer">
+        <div class="row row-between-xs row-center-xs">
+            <div class="col-xs-12 col-sm-shrink space-in-h-zero-xs">
+                <%- @partial('footer') %>
+            </div>
+            <div class="col-xs-12 col-sm-shrink space-in-h-zero-xs">
+                <%- @partial('likely') %>
+            </div>
+        </div>
+    </div>
+    <div class="disqus-wrapper">
+        <article id="disqus_thread" class="disqus-container">
+            <noscript>Включите Javascript, чтобы увидеть комментарии.</noscript>
+        </article>
+    </div>
+    <!--nav class="read-next">
+        <%- @getNavLinks() %>
+    </nav-->
+    <%- @partial('navigation') %>
+    <%- @partial('scripts') %>
+    <%- @partial('docpadscripts') %>
+    <%- @partial('disqusscripts') %>
+    <%- @partial('yandexmetrika') %>
+</body>
+</html>

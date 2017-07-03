@@ -349,9 +349,24 @@ module.exports = (grunt) ->
 					timeout: 120 #seconds
 					scale: 0.8 #scales images down to 1200x630
 					format: 'png' #jpg smaller, png looks better
+			oglatest:
+				options:
+					urls: [
+						'http://127.0.0.1:8080/2017/local_variables/'
+						]
+					sizes: ['1500x788']
+					dest: 'src/raw/i/og'
+					#filename: 'og-{{url}}-{{size}}{{crop}}'
+					filename: 'og-{{url}}'
+					crop: true
+					css: 'out/ui/screenshot/screenshot.css'
+					delay: 5 #seconds
+					timeout: 120 #seconds
+					scale: 0.8 #scales images down to 1200x630
+					format: 'png' #jpg smaller, png looks better
 
 	# Register our Grunt tasks.
-	grunt.registerTask 'ogimages',      ['shell:server', 'pageres', 'copy:ogimages', 'clean:ogimages', 'imagemin' ]
+	grunt.registerTask 'ogimages',      ['shell:server', 'pageres:oglatest', 'copy:ogimages', 'clean:ogimages', 'imagemin' ]
 	grunt.registerTask 'testnow',       ['shell:clean', 'shell:ghpages', 'production']
 	grunt.registerTask 'ghpages',       ['shell:clean', 'shell:ghpages', 'production', 'gh-pages']
 	grunt.registerTask 'deploy',        ['shell:clean', 'shell:ghpages', 'production', 'gh-pages']

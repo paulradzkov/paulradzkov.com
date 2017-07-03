@@ -9,8 +9,8 @@
 @bg-color: #fff;
 
 .page {
-  padding: @padding;
-  color: @txt-color;
-  background-color: @bg-color;
+    padding: @padding;
+    color: @txt-color;
+    background-color: @bg-color;
 }
 ```

@@ -9,7 +9,7 @@
 
 // кастомизация компонентов
 .page-settings() {
-  @txt-color: @glob-text-color;
-  @bg-color: @glob-bg-color;
+    @txt-color: @glob-text-color;
+    @bg-color: @glob-bg-color;
 }
 ```

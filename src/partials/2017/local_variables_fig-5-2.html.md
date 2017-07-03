@@ -7,7 +7,7 @@
 @glob-txt-color: white;
 
 .page-settings() {
-  // всё в порядке
-  @txt-color: @glob-txt-color; 
+    // всё в порядке
+    @txt-color: @glob-txt-color;
 }
 ```

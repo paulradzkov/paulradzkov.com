@@ -92,7 +92,7 @@ og_image: '/i/og/og-index.png'
         <% for page in @getCollection("articles").toJSON().slice(0,1): %>
             <section class="blogwall-item blogwall-gridcell blogwall-gridcell-promo blogwall-fauxlink col-flex-sm">
                 <% if (page.cover) : %>
-                <figure class="space-minus-v-mili-xs space-minus-h-base-xs">
+                <figure class="space-minus-top-mili-xs space-minus-h-base-xs">
                     <img src="<%= page.url %><%= page.cover %>" alt="<%= page.title %>">
                 </figure>
                 <% end %>

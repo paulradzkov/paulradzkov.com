@@ -14,6 +14,7 @@ og_image: '/i/og/og-paulradzkov-2014-deploy_docpad_site_to_github_pages.png'
 
 1. Проблема с абсолютными путями: докпад по-умолчанию использует пути к ресурсам от корня домена, а на GH Pages url проекта будет выглядеть так `http://username.github.io/repository/`. Т.е. сайт находится в папке, а не в корне, и все пути к ресурсам недействительны. Конечно, можно купить собственное доменное имя, но это не мой случай. Нужно, чтобы на локалхосте url оставались абсолютными, а при деплое заменялись с учетом папки, в которую сайт деплоится.
 2. [Плагин для деплоя](https://github.com/docpad/docpad-plugin-ghpages) не заработал сразу и без настроек, как обещает разработчик.
+3. **Добавлено 6 мая 2018**: деплой из командной строки сломался после включения двухфакторной аутентификации на Гитхабе.
 
 Так как у меня не всё прошло гладко и очевидно, решил написать эту инструкцию.
 
@@ -171,3 +172,21 @@ og_image: '/i/og/og-paulradzkov-2014-deploy_docpad_site_to_github_pages.png'
 Теперь можно выкатывать сайт:
 
 <kbd class="cli" contenteditable="true" >&zwj;<span contenteditable="false">docpad deploy-ghpages --env static</span>&zwj;</kbd>
+
+## Двухфакторная аутентификация
+
+**Добавлено 6 мая 2018**
+
+Когда я включил двухфакторную аутентификацию на Гитхабе, деплой из командной строки перестал работать. Чтобы починить, вместо вашего пароля в настройках remote нужно подставить сгенерированный токен. Сгенерируйте его по этой [инструкции](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/). Если кратко:
+
+1. На Гитхабе кликните по вашему аватару, потом **Settings** → **Developer settings** → **Personal access tokens** → **Generate new token**.
+2. Дайте токену любое имя, например, «Mac terminal» или «Windows cmd».
+3. Поставьте уровень доступа **repo**.
+4. Нажмите **Generate token**.
+5. Скопируйте полученный токен. Когда вы уйдете с этой страницы, токен уже нельзя будет посмотреть.
+
+Вам нужно добавить новый «remote» (или заменить существующий) с токеном вместо пароля:
+
+<p><kbd class="cli" contenteditable="true" >&zwj;<span contenteditable="false">git remote add deploy <span>https://</span>login:<mark>token</mark>@github.com/repo_owner/repo_name.git</span>&zwj;</kbd></p>
+
+И всё снова заработает.

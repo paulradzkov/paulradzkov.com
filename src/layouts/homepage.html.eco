@@ -77,5 +77,6 @@
     <%- @partial('docpadscripts') %>
     <%- @partial('disqusscripts') %>
     <%- @partial('yandexmetrika') %>
+    <%- @partial('upup') %>
 </body>
 </html>

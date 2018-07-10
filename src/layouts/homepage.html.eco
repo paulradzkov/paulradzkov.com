@@ -78,5 +78,6 @@
     <%- @partial('disqusscripts') %>
     <%- @partial('yandexmetrika') %>
     <%- @partial('upup') %>
+    <%- @partial('offlinejs') %>
 </body>
 </html>

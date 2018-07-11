@@ -11,15 +11,15 @@ expired: true
 og_image: '/i/og/og-paulradzkov-2012-mobile_developing.png'
 ---
 
-<p>7 марта Abobe <a href="http://tv.adobe.com/watch/adobe-technology-sneaks-2012/adobe-shadow" title="Смотрим презентацию" target="_blank">представила</a> замечательный комплекс программ, позволяющий синхронно просматривать и проводить отладку сайтов в браузерах Webkit на компе и нескольких планшетах и смартфонах одновременно. Количество подключаемых устройств не ограничено. Поддерживаются как iOS, так и Android.</p>
+<p>7 марта Abobe <a href="http://tv.adobe.com/watch/adobe-technology-sneaks-2012/adobe-shadow" title="Смотрим презентацию" target="_blank" rel="noopener">представила</a> замечательный комплекс программ, позволяющий синхронно просматривать и проводить отладку сайтов в браузерах Webkit на компе и нескольких планшетах и смартфонах одновременно. Количество подключаемых устройств не ограничено. Поддерживаются как iOS, так и Android.</p>
 
 <!-- cut -->
 
 <p>Как это работает?</p>
-<p>Для начала устанавливаем <a href="http://labs.adobe.com/downloads/shadow.html" target="_blank">приложение Adobe Shadow</a> для Windows или Mac. Оно должно быть включено во время отладки, без него работать не будет.</p>
+<p>Для начала устанавливаем <a href="http://labs.adobe.com/downloads/shadow.html" target="_blank" rel="noopener">приложение Adobe Shadow</a> для Windows или Mac. Оно должно быть включено во время отладки, без него работать не будет.</p>
 <p><strong>Добавлено.</strong> Теперь продукт называется <a href="http://html.adobe.com/edge/inspect/">Adobe Edge Inspect</a>.</p>
-<p>Ставим <a href="https://chrome.google.com/webstore/detail/ijoeapleklopieoejahbpdnhkjjgddem" target="_blank">плагин Adobe Shadow</a> в Google Chrome.</p>
-<p>На мобильные устройства ставим соответствующие приложения из <a href="https://play.google.com/store/apps/details?id=com.adobe.shadow.android" target="_blank">Плей Маркета</a> или <a href="http://itunes.apple.com/app/adobe-shadow/id498621426" target="_blank">АппСтора</a>.</p>
+<p>Ставим <a href="https://chrome.google.com/webstore/detail/ijoeapleklopieoejahbpdnhkjjgddem" target="_blank" rel="noopener">плагин Adobe Shadow</a> в Google Chrome.</p>
+<p>На мобильные устройства ставим соответствующие приложения из <a href="https://play.google.com/store/apps/details?id=com.adobe.shadow.android" target="_blank" rel="noopener">Плей Маркета</a> или <a href="http://itunes.apple.com/app/adobe-shadow/id498621426" target="_blank" rel="noopener">АппСтора</a>.</p>
 <p>Все устройства должны находиться в одной wifi сети. Запускаем мобильные приложения, вводим коды для синхронизации. Всё готово к работе.</p>
 <p>Теперь можно серфить по сайтам с основного компа, а на подключенных устройствах будут открываться те же страницы. При этом используется движок родного браузера iOS или Android, но внутри приложения Shadow.</p>
 <p>Чтобы вызвать инспектор кода, нужно в выпадающем меню плагина Adobe Shadow кликнуть иконку <strong>&lt;&gt;</strong> напротив интересующего устройства.</p>

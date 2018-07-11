@@ -16,7 +16,7 @@ og_image: '/i/og/og-paulradzkov-2013-lists_and_floats.png'
 
 <!-- cut -->
 
-<p><a href="https://codepen.io/paulradzkov/full/PmQMby/" class="link-to-demo" target="_blank">демка</a></p>
+<p><a href="https://codepen.io/paulradzkov/full/PmQMby/" class="link-to-demo" target="_blank" rel="noopener">демка</a></p>
 <figure>
     <img src="<%= @document.url %>floated_images_and_lists_problem.png" width="800" height="560" alt="Если картинка обтекает список, маркеры списка налазят на картинку"/>
     <figcaption>Проблема: если картинка обтекает список, то маркеры списка налазят на картинку</figcaption>
@@ -87,7 +87,7 @@ ol:not([class]) li {
 
 <p>В отличие от старого решения, элементы списка обтекают картинку естественным образом, не оставляя зазоров под картинкой.</p>
 
-<p>Чтобы починить <a href="https://github.com/paulradzkov/bettertext.css/issues/4" target="_blank">баг</a> в Хроме, Опере и других браузерах на движке Blink, пришлось добавить невидимую анимацию. Она заставляет браузер пересчитать размеры элементов списка и поставить маркеры на место.</p>
+<p>Чтобы починить <a href="https://github.com/paulradzkov/bettertext.css/issues/4" target="_blank" rel="noopener">баг</a> в Хроме, Опере и других браузерах на движке Blink, пришлось добавить невидимую анимацию. Она заставляет браузер пересчитать размеры элементов списка и поставить маркеры на место.</p>
 
 <p>Живой пример:</p>
 

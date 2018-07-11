@@ -139,43 +139,43 @@ og_image: '/i/og/og-index.png'
     <div class="row faq">
         <div class="col-xs-12 col-md-6 col-lg-4 col-xl-3">
             <h5 class="space-out-bottom-nano-xs">Вёрстка, технические советы</h5>
-            <p><a target="_blank" href="https://toster.ru/q/395313#answer_971510">Как открыть цифровую клавиатуру на телефоне при вводе в input type="text"?</a></p>
-            <p><a target="_blank" href="https://toster.ru/q/366025#answer_907105">Удобные инструменты для адаптивной вёрстки?</a></p>
-            <p><a target="_blank" href="https://toster.ru/q/332166#answer_840444">Как использовать text-overflow: ellipsis; для текста в несколько строк?</a></p>
-            <p><a target="_blank" href="https://toster.ru/q/332041#answer_840202">Какие единицы измерения предпочтительнее использовать в адаптивной вёрстке?</a></p>
-            <p><a target="_blank" href="https://toster.ru/q/332057#answer_840170">Как правильно пересчитывать поля и отступы из px в em?</a></p>
-            <p><a target="_blank" href="https://toster.ru/q/331932#answer_840154">Как настроить viewport неадаптивному сайту на мобильниках?</a></p>
-            <p><a target="_blank" href="https://toster.ru/q/326880#answer_830288">У кого есть решение для градиента в IE9?</a></p>
-            <p><a target="_blank" href="https://toster.ru/q/323245#answer_822644">Есть ли смысл в 32 и более колоночных сетках?</a></p>
-            <p><a target="_blank" href="https://toster.ru/q/308760#answer_794191">Как изменять размер шрифта в зависимости от размера экрана?</a></p>
-            <p><a target="_blank" href="https://toster.ru/q/307959#answer_792286">Как менять css-стили в зависимости от размера окна, но без использования медиа-запросов?</a></p>
-            <p><a target="_blank" href="https://toster.ru/q/304730#answer_785822">Как сделать фиксированную шапку таблицы на css?</a></p>
-            <p><a target="_blank" href="https://toster.ru/q/288562#answer_750757">Что лучше использовать ID или class?</a></p>
-            <p><a target="_blank" href="https://toster.ru/q/286239#answer_746058">Оправданность применения миксинов bootstrap типа .make-row()?</a></p>
-            <p><a target="_blank" href="https://toster.ru/q/165927#answer_458185">Почему могут слетать шрифты, после заливки на хостинг?</a></p>
+            <p><a target="_blank" rel="noopener" href="https://toster.ru/q/395313#answer_971510">Как открыть цифровую клавиатуру на телефоне при вводе в input type="text"?</a></p>
+            <p><a target="_blank" rel="noopener" href="https://toster.ru/q/366025#answer_907105">Удобные инструменты для адаптивной вёрстки?</a></p>
+            <p><a target="_blank" rel="noopener" href="https://toster.ru/q/332166#answer_840444">Как использовать text-overflow: ellipsis; для текста в несколько строк?</a></p>
+            <p><a target="_blank" rel="noopener" href="https://toster.ru/q/332041#answer_840202">Какие единицы измерения предпочтительнее использовать в адаптивной вёрстке?</a></p>
+            <p><a target="_blank" rel="noopener" href="https://toster.ru/q/332057#answer_840170">Как правильно пересчитывать поля и отступы из px в em?</a></p>
+            <p><a target="_blank" rel="noopener" href="https://toster.ru/q/331932#answer_840154">Как настроить viewport неадаптивному сайту на мобильниках?</a></p>
+            <p><a target="_blank" rel="noopener" href="https://toster.ru/q/326880#answer_830288">У кого есть решение для градиента в IE9?</a></p>
+            <p><a target="_blank" rel="noopener" href="https://toster.ru/q/323245#answer_822644">Есть ли смысл в 32 и более колоночных сетках?</a></p>
+            <p><a target="_blank" rel="noopener" href="https://toster.ru/q/308760#answer_794191">Как изменять размер шрифта в зависимости от размера экрана?</a></p>
+            <p><a target="_blank" rel="noopener" href="https://toster.ru/q/307959#answer_792286">Как менять css-стили в зависимости от размера окна, но без использования медиа-запросов?</a></p>
+            <p><a target="_blank" rel="noopener" href="https://toster.ru/q/304730#answer_785822">Как сделать фиксированную шапку таблицы на css?</a></p>
+            <p><a target="_blank" rel="noopener" href="https://toster.ru/q/288562#answer_750757">Что лучше использовать ID или class?</a></p>
+            <p><a target="_blank" rel="noopener" href="https://toster.ru/q/286239#answer_746058">Оправданность применения миксинов bootstrap типа .make-row()?</a></p>
+            <p><a target="_blank" rel="noopener" href="https://toster.ru/q/165927#answer_458185">Почему могут слетать шрифты, после заливки на хостинг?</a></p>
         </div>
         <div class="col-xs-12 col-md-6 col-lg-4 col-xl-3">
             <h5 class="space-out-bottom-nano-xs">Дизайн, проектирование, UX</h5>
-            <p><a target="_blank" href="https://toster.ru/q/324761#answer_828684">Стоит ли делать залипающее меню?</a></p>
-            <p><a target="_blank" href="https://toster.ru/q/326107#answer_828672">Как лучше сделать вывод новостных материалов?</a></p>
-            <p><a target="_blank" href="https://toster.ru/q/301214#answer_778399">Какой лучший движок для информационных сайтов?</a></p>
-            <p><a target="_blank" href="https://toster.ru/q/267588#answer_716858">Почему многие популярные интернет издания используют шрифт с засечками для основного текста, хотя это дурной тон?</a></p>
-            <p><a target="_blank" href="https://toster.ru/q/273248#answer_716833">Как веб-дизайнеру избавиться от топорности в своих работах?</a></p>
-            <p><a target="_blank" href="https://toster.ru/q/256968#answer_702422">Нормален ли такой подход для работы с git'ом (хранение дизайна и кода в одном репозитории)?</a></p>
-            <p><a target="_blank" href="https://toster.ru/q/264931#answer_702211">Как вы делаете дизайн сайта? Про этапы разработки</a></p>
-            <p><a target="_blank" href="https://toster.ru/q/218213#answer_591152">Мобильный сайт? Мобильная версия сайта или мобильное приложение?</a></p>
-            <p><a target="_blank" href="https://toster.ru/q/219222#answer_591123">Под какие разрешения рисовать адаптивный дизайн?</a></p>
+            <p><a target="_blank" rel="noopener" href="https://toster.ru/q/324761#answer_828684">Стоит ли делать залипающее меню?</a></p>
+            <p><a target="_blank" rel="noopener" href="https://toster.ru/q/326107#answer_828672">Как лучше сделать вывод новостных материалов?</a></p>
+            <p><a target="_blank" rel="noopener" href="https://toster.ru/q/301214#answer_778399">Какой лучший движок для информационных сайтов?</a></p>
+            <p><a target="_blank" rel="noopener" href="https://toster.ru/q/267588#answer_716858">Почему многие популярные интернет издания используют шрифт с засечками для основного текста, хотя это дурной тон?</a></p>
+            <p><a target="_blank" rel="noopener" href="https://toster.ru/q/273248#answer_716833">Как веб-дизайнеру избавиться от топорности в своих работах?</a></p>
+            <p><a target="_blank" rel="noopener" href="https://toster.ru/q/256968#answer_702422">Нормален ли такой подход для работы с git'ом (хранение дизайна и кода в одном репозитории)?</a></p>
+            <p><a target="_blank" rel="noopener" href="https://toster.ru/q/264931#answer_702211">Как вы делаете дизайн сайта? Про этапы разработки</a></p>
+            <p><a target="_blank" rel="noopener" href="https://toster.ru/q/218213#answer_591152">Мобильный сайт? Мобильная версия сайта или мобильное приложение?</a></p>
+            <p><a target="_blank" rel="noopener" href="https://toster.ru/q/219222#answer_591123">Под какие разрешения рисовать адаптивный дизайн?</a></p>
         </div>
         <div class="col-xs-12 col-md-6 col-lg-4 col-xl-3">
             <h5 class="space-out-bottom-nano-xs">Организация труда</h5>
-            <p><a target="_blank" href="https://toster.ru/q/420931#answer_1013532">Как вы организуете свою работу? Про GitHub</a></p>
-            <p><a target="_blank" href="https://toster.ru/q/323298#answer_822968">Распараллеливание процесса вёрстки между верстальщиками?</a></p>
-            <p><a target="_blank" href="https://toster.ru/q/326938#answer_830276">Как собеседовать/тестировать верстальщика, если ты сам не верстальщик?</a></p>
-            <p><a target="_blank" href="https://toster.ru/q/326246#answer_828973">Что показать работодателю при устройстве стажером в веб-разработку?</a></p>
+            <p><a target="_blank" rel="noopener" href="https://toster.ru/q/420931#answer_1013532">Как вы организуете свою работу? Про GitHub</a></p>
+            <p><a target="_blank" rel="noopener" href="https://toster.ru/q/323298#answer_822968">Распараллеливание процесса вёрстки между верстальщиками?</a></p>
+            <p><a target="_blank" rel="noopener" href="https://toster.ru/q/326938#answer_830276">Как собеседовать/тестировать верстальщика, если ты сам не верстальщик?</a></p>
+            <p><a target="_blank" rel="noopener" href="https://toster.ru/q/326246#answer_828973">Что показать работодателю при устройстве стажером в веб-разработку?</a></p>
             <h5 class="space-out-bottom-nano-xs">Самообразование</h5>
-            <p><a target="_blank" href="https://toster.ru/q/421295#answer_1014403">Как строить карьеру в дизайне? Про уровни дизайнеров</a></p>
-            <p><a target="_blank" href="https://toster.ru/q/326719#answer_830295">Из каких англоязычных ресурсов предпочитаете получать свежую информацию из мира UI / UX / Web Design?</a></p>
-            <p><a target="_blank" href="https://toster.ru/q/227107#answer_608544">Где посмотреть примеры качественного кода вёрстки сайтов, лендингов, веб-приложений?</a></p>
+            <p><a target="_blank" rel="noopener" href="https://toster.ru/q/421295#answer_1014403">Как строить карьеру в дизайне? Про уровни дизайнеров</a></p>
+            <p><a target="_blank" rel="noopener" href="https://toster.ru/q/326719#answer_830295">Из каких англоязычных ресурсов предпочитаете получать свежую информацию из мира UI / UX / Web Design?</a></p>
+            <p><a target="_blank" rel="noopener" href="https://toster.ru/q/227107#answer_608544">Где посмотреть примеры качественного кода вёрстки сайтов, лендингов, веб-приложений?</a></p>
         </div>
     </div>
 </section>

@@ -1,0 +1,173 @@
+.offline-ui, .offline-ui *, .offline-ui:before, .offline-ui:after, .offline-ui *:before, .offline-ui *:after {
+  box-sizing: border-box;
+}
+
+.offline-ui {
+  display: none;
+  position: fixed;
+  background: white;
+  z-index: 2000;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.offline-ui .offline-ui-content:before {
+  display: inline;
+}
+.offline-ui .offline-ui-retry {
+  user-select: none;
+  display: none;
+}
+.offline-ui .offline-ui-retry:before {
+  display: inline;
+}
+.offline-ui.offline-ui-up.offline-ui-up-5s {
+  display: block;
+}
+.offline-ui.offline-ui-down {
+  display: block;
+}
+.offline-ui.offline-ui-down.offline-ui-waiting .offline-ui-retry {
+  display: block;
+}
+.offline-ui.offline-ui-down.offline-ui-reconnect-failed-2s.offline-ui-waiting .offline-ui-retry {
+  display: none;
+}
+
+@keyframes offline-dropin {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+
+  1% {
+    transform: translateY(-800px);
+    opacity: 0;
+  }
+
+  2% {
+    transform: translateY(-800px);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+@keyframes offline-dropout {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-800px);
+  }
+}
+
+
+@keyframes offline-rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(359deg);
+  }
+}
+
+.offline-ui {
+  border-radius: 0 0 4px 4px;
+  font-size: 0.75rem;
+  font-weight: 300;
+  padding: 0.5em;
+  width: 38em;
+  max-width: 100%;
+  background: black;
+  color: #cccccc;
+  overflow: hidden;
+}
+@media (max-width: 27.75em) {
+  .offline-ui {
+    border-radius: 0;
+  }
+}
+.offline-ui .offline-ui-content {
+  padding-left: 2em;
+}
+.offline-ui .offline-ui-content:before {
+  line-height: 1.25em;
+}
+.offline-ui .offline-ui-content:after {
+  border-radius: 50%;
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 1em;
+  margin: auto;
+  height: 1em;
+  width: 1em;
+}
+.offline-ui .offline-ui-retry {
+  position: absolute;
+  right: 3em;
+  top: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.2);
+  text-decoration: none;
+  color: inherit;
+  line-height: 2.5em;
+  height: 2.5em;
+  margin: auto;
+  padding: 0 1em;
+}
+.offline-ui.offline-ui-up {
+  animation: offline-dropout forwards 0.5s 2s;
+  -webkit-backface-visibility: hidden;
+}
+.offline-ui.offline-ui-up .offline-ui-content:after {
+  background: #80d580;
+}
+.offline-ui.offline-ui-down {
+  animation: offline-dropin 0.5s;
+  -webkit-backface-visibility: hidden;
+}
+.offline-ui.offline-ui-down .offline-ui-content:after {
+  background: #e24949;
+}
+.offline-ui.offline-ui-down.offline-ui-connecting, .offline-ui.offline-ui-down.offline-ui-waiting {
+  padding-right: 3em;
+}
+.offline-ui.offline-ui-down.offline-ui-connecting .offline-ui-content:after, .offline-ui.offline-ui-down.offline-ui-waiting .offline-ui-content:after {
+  background: #e24949;
+}
+.offline-ui.offline-ui-down.offline-ui-connecting:after, .offline-ui.offline-ui-down.offline-ui-waiting:after {
+  animation: offline-rotation 0.7s linear infinite;
+  -webkit-backface-visibility: hidden;
+  border-radius: 50%;
+  content: " ";
+  display: block;
+  position: absolute;
+  right: 1em;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: 1em;
+  width: 1em;
+  border: 2px solid transparent;
+  border-top-color: rgba(255, 255, 255, 0.5);
+  border-left-color: rgba(255, 255, 255, 0.5);
+  opacity: 0.7;
+}
+.offline-ui.offline-ui-down.offline-ui-waiting {
+  padding-right: 10em;
+}
+.offline-ui.offline-ui-down.offline-ui-waiting.offline-ui-reconnect-failed-2s {
+  padding-right: 0;
+}

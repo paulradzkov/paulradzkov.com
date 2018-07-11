@@ -47,7 +47,7 @@ var canIUse = (function () {
         TMPL_SUPPORT = '<li title="{browser} - {support}" class="logo-{browsercode} {supportcode}"><span class="version">{version}{prefixed}</span></li>',
         TMPL_PREFIX_NOTE = '<p>* denotes prefix required.</p>',
         TMPL_LEGEND = '<ul class="legend"><li>Поддержка:</li><li class="y">Да</li><li class="n">Нет</li><li class="a">Частично</li><li class="p">Полифил</li></ul>',
-        TMPL_FOOTER = '<p class="stats">Статистика с <a href="http://caniuse.com/#feat={feature}" target="_blank">caniuse.com</a></p>',
+        TMPL_FOOTER = '<p class="stats">Статистика с <a href="http://caniuse.com/#feat={feature}" target="_blank" rel="noopener">caniuse.com</a></p>',
         TMPL_LOADING = '<h1>Загружается виджет…</h1>',
         TMPL_ERROR = '<h1>Error</h1><p>Свойство "{feature}" не найдено!</p>';
 

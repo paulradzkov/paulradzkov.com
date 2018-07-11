@@ -52,7 +52,7 @@ blockquote {
 
 <p>Уверен, многие пробовали использовать <code class="css"><span class="hljs-tag">strong</span> <span class="hljs-rules">{<span class="hljs-rule"><span class="hljs-attribute">font-weight</span>:<span class="hljs-value"> bolder</span></span>;<span class="hljs-rule">}</span></span></code>, но это не принесло ожидаемого результата — текст стал ещё жирнее, чем ожидалось.</p>
 
-<p>А всё потому, что согласно <a href="http://www.w3.org/TR/CSS2/fonts.html#font-boldness" target="_blank">спецификации</a>, значение <code class="hljs-rule"><span class="hljs-value">bolder</span></code>  (<code class="hljs-rule"><span class="hljs-value">lighter</span></code>) увеличивает (уменьшает) <em>унаследованное</em> значение <code class="hljs-attribute">font-weight</code> до следующего возможного для данного шрифта значения, согласно следующей таблице.</p>
+<p>А всё потому, что согласно <a href="http://www.w3.org/TR/CSS2/fonts.html#font-boldness" target="_blank" rel="noopener">спецификации</a>, значение <code class="hljs-rule"><span class="hljs-value">bolder</span></code>  (<code class="hljs-rule"><span class="hljs-value">lighter</span></code>) увеличивает (уменьшает) <em>унаследованное</em> значение <code class="hljs-attribute">font-weight</code> до следующего возможного для данного шрифта значения, согласно следующей таблице.</p>
 
 <figure>
 <table style="margin: auto;">
@@ -117,10 +117,10 @@ strong, b {
 <p>Теперь нам не придётся заботиться о вложенности элементов — каскад всё сделает автоматически. Мы можем вкладывать теги <code class="hljs-tag">strong</code> друг в друга.</p>
 
 <figure>
-    <a href="http://cssdeck.com/labs/x20utix0" target="_blank"><img src="<%= @document.url %>nested-tags-with-font-weight-bolder.png" alt=""></a>
+    <a href="http://cssdeck.com/labs/x20utix0" target="_blank" rel="noopener"><img src="<%= @document.url %>nested-tags-with-font-weight-bolder.png" alt=""></a>
     <figcaption>
         <p>Вложенные теги «strong». Толщина шрифта определяется исходя из значения родительского элемента.</p>
-        <p style="text-align: center;"><a href="http://cssdeck.com/labs/x20utix0" target="_blank" class="link-to-demo">Демка</a></p>
+        <p style="text-align: center;"><a href="http://cssdeck.com/labs/x20utix0" target="_blank" rel="noopener" class="link-to-demo">Демка</a></p>
     </figcaption>
 </figure>
 

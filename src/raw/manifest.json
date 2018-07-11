@@ -1,5 +1,6 @@
 {
-	"name": "paulradzkov",
+	"name": "paulradzkov.com",
+    "short-name": "paulradzkov",
 	"icons": [
 		{
 			"src": "\/android-chrome-192x192.png?v=A0RJW2vMdo",
@@ -7,5 +8,8 @@
 			"type": "image\/png"
 		}
 	],
-	"theme_color": "#ffffff"
+	"theme_color": "#ffffff",
+    "background_color": "#ffffff",
+    "start_url": "\/index.html",
+    "display": "browser"
 }

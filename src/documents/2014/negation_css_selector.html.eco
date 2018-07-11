@@ -45,7 +45,7 @@ og_image: '/i/og/og-paulradzkov-2014-negation_css_selector.png'
 
 <p>Далее у нас варианты:</p>
 
-<p>1) обнулить мешающие стили в слайдерах и других местах. Но это противоречит «<abbr title="Don't Repeat Yourself">DRY</abbr>» и является одним из <a href="http://csswizardry.com/2012/11/code-smells-in-css/" target="_blank">признаков «вонючего» кода</a>. К тому же не решает проблему раз и навсегда: добавите, например, аккордеон и списки в нем снова придется обнулять.</p>
+<p>1) обнулить мешающие стили в слайдерах и других местах. Но это противоречит «<abbr title="Don't Repeat Yourself">DRY</abbr>» и является одним из <a href="http://csswizardry.com/2012/11/code-smells-in-css/" target="_blank" rel="noopener">признаков «вонючего» кода</a>. К тому же не решает проблему раз и навсегда: добавите, например, аккордеон и списки в нем снова придется обнулять.</p>
 
 <p>2) пойти от обратного и ставить класс всем спискам, которые нужно стилизовать:</p>
 
@@ -66,9 +66,9 @@ og_image: '/i/og/og-paulradzkov-2014-negation_css_selector.png'
 <h2>Пример 2. Изменение внешнего вида всех элементов, кроме наведенного</h2>
 
 <figure>
-  <a href="http://cssdeck.com/labs/dlg62kjv" target="_blank"><img src="<%= @document.url %>sample2.gif" width="600" height="150" alt="Изменение внешнего вида всех элементов, кроме наведенного"/></a>
+  <a href="http://cssdeck.com/labs/dlg62kjv" target="_blank" rel="noopener"><img src="<%= @document.url %>sample2.gif" width="600" height="150" alt="Изменение внешнего вида всех элементов, кроме наведенного"/></a>
   <figcaption>
-    <p style="text-align: center;"><a href="http://cssdeck.com/labs/dlg62kjv" class="link-to-demo" target="_blank">Пример</a></p>
+    <p style="text-align: center;"><a href="http://cssdeck.com/labs/dlg62kjv" class="link-to-demo" target="_blank" rel="noopener">Пример</a></p>
   </figcaption>
 </figure>
 
@@ -93,9 +93,9 @@ ul:hover li:not(:hover) {
 
 <h2>Пример 3. Меню с разделителями между элементами</h2>
 <figure>
-    <a href="http://cssdeck.com/labs/dlg62kjv" target="_blank"><img src="<%= @document.url %>sample3.png" width="600" height="200" alt="Меню с разделителями между элементами"/></a>
+    <a href="http://cssdeck.com/labs/dlg62kjv" target="_blank" rel="noopener"><img src="<%= @document.url %>sample3.png" width="600" height="200" alt="Меню с разделителями между элементами"/></a>
   <figcaption>
-    <p style="text-align: center;"><a href="http://cssdeck.com/labs/dlg62kjv" class="link-to-demo" target="_blank">Пример</a></p>
+    <p style="text-align: center;"><a href="http://cssdeck.com/labs/dlg62kjv" class="link-to-demo" target="_blank" rel="noopener">Пример</a></p>
   </figcaption>
 </figure>
 
@@ -191,8 +191,8 @@ textarea,
 
 <h2>Поддержка</h2>
 
-<p>Следует заметить, что согласно <a href="http://www.w3.org/TR/css3-selectors/#negation" target="_blank">спецификации</a> в скобках селектора <code class="hljs-pseudo">:not()</code> может стоять только <a href="http://www.w3.org/TR/css3-selectors/#simple-selectors-dfn" target="_blank">простой селектор</a> и в скобках нельзя использовать сам селектор <code class="hljs-pseudo">:not()</code>. Если нужно исключить несколько элементов, <code class="hljs-pseudo">:not()</code> можно повторить несолько раз, как в примере 5.</p>
+<p>Следует заметить, что согласно <a href="http://www.w3.org/TR/css3-selectors/#negation" target="_blank" rel="noopener">спецификации</a> в скобках селектора <code class="hljs-pseudo">:not()</code> может стоять только <a href="http://www.w3.org/TR/css3-selectors/#simple-selectors-dfn" target="_blank" rel="noopener">простой селектор</a> и в скобках нельзя использовать сам селектор <code class="hljs-pseudo">:not()</code>. Если нужно исключить несколько элементов, <code class="hljs-pseudo">:not()</code> можно повторить несолько раз, как в примере 5.</p>
 
-<div class="caniuse" data-feature="css-sel3"><a href="http://caniuse.com/#search=%3Anot" target="_blank">Поддержка браузерами</a></div>
+<div class="caniuse" data-feature="css-sel3"><a href="http://caniuse.com/#search=%3Anot" target="_blank" rel="noopener">Поддержка браузерами</a></div>
 
-<p>Если очень нужны CSS3-селекторы в браузерах, которые их не поддерживают, можно использовать полифил <a href="http://selectivizr.com/" target="_blank">selectivizr</a>.</p>
+<p>Если очень нужны CSS3-селекторы в браузерах, которые их не поддерживают, можно использовать полифил <a href="http://selectivizr.com/" target="_blank" rel="noopener">selectivizr</a>.</p>

@@ -16,9 +16,9 @@ disqusid: gaussian-blur
     <img src="<%= @document.url %>/gaussian_glow_design.jpg" width="715" height="715" alt=""/>
 </figure>
 
-<p>Сначала была мысль сделать размытие, используя canvas. Но, как оказалось, проще сделать это без канваса и яваскрипта через SVG-фильтры. <a href="http://caniuse.com/#feat=css-filters"  target="_blank">CSS-фильтры</a> от Adobe <abbr title="Март 2013">ещё</abbr> не слишком распространены: работают с префиксом только в webkit. У <a href="http://caniuse.com/#feat=svg-filters">SVG-фильтров</a> поддержка намного шире — все современные браузеры, кроме Safari 5.1 и Андроид браузера. А в IE уже начиная с версии 5.5 есть старые добрые фильтры (те самые, с длинным названием <code>filter: progid:DXImageTransform.Microsoft.Blur(pixelradius=70);</code>), которые, тем не менее, прекрасно справляются с задачей.</p>
+<p>Сначала была мысль сделать размытие, используя canvas. Но, как оказалось, проще сделать это без канваса и яваскрипта через SVG-фильтры. <a href="http://caniuse.com/#feat=css-filters"  target="_blank" rel="noopener">CSS-фильтры</a> от Adobe <abbr title="Март 2013">ещё</abbr> не слишком распространены: работают с префиксом только в webkit. У <a href="http://caniuse.com/#feat=svg-filters">SVG-фильтров</a> поддержка намного шире — все современные браузеры, кроме Safari 5.1 и Андроид браузера. А в IE уже начиная с версии 5.5 есть старые добрые фильтры (те самые, с длинным названием <code>filter: progid:DXImageTransform.Microsoft.Blur(pixelradius=70);</code>), которые, тем не менее, прекрасно справляются с задачей.</p>
 
-<aside>Если всё-таки нужно именно через canvas, то вам сюда — <a href="http://www.quasimondo.com/StackBlurForCanvas/StackBlurDemo.html" target="_blank">StackBlur for Canvas</a>.</aside>
+<aside>Если всё-таки нужно именно через canvas, то вам сюда — <a href="http://www.quasimondo.com/StackBlurForCanvas/StackBlurDemo.html" target="_blank" rel="noopener">StackBlur for Canvas</a>.</aside>
 
 <p>
     <a href="http://cssdeck.com/labs/ambi-glow" class="link-to-demo">Demo</a>

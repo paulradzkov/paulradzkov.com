@@ -34,10 +34,10 @@ scripts:
 og_image: '/i/og/og-paulradzkov-2014-markdown_cheatsheet.png'
 ---
 
-<p><strong>12 июля 2015: Обновил руководство до Github Flavoured Markdown. Предыдущее <a href="http://codepen.io/paulradzkov/pen/ZGoLgr" target="_blank">руководство с традиционным Маркдауном</a>.</strong>
+<p><strong>12 июля 2015: Обновил руководство до Github Flavoured Markdown. Предыдущее <a href="http://codepen.io/paulradzkov/pen/ZGoLgr" target="_blank" rel="noopener">руководство с традиционным Маркдауном</a>.</strong>
 </p>
 
-<p><a href="http://daringfireball.net/projects/markdown/syntax" target="_blank">Официальное руководство</a> по синтаксису Markdown мне кажется слишком длинным и не слишком наглядным, поэтому я составил краткое руководство, которое поможет выучить или повторить синтаксис Маркдауна за час.</p>
+<p><a href="http://daringfireball.net/projects/markdown/syntax" target="_blank" rel="noopener">Официальное руководство</a> по синтаксису Markdown мне кажется слишком длинным и не слишком наглядным, поэтому я составил краткое руководство, которое поможет выучить или повторить синтаксис Маркдауна за час.</p>
 
 <!-- cut -->
 
@@ -50,7 +50,7 @@ og_image: '/i/og/og-paulradzkov-2014-markdown_cheatsheet.png'
     <li>добавили зачеркнутый текст.</li>
 </ul>
 
-<p><a href="https://help.github.com/articles/github-flavored-markdown/" target="_blank">Полный список отличий</a> на Гитхабе.</p>
+<p><a href="https://help.github.com/articles/github-flavored-markdown/" target="_blank" rel="noopener">Полный список отличий</a> на Гитхабе.</p>
 
 <div class="raw-output">
 <%- @partial('highlight-gfm-syntax') %>

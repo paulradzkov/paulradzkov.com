@@ -122,7 +122,7 @@ $(document).ready(function(){
     $('.js-full-size').each(function() {
         var imgLink = $(this).attr('src');
         var linkText = 'Full size';
-        var output = '<a class="full-size-link" target="_blank" href="' + imgLink + '">' + linkText + '</a>';
+        var output = '<a class="full-size-link" target="_blank" rel="noopener" href="' + imgLink + '">' + linkText + '</a>';
         $(this).after(output);
     });
  });

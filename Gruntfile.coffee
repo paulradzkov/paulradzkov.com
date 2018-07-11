@@ -265,6 +265,7 @@ module.exports = (grunt) ->
 					ignore: [
 						/\.likely([-a-zA-Z0-9_:>\*\s\[=\]])*/
 						/\.tooltip([-a-zA-Z0-9_:>\*\s\[=\]])*/
+						/\.offline-ui([-a-zA-Z0-9_:>\*\s\[=\]])*/
 						".hold"
 						".fixed"
 						".scrolltop"
@@ -292,6 +293,7 @@ module.exports = (grunt) ->
 					timeout: 5000
 					ignore: [
 						/\.likely([-a-zA-Z0-9_:>\*\s\[=\]])*/
+						/\.offline-ui([-a-zA-Z0-9_:>\*\s\[=\]])*/
 					]
 					stylesheets: [
 						'../../ui/framework.css'

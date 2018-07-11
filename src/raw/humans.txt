@@ -4,10 +4,3 @@
 # AUTHOR
 
     Paul Radzkov -- web-developer
-
-
-# TECHNOLOGY COLOPHON
-
-    HTML5, CSS3
-    Normalize.css, HTML5 Boilerplate, jQuery, Modernizr
-    Node.js, DocPad, Grunt, Bower, Autoprefixer

@@ -103,7 +103,7 @@ cover: "local_variables_less@1x.png"
             <div class="browserframe" data-title="page.css">
                 <%- @partial("2017/local_variables_fig-1-1") %>
             </div>
-            <figcaption><strong>Было.</strong> Пример кода компонента.</figcaption>
+            <figcaption class="space-in-h-mili-md"><strong>Было.</strong> Пример кода компонента.</figcaption>
         </section>
         <section class="col-xs-12 col-md-1">
             <p>↓</p>
@@ -112,7 +112,7 @@ cover: "local_variables_less@1x.png"
             <div class="browserframe" data-title="page.less">
                 <%- @partial("2017/local_variables_fig-1-2") %>
             </div>
-            <figcaption><strong>Стало.</strong> Переменные объявлены в глобальной области видимости и у них слишком общие имена. Это плохо.</figcaption>
+            <figcaption class="space-in-h-mili-md"><strong>Стало.</strong> Переменные объявлены в глобальной области видимости и у них слишком общие имена. Это плохо.</figcaption>
         </section>
     </div>
 </figure>
@@ -143,7 +143,7 @@ cover: "local_variables_less@1x.png"
             <div class="browserframe" data-title="page.less">
                 <%- @partial("2017/local_variables_fig-1-2") %>
             </div>
-            <figcaption><strong>Было.</strong> Глобальные переменные.</figcaption>
+            <figcaption class="space-in-h-mili-md"><strong>Было.</strong> Глобальные переменные.</figcaption>
         </section>
         <section class="col-xs-12 col-md-1">
             <p>↓</p>
@@ -152,7 +152,7 @@ cover: "local_variables_less@1x.png"
             <div class="browserframe" data-title="page.less">
                 <%- @partial("2017/local_variables_fig-2") %>
             </div>
-            <figcaption><strong>Стало.</strong> Переменные объявлены внутри селектора и не создают конфликта имён, потому что теперь они локальные.</figcaption>
+            <figcaption class="space-in-h-mili-md"><strong>Стало.</strong> Переменные объявлены внутри селектора и не создают конфликта имён, потому что теперь они локальные.</figcaption>
         </section>
     </div>
 </figure>
@@ -175,7 +175,7 @@ cover: "local_variables_less@1x.png"
             <div class="browserframe" data-title="page.less">
                 <%- @partial("2017/local_variables_fig-2") %>
             </div>
-            <figcaption><strong>Было.</strong> Локальные переменные внутри селектора.</figcaption>
+            <figcaption class="space-in-h-mili-md"><strong>Было.</strong> Локальные переменные внутри селектора.</figcaption>
         </section>
         <section class="col-xs-12 col-md-1">
             <p>↓</p>
@@ -184,7 +184,7 @@ cover: "local_variables_less@1x.png"
             <div class="browserframe" data-title="page.less">
                 <%- @partial("2017/local_variables_fig-3") %>
             </div>
-            <figcaption><strong>Стало.</strong> Миксин доставляет переменные в зону видимости селектора.</figcaption>
+            <figcaption class="space-in-h-mili-md"><strong>Стало.</strong> Миксин доставляет переменные в зону видимости селектора.</figcaption>
         </section>
     </div>
 </figure>
@@ -212,23 +212,23 @@ cover: "local_variables_less@1x.png"
 
 <figure class="space-out-h-kilo-xl">
     <div class="row row-bottom-xs row-center-xs row-middle-lg">
-        <section class="col-xs-12 col-md-6 col-lg col-xl space-minus-right-kilo-lg">
+        <section class="col-xs-12 col-md-6 col-lg-shrink col-xl space-minus-right-base-md space-minus-right-kilo-lg">
             <div class="browserframe" data-title="projectname.less">
                 <%- @partial("2017/local_variables_fig-4-1") %>
             </div>
-            <figcaption class="space-in-h-base-lg"><strong>Главный файл.</strong><br> Импортируем компоненты и конфиг. Конфиг — последним.</figcaption>
+            <figcaption class="space-in-h-mili-md space-in-h-base-lg"><strong>Главный файл.</strong><br> Импортируем компоненты и конфиг. Конфиг — последним.</figcaption>
         </section>
         <section class="col-xs-12 col-md-6 col-lg-shrink col-xl space-minus-right-kilo-lg">
             <div class="browserframe" data-title="page.less">
                 <%- @partial("2017/local_variables_fig-3") %>
             </div>
-            <figcaption class="space-in-h-base-lg"><strong>Компонент.</strong><br> Все переменные локальные и хранятся в миксине.</figcaption>
+            <figcaption class="space-in-h-mili-md space-in-h-base-lg"><strong>Компонент.</strong><br> Все переменные локальные и хранятся в миксине.</figcaption>
         </section>
         <section class="col-xs-12 col-md-shrink col-lg-shrink col-xl">
             <div class="browserframe" data-title="config.less">
                 <%- @partial("2017/local_variables_fig-4-2") %>
             </div>
-            <figcaption class="space-in-h-base-lg"><strong>Конфиг проекта.</strong><br> Переопределяем параметры компонента с помощью миксина настроек.</figcaption>
+            <figcaption class="space-in-h-mili-md space-in-h-base-lg"><strong>Конфиг проекта.</strong><br> Переопределяем параметры компонента с помощью миксина настроек.</figcaption>
         </section>
     </div>
 </figure>
@@ -264,7 +264,7 @@ cover: "local_variables_less@1x.png"
             <div class="browserframe" data-title="config.less" style="background-color: #fff4f4;">
                 <%- @partial("2017/local_variables_fig-5-1") %>
             </div>
-            <figcaption><strong>Неправильно.</strong> Рекурсивное определение переменной вызывает ошибку компиляции.</figcaption>
+            <figcaption class="space-in-h-mili-md"><strong>Неправильно.</strong> Рекурсивное определение переменной вызывает ошибку компиляции.</figcaption>
         </section>
         <section class="col-xs-12 col-md-1">
             <p>↓</p>
@@ -273,7 +273,7 @@ cover: "local_variables_less@1x.png"
             <div class="browserframe" data-title="config.less">
                 <%- @partial("2017/local_variables_fig-5-2") %>
             </div>
-            <figcaption><strong>Правильно.</strong> У глобальных переменных свой префикс `glob-`, что исключает совпадение имён.</figcaption>
+            <figcaption class="space-in-h-mili-md"><strong>Правильно.</strong> У глобальных переменных свой префикс `glob-`, что исключает совпадение имён.</figcaption>
         </section>
     </div>
 </figure>
@@ -311,19 +311,19 @@ Sass отличается от Less и больше похож на скрип�
             <div class="browserframe" data-title="projectname.scss">
                 <%- @partial("2017/local_variables_fig-7-1") %>
             </div>
-            <figcaption class="space-in-h-base-lg"><strong>Главный файл.</strong><br> Сначала импортируем конфиг, потом компоненты.</figcaption>
+            <figcaption class="space-in-h-mili-md space-in-h-base-lg"><strong>Главный файл.</strong><br> Сначала импортируем конфиг, потом компоненты.</figcaption>
         </section>
         <section class="col-xs-12 col-md col-lg-6">
             <div class="browserframe" data-title="config.scss">
                 <%- @partial("2017/local_variables_fig-7-2") %>
             </div>
-            <figcaption class="space-in-h-base-lg"><strong>Настройки.</strong><br> Создаём глобальные переменные и переопределяем параметры компонента.</figcaption>
+            <figcaption class="space-in-h-mili-md space-in-h-base-lg"><strong>Настройки.</strong><br> Создаём глобальные переменные и переопределяем параметры компонента.</figcaption>
         </section>
         <section class="col-xs-12 col-md-shrink">
             <div class="browserframe" data-title="page.scss">
                 <%- @partial("2017/local_variables_fig-7-3") %>
             </div>
-            <figcaption class="space-in-h-base-lg"><strong>Компонент.</strong><br> Добавили проверку: а не существуют ли уже настройки, чтобы переопределить компонент?</figcaption>
+            <figcaption class="space-in-h-mili-md space-in-h-base-lg"><strong>Компонент.</strong><br> Добавили проверку: а не существуют ли уже настройки, чтобы переопределить компонент?</figcaption>
         </section>
     </div>
 </figure>

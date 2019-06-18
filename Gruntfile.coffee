@@ -74,10 +74,10 @@ module.exports = (grunt) ->
 				]
 			dist:
 				src: [
-						'out/css/homepage.css'
-						'out/css/template.css'
-						'out/css/article.css'
+						'out/ui/homepage.css'
+						'out/ui/template.css'
 						'out/ui/article.css'
+						'out/ui/default.css'
 						'out/ui/framework.css'
 						'out/ui/screenshot/screenshot.css'
 					]
@@ -86,9 +86,9 @@ module.exports = (grunt) ->
 		cssmin:
 			combine:
 				files:
-					'out/css/homepage.css':'out/css/homepage.css'
-					'out/css/template.css':'out/css/template.css'
-					'out/css/article.css':'out/css/article.css'
+					'out/ui/homepage.css':'out/ui/homepage.css'
+					'out/ui/template.css':'out/ui/template.css'
+					'out/ui/default.css':'out/ui/default.css'
 					'out/ui/article.css':[
 						'out/ui/framework.css'
 						'out/ui/article.css'
@@ -275,7 +275,7 @@ module.exports = (grunt) ->
 						".right"
 					]
 					stylesheets: [
-						'css/homepage.css'
+						'ui/homepage.css'
 					]
 				src: [
 						'out/index.html'
@@ -287,7 +287,7 @@ module.exports = (grunt) ->
 						'out/tags/index.html'
 						'out/search/index.html'
 					]
-				dest: 'out/css/homepage.css'
+				dest: 'out/ui/homepage.css'
 			articles:
 				options:
 					timeout: 5000

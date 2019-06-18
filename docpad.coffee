@@ -61,7 +61,6 @@ docpadConfig = {
 			# The website's production scripts.
 			# See also Environments section below for development scripts
 			scripts: [
-				'/js/output.min.js'
 			]
 
 		# -----------------------------
@@ -220,7 +219,6 @@ docpadConfig = {
 
 					# The website's scripts
 					scripts: [
-						'/vendor/ilyabirman-likely/likely.js'
 					]
 
 

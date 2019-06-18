@@ -52,8 +52,6 @@
         "docpad-plugin-rss": "~2.3.1",
         "docpad-plugin-sitemap": "~2.4.0",
         "docpad-plugin-stylus": "^2.14.0",
-        "docpad-plugin-tagcloud": "~2.0.1",
-        "docpad-plugin-tags": "~2.1.0",
         "docpad-plugin-text": "~2.5.0",
         "flxgrid.css": "^1.0.0",
         "grunt": "^1.0.4",

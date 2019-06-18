@@ -16,9 +16,9 @@ docpadConfig = {
 		# Specify some site properties
 		site:
 			# The production url of our website
-			url: "http://paulradzkov.com"
+			url: "https://paulradzkov.com"
 
-			canonicalUrl: "http://paulradzkov.com"
+			canonicalUrl: "https://paulradzkov.com"
 
 			# Here are some old site urls that you would like to redirect from
 			oldUrls: [
@@ -126,10 +126,6 @@ docpadConfig = {
 		hasReadMore: (content) ->
 			content and ((content.search @cutTag) isnt -1)
 
-		getTagUrl: (tag) ->
-			doc = @getFile({tag:tag})
-			return doc?.get('url') or ''
-
 
 	collections:
 		articles: ->
@@ -157,15 +153,6 @@ docpadConfig = {
 		cleanurls:
 			static: true
 			trailingSlashes: true
-		tags:
-			extension: '.html.eco'
-			injectDocumentHelper: (document) ->
-				document.setMeta(
-					layout: 'tagcloud'
-					data:  """
-						<%- @partial('tag', @) %>
-						"""
-				)
 		prezip:
 			# Files with compression ratios below this value are not kept.
 			ratio: 0.95

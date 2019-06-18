@@ -15,7 +15,7 @@
     <%- @getBlock('meta').toHTML() %>
 
     <!-- DocPad Styles + Our Own -->
-    <link rel="stylesheet" href="/css/article.css">
+    <link rel="stylesheet" href="/ui/default.css">
     <%- @getBlock('styles').add([].concat(@site.styles or []).concat(@document.styles or [])).toHTML() %>
 
     <!-- Icons -->

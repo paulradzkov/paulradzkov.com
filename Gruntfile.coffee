@@ -36,10 +36,10 @@ module.exports = (grunt) ->
 				options:
 					sourceMap: true
 				files: [
-					'out/css/homepage.css': 'src/raw/css/homepage.less'
-					'out/css/template.css': 'src/raw/css/template.less'
-					'out/css/article.css': 'src/raw/css/article.less'
+					'out/ui/homepage.css': 'src/raw/ui/homepage.less'
+					'out/ui/template.css': 'src/raw/ui/template.less'
 					'out/ui/article.css': 'src/raw/ui/article.less'
+					'out/ui/default.css': 'src/raw/ui/default.less'
 					'out/ui/framework.css': 'src/raw/ui/framework.less'
 					'out/ui/screenshot/screenshot.css': 'src/raw/ui/screenshot/screenshot.less'
 					'out/fonts/webfonts.css': 'src/raw/fonts/webfonts.less'

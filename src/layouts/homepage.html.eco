@@ -15,7 +15,7 @@
     <%- @getBlock('meta').toHTML() %>
 
     <!-- Styles -->
-    <link rel="stylesheet" href="/css/homepage.css">
+    <link rel="stylesheet" href="/ui/homepage.css">
     <%- @getBlock('styles').add([].concat(@site.styles or []).concat(@document.styles or [])).toHTML() %>
 
     <!-- Favicon -->

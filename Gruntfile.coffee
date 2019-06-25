@@ -19,7 +19,8 @@ module.exports = (grunt) ->
 		copy:
 			main:
 				files: [
-					'./src/raw/vendor/ilyabirman-likely/likely.js':'./node_modules/ilyabirman-likely/release/likely.js'
+					'./src/raw/ui/likely/likely.js':'./node_modules/ilyabirman-likely/release/likely.js'
+					'./src/raw/ui/likely/likely.css':'./node_modules/ilyabirman-likely/release/likely.css'
 				]
 			ogimages:
 				files: [
@@ -36,10 +37,10 @@ module.exports = (grunt) ->
 				options:
 					sourceMap: true
 				files: [
-					'out/css/homepage.css': 'src/raw/css/homepage.less'
-					'out/css/template.css': 'src/raw/css/template.less'
-					'out/css/article.css': 'src/raw/css/article.less'
+					'out/ui/homepage.css': 'src/raw/ui/homepage.less'
+					'out/ui/template.css': 'src/raw/ui/template.less'
 					'out/ui/article.css': 'src/raw/ui/article.less'
+					'out/ui/default.css': 'src/raw/ui/default.less'
 					'out/ui/framework.css': 'src/raw/ui/framework.less'
 					'out/ui/screenshot/screenshot.css': 'src/raw/ui/screenshot/screenshot.less'
 					'out/fonts/webfonts.css': 'src/raw/fonts/webfonts.less'
@@ -74,10 +75,10 @@ module.exports = (grunt) ->
 				]
 			dist:
 				src: [
-						'out/css/homepage.css'
-						'out/css/template.css'
-						'out/css/article.css'
+						'out/ui/homepage.css'
+						'out/ui/template.css'
 						'out/ui/article.css'
+						'out/ui/default.css'
 						'out/ui/framework.css'
 						'out/ui/screenshot/screenshot.css'
 					]
@@ -86,9 +87,9 @@ module.exports = (grunt) ->
 		cssmin:
 			combine:
 				files:
-					'out/css/homepage.css':'out/css/homepage.css'
-					'out/css/template.css':'out/css/template.css'
-					'out/css/article.css':'out/css/article.css'
+					'out/ui/homepage.css':'out/ui/homepage.css'
+					'out/ui/template.css':'out/ui/template.css'
+					'out/ui/default.css':'out/ui/default.css'
 					'out/ui/article.css':[
 						'out/ui/framework.css'
 						'out/ui/article.css'
@@ -124,7 +125,7 @@ module.exports = (grunt) ->
 			out:
 				files:
 					'out/js/output.min.js':[
-						'src/raw/vendor/ilyabirman-likely/likely.js'
+						'src/raw/ui/likely/likely.js'
 					]
 					'out/js/article.min.js':[
 						'src/raw/vendor/jquery.sticky.js'
@@ -172,7 +173,7 @@ module.exports = (grunt) ->
 		modernizr:
 			dist:
 				# [REQUIRED] Path to the build you're using for development.
-				devFile: "bower_components/modernizr/modernizr.js"
+				devFile: "src/raw/ui/modernizr-2.8.3/modernizr.js"
 
 				# Path to save out the built file.
 				outputFile: "src/files/vendor/modernizr.js"
@@ -275,7 +276,7 @@ module.exports = (grunt) ->
 						".right"
 					]
 					stylesheets: [
-						'css/homepage.css'
+						'ui/homepage.css'
 					]
 				src: [
 						'out/index.html'
@@ -287,7 +288,7 @@ module.exports = (grunt) ->
 						'out/tags/index.html'
 						'out/search/index.html'
 					]
-				dest: 'out/css/homepage.css'
+				dest: 'out/ui/homepage.css'
 			articles:
 				options:
 					timeout: 5000

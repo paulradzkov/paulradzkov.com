@@ -140,7 +140,7 @@
 }
 
 @import "../../../node_modules/links.less/links.less";
-@import "_links.extend.less";
+@import "../css/_links.extend.less";
 
 .links-settings() {
     //@links-text-decoration: none;
@@ -220,22 +220,22 @@
     @logo-icon-bg: #FFF;
 }
 
-@import (less) "_project-card.less";
-@import (less) "_txt.less";
+@import (less) "../css/_project-card.less";
+@import (less) "../css/_txt.less";
 @import (less) "../ui/blogwall/blogwall.less";
-@import (less) "_badge.less";
-@import (less) "_faq.less";
-@import (less) "_copyright.less";
+@import (less) "../css/_badge.less";
+@import (less) "../css/_faq.less";
+@import (less) "../css/_copyright.less";
 .copyright-settings() {
     @c-textcolor: @g-color-muted;
     @c-fz: 0.875em;
 }
 
-@import (less) "_contact-link.less";
-@import (less) "_tags.less";
-@import (less) "_googlesearch.less";
+@import (less) "../css/_contact-link.less";
+@import (less) "../css/_tags.less";
+@import (less) "../css/_googlesearch.less";
 @import (less) "../../../node_modules/ilyabirman-likely/release/likely.css";
-@import (less) "_likely.less";
+@import (less) "../ui/likely/_likely.less";
 .likely-settings() {
     @likely-margin: @kilo 0;
     @likely-align: left;

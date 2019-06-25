@@ -15,7 +15,7 @@
     <%- @getBlock('meta').toHTML() %>
 
     <!-- DocPad Styles + Our Own -->
-    <link rel="stylesheet" href="/css/article.css">
+    <link rel="stylesheet" href="/ui/default.css">
     <%- @getBlock('styles').add([].concat(@site.styles or []).concat(@document.styles or [])).toHTML() %>
 
     <!-- Icons -->
@@ -74,13 +74,6 @@
     </header>
     <aside class="content-width" style="display:none">
         <div class="article-meta inlined">
-            <% if (@document.tags) : %>
-            <span class="tags-list">
-                <% for tag in @document.tags : %>
-                <a class="tag" href="<%= @getTagUrl(tag) %>"><%= tag %></a>
-                <% end %>
-            </span>
-            <% end %>
             <% if ((@site.disqus_shortname) and (@document.disqusid)) : %>
             <span class="comments"><a href="<%= @document.path %>#disqus_thread" data-disqus-identifier="<%= @document.disqusid %>" >Комментарии</a></span>
             <% end %>

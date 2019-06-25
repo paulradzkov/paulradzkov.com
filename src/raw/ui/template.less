@@ -29,9 +29,9 @@
 
 //end of global variables
 
-@import (less) "../../../bower_components/normalize.css/normalize.css";
-@import "_helpers.less";
-@import (less) "../../../bower_components/bettertext.css/bettertext.less";
+@import (less) "../../../node_modules/normalize.css/normalize.css";
+@import "../css/_helpers.less";
+@import (less) "../../../node_modules/bettertext.css/bettertext.less";
 
 .bettertext-settings() {
     @linel: @mawtext;
@@ -40,8 +40,8 @@
     @font-code: @fontmono;
 }
 
-@import "_typo.less";
-@import "_links.less";
+@import "../css/_typo.less";
+@import "../css/_links.less";
 
 .links-settings() {
     //colors
@@ -53,7 +53,7 @@
     @active:        #bc4df8;
 }
 
-@import "_border-underline.less";
+@import "../css/_border-underline.less";
 
 .border-underline-settings() {
     //colors
@@ -73,32 +73,32 @@
     @bdc-active:        lighten(@active, 30%);
 }
 
-@import "_layout.less";
-@import "_allpage.less";
-@import "_content-width.less";
-@import "_site-header.less";
-@import "_page-header.less";
+@import "../css/_layout.less";
+@import "../css/_allpage.less";
+@import "../css/_content-width.less";
+@import "../css/_site-header.less";
+@import "../css/_page-header.less";
 @import "../ui/logo/logo.less";
-@import "_header-contacts.less";
-@import "_nav.less";
-@import "_read-siblings.less";
-@import "_read-next.less";
-@import "_justified-blocks.less";
-@import "_blogroll.less";
-@import "_page-footer.less";
-@import "_meta.less";
-@import "_tags.less";
-@import "_bootstrap-tooltips.less";
-@import "_bootstrap-collapse.less";
-@import "_bootstrap-btn.less";
-@import "_cta.less";
-@import "_github.less";
-@import "_disqus.less";
-@import "_fotorama.less";
-@import "_googlesearch.less";
-@import "_expired.less";
-@import "_print.less";
-@import "_overrides.less";
+@import "../css/_header-contacts.less";
+@import "../css/_nav.less";
+@import "../css/_read-siblings.less";
+@import "../css/_read-next.less";
+@import "../css/_justified-blocks.less";
+@import "../css/_blogroll.less";
+@import "../css/_page-footer.less";
+@import "../css/_meta.less";
+@import "../css/_tags.less";
+@import "../css/_bootstrap-tooltips.less";
+@import "../css/_bootstrap-collapse.less";
+@import "../css/_bootstrap-btn.less";
+@import "../css/_cta.less";
+@import "../css/_github.less";
+@import "../css/_disqus.less";
+@import "../css/_fotorama.less";
+@import "../css/_googlesearch.less";
+@import "../css/_expired.less";
+@import "../css/_print.less";
+@import "../css/_overrides.less";
 
-@import (less) "../../../bower_components/Likely/release/likely.css";
-@import "_likely.less";
+@import (less) "../ui/likely/likely.css";
+@import "../ui/likely/_likely.less";

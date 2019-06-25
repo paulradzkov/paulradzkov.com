@@ -41,7 +41,6 @@
         "docpad-plugin-eco": "~2.2.1",
         "docpad-plugin-highlightjs": "^2.5.0",
         "docpad-plugin-less": "^2.6.0",
-        "docpad-plugin-livereload": "^2.10.0",
         "docpad-plugin-marked": "^2.5.0",
         "docpad-plugin-moment": "~2.0.2",
         "docpad-plugin-navlinks": "~2.0.4",

@@ -8,8 +8,6 @@ publish: true
 disqusid: negation-css-selector
 tags: [css]
 starred: true
-styles: ['/css/caniuse.css']
-scripts: ['/vendor/caniuse.js']
 og_image: '/i/og/og-paulradzkov-2014-negation_css_selector.png'
 ---
 
@@ -193,6 +191,6 @@ textarea,
 
 <p>Следует заметить, что согласно <a href="http://www.w3.org/TR/css3-selectors/#negation" target="_blank" rel="noopener">спецификации</a> в скобках селектора <code class="hljs-pseudo">:not()</code> может стоять только <a href="http://www.w3.org/TR/css3-selectors/#simple-selectors-dfn" target="_blank" rel="noopener">простой селектор</a> и в скобках нельзя использовать сам селектор <code class="hljs-pseudo">:not()</code>. Если нужно исключить несколько элементов, <code class="hljs-pseudo">:not()</code> можно повторить несолько раз, как в примере 5.</p>
 
-<div class="caniuse" data-feature="css-sel3"><a href="http://caniuse.com/#search=%3Anot" target="_blank" rel="noopener">Поддержка браузерами</a></div>
+<p><a href="http://caniuse.com/#search=%3Anot" target="_blank" rel="noopener">Поддержка :not() браузерами</a></p>
 
 <p>Если очень нужны CSS3-селекторы в браузерах, которые их не поддерживают, можно использовать полифил <a href="http://selectivizr.com/" target="_blank" rel="noopener">selectivizr</a>.</p>

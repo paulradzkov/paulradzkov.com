@@ -8,8 +8,6 @@ publish: true
 disqusid: pointer-events
 starred: true
 tags: [css,progressive enhancement]
-styles: ['/css/caniuse.css']
-scripts: ['/vendor/caniuse.js']
 og_image: '/i/og/og-paulradzkov-2012-pointer-events.png'
 ---
 
@@ -26,8 +24,6 @@ og_image: '/i/og/og-paulradzkov-2012-pointer-events.png'
 <p>Изначально свойство «pointer-events» было введено для SVG и должно было стать частью CSS3, но было перенесено в спецификацию CSS4. Кроме «none» и «auto» есть <a href="https://developer.mozilla.org/ru/docs/CSS/pointer-events">еще несколько значений</a>, но они применимы только к SVG, и мы не будем их рассматривать.</p>
 
 <p>Несмотря на то, что свойство относится к  CSS4, <a href="http://caniuse.com/pointer-events" title="Где работает pointer-events?">pointer-events поддерживается</a> уже большим количеством браузеров и довольно давно. Не работает в IE ниже 11 версии и в Opera Presto. А значит, его можно осторожно использовать для улучшения юзабилити в рамках прогрессивного улучшения.</p>
-
-<div class="caniuse" data-feature="pointer-events"></div>
 
 <p>Проверить, поддерживается ли это свойство браузером, можно с помощью <a href="https://github.com/ausi/Feature-detection-technique-for-pointer-events" title="Modernizr plugin feature detection for css property 'pointer-events'">специального теста для Modernizer</a>.</p>
 

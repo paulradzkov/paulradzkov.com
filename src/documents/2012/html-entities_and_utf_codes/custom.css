@@ -5,10 +5,6 @@
   text-align: center;
 }
 
-.touch .table-switcher {
-    display: none;
-}
-
 table.chars {
   border-collapse: separate;
   margin: auto;
@@ -57,18 +53,18 @@ table.chars th {
 }
 
 /* .csstransitions — filter IE10+ */
-.no-touch.csstransitions .chars.layout-flow {
+.chars.layout-flow {
   display: block;
   padding-right: 120px;
   position: relative;
   z-index: 1;
 }
 
-.no-touch.csstransitions .chars.layout-flow thead {
+.chars.layout-flow thead {
   display: none;
 }
 
-.no-touch.csstransitions .chars.layout-flow tr {
+.chars.layout-flow tr {
   display: block;
   float: left;
   width: 119px;
@@ -79,13 +75,13 @@ table.chars th {
   position: relative;
 }
 
-.no-touch.csstransitions .chars.layout-flow .ch-section {
+.chars.layout-flow .ch-section {
   width: 239px;
   height: 119px;
   background: #EEE;
 }
 
-.no-touch.csstransitions .chars.layout-flow .ch-section th {
+.chars.layout-flow .ch-section th {
   display: table-cell;
   border: none;
   padding: 20px 20px;
@@ -98,12 +94,12 @@ table.chars th {
   bottom: 0;
 }
 
-.no-touch.csstransitions .chars.layout-flow tr td {
+.chars.layout-flow tr td {
   border: none;
   position: absolute;
 }
 
-.no-touch.csstransitions .chars.layout-flow tr td.char-demo {
+.chars.layout-flow tr td.char-demo {
   position: relative;
   z-index: 1;
   display: table-cell;
@@ -114,9 +110,9 @@ table.chars th {
   padding: 0 10px;
 }
 
-.no-touch.csstransitions .chars.layout-flow .char-entity,
-.no-touch.csstransitions .chars.layout-flow .char-code,
-.no-touch.csstransitions .chars.layout-flow .char-descr {
+.chars.layout-flow .char-entity,
+.chars.layout-flow .char-code,
+.chars.layout-flow .char-descr {
   visibility: hidden;
   background: #FFF;
   border: 1px solid #AAA;
@@ -124,9 +120,9 @@ table.chars th {
   transition: none !important;
 }
 
-.no-touch.csstransitions .chars.layout-flow tr:hover .char-entity,
-.no-touch.csstransitions .chars.layout-flow tr:hover .char-code,
-.no-touch.csstransitions .chars.layout-flow tr:hover .char-descr {
+.chars.layout-flow tr:hover .char-entity,
+.chars.layout-flow tr:hover .char-code,
+.chars.layout-flow tr:hover .char-descr {
   visibility: visible;
   z-index: 2;
   border: 1px solid #AAA;
@@ -134,11 +130,11 @@ table.chars th {
   transition: none !important;
 }
 
-.no-touch.csstransitions .chars.layout-flow tr:hover .char-demo {
+.chars.layout-flow tr:hover .char-demo {
   color: #4e8d00;
 }
 
-.no-touch.csstransitions .chars.layout-flow tr:hover .char-entity {
+.chars.layout-flow tr:hover .char-entity {
   top: -1px;
   left: 100%;
   width: 120px;
@@ -147,7 +143,7 @@ table.chars th {
   border-width: 1px 1px 0 0;
 }
 
-.no-touch.csstransitions .chars.layout-flow tr:hover .char-code {
+.chars.layout-flow tr:hover .char-code {
   top: 60px;
   left: 100%;
   width: 120px;
@@ -156,7 +152,7 @@ table.chars th {
   border-width: 0px 1px 0 0;
 }
 
-.no-touch.csstransitions .chars.layout-flow tr:hover .char-descr {
+.chars.layout-flow tr:hover .char-descr {
   top: 100%;
   left: -1px;
   width: 199px;
@@ -165,8 +161,8 @@ table.chars th {
   border-width: 0px 1px 1px 1px;
 }
 
-.no-touch.csstransitions .layout-flow .char-entity code,
-.no-touch.csstransitions .layout-flow .char-code code {
+.layout-flow .char-entity code,
+.layout-flow .char-code code {
   display: inline-block;
   margin: 1em;
 }
@@ -208,7 +204,7 @@ table.chars th {
 }
 
 /* .no-borderradius filter to IE8 and below */
-.no-borderradius .demo-css-editable style {
+.demo-css-editable style {
   display: none;
 }
 
@@ -220,7 +216,7 @@ table.chars th {
 .toc a {
   border-bottom: dashed 1px;
 }
-.csscolumns .toc {
+.toc {
   -webkit-columns: 17em;
   -moz-columns: 17em;
   columns: 17em;

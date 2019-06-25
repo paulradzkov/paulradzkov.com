@@ -1,4 +1,4 @@
 
     <!-- DocPad Scripts + Our Own -->
     <%- @getBlock('scripts').add([].concat(@site.scripts or []).concat(@document.scripts or [])).toHTML() %>
-    <script defer="defer" src="/js/output.min.js"></script>
+    <script defer="defer" src="/ui/output.min.js"></script>

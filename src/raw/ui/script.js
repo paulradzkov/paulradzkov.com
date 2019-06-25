@@ -133,11 +133,3 @@ $(document).ready(function(){
 		$('.chars').toggleClass('layout-flow');
 	});
 });
-
-//fallback for svg if not supported
-if (!Modernizr.svg) {
-	$('img[src$=".svg"]').each(function()
-	{
-		$(this).attr('src', $(this).attr('src').replace('.svg', '.png'));
-	});
-}

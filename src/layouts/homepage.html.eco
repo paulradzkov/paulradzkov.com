@@ -37,9 +37,9 @@
             <% if (@document.url != '/') : %><a class="logo link" href="/"><% else : %><span class="logo"><% end %>
                 <span class="logo-icon">
                     <img srcset="
-                        /avatar/paulradzkov_96x96.jpg 2x,
-                        /avatar/paulradzkov_192x192.jpg 4x
-                        " src="/avatar/paulradzkov_48x48.jpg" width="48" height="48" alt="Павел Радьков">
+                        https://paulradzkov.com/avatar/paulradzkov_96x96.jpg 2x,
+                        https://paulradzkov.com/avatar/paulradzkov_192x192.jpg 4x
+                        " src="https://paulradzkov.com/avatar/paulradzkov_48x48.jpg" width="48" height="48" alt="Павел Радьков">
                 </span>
                 <span class="logo-txt">
                     <span class="logo-name">Павел&nbsp;Радьков</span>

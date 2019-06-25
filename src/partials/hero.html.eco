@@ -10,10 +10,10 @@
 				<span class="logo-icon">
 					<img
 					srcset="
-						/avatar/paulradzkov_120x120.jpg 2x,
-						/avatar/paulradzkov_240x240.jpg 4x
+						https://paulradzkov.com/avatar/paulradzkov_120x120.jpg 2x,
+						https://paulradzkov.com/avatar/paulradzkov_240x240.jpg 4x
 						"
-					src="/avatar/paulradzkov_60x60.jpg"
+					src="https://paulradzkov.com/avatar/paulradzkov_60x60.jpg"
 					width="60" height="60"
 					alt="Павел Радьков">
 				</span>

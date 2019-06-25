@@ -93,7 +93,6 @@ module.exports = (grunt) ->
 						'out/ui/framework.css'
 						'out/ui/article.css'
 					]
-					'out/css/caniuse.css':'out/css/caniuse.css'
 
 		#minify html
 		htmlmin:
@@ -122,13 +121,13 @@ module.exports = (grunt) ->
 		uglify:
 			out:
 				files:
-					'out/js/output.min.js':[
+					'out/ui/output.min.js':[
 						'src/raw/ui/likely/likely.js'
 					]
-					'out/js/article.min.js':[
-						'src/raw/vendor/jquery.sticky.js'
-						'src/raw/vendor/bootstrap/js/bootstrap.min.js'
-						'src/raw/js/script.js'
+					'out/ui/article.min.js':[
+						'src/raw/ui/jquery-sticky/jquery.sticky.js'
+						'src/raw/ui/bootstrap/js/bootstrap.min.js'
+						'src/raw/ui/script.js'
 					]
 		compress:
 			main:
@@ -167,64 +166,6 @@ module.exports = (grunt) ->
 				'src/raw/i/og/og-127.0.0.1*'
 			ogimagestemp:
 				'src/raw/i/og/*.{png,jpg}.*'
-
-		modernizr:
-			dist:
-				# [REQUIRED] Path to the build you're using for development.
-				devFile: "src/raw/ui/modernizr-2.8.3/modernizr.js"
-
-				# Path to save out the built file.
-				outputFile: "src/files/vendor/modernizr.js"
-
-				# Based on default settings on http://modernizr.com/download/
-				extra:
-					shiv: true
-					printshiv: false
-					load: true
-					mq: true
-					cssclasses: true
-
-				# Based on default settings on http://modernizr.com/download/
-				extensibility:
-					addtest: false
-					prefixed: false
-					teststyles: false
-					testprops: false
-					testallprops: false
-					hasevents: false
-					prefixes: false
-					domprefixes: false
-					cssclassprefix: ""
-
-				# By default, source is uglified before saving
-				uglify: true
-
-				# Define any tests you want to implicitly include.
-				tests: []
-
-				# By default, this task will crawl your project for references to Modernizr tests.
-				# Set to false to disable.
-				parseFiles: true
-
-				# When parseFiles = true, this task will crawl all *.js, *.css, *.scss and *.sass files,
-				# except files that are in node_modules/.
-				# You can override this by defining a "files" array below.
-				files:
-					src: [
-						'src/documents/**/*.less'
-						'src/documents/**/*.css'
-						'src/documents/**/*.js'
-					]
-
-				# This handler will be passed an array of all the test names passed to the Modernizr API, and will run after the API call has returned
-				# handler: function (tests) {},
-
-				# When parseFiles = true, matchCommunityTests = true will attempt to
-				# match user-contributed tests.
-				matchCommunityTests: true
-
-				# Have custom Modernizr tests? Add paths to their location here.
-				customTests: []
 
 		watch:
 			less:

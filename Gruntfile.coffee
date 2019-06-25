@@ -43,7 +43,6 @@ module.exports = (grunt) ->
 					'out/ui/default.css': 'src/raw/ui/default.less'
 					'out/ui/framework.css': 'src/raw/ui/framework.less'
 					'out/ui/screenshot/screenshot.css': 'src/raw/ui/screenshot/screenshot.less'
-					'out/fonts/webfonts.css': 'src/raw/fonts/webfonts.less'
 				]
 
 		postcss:
@@ -95,7 +94,6 @@ module.exports = (grunt) ->
 						'out/ui/article.css'
 					]
 					'out/css/caniuse.css':'out/css/caniuse.css'
-					'out/fonts/webfonts.css':'out/fonts/webfonts.css'
 
 		#minify html
 		htmlmin:

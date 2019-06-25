@@ -19,7 +19,7 @@ module.exports = (grunt) ->
 		copy:
 			main:
 				files: [
-					'./src/raw/vendor/ilyabirman-likely/likely.js':'./node_modules/ilyabirman-likely/release/likely.js'
+					'./src/raw/ui/likely/likely.js':'./node_modules/ilyabirman-likely/release/likely.js'
 				]
 			ogimages:
 				files: [
@@ -124,7 +124,7 @@ module.exports = (grunt) ->
 			out:
 				files:
 					'out/js/output.min.js':[
-						'src/raw/vendor/ilyabirman-likely/likely.js'
+						'src/raw/ui/likely/likely.js'
 					]
 					'out/js/article.min.js':[
 						'src/raw/vendor/jquery.sticky.js'

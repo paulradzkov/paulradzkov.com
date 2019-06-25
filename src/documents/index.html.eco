@@ -117,7 +117,6 @@ og_image: '/i/og/og-index.png'
                         <div class="likely likely-small" data-url="<%= @site.canonicalUrl %><%= page.url %>" data-title="<%= page.title %>">
                             <div class="facebook"  tabindex="0" role="link" aria-label="Поделиться в Фейсбуке"></div>
                             <div class="twitter"   tabindex="0" role="link" aria-label="Поделиться в Твиттере" data-via="paul_radzkov"></div>
-                            <div class="gplus"     tabindex="0" role="link" aria-label="Поделиться в Гугл Плюсе"></div>
                             <div class="vkontakte" tabindex="0" role="link" aria-label="Поделиться в Контакте"></div>
                             <div class="telegram"  tabindex="0" role="link" aria-label="Поделиться в Телеграме"></div>
                         </div>

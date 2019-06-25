@@ -22,8 +22,6 @@
     <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml">
     <link rel="canonical" href="<%= @site.canonicalUrl %><%= @document.url %>">
 
-    <%- @partial('webfontsjs', { pathtofonts: '/fonts/webfonts.css?v=0.0.1' }) %>
-
     <%- @partial('opengraph') %>
     <%- @partial('twittercard') %>
     <%- @partial('googleAnalytics') %>

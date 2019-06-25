@@ -34,7 +34,6 @@
     "devDependencies": {
         "autoprefixer-core": "^5.2.1",
         "bettertext.css": "^2.0.4",
-        "bower": "^1.8.4",
         "cssnano": "^2.0.2",
         "docpad": "6.79.4",
         "docpad-plugin-cleanurls": "~2.11.0",

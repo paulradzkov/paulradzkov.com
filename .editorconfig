@@ -12,7 +12,7 @@ insert_final_newline = true
 [{**/markdown_cheatsheet.html,**/*.md}]
 trim_trailing_whitespace = false
 
-[{package.json,bower.json,.bowerrc}]
+[{**/*.json}]
 indent_style = space
 indent_size = 2
 

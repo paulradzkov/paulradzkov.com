@@ -20,6 +20,7 @@ module.exports = (grunt) ->
 			main:
 				files: [
 					'./src/raw/ui/likely/likely.js':'./node_modules/ilyabirman-likely/release/likely.js'
+					'./src/raw/ui/likely/likely.css':'./node_modules/ilyabirman-likely/release/likely.css'
 				]
 			ogimages:
 				files: [
@@ -172,7 +173,7 @@ module.exports = (grunt) ->
 		modernizr:
 			dist:
 				# [REQUIRED] Path to the build you're using for development.
-				devFile: "bower_components/modernizr/modernizr.js"
+				devFile: "src/raw/ui/modernizr-2.8.3/modernizr.js"
 
 				# Path to save out the built file.
 				outputFile: "src/files/vendor/modernizr.js"

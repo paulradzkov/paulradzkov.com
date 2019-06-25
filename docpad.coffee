@@ -139,6 +139,13 @@ docpadConfig = {
 
 	# Plugins configurations
 	plugins:
+		marked:
+			pedantic: false
+			headerIds: false
+			gfm: true
+			sanitize: false
+			sanitizer: null
+			highlight: null
 		rss:
 			default:
 				collection: 'articles'

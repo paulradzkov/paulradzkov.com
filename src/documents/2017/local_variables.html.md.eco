@@ -67,15 +67,15 @@ cover: "local_variables_less@1x.png"
 
 <ol class="ol-important space-in-h-zero-xs space-in-h-base-sm">
     <li>
-        <p class="text-custom-number text-important text-center space-in-wide-base-xs space-in-wide-kilo-md space-out-v-base-xs space-minus-h-base-sm " data-number="1">**Переменная используется только в том файле, в котором объявлена.**</p>
+        <p class="text-custom-number text-important text-center space-in-wide-base-xs space-in-wide-kilo-md space-out-v-base-xs space-minus-h-base-sm " data-number="1"><strong>Переменная используется только в том файле, в котором объявлена.</strong></p>
         <p>Правильно создавать все нужные переменные в файле самого компонента и не использовать переменные из других файлов. Тогда компоненты станут независимыми, их можно будет подключать и перемещать между проектами без поломок при компиляции. У каждого компонента собственный набор переменных, которые запрещено использовать в других компонентах и вызывать в других файлах. Когда переменные не выходят за пределы одного файла, легко увидеть, как они используются и на что влияют.</p>
     </li>
     <li>
-        <p class="text-custom-number text-important text-center space-in-wide-base-xs space-in-wide-kilo-md space-out-v-base-xs space-minus-h-base-sm " data-number="2">**Все переменные внутри компонента — локальные.**</p>
+        <p class="text-custom-number text-important text-center space-in-wide-base-xs space-in-wide-kilo-md space-out-v-base-xs space-minus-h-base-sm " data-number="2"><strong>Все переменные внутри компонента — локальные.</strong></p>
         <p>Раз у каждого компонента свои переменные, пусть они будут локальными. Это избавит от проблем с именованием: в компонентах можно использовать переменные с одинаковыми именами и разными значениями — они не будут конфликтовать друг с другом.</p>
     </li>
     <li>
-        <p class="text-custom-number text-important text-center space-in-wide-base-xs space-in-wide-kilo-md space-out-v-base-xs space-minus-h-base-sm " data-number="3">**Глобальные переменные используются только внутри файла настроек.**</p>
+        <p class="text-custom-number text-important text-center space-in-wide-base-xs space-in-wide-kilo-md space-out-v-base-xs space-minus-h-base-sm " data-number="3"><strong>Глобальные переменные используются только внутри файла настроек.</strong></p>
         <p>Благодаря первым двум правилам мы сильно сократим количество глобальных переменных, но они всё равно нужны. Глобальные переменные объявляются в главном файле проекта или в файле типа config.less. К ним тоже применяется правило №1 — переменные не используются за пределами своего файла. Это значит, что нельзя использовать глобальные переменные внутри файлов компонентов. Но существует способ не нарушая первого правила прокинуть значение глобальной переменной внутрь компонента. Как это сделать мы рассмотрим на примерах далее.</p>
     </li>
 </ol>

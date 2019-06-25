@@ -30,7 +30,9 @@
         "node": "0.8.x",
         "npm": "1.1.x"
     },
-    "dependencies": {},
+    "dependencies": {
+        "docpad-plugin-marked": "~2.4.0"
+    },
     "devDependencies": {
         "autoprefixer-core": "^5.2.1",
         "bettertext.css": "^2.0.4",
@@ -39,9 +41,8 @@
         "docpad-plugin-cleanurls": "~2.11.0",
         "docpad-plugin-coffeescript": "~2.6.0",
         "docpad-plugin-eco": "~2.2.1",
-        "docpad-plugin-highlightjs": "^2.5.0",
-        "docpad-plugin-less": "^2.6.0",
-        "docpad-plugin-marked": "^2.5.0",
+        "docpad-plugin-highlightjs": "~2.5.0",
+        "docpad-plugin-less": "~2.6.0",
         "docpad-plugin-moment": "~2.0.2",
         "docpad-plugin-navlinks": "~2.0.4",
         "docpad-plugin-partials": "~2.11.0",

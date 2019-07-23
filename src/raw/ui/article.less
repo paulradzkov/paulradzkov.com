@@ -149,55 +149,30 @@
 }
 
 @import "../css/_links.extend.less";
-@import "../css/_border-underline.less";
-
-.border-underline-settings() {
-    //colors
-    //@link:          #0877db;
-    //@visited:       #9108db;
-    //@hover:         #2b9aff;
-    //@visitedhover:  #bc4df8;
-    //@active:        #bc4df8;
-    //@shift: .1em;
-    //@bd-style: 1px solid;
-
-    //calculations
-    @bdc-link:          lighten(@hover, 30%);
-    @bdc-visited:       lighten(@visitedhover, 30%);
-    @bdc-hover:         lighten(@hover, 30%);
-    @bdc-visitedhover:  lighten(@visitedhover, 30%);
-    @bdc-active:        lighten(@active, 30%);
-}
-
-@import "../css/_allpage.less";
-@import "../css/_content-width.less";
+@import "../ui/allpage/allpage.less";
+@import "../ui/content-width/content-width.less";
 @import "../ui/article-grid/article-grid.less";
 @import "../css/_site-header.less";
 @import "../css/_page-header.less";
 @import "../ui/logo/logo.less";
-//@import "../css/_header-contacts.less";
 @import "../css/_nav.less";
 @import "../css/_read-siblings.less";
-//@import "_read-next.less";
 @import "../css/_justified-blocks.less";
-//@import "_blogroll.less";
 @import "../css/_page-footer.less";
 @import "../css/_meta.less";
 @import "../css/_tags.less";
-@import "../css/_bootstrap-tooltips.less";
-@import "../css/_bootstrap-collapse.less";
-@import "../css/_bootstrap-btn.less";
+@import "../ui/bootstrap/_bootstrap-tooltips.less";
+@import "../ui/bootstrap/_bootstrap-collapse.less";
+@import "../ui/bootstrap/_bootstrap-btn.less";
 @import "../css/_cta.less";
 @import "../css/_github.less";
-@import "../css/_disqus.less";
+@import "../ui/disqus/disqus.less";
 @import "../css/_fotorama.less";
-//@import "_googlesearch.less";
 @import "../css/_expired.less";
-//@import "../css/_print.less";
 @import "../css/_navigation.less";
 @import "../css/_overrides.less";
 
-@import "../css/_codepen.less";
+@import "../ui/codepen/codepen.less";
 
 @import (less) "../ui/likely/likely.css";
 @import "../ui/likely/_likely.less";

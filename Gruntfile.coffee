@@ -38,7 +38,6 @@ module.exports = (grunt) ->
 					sourceMap: true
 				files: [
 					'out/ui/homepage.css': 'src/raw/ui/homepage.less'
-					'out/ui/template.css': 'src/raw/ui/template.less'
 					'out/ui/article.css': 'src/raw/ui/article.less'
 					'out/ui/default.css': 'src/raw/ui/default.less'
 					'out/ui/framework.css': 'src/raw/ui/framework.less'
@@ -75,7 +74,6 @@ module.exports = (grunt) ->
 			dist:
 				src: [
 						'out/ui/homepage.css'
-						'out/ui/template.css'
 						'out/ui/article.css'
 						'out/ui/default.css'
 						'out/ui/framework.css'
@@ -87,7 +85,6 @@ module.exports = (grunt) ->
 			combine:
 				files:
 					'out/ui/homepage.css':'out/ui/homepage.css'
-					'out/ui/template.css':'out/ui/template.css'
 					'out/ui/default.css':'out/ui/default.css'
 					'out/ui/article.css':[
 						'out/ui/framework.css'

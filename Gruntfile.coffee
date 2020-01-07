@@ -116,8 +116,6 @@ module.exports = (grunt) ->
 		uglify:
 			out:
 				files:
-					'out/ui/output.min.js':[
-					]
 					'out/ui/article.min.js':[
 						'src/raw/ui/jquery-sticky/jquery.sticky.js'
 						'src/raw/ui/bootstrap/js/bootstrap.min.js'

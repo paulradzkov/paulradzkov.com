@@ -31,7 +31,7 @@
 <body class="allpage allpage-max-width allpage-stickyfooter layout-<%- @document.kind %>" id="top">
     <header class="allpage--header allpage-article-header">
         <div class="article-nav">
-            <nav class="read-siblings">
+            <nav class="nav-siblings">
                 <%- @getNavLinks() %>
             </nav>
             <nav class="site-navigation sticky-nav" id="sticker">
@@ -80,7 +80,7 @@
             <noscript>Включите Javascript, чтобы увидеть комментарии.</noscript>
         </article>
     </div>
-    <%- @partial('navigation') %>
+    <%- @partial('nav-articles') %>
     <%- @partial('scripts') %>
     <%- @partial('docpadscripts') %>
     <%- @partial('disqusscripts') %>

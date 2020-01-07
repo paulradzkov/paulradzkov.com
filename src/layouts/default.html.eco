@@ -18,20 +18,11 @@
     <link rel="stylesheet" href="/ui/default.css">
     <%- @getBlock('styles').add([].concat(@site.styles or []).concat(@document.styles or [])).toHTML() %>
 
-    <!-- Icons -->
     <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=A0RJW2vMdo">
-    <link rel="icon" type="image/png" href="/favicon-32x32.png?v=A0RJW2vMdo" sizes="32x32">
-    <link rel="icon" type="image/png" href="/favicon-16x16.png?v=A0RJW2vMdo" sizes="16x16">
-    <link rel="manifest" href="/manifest.json?v=A0RJW2vMdo">
-    <link rel="shortcut icon" href="/favicon.ico?v=A0RJW2vMdo">
-    <meta name="theme-color" content="#ffffff">
+    <%- @partial('favicon') %>
 
     <!-- Feeds -->
-    <link rel="alternate" type="application/atom+xml" title="Atom" href="/atom.xml">
-    <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml">
-    <link rel="canonical" href="<%= @site.canonicalUrl %><%= @document.url %>">
-    <meta property="fb:pages" content="297287297277384" />
+    <%- @partial('feeds') %>
 
     <%- @partial('opengraph') %>
     <%- @partial('twittercard') %>
@@ -99,9 +90,6 @@
             <noscript>Включите Javascript, чтобы увидеть комментарии.</noscript>
         </article>
     </div>
-    <!--nav class="read-next">
-        <%- @getNavLinks() %>
-    </nav-->
     <%- @partial('navigation') %>
     <%- @partial('scripts') %>
     <%- @partial('docpadscripts') %>

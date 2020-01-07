@@ -24,9 +24,6 @@
     <!-- Feeds -->
     <%- @partial('feeds') %>
 
-    <!-- Social -->
-    <link rel="canonical" href="<%= @site.canonicalUrl %><%= @document.url %>">
-    <meta property="fb:pages" content="297287297277384" />
     <%- @partial('opengraph') %>
     <%- @partial('twittercard') %>
     <%- @partial('googleAnalytics') %>

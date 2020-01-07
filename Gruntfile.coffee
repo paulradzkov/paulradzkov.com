@@ -19,8 +19,6 @@ module.exports = (grunt) ->
 		copy:
 			main:
 				files: [
-					'./src/raw/ui/likely/likely.js':'./node_modules/ilyabirman-likely/release/likely.js'
-					'./src/raw/ui/likely/likely.css':'./node_modules/ilyabirman-likely/release/likely.css'
 				]
 			ogimages:
 				files: [
@@ -119,7 +117,6 @@ module.exports = (grunt) ->
 			out:
 				files:
 					'out/ui/output.min.js':[
-						'src/raw/ui/likely/likely.js'
 					]
 					'out/ui/article.min.js':[
 						'src/raw/ui/jquery-sticky/jquery.sticky.js'
@@ -200,7 +197,6 @@ module.exports = (grunt) ->
 				options:
 					timeout: 5000
 					ignore: [
-						/\.likely([-a-zA-Z0-9_:>\*\s\[=\]])*/
 						/\.tooltip([-a-zA-Z0-9_:>\*\s\[=\]])*/
 						/\.offline-ui([-a-zA-Z0-9_:>\*\s\[=\]])*/
 						".hold"
@@ -220,8 +216,8 @@ module.exports = (grunt) ->
 						'out/2013/index.html'
 						'out/2014/index.html'
 						'out/2016/index.html'
+						'out/2017/index.html'
 						'out/demo/index.html'
-						'out/tags/index.html'
 						'out/search/index.html'
 					]
 				dest: 'out/ui/homepage.css'
@@ -229,7 +225,6 @@ module.exports = (grunt) ->
 				options:
 					timeout: 5000
 					ignore: [
-						/\.likely([-a-zA-Z0-9_:>\*\s\[=\]])*/
 						/\.offline-ui([-a-zA-Z0-9_:>\*\s\[=\]])*/
 					]
 					stylesheets: [

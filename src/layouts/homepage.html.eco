@@ -58,7 +58,6 @@
     <article class="flex-grow-xs" role="main">
         <%- @content %>
     </article>
-    <%- @partial('likely') %>
 
     <% if (@document.url == '/') : %>
         <div class="row row-bottom-lg space-out-top-kilo-xs">

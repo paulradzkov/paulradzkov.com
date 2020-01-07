@@ -70,7 +70,6 @@
         <div class="content-width">
             <h1 class="article-title"><%- @document.title %></h1>
         </div>
-        <%- @partial('likelybig') %>
     </header>
     <aside class="content-width" style="display:none">
         <div class="article-meta inlined">
@@ -92,7 +91,6 @@
                 <%- @partial('footer') %>
             </div>
             <div class="col-xs-12 col-sm-shrink space-in-h-zero-xs">
-                <%- @partial('likely') %>
             </div>
         </div>
     </div>

@@ -1,4 +1,4 @@
-<footer class="page-footer content-width txt-small txt-muted">
+<footer class="allpage-footer content-width txt-center txt-small txt-muted">
 	<p>
 		© <%- @site.author %>
 		<% if (@document.created_at) : %>

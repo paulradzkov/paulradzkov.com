@@ -29,7 +29,7 @@
     <%- @partial('googleAnalytics') %>
 </head>
 <body class="allpage allpage-max-width allpage-stickyfooter layout-<%- @document.kind %>" id="top">
-    <header class="allpage--header page-header">
+    <header class="allpage--header allpage-article-header">
         <div class="article-nav">
             <nav class="read-siblings">
                 <%- @getNavLinks() %>
@@ -52,28 +52,18 @@
             </nav>
         </div>
         <aside class="nav-placeholder content-width">
-            <div class="article-meta ">
+            <div class="allpage-article-meta ">
             <% if (@document.created_at) : %>
                 <p class="date"><time datetime="<%= @document.created_at %>"><%=@moment(@document.created_at).lang('ru').format('DD MMMM YYYY') %></time></p>
             <% end %>
             </div>
         </aside>
-        <div class="content-width">
-            <h1 class="article-title"><%- @document.title %></h1>
-        </div>
+        <h1 class="allpage-article-title"><%- @document.title %></h1>
     </header>
-    <aside class="content-width" style="display:none">
-        <div class="article-meta inlined">
-            <% if ((@site.disqus_shortname) and (@document.disqusid)) : %>
-            <span class="comments"><a href="<%= @document.path %>#disqus_thread" data-disqus-identifier="<%= @document.disqusid %>" >Комментарии</a></span>
-            <% end %>
-            <span class="pageviews" style="display:none"></span>
-        </div>
-    </aside>
     <%if (@document.expired == true) : %>
     <%- @partial('expired') %>
     <% end %>
-    <article class="allpage--body nav-placeholder content-width article-grid" role="main">
+    <article class="allpage--body content-width article-grid" role="main">
         <%- @content %>
     </article>
     <div class="content-width allpage--article-footer">

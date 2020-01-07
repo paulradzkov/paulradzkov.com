@@ -36,4 +36,40 @@
         padding-left: @allpage-pad;
         padding-right: @allpage-pad;
     }
+
+    &-article-header {
+        text-align: center;
+        position: relative;
+    }
+
+    &-article-meta,
+    &-article-title {
+        position: relative;
+    }
+
+    &-article-meta {
+        font-size: 12px;
+        color: #888;
+
+        a:not(:hover) {
+            color: #888;
+        }
+    }
+
+    &-article-title {
+        margin: 0 auto;
+        padding-left: @pad;
+        padding-right: @pad;
+        font-size: calc(~"1em + 4vw");
+        max-width: 70rem;
+
+        @media (min-width: 1200px) {
+            font-size: 64px;
+        }
+    }
+
+    &-footer {
+        margin: @pad 0;
+        text-align: center;
+    }
 }

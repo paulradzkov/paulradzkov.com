@@ -66,7 +66,7 @@ og_image: '/i/og/og-paulradzkov-2014-negation_css_selector.png'
 <figure>
   <a href="http://cssdeck.com/labs/dlg62kjv" target="_blank" rel="noopener"><img src="<%= @document.url %>sample2.gif" width="600" height="150" alt="Изменение внешнего вида всех элементов, кроме наведенного"/></a>
   <figcaption>
-    <p style="text-align: center;"><a href="http://cssdeck.com/labs/dlg62kjv" class="link-to-demo" target="_blank" rel="noopener">Пример</a></p>
+    <p style="text-align: center;"><a href="http://cssdeck.com/labs/dlg62kjv" class="bigbutton" target="_blank" rel="noopener">Пример</a></p>
   </figcaption>
 </figure>
 
@@ -93,7 +93,7 @@ ul:hover li:not(:hover) {
 <figure>
     <a href="http://cssdeck.com/labs/dlg62kjv" target="_blank" rel="noopener"><img src="<%= @document.url %>sample3.png" width="600" height="200" alt="Меню с разделителями между элементами"/></a>
   <figcaption>
-    <p style="text-align: center;"><a href="http://cssdeck.com/labs/dlg62kjv" class="link-to-demo" target="_blank" rel="noopener">Пример</a></p>
+    <p style="text-align: center;"><a href="http://cssdeck.com/labs/dlg62kjv" class="bigbutton" target="_blank" rel="noopener">Пример</a></p>
   </figcaption>
 </figure>
 

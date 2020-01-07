@@ -120,7 +120,7 @@ strong, b {
     <a href="http://cssdeck.com/labs/x20utix0" target="_blank" rel="noopener"><img src="<%= @document.url %>nested-tags-with-font-weight-bolder.png" alt=""></a>
     <figcaption>
         <p>Вложенные теги «strong». Толщина шрифта определяется исходя из значения родительского элемента.</p>
-        <p style="text-align: center;"><a href="http://cssdeck.com/labs/x20utix0" target="_blank" rel="noopener" class="link-to-demo">Демка</a></p>
+        <p style="text-align: center;"><a href="http://cssdeck.com/labs/x20utix0" target="_blank" rel="noopener" class="bigbutton">Демка</a></p>
     </figcaption>
 </figure>
 

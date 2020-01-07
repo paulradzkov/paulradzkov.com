@@ -14,7 +14,7 @@ og_image: '/i/og/og-paulradzkov-2012-crosswise.png'
 
 <!-- cut -->
 <p>
-    <a href="/demo/crosswise/" class="link-to-demo">Демка</a>
+    <a href="/demo/crosswise/" class="bigbutton">Демка</a>
 </p>
 
 <p>Напишем стили для строчного тега <code class="hljs-tag">del</code> и подготовим класс для перечёркивания блочных элементов <code class="hljs-class">.del-cross</code>.</p>

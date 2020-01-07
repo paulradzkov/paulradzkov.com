@@ -29,6 +29,6 @@ og_image: '/i/og/og-paulradzkov-2014-free_substitution_for_helvetica_neue.png'
 	<figcaption>Слева Helvetica Neue, справа TeX Gyre Heros</figcaption>
 </figure>
 
-<p style="text-align: center;"><a href="/demo/free_substitutes_for_helvetica_neue/" class="link-to-demo">Сравнение шрифтов</a></p>
+<p style="text-align: center;"><a href="/demo/free_substitutes_for_helvetica_neue/" class="bigbutton">Сравнение шрифтов</a></p>
 
 Если всё же нужно купить Helvetica Neue для веба, обратите внимание на [Adobe Typekit](https://typekit.com/plans). У них дешевле.

@@ -33,4 +33,4 @@ a:visited:focus {color:#770081}
 a:active        {color:#000000}
 </code></pre>
 
-<p><a href="http://cssdeck.com/labs/visited_link_on_hover" target="_blank" rel="noopener" class="link-to-demo">Пример</a></p>
+<p><a href="http://cssdeck.com/labs/visited_link_on_hover" target="_blank" rel="noopener" class="bigbutton">Пример</a></p>

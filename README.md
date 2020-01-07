@@ -3,8 +3,7 @@
 
 ## Getting Started
 
-1. [Install DocPad](https://github.com/bevry/docpad)
-2. ```npm install -g bower```
+1. ```npm install -g docpad@6.79.4```
 3. ```npm install -g grunt-cli```
 
 4. Clone the project and run the server
@@ -13,7 +12,6 @@
 	git clone https://github.com/paulradzkov/paulradzkov.com.git
 	cd paulradzkov.com
 	npm install
-	bower install
 	grunt
 	```
 

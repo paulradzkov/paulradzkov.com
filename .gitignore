@@ -1,7 +1,9 @@
 node_modules/
 bower_components/
 out/
+_site
 rsync.bat
+.jekyll-cache
 .docpad.db
 .ftppass
 .DS_Store

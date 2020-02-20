@@ -1,8 +1,0 @@
-<a href="/" class="gotohome">Главная</a>
-<ul class="site-map">
-    <% for page in @getCollection("articles").toJSON(): %>
-        <li class="map-item <%= if page.id is @document.id then 'active' else 'inactive' %>">
-            <a href="<%= page.url %>"><%= page.title %></a>
-        </li>
-    <% end %>
-</ul>

@@ -1,0 +1,10 @@
+<nav class="nav-siblings">
+    <div class="navlinks">
+        {% if page.previous.url %}
+        <a href="{{page.previous.url}}" title="Previous Post: {{page.previous.title}}" class="navlinks-prev">{{page.previous.title}}</a>
+        {% endif %}
+        {% if page.next.url %}
+        <a href="{{page.next.url}}" title="Next Post: {{page.next.title}}" class="navlinks-next">{{page.next.title}}</a>
+        {% endif %}
+    </div>
+</nav>

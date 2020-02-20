@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html class="" lang="ru">
+<head>
+    <!-- Standard Meta -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <!-- Site Properities -->
+    <title>{{ page.title }}</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+
+    <!-- Meta -->
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/ui/homepage.css">
+
+    <!-- Favicon -->
+    {% include favicon.html %}
+
+    <!-- Feeds -->
+    {% include feeds.html %}
+
+    {% include opengraph.html %}
+    {% include twittercard.html %}
+    {% include googleAnalytics.html %}
+</head>
+<body class="global-maw col-flex-xs space-in-mili-xs space-in-base-sm space-in-wide-kilo-lg">
+    <header class="row row-middle-md space-out-bottom-kilo-xs space-out-bottom-mega-lg">
+        <div class="col-xs-12 col-md-shrink">
+            {% if page.url != '/' %}<a class="logo link" href="/">{% else %}<span class="logo">{% endif %}
+                <span class="logo-icon">
+                    <img srcset="
+                        https://paulradzkov.com/avatar/paulradzkov_96x96.jpg 2x,
+                        https://paulradzkov.com/avatar/paulradzkov_192x192.jpg 4x
+                        " src="https://paulradzkov.com/avatar/paulradzkov_48x48.jpg" width="48" height="48" alt="Павел Радьков">
+                </span>
+                <span class="logo-txt">
+                    <span class="logo-name">Павел&nbsp;Радьков</span>
+                </span>
+                {% if page.url != '/' %}</a>{% else %}</span>{% endif %}
+        </div>
+        <div class="col-xs-12 col-md">
+            <nav class="row space-in-left-kilo-xs space-in-left-micro-md">
+                <a class="link-novisited col-xs-12 col-sm-shrink space-in-bottom-nano-xs space-in-v-nano-sm" href="/#projects"><strong>Проекты</strong></a>
+                <a class="link-novisited col-xs-12 col-sm-shrink space-in-bottom-nano-xs space-in-v-nano-sm" href="/#blog"><strong>Статьи</strong></a>
+                <a class="link-novisited col-xs-12 col-sm-shrink space-in-bottom-nano-xs space-in-v-nano-sm" href="/#faq"><strong>FAQ</strong></a>
+                <a class="link-novisited col-xs-12 col-sm-shrink space-in-bottom-nano-xs space-in-v-nano-sm space-auto-left-sm" href="/search">Поиск</a>
+            </nav>
+        </div>
+    </header>
+    <article class="flex-grow-xs" role="main">
+        {{ content }}
+    </article>
+
+    {% if page.url == '/' %}
+        <div class="row row-bottom-lg space-out-top-kilo-xs">
+            <div class="col-xs-12 col-lg-8 ">
+                {% include about.html %}
+            </div>
+            <div class="col-xs-12 col-lg-4 ">
+                <div class="space-in-left-kilo-md">
+                    {% include footer.html %}
+                </div>
+            </div>
+        </div>
+    {% else %}
+        {% include footer.html %}
+    {% endif %}
+    {% include disqusscripts.html %}
+    {% include yandexmetrika.html %}
+    {% comment %}
+    {% include upup.html %}
+    {% include offlinejs.html %}
+    {% endcomment %}
+    
+</body>
+</html>

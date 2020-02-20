@@ -1,0 +1,97 @@
+---
+title: "Списки и картинки с флоатами"
+excerpt: "Для дефолтных браузерных стилей характерно такое поведение: если картинка обтекает список слева, маркеры списка налазят на картинку. От этого можно избавиться незначительно переписав стили."
+description: "Как улучшить обтекание списков картинками."
+created_at: 2013-01-24
+kind: article
+publish: true
+disqusid: lists-and-floats
+tags: [css, typography]
+og_image: '/i/og/og-paulradzkov-2013-lists_and_floats.png'
+---
+
+<p><strong>Обновлено 12 декабря 2015. Спустя три года после написания этого поста в голову пришло более простое и стабильное решение.</strong></p>
+
+<p>Для дефолтных браузерных стилей характерно такое поведение: если картинка обтекает список слева, маркеры списка налазят на картинку. От этого можно избавиться незначительно переписав стили. </p>
+
+<!-- cut -->
+
+<p><a href="https://codepen.io/paulradzkov/full/PmQMby/" class="bigbutton" target="_blank" rel="noopener">демка</a></p>
+<figure>
+    <img src="floated_images_and_lists_problem.png" width="800" height="560" alt="Если картинка обтекает список, маркеры списка налазят на картинку"/>
+    <figcaption>Проблема: если картинка обтекает список, то маркеры списка налазят на картинку</figcaption>
+</figure>
+
+<p><a data-toggle="collapse" data-target="#oldSolution" aria-expanded="false" aria-controls="oldSolution">Старое решение</a></p>
+
+<div id="oldSolution" class="collapse">
+
+<p>Эту проблему можно решить, но придется переписать все отступы для тегов <code class="hljs-tag">ul</code>, <code class="hljs-tag">ol</code> и <code class="hljs-tag">li</code>. Так как <code class="hljs-tag nobr">ul > li</code> могут использоваться не только для текста с маркерами, но и для менюшек, слайдеров, списков новостей и других семантических конструкций, задавать стили напрямую тегам <code class="hljs-tag">ol</code>, <code class="hljs-tag">ul</code> и <code class="hljs-tag">li</code> опасно. Иначе в дальнейшем придется слишком часто эти стили обнулять. Поэтому создадим отдельный класс <code class="hljs-class">.textlist</code>, чтобы ставить его на наши <code class="hljs-tag">ul</code> и <code class="hljs-tag">ol</code>.</p>
+
+<pre><code class="language-css">.textlist {
+    margin: 0;
+    padding: 0;
+}
+.textlist > li {
+    margin: 0;
+    padding-left: 2em;
+    list-style-position: inside;
+    text-indent:-1em;
+    overflow: hidden;
+}
+</code></pre>
+
+<p><code class="hljs-rule"><span class="hljs-attribute">overflow</span>: <span class="hljs-value">hidden</span></code>  тут нам нужен для того, чтобы запретить тексту обтекание картинки по строкам внутри <code class="hljs-tag">li</code>. Теперь каждая <code class="hljs-tag">li</code> обтекает картинку как прямоугольный блок.</p>
+
+<p><code class="hljs-rule"><span class="hljs-attribute">list-style-position</span>: <span class="hljs-value">inside</span></code>  чтобы втянуть маркер списка внутрь блока.</p>
+
+<p>А всё остальное, чтобы отступы выглядели как раньше.</p>
+
+<figure>
+    <img src="floated_images_and_lists_solution.png" width="800" height="580" alt="Маркеры списка не налазят на картинку"/>
+    <figcaption>Маркеры списка больше не налазят на картинку</figcaption>
+</figure>
+
+<hr>
+
+</div>
+
+<h2>Новое решение</h2>
+
+<p><strong>Обновлено 11 июня 2017. Пофикшен баг с наплывом маркеров на картинку при первой загрузке или когда выключен кэш.</strong></p>
+
+<p>Для списков, у которых нет классов, перенесём дефолтный отступ 2.5em с левого края на правый, а сами <code class="hljs-tag nowrap">li</code> сдвинем на те же 2.5em вправо при помощи <code class="hljs-rule"><span class="hljs-attribute">transform</span>: <span class="hljs-value">translateX(2.5em)</span></code>.</p>
+
+<pre><code class="language-css">ul:not([class]),
+ol:not([class]) {
+    padding-left: 0;
+    padding-right: 2.5em;
+}
+ul:not([class]) li,
+ol:not([class]) li {
+    transform: translateX(2.5em);
+    animation: fixlists 1s;
+}
+
+@keyframes fixlists {
+    0% {
+        text-indent: -0.001em;
+    }
+    100% {
+        text-indent: 0;
+    }
+}
+</code></pre>
+
+<p>Списки, не имеющие класса, мы выбираем, чтобы не повредить меню, слайдеры и прочие конструкции, которые используют <code class="hljs-tag nowrap">ul li</code> в своей структуре. Подробнее про это в посте <a href="/2014/negation_css_selector/">про селектор :not()</a>.</p>
+
+<p>В отличие от старого решения, элементы списка обтекают картинку естественным образом, не оставляя зазоров под картинкой.</p>
+
+<p>Чтобы починить <a href="https://github.com/paulradzkov/bettertext.css/issues/4" target="_blank" rel="noopener">баг</a> в Хроме, Опере и других браузерах на движке Blink, пришлось добавить невидимую анимацию. Она заставляет браузер пересчитать размеры элементов списка и поставить маркеры на место.</p>
+
+<p>Живой пример:</p>
+
+<figure>
+    <p data-height="600" data-theme-id="16915" data-slug-hash="PmQMby" data-default-tab="result" data-user="paulradzkov" data-embed-version="2" data-pen-title="2013-lists-and-floats" class="codepen">See the Pen <a href="https://codepen.io/paulradzkov/pen/PmQMby/">2013-lists-and-floats</a> by Paul Radzkov (<a href="http://codepen.io/paulradzkov">@paulradzkov</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+    <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+</figure>

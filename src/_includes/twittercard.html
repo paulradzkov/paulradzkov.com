@@ -1,0 +1,9 @@
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:creator" content="{{ site.twittername }}">
+<meta name="twitter:title" content="{{ page.title }}">
+<meta name="twitter:description" content="{{ page.description }}">
+{% if page.og_image %}
+<meta name="twitter:image" content="{{ site.url }}{{ page.og_image }}">
+{% else %}
+<meta name="twitter:image" content="{{ site.url }}/i/og/og-index.png">
+{% endif %}

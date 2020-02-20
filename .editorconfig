@@ -12,10 +12,10 @@ insert_final_newline = true
 [{**/markdown_cheatsheet.html,**/*.md}]
 trim_trailing_whitespace = false
 
-[{**/*.json}]
+[{**/*.json,**/*.yml}]
 indent_style = space
 indent_size = 2
 
-[{docpad.coffee,Gruntfile.coffee}]
+[{Gruntfile.coffee}]
 indent_style = tab
 indent_size = 4

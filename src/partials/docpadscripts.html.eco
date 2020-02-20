@@ -1,3 +1,0 @@
-
-    <!-- DocPad Scripts + Our Own -->
-    <%- @getBlock('scripts').add([].concat(@site.scripts or []).concat(@document.scripts or [])).toHTML() %>

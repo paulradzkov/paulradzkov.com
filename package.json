@@ -1,24 +1,15 @@
 {
     "name": "paulradzkov.com",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "private": true,
-    "description": "Blog running on DocPad",
+    "description": "Personal blog running on Jekyll",
     "homepage": "https://github.com/paulradzkov/paulradzkov.com",
     "keywords": [
-        "docpad-skeleton",
-        "docpad",
         "website",
-        "skeleton",
-        "html5 boilerplate",
+        "blog",
         "h5bp"
     ],
     "author": "Paul Radzkov <radzkov@gmail.com> (http://paulradzkov.com)",
-    "maintainers": [
-        "Paul Radzkov <radzkov@gmail.com> (http://paulradzkov.com)"
-    ],
-    "contributors": [
-        "Paul Radzkov <radzkov@gmail.com> (http://paulradzkov.com)"
-    ],
     "bugs": {
         "url": "https://github.com/paulradzkov/paulradzkov.com/issues"
     },
@@ -26,29 +17,10 @@
         "type": "git",
         "url": "https://github.com/paulradzkov/paulradzkov.com.git"
     },
-    "engines": {
-        "node": "0.8.x",
-        "npm": "1.1.x"
-    },
-    "dependencies": {
-        "docpad-plugin-marked": "~2.4.0"
-    },
     "devDependencies": {
         "autoprefixer-core": "^5.2.1",
         "bettertext.css": "^2.0.4",
         "cssnano": "^2.0.2",
-        "docpad": "6.79.4",
-        "docpad-plugin-cleanurls": "~2.11.0",
-        "docpad-plugin-coffeescript": "~2.6.0",
-        "docpad-plugin-eco": "~2.2.1",
-        "docpad-plugin-highlightjs": "~2.5.0",
-        "docpad-plugin-less": "~2.6.0",
-        "docpad-plugin-moment": "~2.0.2",
-        "docpad-plugin-navlinks": "~2.0.4",
-        "docpad-plugin-partials": "~2.11.0",
-        "docpad-plugin-raw": "~2.5.1",
-        "docpad-plugin-rss": "~2.3.1",
-        "docpad-plugin-sitemap": "~2.4.0",
         "flxgrid.css": "^1.0.0",
         "grunt": "^1.0.4",
         "grunt-contrib-clean": "^0.6.0",

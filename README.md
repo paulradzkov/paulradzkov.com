@@ -1,21 +1,24 @@
-# [paulradzkov.com](http://paulradzkov.com/) blog built with [DocPad](https://github.com/bevry/docpad)
+# [paulradzkov.com](http://paulradzkov.com/) blog built with [Jekyll](https://jekyllrb.com/)
 
 
 ## Getting Started
 
-1. ```npm install -g docpad@6.79.4```
-3. ```npm install -g grunt-cli```
+1. ```npm install -g grunt-cli```
 
-4. Clone the project and run the server
+2. Clone the project and run the server
 
 	``` bash
 	git clone https://github.com/paulradzkov/paulradzkov.com.git
 	cd paulradzkov.com
 	npm install
-	grunt
+	bundle exec jekyll serve
 	```
 
-1. [Open http://localhost:9778/](http://localhost:9778/)
+3. [Open http://localhost:9778/](http://localhost:9778/)
+
+
+## Automation
+
 
 
 ## License

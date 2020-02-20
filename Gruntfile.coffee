@@ -23,11 +23,11 @@ module.exports = (grunt) ->
 			ogimages:
 				files: [
 					expand: true
-					cwd: 'src/raw/i/og/'
+					cwd: 'src/i/og/'
 					src: ['*']
-					dest: 'src/raw/i/og/'
+					dest: 'src/i/og/'
 					rename: (dest, src) ->
-						dest + src.replace('127.0.0.1!8080!','paulradzkov-').replace('!','-')
+						dest + src.replace('127.0.0.1!4000!','paulradzkov-').replace('!','-')
 				]
 
 		less:
@@ -35,11 +35,11 @@ module.exports = (grunt) ->
 				options:
 					sourceMap: true
 				files: [
-					'out/ui/homepage.css': 'src/raw/ui/homepage.less'
-					'out/ui/article.css': 'src/raw/ui/article.less'
-					'out/ui/default.css': 'src/raw/ui/default.less'
-					'out/ui/framework.css': 'src/raw/ui/framework.less'
-					'out/ui/screenshot/screenshot.css': 'src/raw/ui/screenshot/screenshot.less'
+					'out/ui/homepage.css': 'src/ui/homepage.less'
+					'out/ui/article.css': 'src/ui/article.less'
+					'out/ui/default.css': 'src/ui/default.less'
+					'out/ui/framework.css': 'src/ui/framework.less'
+					'out/ui/screenshot/screenshot.css': 'src/ui/screenshot/screenshot.less'
 				]
 
 		postcss:
@@ -117,9 +117,9 @@ module.exports = (grunt) ->
 			out:
 				files:
 					'out/ui/article.min.js':[
-						'src/raw/ui/jquery-sticky/jquery.sticky.js'
-						'src/raw/ui/bootstrap/js/bootstrap.min.js'
-						'src/raw/ui/script.js'
+						'src/ui/jquery-sticky/jquery.sticky.js'
+						'src/ui/bootstrap/js/bootstrap.min.js'
+						'src/ui/script.js'
 					]
 		compress:
 			main:
@@ -155,13 +155,13 @@ module.exports = (grunt) ->
 			less:
 				'out/css/*.less'
 			ogimages:
-				'src/raw/i/og/og-127.0.0.1*'
+				'src/i/og/og-127.0.0.1*'
 			ogimagestemp:
-				'src/raw/i/og/*.{png,jpg}.*'
+				'src/i/og/*.{png,jpg}.*'
 
 		watch:
 			less:
-				files: ['src/raw/**/*.less']
+				files: ['src/ui/**/*.less']
 				tasks: ['less', 'postcss']
 
 		# generate development
@@ -169,20 +169,20 @@ module.exports = (grunt) ->
 			clean:
 				options:
 					stdout: true
-				command: 'docpad clean'
-			docpad:
+				command: 'bundle exec jekyll clean'
+			runstatic:
 				options:
 					stdout: true
-				command: 'docpad generate --env static'
+				command: 'bundle exec jekyll build JEKYLL_ENV=static'
 			ghpages:
 				options:
 					stdout: true
-				command: 'docpad generate --env ghpages'
+				command: 'bundle exec jekyll build JEKYLL_ENV=ghpages'
 			run:
 				options:
 					stdout: true
 					async: true
-				command: 'docpad run'
+				command: 'bundle exec jekyll serve'
 			server:
 				options:
 					stdout: true
@@ -274,30 +274,30 @@ module.exports = (grunt) ->
 			ogimages:
 				options:
 					urls: [
-						'http://127.0.0.1:8080/2017/local_variables/'
-						'http://127.0.0.1:8080/2016/code_review/'
-						'http://127.0.0.1:8080/2014/web-fonts_license/'
-						'http://127.0.0.1:8080/2014/free_substitution_for_helvetica_neue/'
-						'http://127.0.0.1:8080/2014/deploy_docpad_site_to_github_pages/'
-						'http://127.0.0.1:8080/2014/markdown_cheatsheet/'
-						'http://127.0.0.1:8080/2014/designer-superstar/'
-						'http://127.0.0.1:8080/2014/capture_screen_to_gif/'
-						'http://127.0.0.1:8080/2014/font-weight_bolder/'
-						'http://127.0.0.1:8080/2014/mailto_parameters/'
-						'http://127.0.0.1:8080/2014/visited_link_on_hover/'
-						'http://127.0.0.1:8080/2014/negation_css_selector/'
-						'http://127.0.0.1:8080/2013/lists_and_floats/'
-						'http://127.0.0.1:8080/2012/pointer-events/'
-						'http://127.0.0.1:8080/2012/chrome_dev_tools/'
-						'http://127.0.0.1:8080/2012/crosswise/'
-						'http://127.0.0.1:8080/2012/mobile_developing/'
-						'http://127.0.0.1:8080/2012/photoshop_next_and_previous_layer/'
-						'http://127.0.0.1:8080/2012/html-entities_and_utf_codes/'
-						'http://127.0.0.1:8080/2012/photoshop_new_layer_based_slice/'
-						'http://127.0.0.1:8080/2012/autocomplete/'
+						'http://127.0.0.1:4000/2017/local_variables/'
+						'http://127.0.0.1:4000/2016/code_review/'
+						'http://127.0.0.1:4000/2014/web-fonts_license/'
+						'http://127.0.0.1:4000/2014/free_substitution_for_helvetica_neue/'
+						'http://127.0.0.1:4000/2014/deploy_docpad_site_to_github_pages/'
+						'http://127.0.0.1:4000/2014/markdown_cheatsheet/'
+						'http://127.0.0.1:4000/2014/designer-superstar/'
+						'http://127.0.0.1:4000/2014/capture_screen_to_gif/'
+						'http://127.0.0.1:4000/2014/font-weight_bolder/'
+						'http://127.0.0.1:4000/2014/mailto_parameters/'
+						'http://127.0.0.1:4000/2014/visited_link_on_hover/'
+						'http://127.0.0.1:4000/2014/negation_css_selector/'
+						'http://127.0.0.1:4000/2013/lists_and_floats/'
+						'http://127.0.0.1:4000/2012/pointer-events/'
+						'http://127.0.0.1:4000/2012/chrome_dev_tools/'
+						'http://127.0.0.1:4000/2012/crosswise/'
+						'http://127.0.0.1:4000/2012/mobile_developing/'
+						'http://127.0.0.1:4000/2012/photoshop_next_and_previous_layer/'
+						'http://127.0.0.1:4000/2012/html-entities_and_utf_codes/'
+						'http://127.0.0.1:4000/2012/photoshop_new_layer_based_slice/'
+						'http://127.0.0.1:4000/2012/autocomplete/'
 					]
 					sizes: ['1500x788']
-					dest: 'src/raw/i/og'
+					dest: 'src/i/og'
 					#filename: 'og-{{url}}-{{size}}{{crop}}'
 					filename: 'og-{{url}}'
 					crop: true
@@ -312,7 +312,7 @@ module.exports = (grunt) ->
 						'http://127.0.0.1:8080/2017/local_variables/'
 					]
 					sizes: ['1500x788']
-					dest: 'src/raw/i/og'
+					dest: 'src/i/og'
 					#filename: 'og-{{url}}-{{size}}{{crop}}'
 					filename: 'og-{{url}}'
 					crop: true
@@ -329,5 +329,5 @@ module.exports = (grunt) ->
 	grunt.registerTask 'deploy',        ['shell:clean', 'shell:ghpages', 'production', 'gh-pages']
 	grunt.registerTask 'production',    ['less', 'uncss', 'postcss', 'cssmin', 'htmlmin', 'uglify', 'compress', 'clean']
 	grunt.registerTask 'run',           ['shell:run', 'less', 'postcss', 'cssmin', 'uglify', 'watch:less']
-	grunt.registerTask 'cdn',           ['shell:clean', 'shell:docpad', 'production']
+	grunt.registerTask 'cdn',           ['shell:clean', 'shell:runstatic', 'production']
 	grunt.registerTask 'default',       ['run']

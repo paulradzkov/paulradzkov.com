@@ -1,0 +1,48 @@
+# Jekyll config
+source              : ./src
+destination         : ./out
+plugins_dir         : _plugins
+layouts_dir         : _layouts
+data_dir            : _data
+includes_dir        : _includes
+keep_files          : [ui/]
+excerpt_separator:  <!-- cut -->
+collections:
+  posts:
+    output          : true
+    permalink:      /:year/:title/
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "article"
+
+# Specify some site properties
+# The production url of our website
+url                 : "https://paulradzkov.com"
+canonicalUrl        : "https://paulradzkov.com"
+
+# The default title of our website
+title               : "Павел Радьков"
+
+# RSS title of our website
+rssTitle            : "Блог Павла Радькова"
+
+# Author name used in copyrights and meta data
+author              : "Павел Радьков"
+
+# Change to your disqus name or comment it out to disable comments
+disqus_shortname    : "paulradzkov"
+
+# The website description (for SEO)
+description: "Заметки о веб-разработке Павла Радькова."
+
+# The website keywords (for SEO) separated by commas
+keywords: "Paul Radzkov, web-developer, blog, html, css"
+
+email               : "radzkov@gmail.com"
+googleAnalyticsId   : "UA-29416794-1"
+googleAnalyticsDomain: "paulradzkov.com"

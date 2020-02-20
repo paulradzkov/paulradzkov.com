@@ -1,0 +1,26 @@
+<meta property="og:title" content="{{ page.title }}" />
+<meta property="og:description" content="{{ page.description }}" />
+{% if page.og_image %}
+    <meta property="og:image" content="{{ site.url }}{{ page.og_image }}" />
+{% else %}
+    <meta property="og:image" content="{{ site.url }}/i/og/og-index.png" />
+{% endif %}
+{% if page.kind == 'article' %}
+    <meta property="og:type" content="article" />
+    <meta property="og:article:published_time" content="{{ page.created_at }}" />
+    {% if page.modified_at %}
+    <meta property="og:article:modified_time" content="{{ page.modified_at }}" />
+    {% endif %}
+    <meta property="og:article:author" content="{{ site.author }}" />
+    {% if page.section %}
+    <meta property="og:article:section" content="{{ page.section }}" />
+    {% endif %}
+    {% if page.tags %}
+    <meta property="og:article:tag" content="{{ page.tags }}" />
+    {% endif %}
+{% else %}
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ site.url }}" />
+    <meta property="og:site_name" content="{{ site.rssTitle }}" />
+{% endif %}
+<meta property="og:locale" content="ru_RU" />

@@ -1,0 +1,141 @@
+/* navigation */
+.nav-icon {
+    font-family: Arial;
+    display: block;
+    position: absolute;
+    z-index: 1;
+    font-size: 1.5em;
+    margin: 1em 0 1em 1em;
+    width: 48px;
+    height: 48px;
+    text-align: center;
+    line-height: 2;
+    border: 0;
+    background-color: #000;
+    background-image: url(https://paulradzkov.com/avatar/paulradzkov_120x120.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: transparent;
+    outline: none;
+    border-radius: 2px;
+    box-shadow: 0 0 0 -0.2em rgba(0, 0, 0, 0.2), inset 0 0 0 0 #0877db;
+    transition: all 0.3s;
+    box-sizing: border-box;
+
+    svg {
+        fill: currentColor;
+        vertical-align: top;
+    }
+
+    &-home,
+    &-top {
+        display: block;
+        position: absolute;
+        z-index: 1;
+        padding: 12px;
+        width: 48px;
+        height: 48px;
+        border-radius: inherit;
+        color: inherit !important;
+        box-sizing: border-box;
+
+        &:focus {
+            box-shadow: 0 0 0 0.1875em rgba(43, 154, 255, 0.2);
+            outline: none;
+        }
+    }
+
+}
+
+@media screen and (max-width: 35.99rem) {
+    .nav-icon-centered {
+        margin-left: calc(~"50% - 1em");
+    }
+
+    .fixed .nav-icon-centered {
+        margin-left: 1em;
+    }
+}
+
+.fixed .nav-icon,
+.nav-icon:hover {
+    color: #FFF;
+    box-shadow: 0.2em 0.2em 0.2em -0.2em rgba(0, 0, 0, 0.2), inset 0 0 0 1em #0877db;
+}
+.no-boxshadow .nav-icon:hover {
+    background-color: #0877db;
+}
+.nav-icon:active {
+    box-shadow: inset 0.1em 0.1em 0.1em 0em rgba(0, 0, 0, 0.4), inset 0 0 0 1em #0877db;
+    transition: all 0.1s;
+}
+.nav-icon img {
+    max-width: none;
+    width: 28px;
+    height: 28px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.site-navigation .tooltip {
+    text-align: left;
+    white-space: nowrap;
+}
+
+.nav-placeholder {
+    padding-top: 10rem;
+}
+
+.hold {
+    transition: all .5s;
+}
+
+@media screen and (max-width:64rem) {
+    .no-csstransforms3d .fixed.scrolldown .nav-icon {
+        top: -4em;
+        transition: top .3s;
+    }
+    .no-csstransforms3d .fixed.scrolltop .nav-icon {
+        top: 0;
+        transition: top .3s;
+    }
+    .csstransforms3d .fixed.scrolldown .nav-icon {
+        transform: translate3d(0, -4em, 0);
+        transition: transform .3s, box-shadow .5s;
+    }
+    .csstransforms3d .fixed.scrolltop .nav-icon {
+        transform: translate3d(0, 0em, 0);
+        transition: transform .3s, box-shadow .5s;
+    }
+}
+
+.nav-icon-top {
+    display: none;
+}
+
+.fixed .nav-icon-top {
+    display: block;
+}
+
+.nav-icon-home {
+    display: block;
+}
+
+.fixed .nav-icon-home {
+    display: none;
+}
+
+.sticky-nav {
+    z-index: 2;
+    width: 100%;
+}
+
+.nav-icon-visuallyhidden {
+    position: absolute !important;
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px);
+	padding:0 !important;
+	border:0 !important;
+	height: 1px !important; 
+	width: 1px !important; 
+	overflow: hidden;
+}

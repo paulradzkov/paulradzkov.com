@@ -1,0 +1,20 @@
+---
+layout: 'homepage'
+title: 'Блог / Статьи 2013 года'
+---
+
+<div class="row row-bottom-sm" style="align-items: baseline;">
+    <div class="col-xs-12 col-sm-shrink">
+        <h1 class="space-in-right-mili-lg">Статьи за 2013 год</h1>
+    </div>
+    <div class="col-xs-12 col-sm-shrink">
+        <p>Подписаться на обновления:
+            <a class="link space-in-wide-micro-xs" href="/rss.xml" onClick="_gaq.push(['_trackEvent', 'Feed', 'Open', 'RSS Feed']);">RSS</a>
+        </p>
+    </div>
+</div>
+<div class="blogwall space-minus-h-mili-xs space-out-h-zero-sm space-out-top-micro-xs">
+    {% for post in site.posts offset:1 %}
+        {% include blogwallitem.html %}
+    {% endfor %}
+</div>

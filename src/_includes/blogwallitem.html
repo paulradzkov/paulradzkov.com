@@ -1,0 +1,20 @@
+<section class="blogwall-item blogwall-gridcell blogwall-fauxlink col-flex-sm">
+    <p class="txt-date space-out-zero-xs">
+        {% if post.badge %}
+        <span class="badge space-out-right-nano-xs {% if post.badgetype %}{{ post.badgetype }}{% endif %}">{{ post.badge }}</span>
+        {% endif %}
+        <time class="blogwall-date" datetime="{{ post.created_at }}">
+            <span class="blogwall-readable-only">Дата публикации:</span> {{ post.created_at| localize: "%e %B %Y" }}
+        </time>
+    </p>
+    {% if post.starred %}
+        <div class="blogwall-item-star">★<span class="blogwall-readable-only">Популярная статья</span></div>
+    {% endif %}
+    <p class="space-out-v-nano-xs">
+        <a href="{{ post.url }}" class="link blogwall-link" tabindex="-1">{{ post.title }}</a>
+    </p>
+    <aside class="space-auto-top-sm txt-comments">
+        <a class="link-inherit link-noline" href="{{ post.url }}#disqus_thread" data-disqus-identifier="{{ post.disqusid }}" tabindex="-1"></a>
+    </aside>
+    <a href="{{ post.url }}" class="link blogwall-fauxlink--overlay"><span class="blogwall-readable-only">Читать статью «{{ post.title }}»</span></a>
+</section>

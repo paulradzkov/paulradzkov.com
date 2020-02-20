@@ -1,8 +1,0 @@
-<nav class="nav-articles row">
-    <% for page in @getCollection("articles").toJSON(): %>
-        <section class="col-xs-min nav-articles-item <%= if page.id is @document.id then 'is-active' else 'is-inactive' %> <% for tag in page.tags : %> <%= @wspToDash(tag) %><% end %>">
-            <div class="txt-date"><time datetime="<%= page.created_at %>"><%=@moment(page.created_at).format('DD MMMM YYYY') %></time></div>
-            <p><a href="<%= page.url %>"><%= page.title %></a></p>
-        </section>
-    <% end %>
-</nav>

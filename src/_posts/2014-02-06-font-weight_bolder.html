@@ -1,0 +1,148 @@
+---
+title: "Font-weight: bolder для шрифтов со множеством начертаний"
+excerpt: 'Font-weight: bolder не работает или работает не так? Это легко исправить. Статья о том как правильно использовать font-weight: bolder и lighter.'
+description: "Font-weight: bolder не работает или работает не так? Это легко исправить. Статья о том как правильно использовать font-weight: bolder и lighter."
+created_at: 2014-02-06
+kind: article
+publish: true
+disqusid: font-weight_bolder
+tags: [css, typography]
+og_image: '/i/og/og-paulradzkov-2014-font-weight_bolder.png'
+---
+
+<p>Если вы используете шрифт со множеством начертаний, то вам, вероятно, захочется, чтобы теги <code class="hljs-tag">strong</code> и <code class="hljs-tag">b</code> не увеличивали жирность шрифта до фиксированного значения <code class="hljs-rule"><span class="hljs-attribute">font-weight</span>:<span class="hljs-number">700</span></code>, как это происходит по-умолчанию, а использовали промежуточные значения, рассчитанные исходя из жирности шрифта родительского элемента.</p>
+<p>Ведь не очень красиво, когда в ультратонком шрифте появляются жирные кляксы тегов <code class="hljs-tag">strong</code>.</p>
+
+<!-- cut -->
+
+<p>Возьмём для примера Open Sans.</p>
+
+<figure>
+  <img src="open-sans.png" width="847" height="345" alt="Open Sans и все его начертания">
+  <figcaption>
+  	<p>Open Sans имеет пять начертаний: Light 300, Normal 400, Semi-Bold 600, Bold 700 и Extra-Bold 800. <br> Цифры соответствуют значению <code class="hljs-attribute">font-weight</code>.</p>
+  </figcaption>
+</figure>
+
+<p>Основной текст имеет начертание Light 300, заголовки и цитаты — Normal 400, а промо-блок — Semi-Bold 600:</p>
+
+<pre><code class="language-css">body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+}
+h1, h2, h3, h4, h5, h6,
+blockquote {
+  font-weight: 400;
+}
+.promo {
+  font-weight: 600;
+}
+</code></pre>
+
+<p>Тег <code class="hljs-tag">strong</code> может встечаться и в основном тексте, и в цитатах, и промо-блоке. Надо это учесть.</p>
+
+<p>По-умолчанию:</p>
+
+<pre><code class="language-css">strong, b {
+    font-weight: bold; /* bold = 700 */
+}
+</code></pre>
+
+<p>А нам хочется, чтобы у <code class="hljs-tag">strong</code> и <code class="hljs-tag">b</code> для основного текста было Normal 400, для цитат и заголовков — Bold 700, а для промо блока — Extra-Bold 800. Это сохранит контраст между жирным и нежирным текстом примерно равным во всех случаях.</p>
+
+<p>Уверен, многие пробовали использовать <code class="css"><span class="hljs-tag">strong</span> <span class="hljs-rules">{<span class="hljs-rule"><span class="hljs-attribute">font-weight</span>:<span class="hljs-value"> bolder</span></span>;<span class="hljs-rule">}</span></span></code>, но это не принесло ожидаемого результата — текст стал ещё жирнее, чем ожидалось.</p>
+
+<p>А всё потому, что согласно <a href="http://www.w3.org/TR/CSS2/fonts.html#font-boldness" target="_blank" rel="noopener">спецификации</a>, значение <code class="hljs-rule"><span class="hljs-value">bolder</span></code>  (<code class="hljs-rule"><span class="hljs-value">lighter</span></code>) увеличивает (уменьшает) <em>унаследованное</em> значение <code class="hljs-attribute">font-weight</code> до следующего возможного для данного шрифта значения, согласно следующей таблице.</p>
+
+<figure>
+<table style="margin: auto;">
+    <tr>
+        <th>Наследуемое значение</th><th>bolder</th><th>lighter</th>
+    </tr>
+    <tr>
+        <td>100</td><td>400</td><td>100</td>
+    </tr>
+    <tr>
+        <td>200</td><td>400</td><td>100</td>
+    </tr>
+    <tr>
+        <td>300</td><td>400</td><td>100</td>
+    </tr>
+    <tr>
+        <td>400</td><td>700</td><td>100</td>
+    </tr>
+    <tr>
+        <td>500</td><td>700</td><td>100</td>
+    </tr>
+    <tr>
+        <td>600</td><td>900</td><td>400</td>
+    </tr>
+    <tr>
+        <td>700</td><td>900</td><td>400</td>
+    </tr>
+    <tr>
+        <td>800</td><td>900</td><td>700</td>
+    </tr>
+    <tr>
+        <td>900</td><td>900</td><td>700</td>
+    </tr>
+</table>
+<figcaption><p>Значения «bolder» и «lighter» в зависимости от наследуемого значения.</p></figcaption>
+</figure>
+
+<p><del>Но в браузерной CSS прописано <code class="css"><span class="hljs-tag">strong</span>, <span class="hljs-tag">b</span> <span class="hljs-rules">{<span class="hljs-rule"><span class="hljs-attribute">font-weight</span>:<span class="hljs-value">bold</span></span>;<span class="hljs-rule">}</span></span></code>, т.е. <em>унаследуется</em> значение «700», а потом оно ещё и увеличивается до «900». Поэтому кажется, что <code class="hljs-rule"><span class="hljs-value">bolder</span></code> работает неправильно.</del></p>
+
+<blockquote>
+    <p><strong>Добавлено 22 января 2016</strong></p>
+    <p>На самом деле это был баг и он присутствовал во всех браузерах на момент написания статьи. Позже баги в браузерах были исправлены.
+        А <a href="https://github.com/necolas/normalize.css/pull/342">мой пулл-реквест</a> был принят в <a href="https://github.com/necolas/normalize.css">normalize.css</a>.</p>
+</blockquote>
+
+<p>Исправить это можно так:</p>
+
+<pre><code class="language-css">/* сбрасываем стандартное «bold»,
+шрифт становится таким же как его родительский элемент */
+strong, b {
+  font-weight: inherit;
+}
+
+/* теперь bolder будет вычисляться исходя из веса шрифта родительского элемента */
+strong, b {
+  font-weight: bolder;
+}
+</code></pre>
+
+<p>Именно так, как два отдельных правила. Первое обнуляет значение <code class="hljs-attribute">font-weight</code> из браузерной таблицы стилей, второе задаёт жирность уже в относительных, а не абсолютных единицах.</p>
+
+<p>Теперь нам не придётся заботиться о вложенности элементов — каскад всё сделает автоматически. Мы можем вкладывать теги <code class="hljs-tag">strong</code> друг в друга.</p>
+
+<figure>
+    <a href="http://cssdeck.com/labs/x20utix0" target="_blank" rel="noopener"><img src="<%= @document.url %>nested-tags-with-font-weight-bolder.png" alt=""></a>
+    <figcaption>
+        <p>Вложенные теги «strong». Толщина шрифта определяется исходя из значения родительского элемента.</p>
+        <p style="text-align: center;"><a href="http://cssdeck.com/labs/x20utix0" target="_blank" rel="noopener" class="bigbutton">Демка</a></p>
+    </figcaption>
+</figure>
+
+
+<h2>Ограничения</h2>
+
+<p>Используя относительные значения <code class="hljs-attribute">font-weight</code> мы получаем только по три градации жирности шрифта для <code class="hljs-rule"><span class="hljs-value">bolder</span></code> и <code class="hljs-rule"><span class="hljs-value">lighter</span></code> соответственно. Спецификация не гарантирует, что браузеры правильно сопоставят названия начертаний и числовые значения. Не гарантирует, что для шрифта найдётся более жирное или более тонкое начертание. У некоторых шрифтов всего два начертания, у некоторых может быть восемь.</p>
+
+<p>Единственной гарантией при использовании <code class="hljs-rule"><span class="hljs-value">bolder</span></code> / <code class="hljs-rule"><span class="hljs-value">lighter</span></code> является то, что шрифт при значении «bolder» не будет тоньше, чем более легкие начертания этого шрифта, а при значении «lighter» будет не толще, чем более жирные начертания этого шрифта.</p>
+
+<p>Чтобы более тонко настроить вес шрифта, надо использовать абсолютные значения.</p>
+
+<h2>Баги</h2>
+
+<p>Если у вас шрифт установлен в системе, но не подключен через <code class="hljs-at_rule">@<span class="hljs-keyword">font-face</span></code>, то Google Chrome определяет только Normal и Bold начертания шрифта. Чтобы локальный шрифт заработал, нужно дополнительно указать его <code class="hljs-attribute">font-family</code>.</p>
+
+<pre><code class="language-css">.fw300 {
+  font-family: "Open Sans Light", "Open Sans";
+  font-weight: 300;
+}
+.fw600 {
+  font-family: "Open Sans SemiBold", "Open Sans";
+  font-weight: 600;
+}
+</code></pre>

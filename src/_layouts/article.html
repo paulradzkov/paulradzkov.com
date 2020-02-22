@@ -15,8 +15,11 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="/ui/article.css">
+
     {% if page.styles %}
-    <link rel="stylesheet" href="{{ page.styles }}">
+        {% for stylesheet in page.styles %}
+        <link rel="stylesheet" href="{{ stylesheet }}">
+        {% endfor %}
     {% endif %}
     
     <!-- Favicon -->
@@ -85,7 +88,9 @@
     {% include offlinejs.html %}
     {% endcomment %}
     {% if page.scripts %}
-    <script src="{{ page.scripts }}"></script>
+        {% for js_file in page.scripts %}
+        <script type="text/javascript" src="{{ js_file }}"></script>
+        {% endfor %}
     {% endif %}
 </body>
 </html>

@@ -23,14 +23,17 @@ og_image: '/i/og/og-paulradzkov-2014-visited_link_on_hover.png'
   </figcaption>
 </figure>
 
-
-<pre><code class="language-css">a:link          {color:#0267FF}
+{% capture codeexample %}
+```css
+a:link          {color:#0267FF}
 a:visited       {color:#B413D3}
 a:hover         {color:#004DC0}
 a:visited:hover {color:#9501B3}
 a:focus         {color:#004DC0}
 a:visited:focus {color:#770081}
 a:active        {color:#000000}
-</code></pre>
+```
+{% endcapture %}
+{% include browserframe.html content=codeexample title="links.css" class="space-out-bottom-kilo-xs" relative-url="" %}
 
 <p><a href="http://cssdeck.com/labs/visited_link_on_hover" target="_blank" rel="noopener" class="bigbutton">Пример</a></p>

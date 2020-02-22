@@ -22,18 +22,23 @@ og_image: '/i/og/og-paulradzkov-2012-html-entities_and_utf_codes.png'
 
 <p>Пример CSS-кода:</p>
 
-<pre><code class="css">p.readmore a:after {
+{% capture codeexample %}
+```css
+p.readmore a:after {
     content: '\203A'; /* выведет &rsaquo; */
     position: absolute;
     right: 0.8em;
     top: 4px;
     display: block;
-}</code>
-</pre>
+}
+```
+{% endcapture %}
+{% include browserframe.html content=codeexample title="styles.css" class="space-out-bottom-kilo-xs" relative-url="" %}
 
 <h2>Таблица символов</h2>
 
-<div class="demo-css-editable"><style type="text/css" contenteditable scoped>/* Предпросмотр символов */
+<div class="demo-css-editable article-grid--wide">
+<style type="text/css" contenteditable="true" scoped>/* Предпросмотр символов */
 /* Чтобы изменить шрифт, размер, начертание, отредактируйте эти стили. */
 
 .chars .char-demo {
@@ -72,7 +77,7 @@ og_image: '/i/og/og-paulradzkov-2012-html-entities_and_utf_codes.png'
     </form>
 </div>
 
-    <table class="chars layout-flow">
+    <table class="chars layout-flow ">
         <thead>
             <tr>
                 <th>Символ</th>
@@ -1697,4 +1702,5 @@ og_image: '/i/og/og-paulradzkov-2012-html-entities_and_utf_codes.png'
             </tr>
         </tbody>
     </table>
+
 </div>

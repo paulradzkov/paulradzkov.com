@@ -26,7 +26,9 @@ og_image: '/i/og/og-paulradzkov-2014-font-weight_bolder.png'
 
 <p>Основной текст имеет начертание Light 300, заголовки и цитаты — Normal 400, а промо-блок — Semi-Bold 600:</p>
 
-<pre><code class="language-css">body {
+{% capture fig-1 %}
+```css
+body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
 }
@@ -37,16 +39,22 @@ blockquote {
 .promo {
   font-weight: 600;
 }
-</code></pre>
+```
+{% endcapture %}
+{% include browserframe.html content=fig-1 title="styles.css" class="space-out-bottom-kilo-xs" relative-url="" %}
 
 <p>Тег <code class="hljs-tag">strong</code> может встечаться и в основном тексте, и в цитатах, и промо-блоке. Надо это учесть.</p>
 
 <p>По-умолчанию:</p>
 
-<pre><code class="language-css">strong, b {
-    font-weight: bold; /* bold = 700 */
+{% capture fig-2 %}
+```css
+strong, b {
+  font-weight: bold; /* bold = 700 */
 }
-</code></pre>
+```
+{% endcapture %}
+{% include browserframe.html content=fig-2 title="styles.css" class="space-out-bottom-kilo-xs" relative-url="" %}
 
 <p>А нам хочется, чтобы у <code class="hljs-tag">strong</code> и <code class="hljs-tag">b</code> для основного текста было Normal 400, для цитат и заголовков — Bold 700, а для промо блока — Extra-Bold 800. Это сохранит контраст между жирным и нежирным текстом примерно равным во всех случаях.</p>
 
@@ -100,7 +108,9 @@ blockquote {
 
 <p>Исправить это можно так:</p>
 
-<pre><code class="language-css">/* сбрасываем стандартное «bold»,
+{% capture fig-3 %}
+```css
+/* сбрасываем стандартное «bold»,
 шрифт становится таким же как его родительский элемент */
 strong, b {
   font-weight: inherit;
@@ -110,14 +120,16 @@ strong, b {
 strong, b {
   font-weight: bolder;
 }
-</code></pre>
+```
+{% endcapture %}
+{% include browserframe.html content=fig-3 title="styles.css" class="space-out-bottom-kilo-xs" relative-url="" %}
 
 <p>Именно так, как два отдельных правила. Первое обнуляет значение <code class="hljs-attribute">font-weight</code> из браузерной таблицы стилей, второе задаёт жирность уже в относительных, а не абсолютных единицах.</p>
 
 <p>Теперь нам не придётся заботиться о вложенности элементов — каскад всё сделает автоматически. Мы можем вкладывать теги <code class="hljs-tag">strong</code> друг в друга.</p>
 
 <figure>
-    <a href="http://cssdeck.com/labs/x20utix0" target="_blank" rel="noopener"><img src="<%= @document.url %>nested-tags-with-font-weight-bolder.png" alt=""></a>
+    <a href="http://cssdeck.com/labs/x20utix0" target="_blank" rel="noopener"><img src="nested-tags-with-font-weight-bolder.png" alt=""></a>
     <figcaption>
         <p>Вложенные теги «strong». Толщина шрифта определяется исходя из значения родительского элемента.</p>
         <p style="text-align: center;"><a href="http://cssdeck.com/labs/x20utix0" target="_blank" rel="noopener" class="bigbutton">Демка</a></p>
@@ -137,7 +149,9 @@ strong, b {
 
 <p>Если у вас шрифт установлен в системе, но не подключен через <code class="hljs-at_rule">@<span class="hljs-keyword">font-face</span></code>, то Google Chrome определяет только Normal и Bold начертания шрифта. Чтобы локальный шрифт заработал, нужно дополнительно указать его <code class="hljs-attribute">font-family</code>.</p>
 
-<pre><code class="language-css">.fw300 {
+{% capture fig-4 %}
+```css
+.fw300 {
   font-family: "Open Sans Light", "Open Sans";
   font-weight: 300;
 }
@@ -145,4 +159,6 @@ strong, b {
   font-family: "Open Sans SemiBold", "Open Sans";
   font-weight: 600;
 }
-</code></pre>
+```
+{% endcapture %}
+{% include browserframe.html content=fig-4 title="styles.css" class="space-out-bottom-kilo-xs" relative-url="" %}

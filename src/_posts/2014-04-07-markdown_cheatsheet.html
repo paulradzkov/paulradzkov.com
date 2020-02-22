@@ -53,15 +53,15 @@ og_image: '/i/og/og-paulradzkov-2014-markdown_cheatsheet.png'
 <p><a href="https://help.github.com/articles/github-flavored-markdown/" target="_blank" rel="noopener">Полный список отличий</a> на Гитхабе.</p>
 
 <div class="raw-output">
-<%- @partial('highlight-gfm-syntax') %>
+{% include_relative markdown_cheatsheet/highlight-gfm-syntax.md %}
 </div>
 
-<div class="markdown-cheatsheet">
+<div class="markdown-cheatsheet article-grid--wide">
   <div class="markdown-cheatsheet-inner">
     <div id="in">
       <form>
         <textarea id="code" contentEditable="true">
-<%- @partial('gfm-syntax') %>
+{% include_relative markdown_cheatsheet/gfm-syntax.md %}
         </textarea>
       </form>
     </div>

@@ -1,0 +1,11 @@
+{% if include.relative-url !="" %}
+{% capture code %}{% include_relative {{ include.relative-url }} %}{% endcapture %}
+{% endif %}
+<div class="browserframe {{ include.class }}" data-title="{{ include.title }}"{% if include.style %} style="{{ include.style }}"{% endif %}>
+    {% if include.relative-url != "" %}
+    {{ code | markdownify }}
+    {% endif %}
+    {% if include.content %}
+    {{ include.content | markdownify }}
+    {% endif %}
+</div>

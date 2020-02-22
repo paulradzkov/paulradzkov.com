@@ -1,13 +1,14 @@
----
----
-
 ```less
-// page.less v0.2
+// page.less v0.3
 
-.page {
+.page-settings() {
     @padding: 40px;
     @txt-color: #000;
     @bg-color: #fff;
+}
+
+.page {
+    .page-settings();
 
     padding: @padding;
     color: @txt-color;

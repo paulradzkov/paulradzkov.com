@@ -1,5 +1,5 @@
 ---
-title: "Деплой Docpad-сайта на GitHub Pages"
+title: "Деплой Docpad-сайта на GitHub Pages"
 excerpt: "Решение проблемы с абсолютными путями и автоматизация выкладки сайта на хостинг"
 description: "Решение проблемы с абсолютными путями и автоматизация выкладки сайта на хостинг"
 created_at: 2014-04-25
@@ -28,25 +28,32 @@ og_image: '/i/og/og-paulradzkov-2014-deploy_docpad_site_to_github_pages.png'
 
 Если ещё не создана, сделаем в конфиге докпада переменную `@site.url`:
 
+{% capture fig-1 %}
 ```coffeescript
-	templateData:
-		site:
-			# The production url of our website. Used in sitemap and rss feed
-			url: "http://paulradzkov.github.io/docpad-simpleblog"
+templateData:
+  site:
+    # The production url of our website. Used in sitemap and rss feed
+    url: "http://paulradzkov.github.io/docpad-simpleblog"
 ```
+{% endcapture %}
+{% include browserframe.html content=fig-1 relative-url="" title="docpad.coffee" class="space-out-bottom-kilo-xs browserframe-scrollable" %}
 
 И добавим отдельную конфигурацию для «development» окружения:
 
+{% capture fig-2 %}
 ```coffeescript
-	# =================================
-	# Environments
+# =================================
+# Environments
 
-	environments:
-		development:
-			templateData:
-				site:
-					url: 'http://localhost:9778'
+environments:
+  development:
+    templateData:
+      site:
+        # The development url
+        url: 'http://localhost:9778'
 ```
+{% endcapture %}
+{% include browserframe.html content=fig-2 relative-url="" title="docpad.coffee" class="space-out-bottom-kilo-xs" %}
 
 Эта переменная — `@site.url` — будет подставляться префиксом ко всем путям и ссылкам в зависимости от того, работаем мы на локалхосте или выкатываем сайт на хостинг.
 
@@ -54,24 +61,31 @@ og_image: '/i/og/og-paulradzkov-2014-deploy_docpad_site_to_github_pages.png'
 
 Например, было:
 
+{% capture fig-3-before %}
 ```html
 <!-- DocPad Styles + Our Own -->
 <%- @getBlock("styles").add(@site.styles).toHTML() %>
 
 <script src="/vendor/modernizr.js"></script>
 ```
+{% endcapture %}
+{% include browserframe.html content=fig-3-before relative-url="" title="layout/default.html.eco" class="space-out-bottom-kilo-xs" %}
 
 Стало:
 
+{% capture fig-3-after %}
 ```html
 <!-- DocPad Styles + Our Own -->
 <%- @getBlock("styles").add(@getUrl(@site.styles)).toHTML() %>
 
 <script src="<%= @getUrl('/vendor/modernizr.js') %>"></script>
 ```
+{% endcapture %}
+{% include browserframe.html content=fig-3-after relative-url="" title="layout/default.html.eco" class="space-out-bottom-kilo-xs" %}
 
 Было:
 
+{% capture fig-4-before %}
 ```html
 <ul class="nav-list">
 	<li><a href="/"><span>Blog</span></a></li>
@@ -80,9 +94,12 @@ og_image: '/i/og/og-paulradzkov-2014-deploy_docpad_site_to_github_pages.png'
 	<li><a href="https://github.com/paulradzkov/docpad-simpleblog"><span>Source Code</span></a></li>
 </ul>
 ```
+{% endcapture %}
+{% include browserframe.html content=fig-4-before relative-url="" title="includes/nav.html.eco" class="space-out-bottom-kilo-xs" %}
 
 Стало:
 
+{% capture fig-4-after %}
 ```html
 <ul class="nav-list">
 	<li><a href="<%= @getUrl('/') %>"><span>Blog</span></a></li>
@@ -91,9 +108,12 @@ og_image: '/i/og/og-paulradzkov-2014-deploy_docpad_site_to_github_pages.png'
 	<li><a href="https://github.com/paulradzkov/docpad-simpleblog"><span>Source Code</span></a></li>
 </ul>
 ```
+{% endcapture %}
+{% include browserframe.html content=fig-4-after relative-url="" title="includes/nav.html.eco" class="space-out-bottom-kilo-xs" %}
 
 Было:
 
+{% capture fig-5-before %}
 ```html
 <ul class="meta-data">
 	<li class="comments">
@@ -106,9 +126,12 @@ og_image: '/i/og/og-paulradzkov-2014-deploy_docpad_site_to_github_pages.png'
 	</li>
 </ul>
 ```
+{% endcapture %}
+{% include browserframe.html content=fig-5-before relative-url="" title="layouts/article.html.eco" class="space-out-bottom-kilo-xs" %}
 
 Стало:
 
+{% capture fig-5-after %}
 ```html
 <ul class="meta-data">
 	<li class="comments">
@@ -121,6 +144,9 @@ og_image: '/i/og/og-paulradzkov-2014-deploy_docpad_site_to_github_pages.png'
 	</li>
 </ul>
 ```
+{% endcapture %}
+{% include browserframe.html content=fig-5-after relative-url="" title="layouts/article.html.eco" class="space-out-bottom-kilo-xs" %}
+
 
 И так далее.
 
@@ -131,8 +157,8 @@ og_image: '/i/og/og-paulradzkov-2014-deploy_docpad_site_to_github_pages.png'
 В репозитории создадим ветку «`gh-pages`». По инструкции это должна быть пустая ветка без истории, но об этом в дальнейшем позаботится плагин для деплоя.
 
 <figure>
-	![В репозитории проекта создадим ветку с именем «gh-pages»](/2014/deploy_docpad_site_to_github_pages/new_branch_gh-pages.png)
-	<figcaption>В репозитории проекта создадим ветку с именем «`gh-pages`»</figcaption>
+	<img src="new_branch_gh-pages.png" alt="В репозитории проекта создадим ветку с именем «gh-pages»">
+	<figcaption>В репозитории проекта создадим ветку с именем «<code>gh-pages</code>»</figcaption>
 </figure>
 
 Установим [GitHub Pages Deployer Plugin for DocPad](https://github.com/docpad/docpad-plugin-ghpages).
@@ -140,8 +166,8 @@ og_image: '/i/og/og-paulradzkov-2014-deploy_docpad_site_to_github_pages.png'
 При попытке выполнить <kbd class="cli" contenteditable="true">&zwj;<span contenteditable="false">docpad deploy-ghpages --env static</span>&zwj;</kbd> у меня появляется ошибка:
 
 <figure>
-	![could not read Username for ’http://github.com’: No such file or directory](/2014/deploy_docpad_site_to_github_pages/gh-pages_deploy_error.png)
-	<figcaption>`could not read Username for ’http://github.com’: No such file or directory`</figcaption>
+	<img src="gh-pages_deploy_error.png" alt="could not read Username for ’http://github.com’: No such file or directory">
+	<figcaption><code>could not read Username for ’http://github.com’: No such file or directory</code></figcaption>
 </figure>
 
 Плагин не смог соединиться с моим аккаунтом на гитхабе. Чтобы показать плагину правильный путь с логином и паролем, добавим новый «remote» для репозитория. Для этого в консоли git выполним:
@@ -155,19 +181,22 @@ og_image: '/i/og/og-paulradzkov-2014-deploy_docpad_site_to_github_pages.png'
 «`github.com/repo_owner/repo_name.git`» — путь к репозиторию проекта, в котором у вас есть права на запись. Это не обязательно должен быть ваш репозиторий, если вы коллаборатор, и у вас есть доступ на запись — вы можете деплоить туда проект.
 
 <figure>
-	![Добавление нового «remote» c логином и паролем](/2014/deploy_docpad_site_to_github_pages/adding_another_remote.png)
+	<img src="adding_another_remote.png" alt="Добавление нового «remote» c логином и паролем">
 	<figcaption>Добавление нового «remote» c логином и паролем. Эту процедуру нужно выполнить один раз для каждого локального репозитория</figcaption>
 </figure>
 
 А в конфиге докпада пропишем настройки для плагина:
 
+{% capture fig-6 %}
 ```coffeescript
-	# Plugins configurations
-	plugins:
-		ghpages:
-			deployRemote: 'deploy'
-			deployBranch: 'gh-pages'
+# Plugins configurations
+plugins:
+  ghpages:
+    deployRemote: 'deploy'
+    deployBranch: 'gh-pages'
 ```
+{% endcapture %}
+{% include browserframe.html content=fig-6 relative-url="" title="docpad.coffee" class="space-out-bottom-kilo-xs" %}
 
 Теперь можно выкатывать сайт:
 

@@ -1,6 +1,3 @@
----
----
-
 ```less
 // config.less
 

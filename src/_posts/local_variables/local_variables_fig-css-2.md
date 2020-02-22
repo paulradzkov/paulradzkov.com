@@ -1,6 +1,3 @@
----
----
-
 ```css
 .something {
   margin: 0;

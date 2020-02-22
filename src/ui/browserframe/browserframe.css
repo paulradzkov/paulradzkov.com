@@ -25,3 +25,12 @@
     background-position: 0 0, 0 0;
     background-size: 78px 38px, 100% 100%;
 }
+
+.browserframe-scrollable {
+    overflow: auto;
+}
+
+.browserframe-scrollable pre {
+    white-space: pre;
+    word-wrap: normal;
+}

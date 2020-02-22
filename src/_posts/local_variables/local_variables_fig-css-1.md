@@ -1,6 +1,3 @@
----
----
-
 ```css
 .something {
     padding: 40px;

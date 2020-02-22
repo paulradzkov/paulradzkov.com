@@ -36,7 +36,7 @@ templateData:
     url: "http://paulradzkov.github.io/docpad-simpleblog"
 ```
 {% endcapture %}
-{% include browserframe.html content=fig-1 relative-url="" title="docpad.coffee" class="space-out-bottom-kilo-xs browserframe-scrollable" %}
+{% include browserframe.html content=fig-1 relative-url="" title="docpad.coffee" class="space-out-bottom-kilo-xs" %}
 
 И добавим отдельную конфигурацию для «development» окружения:
 
@@ -150,7 +150,7 @@ environments:
 
 И так далее.
 
-Теперь, когда мы запускаем <kbd class="cli" contenteditable="true" >&zwj;<span contenteditable="false">docpad run</span>&zwj;</kbd>, ко всем путям подставляется `@site.url` из девелоперского окружения — `http://localhost:9778`. А когда <kbd class="cli" contenteditable="true" >&zwj;<span contenteditable="false">docpad run --env static</span>&zwj;</kbd>, переменная `@site.url` равна нашему продакшен пути.
+Теперь, когда мы запускаем <kbd class="cli">docpad run</kbd>, ко всем путям подставляется `@site.url` из девелоперского окружения — `http://localhost:9778`. А когда <kbd class="cli" >docpad run --env static</kbd>, переменная `@site.url` равна нашему продакшен пути.
 
 ## Деплой на GitHub Pages
 
@@ -163,7 +163,7 @@ environments:
 
 Установим [GitHub Pages Deployer Plugin for DocPad](https://github.com/docpad/docpad-plugin-ghpages).
 
-При попытке выполнить <kbd class="cli" contenteditable="true">&zwj;<span contenteditable="false">docpad deploy-ghpages --env static</span>&zwj;</kbd> у меня появляется ошибка:
+При попытке выполнить <kbd class="cli">docpad deploy-ghpages --env static</kbd> у меня появляется ошибка:
 
 <figure>
 	<img src="gh-pages_deploy_error.png" alt="could not read Username for ’http://github.com’: No such file or directory">
@@ -172,7 +172,7 @@ environments:
 
 Плагин не смог соединиться с моим аккаунтом на гитхабе. Чтобы показать плагину правильный путь с логином и паролем, добавим новый «remote» для репозитория. Для этого в консоли git выполним:
 
-<p><kbd class="cli" contenteditable="true" >&zwj;<span contenteditable="false">git remote add deploy <span>https://</span>login:password@github.com/repo_owner/repo_name.git</span>&zwj;</kbd></p>
+<p><kbd class="cli" contenteditable="true" >git remote add deploy https://login:password@github.com/repo_owner/repo_name.git</kbd></p>
 
 Где «`deploy`» — это название удаленного репозитория. Можно выбрать любое, но переопределять «origin» я бы не советовал: у меня от этого локальная копия репозитория потеряла связь с Гитхабом.
 
@@ -200,7 +200,7 @@ plugins:
 
 Теперь можно выкатывать сайт:
 
-<kbd class="cli" contenteditable="true" >&zwj;<span contenteditable="false">docpad deploy-ghpages --env static</span>&zwj;</kbd>
+<kbd class="cli">docpad deploy-ghpages --env static</kbd>
 
 ## Двухфакторная аутентификация
 
@@ -216,6 +216,6 @@ plugins:
 
 Вам нужно добавить новый «remote» (или заменить существующий) с токеном вместо пароля:
 
-<p><kbd class="cli" contenteditable="true" >&zwj;<span contenteditable="false">git remote add deploy <span>https://</span>login:<mark>token</mark>@github.com/repo_owner/repo_name.git</span>&zwj;</kbd></p>
+<p><kbd class="cli" contenteditable="true" >git remote add deploy https://login:<mark>token</mark>@github.com/repo_owner/repo_name.git</kbd></p>
 
 И всё снова заработает.

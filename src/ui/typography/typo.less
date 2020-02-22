@@ -103,6 +103,10 @@ li code {
     padding: 0.2em 0.3em;
     background: #f8f8f8;
     font-weight: bold;
+    -moz-user-select: all;
+    -webkit-user-select: all;
+    -ms-user-select: all;
+    user-select: all;
 }
 p .cli {
     margin: 0 0.2em;
@@ -169,6 +173,12 @@ p .cli {
     list-style-type: none;
     padding-left: 2.5em;
     padding-right: 2.5em;
+}
+
+[contenteditable="true"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.1875em rgba(43, 154, 255, 0.2);
+    transition: all .5s;
 }
 
 /* utility classes */

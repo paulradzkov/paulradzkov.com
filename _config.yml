@@ -5,7 +5,8 @@ plugins_dir         : _plugins
 layouts_dir         : _layouts
 data_dir            : _data
 includes_dir        : _includes
-keep_files          : [ui/]
+keep_files          : [ui]
+exclude             : [ui]
 excerpt_separator:  <!-- cut -->
 collections:
   posts:

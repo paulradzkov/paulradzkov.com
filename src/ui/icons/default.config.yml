@@ -1,0 +1,17 @@
+mode: 
+    css: 
+        render:
+            css: true
+        example: true
+    symbol:
+        render: true
+        example: true
+    defs:
+        render: true
+        example: true
+    stack:
+        render: true
+        example: true
+    view:
+        render: true
+        example: true

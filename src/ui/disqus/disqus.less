@@ -1,9 +1,17 @@
 /* disqus */
-.disqus-wrapper {
-    padding: @pad*2 @pad @pad*2;
+
+& {
+    @pad: 2rem;
+    @mawtext: 50rem;
+
+    .disqus-wrapper {
+        padding: @pad*2 @pad @pad*2;
+    }
+    
+    .disqus-container {
+        max-width: @mawtext;
+        margin: auto;
+    }
 }
 
-.disqus-container {
-    max-width: @mawtext;
-    margin: auto;
-}
+

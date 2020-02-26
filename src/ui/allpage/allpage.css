@@ -1,0 +1,60 @@
+.allpage {
+  min-height: 100vh;
+}
+.allpage--body {
+  padding: 4rem 2rem 2rem;
+}
+@media screen and (min-width: 1440px) {
+  .allpage-max-width {
+    max-width: 1440px;
+    margin: 0 auto;
+    background: #fff;
+    box-shadow: 0 0 0 1px #f1f1f1;
+  }
+}
+.allpage-stickyfooter {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  align-content: stretch;
+}
+.allpage-stickyfooter .allpage--body {
+  flex-grow: 1;
+}
+.allpage--article-footer {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.allpage-article-header {
+  text-align: center;
+  position: relative;
+}
+.allpage-article-meta,
+.allpage-article-title {
+  position: relative;
+}
+.allpage-article-meta {
+  font-size: 12px;
+  color: #888;
+}
+.allpage-article-meta a:not(:hover) {
+  color: #888;
+}
+.allpage-article-title {
+  margin: 0 auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  font-size: calc(1em + 4vw);
+  max-width: 70rem;
+}
+@media (min-width: 1200px) {
+  .allpage-article-title {
+    font-size: 64px;
+  }
+}
+.allpage-footer {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+/*# sourceMappingURL=allpage.css.map */

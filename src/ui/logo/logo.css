@@ -1,0 +1,49 @@
+/* logo */
+.logo {
+  margin: 0;
+  display: table;
+  width: 15em;
+  text-align: left;
+  text-decoration: none;
+  color: #000;
+  /* decoration */
+}
+.logo:link,
+.logo:visited {
+  color: #000;
+}
+a.logo:hover,
+a.logo:visited:hover,
+a.logo:focus,
+a.logo:active {
+  color: #0877DB;
+}
+.logo-icon {
+  display: table-cell;
+  vertical-align: middle;
+  border-radius: 50%;
+  width: 76px;
+}
+.logo-icon img {
+  display: block;
+  width: 60px;
+  height: 60px;
+  background: #FFF;
+  border-radius: inherit;
+}
+.logo-txt {
+  display: table-cell;
+  vertical-align: middle;
+  line-height: 1.2;
+}
+.logo-name {
+  position: relative;
+  display: block;
+  font-size: 20px;
+  font-weight: bold;
+}
+.logo-title {
+  font-size: 14px;
+}
+
+/*# sourceMappingURL=logo.css.map */

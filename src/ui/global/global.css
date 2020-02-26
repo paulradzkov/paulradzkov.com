@@ -1,0 +1,68 @@
+* {
+  box-sizing: border-box;
+}
+*:before,
+*after {
+  box-sizing: inherit;
+}
+html,
+body {
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+html {
+  background-color: #FFF;
+  color: #000;
+  font-size: 16px;
+  min-width: 320px;
+}
+@media (max-width: 374px) {
+  html {
+    font-size: 14px;
+  }
+}
+body {
+  margin: 0;
+  scroll-behavior: smooth;
+}
+.global-maw {
+  max-width: 1920px;
+  margin-left: auto;
+  margin-right: auto;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #000;
+}
+/*
+     * HTML5 Boilerplate helpers
+     *
+     * What follows is the result of much research on cross-browser styling.
+     * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+     * Kroc Camen, and the H5BP dev community and team.
+     */
+/*
+     * Remove text-shadow in selection highlight: h5bp.com/i
+     * These selection declarations have to be separate.
+     * Customize the background color to match your design.
+     */
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+/*
+     * Allow only vertical resizing of textareas.
+     */
+textarea {
+  resize: vertical;
+}
+
+/*# sourceMappingURL=global.css.map */

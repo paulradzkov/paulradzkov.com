@@ -1,0 +1,28 @@
+.nav-articles {
+  margin: 1rem 0rem 0;
+  flex-wrap: nowrap;
+  flex-direction: row-reverse;
+  overflow: auto;
+}
+.nav-articles-item {
+  width: 14em;
+  min-width: 14em;
+  border-top: 1px solid #f1f1f1;
+  padding: 1.5rem 2em;
+  font-size: 0.8em;
+}
+.nav-articles-item.is-active {
+  border-color: #000;
+  box-shadow: inset 0 3px 0 #000, inset 0 -4px 0 #000;
+}
+.nav-articles-item.is-active a {
+  font-weight: bold;
+  color: inherit !important;
+  pointer-events: none;
+}
+.nav-articles-item .meta-data {
+  font-size: 0.875em;
+  opacity: 0.6;
+}
+
+/*# sourceMappingURL=nav-articles.css.map */

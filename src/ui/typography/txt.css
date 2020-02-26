@@ -1,0 +1,38 @@
+.txt-date {
+  display: inline-block;
+  font-size: 0.625em;
+  line-height: 1.6;
+  color: #9B9B9B;
+  text-transform: uppercase;
+}
+.txt-comments {
+  font-size: 0.75em;
+  line-height: 1.3333;
+  color: #9B9B9B;
+}
+.txt-aside {
+  font-size: 0.85em;
+  color: #9B9B9B;
+}
+@media (max-width: 1199px) {
+  .txt-aside {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+.txt-right {
+  text-align: right;
+}
+@media (min-width: 1200px) {
+  .txt-right-lg {
+    text-align: right;
+  }
+}
+.txt-small {
+  font-size: 0.875em;
+}
+.txt-muted {
+  color: #9B9B9B;
+}
+
+/*# sourceMappingURL=txt.css.map */

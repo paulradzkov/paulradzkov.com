@@ -1,6 +1,7 @@
 .nav-articles {
+    @active-color: #000;
+
     margin: 1rem 0rem 0;
-    border-top: 1px solid #f1f1f1;
     flex-wrap: nowrap;
     flex-direction: row-reverse;
     overflow: auto;
@@ -8,10 +9,14 @@
     &-item {
         width: 14em;
         min-width: 14em;
+        border-top: 1px solid #f1f1f1;
         padding: 1.5rem 2em;
         font-size: 0.8em;
 
         &.is-active {
+            border-color: @active-color;
+            box-shadow: inset 0 3px 0 @active-color, inset 0 -4px 0 @active-color;
+
             a {
                 font-weight: bold;
                 color: inherit !important;

@@ -93,15 +93,15 @@ $(document).ready(function(){
 
     // Bottom navigation positioning
     function scrollNavigation() {
-        if ($('.navigation').length > 0) {
-            $('.navigation').scrollLeft(0);
-            if ($('.navigation').offset().left > 0) {
-                $('.navigation').scrollLeft(
-                    $('.navigation-item.active').offset().left + $('.navigation-item.active').outerWidth() / 2 - $('.navigation').width() / 2 - $('.navigation').offset().left
+        if ($('.nav-articles').length > 0) {
+            $('.nav-articles').scrollLeft(0);
+            if ($('.nav-articles').offset().left > 0) {
+                $('.nav-articles').scrollLeft(
+                    $('.nav-articles-item.is-active').offset().left + $('.nav-articles-item.is-active').outerWidth() / 2 - $('.nav-articles').width() / 2 - $('.nav-articles').offset().left
                 );
             } else {
-                $('.navigation').scrollLeft(
-                    $('.navigation-item.active').offset().left + $('.navigation-item.active').outerWidth() / 2 - $('.navigation').width() / 2
+                $('.nav-articles').scrollLeft(
+                    $('.nav-articles-item.is-active').offset().left + $('.nav-articles-item.is-active').outerWidth() / 2 - $('.nav-articles').width() / 2
                 );
             }
         }

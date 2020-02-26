@@ -8,3 +8,4 @@ rsync.bat
 .ftppass
 .DS_Store
 .grunt
+*.sublime-workspace

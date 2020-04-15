@@ -8,7 +8,10 @@ publish: true
 disqusid: web-fonts_license
 tags: [fonts, typography]
 starred: true
-styles: ["/ui/fotorama/fotorama.css"]
+styles: [
+  "/ui/fotorama/fotorama.css",
+  "/ui/fotorama/fotorama-custom.css"
+  ]
 scripts: ["/ui/fotorama/fotorama.js"]
 og_image: '/i/og/og-paulradzkov-2014-web-fonts_license.png'
 ---

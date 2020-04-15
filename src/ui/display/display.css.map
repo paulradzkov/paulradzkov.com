@@ -1,1 +1,0 @@
-{"version":3,"sources":["display/display.less"],"names":[],"mappings":"AAAA;EACI,cAAA;;AAGJ;EACI,eAAA;;AAGJ;EACI,qBAAA","sourcesContent":[".display-block {\n    display: block;\n}\n\n.display-inline {\n    display: inline;\n}\n\n.display-inline-block {\n    display: inline-block;\n}\n"],"file":"display.css"}
